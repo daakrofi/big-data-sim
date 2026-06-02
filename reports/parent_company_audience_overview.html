@@ -1,0 +1,1480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Corporate Audience Overlap & Media Synergy Study - Highland Studios</title>
+<style>
+  .pcar,
+  .pcar * {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+    background: #d8d2c6;
+    color: #171713;
+    font-family: Aptos, "Segoe UI", Arial, sans-serif;
+    font-size: 10pt;
+    line-height: 1.62;
+  }
+
+  .strategic-document.pcar {
+    --paper: #f7f4ed;
+    --paper-strong: #fffdfa;
+    --ink: #171713;
+    --ink-mid: #474844;
+    --ink-soft: #74766f;
+    --rule: #d6d1c5;
+    --rule-strong: #b7ad9d;
+    --corporate: #173b37;
+    --corporate-2: #245c55;
+    --blue: #23476b;
+    --blue-pale: #e8eef3;
+    --green: #1d6a4f;
+    --green-pale: #e6f1eb;
+    --amber: #8b6416;
+    --amber-pale: #f5edda;
+    --red: #8f342e;
+    --red-pale: #f4e3e0;
+    --violet: #4a3e72;
+    --violet-pale: #ece9f3;
+    max-width: 980px;
+    margin: 32px auto;
+    background: var(--paper);
+    color: var(--ink);
+    border: 1px solid #c8c0b2;
+    box-shadow: 0 18px 54px rgba(36, 31, 24, 0.22);
+    overflow: visible;
+  }
+
+  .pcar h1,
+  .pcar h2,
+  .pcar h3,
+  .pcar h4,
+  .pcar p {
+    margin-top: 0;
+  }
+
+  .pcar p {
+    color: var(--ink-mid);
+    margin-bottom: 12px;
+  }
+
+  .pcar-cover {
+    position: relative;
+    overflow: hidden;
+    min-height: 430px;
+    padding: 58px 64px 42px;
+    color: #ffffff;
+    background:
+      linear-gradient(118deg, rgba(23, 59, 55, 0.98), rgba(20, 48, 64, 0.96)),
+      repeating-linear-gradient(90deg, rgba(255,255,255,0.06) 0, rgba(255,255,255,0.06) 1px, transparent 1px, transparent 38px);
+  }
+
+  .pcar-cover:after {
+    content: "";
+    position: absolute;
+    right: -120px;
+    top: -80px;
+    width: 440px;
+    height: 560px;
+    background:
+      linear-gradient(135deg, transparent 0 33%, rgba(255,255,255,0.06) 33% 34%, transparent 34% 66%, rgba(255,255,255,0.05) 66% 67%, transparent 67%),
+      linear-gradient(45deg, rgba(255,255,255,0.06), transparent 54%);
+    transform: rotate(8deg);
+  }
+
+  .pcar-cover-inner {
+    position: relative;
+    z-index: 1;
+    max-width: 720px;
+  }
+
+  .pcar-eyebrow,
+  .pcar-mono,
+  .pcar-label,
+  .pcar-table th,
+  .pcar-toc h2,
+  .pcar-section-kicker,
+  .pcar-footer {
+    font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  }
+
+  .pcar-eyebrow {
+    font-size: 7.5pt;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    opacity: 0.72;
+    margin-bottom: 20px;
+  }
+
+  .pcar-cover h1 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 31pt;
+    font-weight: 500;
+    line-height: 1.08;
+    letter-spacing: 0;
+    margin-bottom: 18px;
+  }
+
+  .pcar-cover h1 span {
+    display: block;
+    font-style: italic;
+    font-weight: 400;
+    opacity: 0.82;
+  }
+
+  .pcar .pcar-cover-subtitle {
+    max-width: 630px;
+    color: rgba(255,255,255,0.82);
+    font-size: 11pt;
+    line-height: 1.62;
+    margin-bottom: 34px;
+  }
+
+  .pcar-cover-meta {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    border-top: 1px solid rgba(255,255,255,0.24);
+    gap: 22px;
+    padding-top: 22px;
+  }
+
+  .pcar-cover-meta label {
+    display: block;
+    color: rgba(255,255,255,0.52);
+    font-size: 6.5pt;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+  }
+
+  .pcar-cover-meta span {
+    display: block;
+    color: rgba(255,255,255,0.9);
+    font-size: 8.6pt;
+    line-height: 1.35;
+  }
+
+  .pcar-status {
+    display: inline-block;
+    border: 1px solid rgba(255,255,255,0.35);
+    background: rgba(255,255,255,0.11);
+    color: rgba(255,255,255,0.9);
+    padding: 4px 11px;
+    margin-bottom: 18px;
+    font-size: 7pt;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .pcar-body {
+    padding: 44px 64px 58px;
+  }
+
+  .pcar-doc-control {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 22px;
+    margin-bottom: 34px;
+  }
+
+  .pcar-panel {
+    background: var(--paper-strong);
+    border: 1px solid var(--rule);
+    padding: 22px 24px;
+  }
+
+  .pcar-panel h2,
+  .pcar-panel h3 {
+    font-size: 10pt;
+    margin: 0 0 10px;
+    color: var(--corporate);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+
+  .pcar-detail-grid {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    gap: 7px 16px;
+    font-size: 8.5pt;
+  }
+
+  .pcar-detail-grid dt {
+    color: var(--ink-soft);
+    font-weight: 700;
+  }
+
+  .pcar-detail-grid dd {
+    margin: 0;
+    color: var(--ink-mid);
+  }
+
+  .pcar-toc {
+    background: var(--blue-pale);
+    border-left: 4px solid var(--blue);
+    padding: 24px 28px;
+    margin-bottom: 42px;
+  }
+
+  .pcar-toc h2 {
+    color: var(--blue);
+    font-size: 7pt;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+
+  .pcar-toc ol {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    counter-reset: report-toc;
+  }
+
+  .pcar-toc li {
+    counter-increment: report-toc;
+    display: grid;
+    grid-template-columns: 34px 1fr 38px;
+    gap: 10px;
+    padding: 5px 0;
+    border-bottom: 1px dotted #b8c2cc;
+    color: var(--ink-mid);
+    font-size: 8.8pt;
+  }
+
+  .pcar-toc li:last-child {
+    border-bottom: 0;
+  }
+
+  .pcar-toc li:before {
+    content: counter(report-toc, decimal-leading-zero);
+    color: var(--blue);
+    font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+    font-size: 7.8pt;
+  }
+
+  .pcar-page {
+    color: var(--ink-soft);
+    text-align: right;
+    font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+    font-size: 7.8pt;
+  }
+
+  .pcar-exec {
+    background: var(--corporate);
+    color: #ffffff;
+    padding: 32px 36px;
+    margin-bottom: 42px;
+  }
+
+  .pcar-exec h2 {
+    color: rgba(255,255,255,0.74);
+    font-size: 7.2pt;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+
+  .pcar-exec p {
+    color: rgba(255,255,255,0.87);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 11pt;
+    line-height: 1.68;
+  }
+
+  .pcar-kpi-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 12px;
+    margin-top: 24px;
+    padding-top: 22px;
+    border-top: 1px solid rgba(255,255,255,0.22);
+  }
+
+  .pcar-kpi {
+    background: rgba(255,255,255,0.1);
+    border-top: 3px solid rgba(255,255,255,0.38);
+    padding: 13px 12px 14px;
+  }
+
+  .pcar-kpi strong {
+    display: block;
+    color: #ffffff;
+    font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+    font-size: 19pt;
+    line-height: 1;
+    margin-bottom: 5px;
+  }
+
+  .pcar-kpi span {
+    display: block;
+    color: rgba(255,255,255,0.68);
+    font-size: 7.2pt;
+    line-height: 1.35;
+  }
+
+  .pcar-section {
+    margin-bottom: 46px;
+  }
+
+  .pcar-section-header {
+    display: grid;
+    grid-template-columns: 44px 1fr;
+    gap: 14px;
+    align-items: start;
+    border-bottom: 2px solid var(--corporate);
+    padding-bottom: 10px;
+    margin-bottom: 22px;
+  }
+
+  .pcar-section-kicker {
+    color: var(--corporate-2);
+    font-size: 8pt;
+    font-weight: 700;
+    padding-top: 5px;
+  }
+
+  .pcar-section h2 {
+    color: var(--corporate);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 17pt;
+    font-weight: 600;
+    line-height: 1.18;
+    margin: 0;
+  }
+
+  .pcar-section h3 {
+    color: var(--ink);
+    font-size: 9.5pt;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 5px;
+    margin: 22px 0 10px;
+  }
+
+  .pcar-two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 22px;
+  }
+
+  .pcar-three-col {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px;
+  }
+
+  .pcar-callout {
+    border-left: 4px solid var(--corporate-2);
+    background: var(--green-pale);
+    padding: 15px 18px;
+    margin: 18px 0;
+  }
+
+  .pcar-callout.warning {
+    border-left-color: var(--amber);
+    background: var(--amber-pale);
+  }
+
+  .pcar-callout.risk {
+    border-left-color: var(--red);
+    background: var(--red-pale);
+  }
+
+  .pcar-callout.blue {
+    border-left-color: var(--blue);
+    background: var(--blue-pale);
+  }
+
+  .pcar-callout h4 {
+    color: var(--corporate);
+    font-size: 8pt;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin: 0 0 6px;
+  }
+
+  .pcar-callout p {
+    font-size: 9pt;
+    margin: 0;
+  }
+
+  .pcar-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 16px 0 22px;
+    font-size: 8.5pt;
+    background: var(--paper-strong);
+    border: 1px solid var(--rule);
+  }
+
+  .pcar-table th {
+    background: var(--corporate);
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 7pt;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    text-align: left;
+    padding: 8px 9px;
+  }
+
+  .pcar-table td {
+    padding: 8px 9px;
+    border-bottom: 1px solid var(--rule);
+    color: var(--ink-mid);
+    vertical-align: top;
+  }
+
+  .pcar-table tbody tr:nth-child(even) td {
+    background: #f1ede5;
+  }
+
+  .pcar-table td:first-child {
+    color: var(--ink);
+    font-weight: 700;
+  }
+
+  .pcar-chart {
+    background: var(--paper-strong);
+    border: 1px solid var(--rule);
+    padding: 20px 22px;
+    margin: 18px 0 24px;
+  }
+
+  .pcar-chart-title {
+    color: var(--ink);
+    font-weight: 700;
+    margin-bottom: 3px;
+    font-size: 10pt;
+  }
+
+  .pcar-chart-note {
+    color: var(--ink-soft);
+    font-size: 7.6pt;
+    margin-bottom: 15px;
+  }
+
+  .pcar-bar-row {
+    display: grid;
+    grid-template-columns: 170px 1fr 54px;
+    gap: 12px;
+    align-items: center;
+    margin-bottom: 10px;
+    font-size: 8.4pt;
+  }
+
+  .pcar-bar-label {
+    color: var(--ink-mid);
+    font-weight: 700;
+  }
+
+  .pcar-bar-track {
+    height: 13px;
+    background: #e6e0d4;
+    border: 1px solid #d2cabe;
+    overflow: hidden;
+  }
+
+  .pcar-bar-fill {
+    height: 100%;
+    width: var(--v);
+    background: linear-gradient(90deg, var(--corporate-2), #6d8f82);
+  }
+
+  .pcar-bar-fill.blue {
+    background: linear-gradient(90deg, var(--blue), #7a94ad);
+  }
+
+  .pcar-bar-fill.amber {
+    background: linear-gradient(90deg, var(--amber), #c09c4d);
+  }
+
+  .pcar-bar-fill.red {
+    background: linear-gradient(90deg, var(--red), #c17a73);
+  }
+
+  .pcar-bar-value {
+    color: var(--ink);
+    font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+    text-align: right;
+  }
+
+  .pcar-metric-card {
+    background: var(--paper-strong);
+    border: 1px solid var(--rule);
+    border-top: 4px solid var(--corporate-2);
+    padding: 16px 15px;
+  }
+
+  .pcar-metric-card.alt {
+    border-top-color: var(--blue);
+  }
+
+  .pcar-metric-card.warn {
+    border-top-color: var(--amber);
+  }
+
+  .pcar-metric-card.risk {
+    border-top-color: var(--red);
+  }
+
+  .pcar-metric-card strong {
+    display: block;
+    color: var(--corporate);
+    font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+    font-size: 18pt;
+    line-height: 1;
+    margin-bottom: 7px;
+  }
+
+  .pcar-metric-card span {
+    display: block;
+    color: var(--ink-soft);
+    font-size: 7.6pt;
+    line-height: 1.35;
+  }
+
+  .pcar-heatmap {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 3px;
+    margin: 18px 0 20px;
+    font-size: 8pt;
+  }
+
+  .pcar-heatmap th {
+    color: var(--ink-soft);
+    font-weight: 700;
+    text-align: center;
+    font-size: 7pt;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 5px;
+  }
+
+  .pcar-heatmap th:first-child {
+    text-align: left;
+  }
+
+  .pcar-heatmap td {
+    background: #ebe5da;
+    padding: 8px;
+    text-align: center;
+    color: var(--ink);
+    border: 1px solid rgba(0,0,0,0.04);
+  }
+
+  .pcar-heatmap td:first-child {
+    text-align: left;
+    font-weight: 700;
+    background: var(--paper-strong);
+    width: 190px;
+  }
+
+  .pcar-heatmap .score-5 { background: #1d6a4f; color: #fff; }
+  .pcar-heatmap .score-4 { background: #7aa180; color: #10221a; }
+  .pcar-heatmap .score-3 { background: #d8c07c; color: #2c2107; }
+  .pcar-heatmap .score-2 { background: #d99570; color: #301105; }
+  .pcar-heatmap .score-1 { background: #a3473d; color: #fff; }
+
+  .pcar-flow {
+    display: grid;
+    grid-template-columns: 1fr 38px 1fr 38px 1fr;
+    align-items: stretch;
+    gap: 10px;
+    margin: 18px 0 22px;
+  }
+
+  .pcar-flow-node {
+    background: var(--paper-strong);
+    border: 1px solid var(--rule);
+    border-top: 4px solid var(--blue);
+    padding: 14px 14px 15px;
+    min-height: 116px;
+  }
+
+  .pcar-flow-node strong {
+    display: block;
+    color: var(--blue);
+    font-size: 10pt;
+    margin-bottom: 5px;
+  }
+
+  .pcar-flow-node span {
+    display: block;
+    color: var(--ink-soft);
+    font-size: 7.8pt;
+    line-height: 1.35;
+  }
+
+  .pcar-flow-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--corporate-2);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 24pt;
+  }
+
+  .pcar-funnel {
+    margin: 18px 0 22px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 7px;
+  }
+
+  .pcar-funnel-step {
+    width: var(--w);
+    background: var(--paper-strong);
+    border: 1px solid var(--rule);
+    border-left: 5px solid var(--corporate-2);
+    padding: 10px 14px;
+    display: flex;
+    justify-content: space-between;
+    gap: 14px;
+    color: var(--ink-mid);
+    font-size: 8.5pt;
+  }
+
+  .pcar-funnel-step strong {
+    color: var(--ink);
+    font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  }
+
+  .pcar-stack-row {
+    display: grid;
+    grid-template-columns: 154px 1fr 54px;
+    gap: 12px;
+    align-items: center;
+    margin-bottom: 9px;
+    font-size: 8.4pt;
+  }
+
+  .pcar-stack {
+    display: flex;
+    height: 14px;
+    background: #e4ded2;
+    border: 1px solid #d0c6b6;
+  }
+
+  .pcar-stack span {
+    display: block;
+    height: 100%;
+  }
+
+  .pcar-stack-owned { background: var(--green); width: var(--owned); }
+  .pcar-stack-paid { background: var(--amber); width: var(--paid); }
+  .pcar-stack-partner { background: var(--blue); width: var(--partner); }
+
+  .pcar-legend {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    color: var(--ink-soft);
+    font-size: 7.7pt;
+    margin-top: 12px;
+  }
+
+  .pcar-legend span {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .pcar-swatch {
+    width: 10px;
+    height: 10px;
+    display: inline-block;
+  }
+
+  .pcar-timeline {
+    display: grid;
+    grid-template-columns: 110px 1fr;
+    gap: 0;
+    margin: 16px 0 22px;
+    border: 1px solid var(--rule);
+    background: var(--paper-strong);
+  }
+
+  .pcar-time-label,
+  .pcar-time-cell {
+    padding: 10px 12px;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .pcar-time-label {
+    background: #ece6dc;
+    color: var(--ink);
+    font-weight: 700;
+    font-size: 8pt;
+  }
+
+  .pcar-time-cell {
+    color: var(--ink-mid);
+    font-size: 8.4pt;
+  }
+
+  .pcar-time-label:last-of-type,
+  .pcar-time-cell:last-of-type {
+    border-bottom: 0;
+  }
+
+  .pcar-rating {
+    display: inline-block;
+    min-width: 66px;
+    text-align: center;
+    padding: 2px 7px;
+    font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+    font-size: 7.5pt;
+    font-weight: 700;
+  }
+
+  .pcar-rating.high {
+    background: var(--green-pale);
+    color: var(--green);
+    border: 1px solid #b8d5c4;
+  }
+
+  .pcar-rating.mid {
+    background: var(--amber-pale);
+    color: var(--amber);
+    border: 1px solid #dbc88f;
+  }
+
+  .pcar-rating.low {
+    background: var(--red-pale);
+    color: var(--red);
+    border: 1px solid #d8aaa6;
+  }
+
+  .pcar-source-note {
+    color: var(--ink-soft);
+    font-size: 7.6pt;
+    margin-top: -8px;
+  }
+
+  .pcar-appendix {
+    background: #ebe5da;
+    border-top: 2px solid var(--rule-strong);
+    padding: 28px 32px;
+    margin-top: 38px;
+  }
+
+  .pcar-appendix h2 {
+    color: var(--ink-soft);
+    font-size: 8pt;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+
+  .pcar-appendix p {
+    color: var(--ink-soft);
+    font-size: 8.2pt;
+  }
+
+  .pcar-footer {
+    background: var(--corporate);
+    color: rgba(255,255,255,0.76);
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 16px 64px;
+    font-size: 7pt;
+    line-height: 1.35;
+  }
+
+  @media (max-width: 860px) {
+    .strategic-document.pcar {
+      margin: 0;
+      border-left: 0;
+      border-right: 0;
+    }
+
+    .pcar-cover,
+    .pcar-body,
+    .pcar-footer {
+      padding-left: 28px;
+      padding-right: 28px;
+    }
+
+    .pcar-cover-meta,
+    .pcar-kpi-grid,
+    .pcar-doc-control,
+    .pcar-two-col,
+    .pcar-three-col {
+      grid-template-columns: 1fr;
+    }
+
+    .pcar-flow {
+      grid-template-columns: 1fr;
+    }
+
+    .pcar-flow-arrow {
+      transform: rotate(90deg);
+      min-height: 18px;
+    }
+
+    .pcar-bar-row,
+    .pcar-stack-row {
+      grid-template-columns: 1fr;
+      gap: 5px;
+    }
+  }
+
+  @media print {
+    body {
+      background: #fff;
+    }
+
+    .strategic-document.pcar {
+      margin: 0;
+      max-width: none;
+      border: 0;
+      box-shadow: none;
+    }
+
+    .pcar-section {
+      break-inside: avoid;
+    }
+  }
+</style>
+</head>
+<body>
+<article class="strategic-document pcar">
+  <header class="pcar-cover">
+    <div class="pcar-cover-inner">
+      <div class="pcar-status pcar-mono">Approved Release - Confidential</div>
+      <div class="pcar-eyebrow">Corporate Analytics Office | Audience Intelligence Unit</div>
+      <h1>Corporate Audience Overlap <span>&amp; Media Synergy Study</span></h1>
+      <p class="pcar-cover-subtitle">A governance-approved summary of cross-category consumer affinity, owned-channel media leverage, and campaign fit for Highland Studios' next project selection exercise.</p>
+      <div class="pcar-cover-meta">
+        <div>
+          <label>Document ID</label>
+          <span>CAO-AUD-26-Q2-117</span>
+        </div>
+        <div>
+          <label>Prepared For</label>
+          <span>Highland Studios Strategy Task Force</span>
+        </div>
+        <div>
+          <label>Data Window</label>
+          <span>Oct 2025 - Mar 2026</span>
+        </div>
+        <div>
+          <label>Distribution</label>
+          <span>Internal simulation use only</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="pcar-body">
+    <div class="pcar-doc-control">
+      <div class="pcar-panel">
+        <h2>Document Control</h2>
+        <dl class="pcar-detail-grid">
+          <dt>Prepared by</dt>
+          <dd>Corporate Analytics Office, Audience Intelligence Unit</dd>
+          <dt>Sponsor</dt>
+          <dd>Group Strategy and Portfolio Planning</dd>
+          <dt>Security</dt>
+          <dd>Confidential - aggregated data only; no user-level export authorised</dd>
+          <dt>Review cycle</dt>
+          <dd>Quarterly refresh; next scheduled readout July 2026</dd>
+          <dt>Contact</dt>
+          <dd>Corporate Data Governance Team Office</dd>
+        </dl>
+      </div>
+      <div class="pcar-panel">
+        <h3>Release Conditions</h3>
+        <p>This document is an approved analytical summary produced after governance review. It intentionally excludes raw identifiers, household-level viewing paths, precise purchase histories, and any export that would allow direct re-identification of individuals.</p>
+        <p>Percentages should be interpreted as directional planning indicators, not deterministic conversion forecasts.</p>
+      </div>
+    </div>
+
+    <nav class="pcar-toc" aria-label="Table of contents">
+      <h2>Contents</h2>
+      <ol>
+        <li><span>Executive Summary and Decision Relevance</span><span class="pcar-page">03</span></li>
+        <li><span>Objective, Scope, and Analytical Method</span><span class="pcar-page">05</span></li>
+        <li><span>Audience Universe and Overlap Findings</span><span class="pcar-page">07</span></li>
+        <li><span>Cross-Category Engagement Indices</span><span class="pcar-page">10</span></li>
+        <li><span>Owned Media and Commerce Synergy Model</span><span class="pcar-page">14</span></li>
+        <li><span>Project Option Implications</span><span class="pcar-page">18</span></li>
+        <li><span>Risks, Caveats, and Governance Limits</span><span class="pcar-page">22</span></li>
+        <li><span>Recommendations and Appendix Notes</span><span class="pcar-page">25</span></li>
+      </ol>
+    </nav>
+
+    <section class="pcar-exec" id="executive-summary">
+      <h2>Executive Summary</h2>
+      <p>This report evaluates potential brand alignment and cross-promotional synergies between Highland Studios' upcoming project directions and the broader media ecosystem owned by the parent corporation. The parent company's relevant assets include a streaming service with 62M active accounts, fashion merchandising, youth-culture lifestyle publications, licensed talent access, and owned social channels.</p>
+      <p>The strongest finding is that creative self-expression travels well across the group portfolio. Lifestyle and cozy-media overlap reaches 82% among players who bought Highland's action-sports titles, especially where character styling, home or space decoration, music identity, creator tutorials, and fashion-led social content are present. By contrast, motorsport broadcast overlap is materially narrower: only 24% of general corporate subscribers overlap with racing simulation buyers, with concentration in core sports channels and lower reach through lifestyle or merchandising units.</p>
+      <p>In project-selection terms, a title with heavy customization, self-expression, and social sandbox structures - most clearly Option 5, with Option 4 as the higher-risk version - can use corporate owned media more efficiently than a traditional racing sequel. Option 1 remains viable as a lower-risk production path, but it lacks the same corporate demographic leverage and would require a higher share of paid marketing spend to achieve comparable visibility.</p>
+      <div class="pcar-kpi-grid">
+        <div class="pcar-kpi">
+          <strong>62M</strong>
+          <span>active streaming accounts in the approved parent-company universe</span>
+        </div>
+        <div class="pcar-kpi">
+          <strong>82%</strong>
+          <span>lifestyle and cozy-media affinity among action-sports buyers</span>
+        </div>
+        <div class="pcar-kpi">
+          <strong>24%</strong>
+          <span>general subscriber overlap with racing simulation buyers</span>
+        </div>
+        <div class="pcar-kpi">
+          <strong>3.1x</strong>
+          <span>relative owned-channel efficiency for customization-led concepts</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="pcar-section" id="objective">
+      <div class="pcar-section-header">
+        <div class="pcar-section-kicker">01</div>
+        <h2>Objective, Scope, and Analytical Method</h2>
+      </div>
+      <p>The Strategy Task Force asked whether Highland Studios' parent-company ecosystem provides meaningful audience leverage for any of the project options under consideration. The analysis focuses on whether existing entertainment, lifestyle, commerce, and publication audiences can reduce go-to-market friction, increase credibility, or create lower-cost discovery loops for a new Highland title.</p>
+      <p>The question is not simply whether parent-company consumers play games. The more useful question is whether the group's audiences already demonstrate behaviors that resemble the emotional and social use cases of a proposed game: identity formation, character styling, episodic viewing, competitive fandom, collection behavior, social sharing, creator imitation, and willingness to buy adjacent merchandise.</p>
+
+      <h3>1.1 Approved Data Sources</h3>
+      <table class="pcar-table">
+        <thead>
+          <tr>
+            <th>Source</th>
+            <th>Coverage</th>
+            <th>Refresh</th>
+            <th>Analytical Use</th>
+            <th>Governance Treatment</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Streaming account taxonomy</td>
+            <td>62M active accounts across entertainment, sport, and youth-culture verticals</td>
+            <td>Quarterly</td>
+            <td>Media affinity, format preference, co-viewing context</td>
+            <td>Aggregated cohorts only</td>
+          </tr>
+          <tr>
+            <td>Merchandise transaction segments</td>
+            <td>Fashion, collectible, event, and limited-edition drops</td>
+            <td>Monthly</td>
+            <td>Commerce conversion and style-led purchasing</td>
+            <td>Spend bands, no raw transaction export</td>
+          </tr>
+          <tr>
+            <td>Lifestyle publication audiences</td>
+            <td>Editorial readers and newsletter subscribers across youth culture, design, sport, and music</td>
+            <td>Monthly</td>
+            <td>Topic resonance and creator-led feature fit</td>
+            <td>Topic clusters; no named reader lists</td>
+          </tr>
+          <tr>
+            <td>Highland historical buyers</td>
+            <td>Prior racing, skateboarding, and simulation title purchasers</td>
+            <td>Historical snapshot</td>
+            <td>Gaming baseline and franchise affinity</td>
+            <td>Hashed and cohort-matched</td>
+          </tr>
+          <tr>
+            <td>Social content engagement</td>
+            <td>Owned-channel posts, trailer reactions, creator clips, and editorial shares</td>
+            <td>Weekly</td>
+            <td>Content format performance and message testing</td>
+            <td>Aggregate engagement only</td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="pcar-source-note">Source: Corporate Analytics Office approved release CAO-AUD-26-Q2-117. Sample thresholds suppress cohorts below governance minimums.</p>
+
+      <div class="pcar-callout blue">
+        <h4>Method Note</h4>
+        <p>Overlap percentages measure observed co-affinity within the parent-company ecosystem. They do not assert that every overlapping consumer will purchase a game. The values are most useful for comparing the relative ease of reaching, explaining, and validating each project concept through owned channels.</p>
+      </div>
+    </section>
+
+    <section class="pcar-section" id="audience-universe">
+      <div class="pcar-section-header">
+        <div class="pcar-section-kicker">02</div>
+        <h2>Audience Universe and Overlap Findings</h2>
+      </div>
+      <p>The approved parent-company universe is broad, but the gaming-relevant portion is not evenly distributed across genres. Racing buyers are concentrated in sports-viewing and vehicle-culture pockets. Skateboarding and lifestyle-sports buyers are spread across streetwear, music, short-form creator culture, fashion drops, and design-led streaming categories. Life-simulation intenders show lower existing Highland familiarity, but high alignment with customization, home-space, relationship-story, and cozy-media signals.</p>
+
+      <div class="pcar-chart" aria-label="Audience overlap bar chart">
+        <div class="pcar-chart-title">Observed Cross-Category Affinity by Highland-Relevant Segment</div>
+        <div class="pcar-chart-note">Share of each gaming segment showing high affinity with selected parent-company media and commerce categories.</div>
+        <div class="pcar-bar-row">
+          <div class="pcar-bar-label">Action-sports buyers to lifestyle/cozy media</div>
+          <div class="pcar-bar-track"><div class="pcar-bar-fill" style="--v:82%"></div></div>
+          <div class="pcar-bar-value">82%</div>
+        </div>
+        <div class="pcar-bar-row">
+          <div class="pcar-bar-label">Skate buyers to fashion and music drops</div>
+          <div class="pcar-bar-track"><div class="pcar-bar-fill" style="--v:76%"></div></div>
+          <div class="pcar-bar-value">76%</div>
+        </div>
+        <div class="pcar-bar-row">
+          <div class="pcar-bar-label">Life-sim intenders to home/style series</div>
+          <div class="pcar-bar-track"><div class="pcar-bar-fill blue" style="--v:69%"></div></div>
+          <div class="pcar-bar-value">69%</div>
+        </div>
+        <div class="pcar-bar-row">
+          <div class="pcar-bar-label">Motorsport players to sports channels</div>
+          <div class="pcar-bar-track"><div class="pcar-bar-fill amber" style="--v:52%"></div></div>
+          <div class="pcar-bar-value">52%</div>
+        </div>
+        <div class="pcar-bar-row">
+          <div class="pcar-bar-label">General subscribers to racing buyers</div>
+          <div class="pcar-bar-track"><div class="pcar-bar-fill red" style="--v:24%"></div></div>
+          <div class="pcar-bar-value">24%</div>
+        </div>
+      </div>
+
+      <div class="pcar-three-col">
+        <div class="pcar-metric-card">
+          <strong>18.7M</strong>
+          <span>reachable accounts with both gaming and identity-expression signals</span>
+        </div>
+        <div class="pcar-metric-card alt">
+          <strong>11.4M</strong>
+          <span>accounts showing repeat engagement with customization, decor, fashion, or creator-led tutorials</span>
+        </div>
+        <div class="pcar-metric-card warn">
+          <strong>4.2M</strong>
+          <span>accounts showing strong racing or motorsport affinity but low lifestyle-content breadth</span>
+        </div>
+      </div>
+
+      <h3>2.1 Audience Interpretation</h3>
+      <p>The scale advantage sits with concepts that can be explained through identity and social creativity. Parent-company channels already know how to package fashion edits, character-led stories, creator transformations, room makeovers, playlist identity, and aspirational lifestyle routines. These formats translate naturally to a customizable sports-lifestyle or life-simulation concept.</p>
+      <p>Racing concepts can still benefit from sports channels, motorsport documentaries, and high-performance equipment partnerships. However, the data suggests that racing requires a more specialised message and reaches fewer casual entertainment subscribers through the parent portfolio.</p>
+    </section>
+
+    <section class="pcar-section" id="engagement-indices">
+      <div class="pcar-section-header">
+        <div class="pcar-section-kicker">03</div>
+        <h2>Cross-Category Engagement Indices</h2>
+      </div>
+      <p>To compare concepts on a like-for-like basis, the Analytics Office created a Cross-Category Engagement Index. A score of 100 represents average cross-category fit for a recent mid-budget game launch within the group. Scores above 130 indicate that the concept can plausibly be supported with unusually efficient owned media, editorial, or commerce integrations.</p>
+
+      <table class="pcar-table">
+        <thead>
+          <tr>
+            <th>Candidate Concept</th>
+            <th>Streaming Affinity</th>
+            <th>Editorial Fit</th>
+            <th>Merchandise Fit</th>
+            <th>Creator Content Fit</th>
+            <th>Composite Index</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Option 5: Hybrid Lifestyle Sports</td>
+            <td>148</td>
+            <td>166</td>
+            <td>171</td>
+            <td>159</td>
+            <td><span class="pcar-rating high">161</span></td>
+          </tr>
+          <tr>
+            <td>Option 4: Life Simulation Reboot</td>
+            <td>172</td>
+            <td>151</td>
+            <td>138</td>
+            <td>166</td>
+            <td><span class="pcar-rating high">157</span></td>
+          </tr>
+          <tr>
+            <td>Option 3: Open-World Action-Sports</td>
+            <td>129</td>
+            <td>144</td>
+            <td>153</td>
+            <td>147</td>
+            <td><span class="pcar-rating high">143</span></td>
+          </tr>
+          <tr>
+            <td>Option 2: Skateboarding Sequel</td>
+            <td>118</td>
+            <td>132</td>
+            <td>147</td>
+            <td>135</td>
+            <td><span class="pcar-rating mid">133</span></td>
+          </tr>
+          <tr>
+            <td>Option 6: Motorsport Management &amp; Lifestyle</td>
+            <td>91</td>
+            <td>96</td>
+            <td>107</td>
+            <td>82</td>
+            <td><span class="pcar-rating mid">94</span></td>
+          </tr>
+          <tr>
+            <td>Option 1: Racing Sequel</td>
+            <td>78</td>
+            <td>72</td>
+            <td>83</td>
+            <td>61</td>
+            <td><span class="pcar-rating low">74</span></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>3.1 Project-to-Asset Fit Heatmap</h3>
+      <table class="pcar-heatmap" aria-label="Project option to asset fit heatmap">
+        <thead>
+          <tr>
+            <th>Project Option</th>
+            <th>Streaming</th>
+            <th>Fashion</th>
+            <th>Lifestyle Press</th>
+            <th>Creator Network</th>
+            <th>Sports Channels</th>
+            <th>Commerce</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Option 1: Racing Sequel</td>
+            <td class="score-2">2</td>
+            <td class="score-1">1</td>
+            <td class="score-1">1</td>
+            <td class="score-2">2</td>
+            <td class="score-5">5</td>
+            <td class="score-2">2</td>
+          </tr>
+          <tr>
+            <td>Option 2: Skateboarding Sequel</td>
+            <td class="score-3">3</td>
+            <td class="score-5">5</td>
+            <td class="score-4">4</td>
+            <td class="score-4">4</td>
+            <td class="score-2">2</td>
+            <td class="score-4">4</td>
+          </tr>
+          <tr>
+            <td>Option 3: Open-World Action-Sports</td>
+            <td class="score-4">4</td>
+            <td class="score-5">5</td>
+            <td class="score-4">4</td>
+            <td class="score-5">5</td>
+            <td class="score-3">3</td>
+            <td class="score-4">4</td>
+          </tr>
+          <tr>
+            <td>Option 4: Life Simulation Reboot</td>
+            <td class="score-5">5</td>
+            <td class="score-4">4</td>
+            <td class="score-5">5</td>
+            <td class="score-5">5</td>
+            <td class="score-1">1</td>
+            <td class="score-4">4</td>
+          </tr>
+          <tr>
+            <td>Option 5: Hybrid Lifestyle Sports</td>
+            <td class="score-5">5</td>
+            <td class="score-5">5</td>
+            <td class="score-5">5</td>
+            <td class="score-5">5</td>
+            <td class="score-3">3</td>
+            <td class="score-5">5</td>
+          </tr>
+          <tr>
+            <td>Option 6: Motorsport Management &amp; Lifestyle</td>
+            <td class="score-2">2</td>
+            <td class="score-3">3</td>
+            <td class="score-3">3</td>
+            <td class="score-2">2</td>
+            <td class="score-4">4</td>
+            <td class="score-3">3</td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="pcar-source-note">Heatmap scale: 1 = weak fit, 3 = workable fit, 5 = strong fit. Ratings combine reach, message credibility, expected content supply, and internal activation cost.</p>
+    </section>
+
+    <section class="pcar-section" id="media-synergy">
+      <div class="pcar-section-header">
+        <div class="pcar-section-kicker">04</div>
+        <h2>Owned Media and Commerce Synergy Model</h2>
+      </div>
+      <p>The parent-company advantage is most valuable where the group can provide credible discovery without buying every impression externally. The model below separates paid acquisition from owned media, partner editorial, and commerce-led discovery. Customization-heavy concepts shift more of the launch burden toward channels already controlled by the corporation.</p>
+
+      <div class="pcar-flow" aria-label="Media synergy flow">
+        <div class="pcar-flow-node">
+          <strong>Audience Signal</strong>
+          <span>Identity expression, character styling, lifestyle aspiration, creator imitation, and social sharing detected across streaming and editorial cohorts.</span>
+        </div>
+        <div class="pcar-flow-arrow">></div>
+        <div class="pcar-flow-node">
+          <strong>Activation Surface</strong>
+          <span>Series placements, fashion drops, youth-culture articles, creator challenges, playlist moments, and short-form explainers.</span>
+        </div>
+        <div class="pcar-flow-arrow">></div>
+        <div class="pcar-flow-node">
+          <strong>Game Demand</strong>
+          <span>Wishlist additions, launch trial intent, community sharing, avatar-item interest, and lower dependence on paid reach.</span>
+        </div>
+      </div>
+
+      <div class="pcar-chart" aria-label="Marketing mix stacked bars">
+        <div class="pcar-chart-title">Illustrative Launch-Reach Mix by Project Concept</div>
+        <div class="pcar-chart-note">Estimated share of reachable launch impressions by channel type under a standard group-supported campaign.</div>
+        <div class="pcar-stack-row">
+          <div class="pcar-bar-label">Hybrid Lifestyle Sports</div>
+          <div class="pcar-stack" style="--owned:46%; --paid:22%; --partner:32%">
+            <span class="pcar-stack-owned"></span><span class="pcar-stack-paid"></span><span class="pcar-stack-partner"></span>
+          </div>
+          <div class="pcar-bar-value">78% non-paid</div>
+        </div>
+        <div class="pcar-stack-row">
+          <div class="pcar-bar-label">Life Simulation Reboot</div>
+          <div class="pcar-stack" style="--owned:41%; --paid:29%; --partner:30%">
+            <span class="pcar-stack-owned"></span><span class="pcar-stack-paid"></span><span class="pcar-stack-partner"></span>
+          </div>
+          <div class="pcar-bar-value">71% non-paid</div>
+        </div>
+        <div class="pcar-stack-row">
+          <div class="pcar-bar-label">Open-World Action-Sports</div>
+          <div class="pcar-stack" style="--owned:34%; --paid:36%; --partner:30%">
+            <span class="pcar-stack-owned"></span><span class="pcar-stack-paid"></span><span class="pcar-stack-partner"></span>
+          </div>
+          <div class="pcar-bar-value">64% non-paid</div>
+        </div>
+        <div class="pcar-stack-row">
+          <div class="pcar-bar-label">Racing Sequel</div>
+          <div class="pcar-stack" style="--owned:18%; --paid:61%; --partner:21%">
+            <span class="pcar-stack-owned"></span><span class="pcar-stack-paid"></span><span class="pcar-stack-partner"></span>
+          </div>
+          <div class="pcar-bar-value">39% non-paid</div>
+        </div>
+        <div class="pcar-legend">
+          <span><i class="pcar-swatch" style="background: var(--green)"></i>Owned media</span>
+          <span><i class="pcar-swatch" style="background: var(--blue)"></i>Partner/editorial</span>
+          <span><i class="pcar-swatch" style="background: var(--amber)"></i>Paid acquisition</span>
+        </div>
+      </div>
+
+      <h3>4.1 Campaign Funnel for Customization-Led Concepts</h3>
+      <div class="pcar-funnel" aria-label="Customization-led campaign funnel">
+        <div class="pcar-funnel-step" style="--w:100%"><span>Parent-company active account universe</span><strong>62.0M</strong></div>
+        <div class="pcar-funnel-step" style="--w:88%"><span>Accounts with gaming, youth-culture, or creator-content signals</span><strong>31.8M</strong></div>
+        <div class="pcar-funnel-step" style="--w:74%"><span>Accounts with customization, fashion, decor, or identity-expression signals</span><strong>18.7M</strong></div>
+        <div class="pcar-funnel-step" style="--w:60%"><span>Likely reachable via at least two owned corporate channels</span><strong>11.4M</strong></div>
+        <div class="pcar-funnel-step" style="--w:46%"><span>High-propensity campaign responders before paid media amplification</span><strong>4.9M</strong></div>
+      </div>
+
+      <div class="pcar-callout warning">
+        <h4>Planning Interpretation</h4>
+        <p>A larger reachable audience does not remove the need for a strong game concept or stable technology. It does, however, lower the cost of initial explanation. Concepts that are easy to show through outfits, social spaces, room builds, tricks, stories, or creator challenges are easier for the parent-company portfolio to promote repeatedly.</p>
+      </div>
+    </section>
+
+    <section class="pcar-section" id="project-implications">
+      <div class="pcar-section-header">
+        <div class="pcar-section-kicker">05</div>
+        <h2>Project Option Implications</h2>
+      </div>
+      <p>The data does not make the final project decision by itself. Highland must still weigh studio capability, production risk, historical failures, expected development cost, and competitor timing. However, the parent-company overlap analysis changes the marketing side of the decision: the group can create the most leverage for concepts that combine social identity, creator content, and customisable consumer-facing assets.</p>
+
+      <h3>5.1 Option-Level Readout</h3>
+      <table class="pcar-table">
+        <thead>
+          <tr>
+            <th>Option</th>
+            <th>Corporate Audience Leverage</th>
+            <th>Best Activation Route</th>
+            <th>Primary Limitation</th>
+            <th>Planning Implication</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Option 1: Racing Sequel</td>
+            <td><span class="pcar-rating low">Low</span></td>
+            <td>Sports channels, motorsport documentary inventory, specialist creator campaigns</td>
+            <td>Narrow general-subscriber overlap; low fashion and lifestyle editorial fit</td>
+            <td>Keep if production certainty dominates. Budget for higher paid acquisition.</td>
+          </tr>
+          <tr>
+            <td>Option 2: Skateboarding Sequel</td>
+            <td><span class="pcar-rating mid">Medium</span></td>
+            <td>Streetwear drops, creator tricks, soundtrack tie-ins, youth press</td>
+            <td>Strong but concentrated around known franchise fans</td>
+            <td>Solid fit, though less strategically expansive than a hybrid concept.</td>
+          </tr>
+          <tr>
+            <td>Option 3: Open-World Action-Sports</td>
+            <td><span class="pcar-rating high">High</span></td>
+            <td>Creator challenges, city-culture editorials, fashion integrations, social clips</td>
+            <td>Requires more server and content scale than a direct sports sequel</td>
+            <td>Strong marketing logic if production capacity can support a larger world.</td>
+          </tr>
+          <tr>
+            <td>Option 4: Life Simulation Reboot</td>
+            <td><span class="pcar-rating high">High</span></td>
+            <td>Home design, character stories, relationship drama, cozy series adjacency</td>
+            <td>Highest technical and reputational risk due to prior LifeSpace failure</td>
+            <td>Large upside, but only with credible engineering remediation and staged scope.</td>
+          </tr>
+          <tr>
+            <td>Option 5: Hybrid Lifestyle Sports</td>
+            <td><span class="pcar-rating high">Very High</span></td>
+            <td>Fashion, music, creator stunts, avatar styling, social hubs, trick sharing</td>
+            <td>Needs clear product definition to avoid becoming unfocused</td>
+            <td>Best balance between Highland capability and parent-company leverage.</td>
+          </tr>
+          <tr>
+            <td>Option 6: Motorsport Management &amp; Lifestyle</td>
+            <td><span class="pcar-rating mid">Moderate</span></td>
+            <td>Sports personalities, team-livery commerce, management strategy content</td>
+            <td>Niche audience; difficult to make broadly legible in youth/lifestyle channels</td>
+            <td>Efficient smaller project, but limited transformational potential.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>5.2 Recommended Activation Sequence if Option 5 Proceeds</h3>
+      <div class="pcar-timeline">
+        <div class="pcar-time-label">T-9 months</div>
+        <div class="pcar-time-cell">Soft editorial seeding through youth-culture publications: "new social sports spaces", character identity, music, fashion, and city movement themes. No hard sell before gameplay clarity.</div>
+        <div class="pcar-time-label">T-6 months</div>
+        <div class="pcar-time-cell">Creator prototype sessions focused on avatar styling, trick expression, social hub traversal, and shareable challenge formats. Capture feedback before content-lock.</div>
+        <div class="pcar-time-label">T-3 months</div>
+        <div class="pcar-time-cell">Limited merchandise test: digital outfit concepts mirrored by small real-world capsule drops. Measure click-through and wishlist lift by style cluster.</div>
+        <div class="pcar-time-label">Launch month</div>
+        <div class="pcar-time-cell">Synchronized streaming-service inventory, creator challenge week, lifestyle press features, and store-page conversion tests. Paid media supports proof points that owned channels have already validated.</div>
+        <div class="pcar-time-label">Post-launch</div>
+        <div class="pcar-time-cell">Monthly creator prompts, player-designed looks, seasonal social events, and commerce tie-ins. Avoid a single launch spike; design for repeatable identity-led content.</div>
+      </div>
+
+      <div class="pcar-callout">
+        <h4>Strategic Implication</h4>
+        <p>Option 5 appears to capture the most useful middle ground: it preserves Highland's credibility in physics-driven movement while adding the identity-expression layer that the parent-company ecosystem can promote at scale. Option 4 has comparable audience upside but materially higher engineering and reputational risk.</p>
+      </div>
+    </section>
+
+    <section class="pcar-section" id="risks">
+      <div class="pcar-section-header">
+        <div class="pcar-section-kicker">06</div>
+        <h2>Risks, Caveats, and Governance Limits</h2>
+      </div>
+      <p>Corporate audience fit can become misleading if treated as a substitute for product-market fit. The parent company can amplify a concept that matches its audiences, but it cannot make an unstable game retain players, nor can it guarantee that streaming viewers convert into buyers at a profitable rate.</p>
+
+      <div class="pcar-two-col">
+        <div class="pcar-callout risk">
+          <h4>Analytical Risk</h4>
+          <p>High affinity may reflect content interest rather than purchase intent. Consumers who enjoy fashion, decor, or social storytelling may still reject a game if onboarding is weak, price is too high, or community tools feel shallow.</p>
+        </div>
+        <div class="pcar-callout risk">
+          <h4>Execution Risk</h4>
+          <p>The more a game relies on self-expression, the more it needs robust customization tools, moderation processes, content pipelines, and reliable social systems. These requirements must be costed before the audience upside is banked.</p>
+        </div>
+      </div>
+
+      <h3>6.1 Specific Caveats</h3>
+      <table class="pcar-table">
+        <thead>
+          <tr>
+            <th>Caveat</th>
+            <th>Why It Matters</th>
+            <th>Mitigation</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Correlation is not conversion</td>
+            <td>Overlap measures shared affinity, not guaranteed purchasing behavior.</td>
+            <td>Run store-page tests, wishlist tracking, and prototype creator sessions before final go-to-market budget approval.</td>
+          </tr>
+          <tr>
+            <td>Different audience contexts</td>
+            <td>Streaming viewers are often passive; game buyers need control, agency, and value.</td>
+            <td>Translate media hooks into playable loops, not just campaign imagery.</td>
+          </tr>
+          <tr>
+            <td>Privacy and governance suppression</td>
+            <td>Low-volume cohorts are intentionally hidden, reducing precision in smaller segments.</td>
+            <td>Use larger directional ranges and avoid overfitting decisions to small subgroup patterns.</td>
+          </tr>
+          <tr>
+            <td>Prior LifeSpace reputational memory</td>
+            <td>Life-simulation players may remember technical failures and demand proof of stability.</td>
+            <td>Publish transparent technical milestones only when verified; consider staged alpha proof before broad brand campaigns.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="pcar-section" id="recommendations">
+      <div class="pcar-section-header">
+        <div class="pcar-section-kicker">07</div>
+        <h2>Recommendations for the Strategy Task Force</h2>
+      </div>
+      <p>The parent-company audience data should be treated as a strategic multiplier, not as the sole decision criterion. If the Task Force chooses a concept that already fits Highland's delivery capability, the parent ecosystem can materially reduce launch friction. If the Task Force chooses a concept beyond current capability, audience fit alone will not offset execution failure.</p>
+
+      <table class="pcar-table">
+        <thead>
+          <tr>
+            <th>Recommendation</th>
+            <th>Action</th>
+            <th>Decision Use</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>R-1</td>
+            <td>Prioritise Option 5 as the strongest audience-leverage candidate, subject to product-scope discipline and technical feasibility review.</td>
+            <td>Best balance of parent-company media leverage and Highland's action-sports capability base.</td>
+          </tr>
+          <tr>
+            <td>R-2</td>
+            <td>Keep Option 4 under consideration only if the studio can demonstrate a credible remediation plan for AI simulation, save-state reliability, and mod/customization tooling.</td>
+            <td>High market and media upside, but unacceptable if historical LifeSpace weaknesses remain unresolved.</td>
+          </tr>
+          <tr>
+            <td>R-3</td>
+            <td>If Option 1 is selected, plan for a more conventional paid acquisition model and do not assume broad parent-company lifestyle support.</td>
+            <td>Prevents underbudgeting a lower-overlap but lower-production-risk project.</td>
+          </tr>
+          <tr>
+            <td>R-4</td>
+            <td>Run a two-week concept validation sprint comparing a racing sequel trailer, a hybrid lifestyle sports prototype, and a life-sim customization slice using matched owned-channel placements.</td>
+            <td>Turns the current directional analysis into campaign-response evidence before final greenlight.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="pcar-callout blue">
+        <h4>Final Readout</h4>
+        <p>The corporate ecosystem is structurally better at amplifying identity, style, creator behavior, and social storytelling than pure motorsport realism. This creates a measurable advantage for customization-led projects. The most defensible strategic interpretation is that corporate audience data strengthens the case for Option 5 and, with stronger technical controls, may support Option 4. It does not materially strengthen the case for a traditional racing sequel.</p>
+      </div>
+    </section>
+
+    <div class="pcar-appendix">
+      <h2>Appendix - Definitions and Methodology Notes</h2>
+      <p><strong>Cross-Category Engagement Index:</strong> A composite measure normalised to 100, combining reach, repeat engagement, content format fit, editorial credibility, merchandise adjacency, and expected activation cost. Scores above 130 indicate strong cross-portfolio leverage.</p>
+      <p><strong>High affinity:</strong> A cohort-level classification assigned when observed engagement is materially above the parent-company baseline for a given topic or format. Affinity does not require direct purchase behavior.</p>
+      <p><strong>Owned-channel efficiency:</strong> Estimated ability to generate credible awareness through streaming inventory, editorial, newsletters, social channels, commerce moments, and talent integrations controlled by the corporation before external paid media is applied.</p>
+      <p><strong>Governance suppression:</strong> Cohorts below minimum size thresholds are suppressed or aggregated. The analysis therefore favors stable directional conclusions over precise micro-segment claims.</p>
+      <p><em>Classification: Confidential. This summary is approved for Highland Studios Strategy Task Force use within the classroom simulation. Do not interpret any fictional metric as a real corporate benchmark.</em></p>
+    </div>
+  </div>
+
+  <footer class="pcar-footer">
+    <div>Corporate Analytics Office | Audience Intelligence Unit | CAO-AUD-26-Q2-117</div>
+    <div>Prepared for Highland Studios | Confidential aggregated release | Page package v1.0</div>
+  </footer>
+</article>
+</body>
+</html>

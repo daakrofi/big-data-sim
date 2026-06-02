@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Highland Studios | Strategy Portal & Analytics Exercise</title>
+  <!-- Google Fonts for premium typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Access Screen (Login Modal Overlay) -->
+  <div id="login-overlay" class="login-overlay">
+    <div class="login-box glass-panel">
+      <header class="login-header">
+        <div class="logo">HIGHLAND STUDIOS</div>
+        <h1>Strategy Task Force Portal</h1>
+        <p class="subtitle">Big Data Analytics Exercise - Project Selector Simulation</p>
+      </header>
+      
+      <form id="login-form" class="login-form">
+        <div class="form-group">
+          <label for="team-select">Select Your Team</label>
+          <select id="team-select" required>
+            <option value="" disabled selected>-- Select Team --</option>
+            <option value="Team 1">Team 1</option>
+            <option value="Team 2">Team 2</option>
+            <option value="Team 3">Team 3</option>
+            <option value="Team 4">Team 4</option>
+            <option value="Team 5">Team 5</option>
+            <option value="Team 6">Team 6</option>
+            <option value="Team 7">Team 7</option>
+            <option value="Team 8">Team 8</option>
+            <option value="Team 9">Team 9</option>
+            <option value="Team 10">Team 10</option>
+            <option value="Admin">Admin</option>
+          </select>
+        </div>
+        
+        <div class="form-group">
+          <label for="passcode-input">Team Passcode</label>
+          <input type="text" id="passcode-input" autocomplete="current-password" placeholder="Enter passcode" required>
+          <span class="error-message" id="login-error" aria-live="polite"></span>
+        </div>
+        
+        <button type="submit" class="btn btn-primary">Enter Portal</button>
+      </form>
+      
+      <footer class="login-footer">
+        <details>
+          <summary>Passcode Reference (For Classroom Testing)</summary>
+          <div class="passcode-table-wrapper">
+            <table class="passcode-table">
+              <thead>
+                <tr>
+                  <th>Team</th>
+                  <th>Passcode</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>Team 1</td><td><code>HIGHLAND-101</code></td></tr>
+                <tr><td>Team 2</td><td><code>HIGHLAND-202</code></td></tr>
+                <tr><td>Team 3</td><td><code>HIGHLAND-303</code></td></tr>
+                <tr><td>Team 4</td><td><code>HIGHLAND-404</code></td></tr>
+                <tr><td>Team 5</td><td><code>HIGHLAND-505</code></td></tr>
+                <tr><td>Team 6</td><td><code>HIGHLAND-606</code></td></tr>
+                <tr><td>Team 7</td><td><code>HIGHLAND-707</code></td></tr>
+                <tr><td>Team 8</td><td><code>HIGHLAND-808</code></td></tr>
+                <tr><td>Team 9</td><td><code>HIGHLAND-909</code></td></tr>
+                <tr><td>Team 10</td><td><code>HIGHLAND-010</code></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </details>
+      </footer>
+    </div>
+  </div>
+
+  <!-- App Wrapper (Hidden until logged in) -->
+  <div id="app-wrapper" class="app-wrapper hidden">
+    
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar-nav">
+      <div class="sidebar-header">
+        <div class="logo">HIGHLAND STUDIOS</div>
+        <div class="tag">Strategy Portal</div>
+      </div>
+      
+      <div class="team-card glass-panel-accent">
+        <div class="team-name" id="display-team-name">Team Name</div>
+        <div class="budget-label">Available Analytics Budget:</div>
+        <div class="budget-value" id="display-budget">£10,000</div>
+      </div>
+      
+      <nav aria-label="Main Navigation">
+        <ul class="nav-list">
+          <li>
+            <button type="button" class="nav-item active" data-target="tab-briefing">
+              <span class="icon">📋</span> Scenario Briefing
+            </button>
+          </li>
+          <li>
+            <button type="button" class="nav-item" data-target="tab-journey">
+              <span class="icon">🛣️</span> Consumer Journey Map
+            </button>
+          </li>
+          <li>
+            <button type="button" class="nav-item" data-target="tab-slack">
+              <span class="icon">💬</span> Internal Slack Board
+            </button>
+          </li>
+          <li>
+            <button type="button" class="nav-item" data-target="tab-macro">
+              <span class="icon">🌐</span> Macro Environment
+            </button>
+          </li>
+          <li>
+            <button type="button" class="nav-item" data-target="tab-email">
+              <span class="icon">📥</span> Email Inbox
+              <span class="badge hidden" id="email-badge">0</span>
+            </button>
+          </li>
+          <li>
+            <button type="button" class="nav-item" data-target="tab-worksheet">
+              <span class="icon">📝</span> Decision Worksheet
+            </button>
+          </li>
+        </ul>
+      </nav>
+      
+      <div class="sidebar-footer">
+        <button type="button" class="btn btn-outline btn-sm logout-btn" id="logout-btn">Log Out</button>
+      </div>
+    </aside>
+
+    <!-- Main Workspace Content -->
+    <main class="main-content" id="main-content">
+      
+      <!-- Top header bar -->
+      <header class="topbar">
+        <h2 id="current-tab-title">Scenario Briefing</h2>
+        <div class="topbar-actions">
+          <div class="status-indicator">
+            <span class="dot live"></span> Simulation Active
+          </div>
+        </div>
+      </header>
+
+      <!-- Content Scroll Container -->
+      <div class="content-scroll">
+        
+        <!-- Tab 1: Briefing -->
+        <section id="tab-briefing" class="tab-pane active-pane">
+          <div class="briefing-container">
+            <div class="card glass-panel hero-card">
+              <h1>Strategic Executive Mandate</h1>
+              <p>Welcome, Strategy Task Force. Highland Studios is preparing to commit its resources to its next major development project. Game production is a multi-million-pound, long-term commitment taking 3 to 5 years. Instinct is not enough; you must leverage analytical evidence to justify the studio's project path.</p>
+            </div>
+            
+            <div class="grid grid-2">
+              <div class="card glass-panel">
+                <h2>Our Capability & History</h2>
+                <p>Highland Studios is historically recognized for two core strengths:</p>
+                <ul>
+                  <li><strong>Racing Simulation:</strong> Excellent track record, reliable sales performance, stable reviews, and highly competent internal physics engine development.</li>
+                  <li><strong>Skateboarding:</strong> Recent critical and commercial success with <em>Streetline Skate</em>, showing exceptional ability in expressive motion, physics-driven styling, and community advocacy.</li>
+                </ul>
+                <div class="alert alert-warning">
+                  <strong>Warning:</strong> Several years ago, the studio launched <em>LifeSpace</em>, a life simulation title. It sold poorly and was heavily criticized for crashes, simulation-breaking logic bugs, and weak AI. Morale was damaged, and the team remains nervous about re-entering this category.
+                </div>
+              </div>
+              
+              <div class="card glass-panel">
+                <h2>The Strategic Tension</h2>
+                <p>Market intelligence indicates a powerful surge in consumer demand for <strong>Life Simulation</strong> games. Players are actively searching for alternatives to the dominant titles, specifically demanding better customization, deeper AI systems, and robust modding tools.</p>
+                <p>This leaves Highland Studios in a dilemma: do we build the safe racing sequel, double-down on action sports, or attempt a high-upside but high-risk life simulation reboot?</p>
+                <div class="alert alert-info">
+                  <strong>Task Force Goal:</strong> Inspect available data along the customer journey, analyze internal studio readiness, assess the competitive environment, and submit a final recommendation report.
+                </div>
+              </div>
+            </div>
+
+            <h2>Project Options to Evaluate</h2>
+            <div class="options-grid">
+              
+              <div class="option-card glass-panel">
+                <div class="option-header">
+                  <h3>Option 1: Racing Sequel</h3>
+                  <span class="badge badge-safe">Low-Medium Risk</span>
+                </div>
+                <p class="option-desc">Create a follow-up to our highly rated motorsport titles. Utilizes proven physics systems and appeals to a reliable, built-in audience.</p>
+                <div class="option-details">
+                  <span><strong>Capability Fit:</strong> Strong</span>
+                  <span><strong>Market Spread:</strong> Stable</span>
+                </div>
+              </div>
+
+              <div class="option-card glass-panel">
+                <div class="option-header">
+                  <h3>Option 2: Skateboarding Sequel</h3>
+                  <span class="badge badge-safe">Medium Risk</span>
+                </div>
+                <p class="option-desc">A direct sequel to <em>Streetline Skate</em>, capitalizing on community excitement, expressive customization, and skateboarding culture.</p>
+                <div class="option-details">
+                  <span><strong>Capability Fit:</strong> Strong</span>
+                  <span><strong>Market Spread:</strong> Focused</span>
+                </div>
+              </div>
+
+              <div class="option-card glass-panel">
+                <div class="option-header">
+                  <h3>Option 3: Open-World Action-Sports Game</h3>
+                  <span class="badge badge-alert">Medium-High Risk</span>
+                </div>
+                <p class="option-desc">Expand skateboarding physics to parkour, biking, and street culture. Focuses on social multiplayer spaces and streaming popularity.</p>
+                <div class="option-details">
+                  <span><strong>Capability Fit:</strong> Moderate</span>
+                  <span><strong>Market Spread:</strong> Growing</span>
+                </div>
+              </div>
+
+              <div class="option-card glass-panel">
+                <div class="option-header">
+                  <h3>Option 4: Life Simulation Reboot</h3>
+                  <span class="badge badge-danger">High Risk</span>
+                </div>
+                <p class="option-desc">A complete reimagining of the life simulation genre. Massive commercial potential, but requires significant hiring and builds on past technical failures.</p>
+                <div class="option-details">
+                  <span><strong>Capability Fit:</strong> Weak</span>
+                  <span><strong>Market Spread:</strong> Extremely High</span>
+                </div>
+              </div>
+
+              <div class="option-card glass-panel">
+                <div class="option-header">
+                  <h3>Option 5: Hybrid Lifestyle Sports Game</h3>
+                  <span class="badge badge-alert">Medium Risk</span>
+                </div>
+                <p class="option-desc">Combines skateboarding, social meeting grounds, and creative player customization spaces. Bridges our core strength with lifestyle trends.</p>
+                <div class="option-details">
+                  <span><strong>Capability Fit:</strong> Good</span>
+                  <span><strong>Market Spread:</strong> Distinctive</span>
+                </div>
+              </div>
+
+              <div class="option-card glass-panel">
+                <div class="option-header">
+                  <h3>Option 6: Motorsport Management & Lifestyle</h3>
+                  <span class="badge badge-alert">Medium Risk</span>
+                </div>
+                <p class="option-desc">A tactical management game merging racing metrics with lifestyle elements, driver relationships, and custom team sponsorships.</p>
+                <div class="option-details">
+                  <span><strong>Capability Fit:</strong> Moderate</span>
+                  <span><strong>Market Spread:</strong> Niche</span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </section>
+
+        <!-- Tab 2: Journey Map -->
+        <section id="tab-journey" class="tab-pane">
+          <div class="journey-container">
+            <header class="tab-header">
+              <h1>Interactive Consumer Journey Map</h1>
+              <p>Analyze how players discover, evaluate, purchase, and engage with game categories. Click on each journey stage to explore available data sources, check their format, cost, and availability, and inspect the datasets.</p>
+            </header>
+
+            <!-- Horizontal Journey Timeline -->
+            <div class="journey-timeline-wrapper">
+              <div class="journey-timeline" role="listbox" aria-label="Consumer Journey Stages">
+                
+                <button type="button" class="journey-node active" data-stage="1" role="option" aria-selected="true">
+                  <span class="node-number">1</span>
+                  <span class="node-name">Needs Recognition</span>
+                </button>
+                
+                <button type="button" class="journey-node" data-stage="2" role="option" aria-selected="false">
+                  <span class="node-number">2</span>
+                  <span class="node-name">Search for Info</span>
+                </button>
+                
+                <button type="button" class="journey-node" data-stage="3" role="option" aria-selected="false">
+                  <span class="node-number">3</span>
+                  <span class="node-name">Pre-Purchase Eval</span>
+                </button>
+                
+                <button type="button" class="journey-node" data-stage="4" role="option" aria-selected="false">
+                  <span class="node-number">4</span>
+                  <span class="node-name">Purchase</span>
+                </button>
+                
+                <button type="button" class="journey-node" data-stage="5" role="option" aria-selected="false">
+                  <span class="node-number">5</span>
+                  <span class="node-name">Consumption</span>
+                </button>
+                
+                <button type="button" class="journey-node" data-stage="6" role="option" aria-selected="false">
+                  <span class="node-number">6</span>
+                  <span class="node-name">Post-Purchase Eval</span>
+                </button>
+                
+                <button type="button" class="journey-node" data-stage="7" role="option" aria-selected="false">
+                  <span class="node-number">7</span>
+                  <span class="node-name">Advocacy & Comm</span>
+                </button>
+                
+              </div>
+            </div>
+
+            <!-- Stage Description Card -->
+            <div class="stage-info-card glass-panel" id="stage-info-display">
+              <h2 id="stage-title">Needs Recognition</h2>
+              <p id="stage-description">Early signals that players are feeling an unmet interest, general genre category demand, or growing curiosity before they actively research a specific title.</p>
+            </div>
+
+            <!-- Data Sources Grid -->
+            <h2>Available Data Sources at this Stage</h2>
+            <div class="data-sources-grid" id="data-sources-grid">
+              <!-- Dynamically populated cards -->
+            </div>
+            
+          </div>
+        </section>
+
+        <!-- Tab 3: Slack Board -->
+        <section id="tab-slack" class="tab-pane">
+          <div class="slack-container">
+            <header class="tab-header">
+              <h1>Internal Studio Communications</h1>
+              <p>Review the logs of the Highland Studios team. Studio readiness, engineering morale, and production capabilities contain critical details that complicate market demand.</p>
+            </header>
+
+            <div class="slack-workspace glass-panel">
+              <!-- Slack channels panel -->
+              <aside class="slack-sidebar" aria-label="Slack Channels">
+                <h3># Channels</h3>
+                <nav>
+                  <ul>
+                    <li><button type="button" class="slack-channel-btn active" data-channel="general"># general</button></li>
+                    <li><button type="button" class="slack-channel-btn" data-channel="dev-team"># dev-team</button></li>
+                    <li><button type="button" class="slack-channel-btn" data-channel="marketing"># marketing</button></li>
+                    <li><button type="button" class="slack-channel-btn" data-channel="executive"># executive</button></li>
+                  </ul>
+                </nav>
+                
+                <div class="sentiment-button-wrapper">
+                  <button type="button" class="btn btn-primary btn-sm btn-full" id="analyze-slack-btn">Analyse Internal Sentiment</button>
+                </div>
+              </aside>
+
+              <!-- Slack Messages display -->
+              <main class="slack-chat-area" aria-label="Slack Messages">
+                <div class="slack-message-feed" id="slack-message-feed">
+                  <!-- Dynamically populated slack messages -->
+                </div>
+              </main>
+            </div>
+            
+            <!-- Dynamic Sentiment Analysis Dashboard (Hidden by default, shown when button clicked) -->
+            <div id="sentiment-analysis-dashboard" class="sentiment-dashboard-panel glass-panel hidden">
+              <div class="sentiment-dashboard-header">
+                <h2>Diagnostic Report: Studio Readiness & Core Sentiment</h2>
+                <button type="button" class="btn-close" id="close-sentiment-btn" aria-label="Close dashboard">&times;</button>
+              </div>
+              
+              <div class="grid grid-2">
+                <div class="sentiment-card">
+                  <h3>Developer Confidence & Anxiety by Genre</h3>
+                  <div class="bar-chart-container">
+                    <div class="chart-row">
+                      <span class="row-label">Racing</span>
+                      <div class="chart-bar-wrapper">
+                        <div class="bar bar-confidence" style="width: 85%" title="Confidence: 85%"></div>
+                        <div class="bar bar-anxiety" style="width: 15%" title="Anxiety: 15%"></div>
+                      </div>
+                      <span class="row-value">85% vs 15%</span>
+                    </div>
+                    <div class="chart-row">
+                      <span class="row-label">Skateboarding</span>
+                      <div class="chart-bar-wrapper">
+                        <div class="bar bar-confidence" style="width: 90%" title="Confidence: 90%"></div>
+                        <div class="bar bar-anxiety" style="width: 10%" title="Anxiety: 10%"></div>
+                      </div>
+                      <span class="row-value">90% vs 10%</span>
+                    </div>
+                    <div class="chart-row">
+                      <span class="row-label">Life Simulation</span>
+                      <div class="chart-bar-wrapper">
+                        <div class="bar bar-confidence" style="width: 25%" title="Confidence: 25%"></div>
+                        <div class="bar bar-anxiety" style="width: 75%" title="Anxiety: 75%"></div>
+                      </div>
+                      <span class="row-value">25% vs 75%</span>
+                    </div>
+                    <div class="chart-row">
+                      <span class="row-label">Hybrid Sports</span>
+                      <div class="chart-bar-wrapper">
+                        <div class="bar bar-confidence" style="width: 70%" title="Confidence: 70%"></div>
+                        <div class="bar bar-anxiety" style="width: 30%" title="Anxiety: 30%"></div>
+                      </div>
+                      <span class="row-value">70% vs 30%</span>
+                    </div>
+                  </div>
+                  <div class="chart-legend">
+                    <span class="legend-item"><span class="legend-dot color-confidence"></span> Confidence</span>
+                    <span class="legend-item"><span class="legend-dot color-anxiety"></span> Anxiety</span>
+                  </div>
+                </div>
+
+                <div class="sentiment-card">
+                  <h3>Technical Risk & Brand Fit Index</h3>
+                  <div class="radar-indicators">
+                    <div class="metric-gauge">
+                      <svg class="radial-svg" viewBox="0 0 100 100">
+                        <circle cx="50" cy="50" r="40" class="gauge-bg"></circle>
+                        <circle cx="50" cy="50" r="40" class="gauge-fill color-danger" stroke-dasharray="251" stroke-dashoffset="50"></circle>
+                        <text x="50" y="55" class="gauge-text font-bold">80%</text>
+                      </svg>
+                      <span class="gauge-label">Life Sim Tech Risk</span>
+                    </div>
+                    <div class="metric-gauge">
+                      <svg class="radial-svg" viewBox="0 0 100 100">
+                        <circle cx="50" cy="50" r="40" class="gauge-bg"></circle>
+                        <circle cx="50" cy="50" r="40" class="gauge-fill color-success" stroke-dasharray="251" stroke-dashoffset="38"></circle>
+                        <text x="50" y="55" class="gauge-text font-bold">85%</text>
+                      </svg>
+                      <span class="gauge-label">Skate Brand Fit</span>
+                    </div>
+                    <div class="metric-gauge">
+                      <svg class="radial-svg" viewBox="0 0 100 100">
+                        <circle cx="50" cy="50" r="40" class="gauge-bg"></circle>
+                        <circle cx="50" cy="50" r="40" class="gauge-fill color-warning" stroke-dasharray="251" stroke-dashoffset="100"></circle>
+                        <text x="50" y="55" class="gauge-text font-bold">60%</text>
+                      </svg>
+                      <span class="gauge-label">Hybrid Brand Fit</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="sentiment-insights-box">
+                <h4>Sentiment Analytical Insight:</h4>
+                <p>While executive interest is drawn toward the high commercial potential of a Life Simulation project, developer survey logs demonstrate extreme anxiety (75%) related to technical infrastructure risks. Conversely, a Skateboarding sequel displays maximum team morale and brand alignment, though there are concerns regarding the market size. The Hybrid Lifestyle Sports option presents moderate technical risk (30%) while aligning strongly with the team's creative desire to expand core strengths.</p>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- Tab 4: Macro Environment -->
+        <section id="tab-macro" class="tab-pane">
+          <div class="macro-container">
+            <header class="tab-header">
+              <h1>Macro Environment and Industry Context</h1>
+              <p>Explore broader gaming trends, competitor activities, production economics, and platforms. These reports provide context on structural pressures affecting the whole market.</p>
+            </header>
+
+            <div class="macro-layout">
+              <!-- Report Tabs left -->
+              <nav class="macro-nav" aria-label="Macro Reports">
+                <ul>
+                  <li><button type="button" class="macro-tab-btn active" data-report="macro-general">General Macroeconomic Report</button></li>
+                  <li><button type="button" class="macro-tab-btn" data-report="macro-trends">Games Industry Trends</button></li>
+                  <li><button type="button" class="macro-tab-btn" data-report="macro-consumer">Consumer Spending & Platforms</button></li>
+                  <li><button type="button" class="macro-tab-btn" data-report="macro-production">Technology & Production Costs</button></li>
+                  <li><button type="button" class="macro-tab-btn" data-report="macro-competitors">Competitor Pipeline</button></li>
+                </ul>
+              </nav>
+
+              <!-- Report content panel right -->
+              <article class="macro-report-view glass-panel" id="macro-report-content">
+                <!-- Dynamically populated report text -->
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <!-- Tab 5: Email Inbox -->
+        <section id="tab-email" class="tab-pane">
+          <div class="email-container">
+            <header class="tab-header">
+              <h1>Simulated Communications Inbox</h1>
+              <p>Review requested datasets, platform partnership decisions, parent company responses, and data request results. Checked/approved files will appear here when they are ready.</p>
+            </header>
+
+            <div class="email-layout glass-panel">
+              <!-- Email list panel -->
+              <aside class="email-list-panel" aria-label="Email List">
+                <ul class="email-list" id="email-list-container">
+                  <!-- Dynamically populated email list -->
+                </ul>
+              </aside>
+
+              <!-- Email view panel -->
+              <main class="email-view-panel" id="email-view-container" aria-label="Email Content">
+                <div class="email-empty-state">
+                  <div class="large-icon">✉️</div>
+                  <p>Select an email from the left pane to view its content and attachments.</p>
+                </div>
+              </main>
+            </div>
+          </div>
+        </section>
+
+        <!-- Tab 6: Worksheet -->
+        <section id="tab-worksheet" class="tab-pane">
+          <div class="worksheet-container">
+            <header class="tab-header">
+              <h1>Strategic Recommendation Worksheet</h1>
+              <p>Formulate and submit your team's recommendation. Your answers should justify your choice using specific analytical evidence and map out your analytical categories.</p>
+            </header>
+
+            <!-- Interactive Forecast Scenario Explorer -->
+            <div class="card glass-panel" style="margin-bottom: 2rem;" id="forecast-explorer-panel">
+              <h2>Interactive Forecast Scenario Explorer</h2>
+              <p>Select a proposed project direction and adjust the market environment scenario to see estimated production metrics, projected sales, and financial risk profiles.</p>
+              
+              <div class="grid grid-2" style="margin-top: 1rem;">
+                <div class="form-group" style="margin-bottom: 0;">
+                  <label for="forecast-project-select">Select Project Direction</label>
+                  <select id="forecast-project-select">
+                    <option value="racing">Option 1: Racing Sequel</option>
+                    <option value="skate">Option 2: Skateboarding Sequel</option>
+                    <option value="openworld">Option 3: Open-World Action-Sports Game</option>
+                    <option value="lifesim">Option 4: Life Simulation Reboot</option>
+                    <option value="hybrid">Option 5: Hybrid Lifestyle Sports Game</option>
+                    <option value="motorsport">Option 6: Motorsport Management & Lifestyle</option>
+                  </select>
+                </div>
+                
+                <div class="form-group" style="margin-bottom: 0;">
+                  <label>Market Environment Scenario</label>
+                  <div class="scenario-tabs" style="border-bottom: none; padding-bottom: 0;" role="group" aria-label="Scenario Multiplier Selection">
+                    <button type="button" class="scenario-tab-btn" data-multiplier="pessimistic">Pessimistic</button>
+                    <button type="button" class="scenario-tab-btn active" data-multiplier="moderate">Moderate</button>
+                    <button type="button" class="scenario-tab-btn" data-multiplier="optimistic">Optimistic</button>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="forecast-results-grid" style="margin-top: 1.5rem;">
+                <div class="forecast-metric-card">
+                  <span class="f-label">Development Cost</span>
+                  <span class="f-val" id="fc-cost">£13.5M</span>
+                </div>
+                <div class="forecast-metric-card">
+                  <span class="f-label">Development Time</span>
+                  <span class="f-val" id="fc-time">3 Years</span>
+                </div>
+                <div class="forecast-metric-card upside">
+                  <span class="f-label">Projected Sales (Yr 1)</span>
+                  <span class="f-val" id="fc-sales">£45M</span>
+                </div>
+                <div class="forecast-metric-card upside">
+                  <span class="f-label">Long-Tail Potential</span>
+                  <span class="f-val" id="fc-tail">Low</span>
+                </div>
+                <div class="forecast-metric-card downside">
+                  <span class="f-label">Risk Profile</span>
+                  <span class="f-val" id="fc-risk">Low</span>
+                </div>
+              </div>
+            </div>
+
+            <form id="worksheet-form" class="worksheet-form glass-panel">
+              <fieldset>
+                <legend>Simulation Parameters & Identification</legend>
+                <div class="grid grid-2">
+                  <div class="form-group">
+                    <label for="ws-team-display">Team Name</label>
+                    <input type="text" id="ws-team-display" readonly>
+                  </div>
+                  <div class="form-group">
+                    <label for="ws-budget-display">Budget Spent</label>
+                    <input type="text" id="ws-budget-display" readonly>
+                  </div>
+                </div>
+              </fieldset>
+
+              <fieldset>
+                <legend>Strategic Decision</legend>
+                <div class="form-group">
+                  <label for="ws-project-choice">1. What project should Highland Studios develop next?</label>
+                  <select id="ws-project-choice" required>
+                    <option value="" disabled selected>-- Select a Strategic Option --</option>
+                    <option value="Option 1: Racing Sequel">Option 1: Racing Sequel (Low-Medium Risk)</option>
+                    <option value="Option 2: Skateboarding Sequel">Option 2: Skateboarding Sequel (Medium Risk)</option>
+                    <option value="Option 3: Open-World Action-Sports Game">Option 3: Open-World Action-Sports Game (Medium-High Risk)</option>
+                    <option value="Option 4: Life Simulation Reboot">Option 4: Life Simulation Reboot (High Risk)</option>
+                    <option value="Option 5: Hybrid Lifestyle Sports Game">Option 5: Hybrid Lifestyle Sports Game (Medium Risk)</option>
+                    <option value="Option 6: Motorsport Management & Lifestyle Game">Option 6: Motorsport Management & Lifestyle Game (Medium Risk)</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label for="ws-evidence">2. What evidence supports this recommendation? (Cite specific search, sales, community, or financial metrics)</label>
+                  <textarea id="ws-evidence" rows="4" placeholder="Provide details from your research..." required></textarea>
+                </div>
+              </fieldset>
+
+              <fieldset>
+                <legend>Analytics Classification & Journey Mapping</legend>
+                <div class="form-group">
+                  <label for="ws-analytics-type">3. What primary type of analytics did this business question require? (Choose all that apply)</label>
+                  <div class="checkbox-group">
+                    <label class="checkbox-label" for="analytics-desc">
+                      <input type="checkbox" id="analytics-desc" value="Descriptive">
+                      <span><strong>Descriptive Analytics</strong> (What is the market interested in right now?)</span>
+                    </label>
+                    <label class="checkbox-label" for="analytics-diag">
+                      <input type="checkbox" id="analytics-diag" value="Diagnostic">
+                      <span><strong>Diagnostic / Explanatory Analytics</strong> (Why did the previous project fail?)</span>
+                    </label>
+                    <label class="checkbox-label" for="analytics-pred">
+                      <input type="checkbox" id="analytics-pred" value="Predictive">
+                      <span><strong>Predictive Analytics</strong> (What trends will yield the highest returns in 3-5 years?)</span>
+                    </label>
+                    <label class="checkbox-label" for="analytics-pres">
+                      <input type="checkbox" id="analytics-pres" value="Prescriptive">
+                      <span><strong>Prescriptive Analytics</strong> (How should we allocate resources to minimize risk?)</span>
+                    </label>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="ws-journey-stages">4. Which customer journey stages contained the most valuable evidence for your decision? (Choose all that apply)</label>
+                  <div class="checkbox-group">
+                    <label class="checkbox-label" for="stage-1">
+                      <input type="checkbox" id="stage-1" value="Needs Recognition">
+                      <span>Needs Recognition (Search trends, social listening)</span>
+                    </label>
+                    <label class="checkbox-label" for="stage-2">
+                      <input type="checkbox" id="stage-2" value="Search for Information">
+                      <span>Search for Information (Website clicks, video views)</span>
+                    </label>
+                    <label class="checkbox-label" for="stage-3">
+                      <input type="checkbox" id="stage-3" value="Pre-Purchase Evaluation">
+                      <span>Pre-Purchase Evaluation of Alternatives (Competitor databases, wishlists)</span>
+                    </label>
+                    <label class="checkbox-label" for="stage-4">
+                      <input type="checkbox" id="stage-4" value="Purchase">
+                      <span>Purchase (Historical sales files, store pricing benchmarks)</span>
+                    </label>
+                    <label class="checkbox-label" for="stage-5">
+                      <input type="checkbox" id="stage-5" value="Consumption">
+                      <span>Consumption (Gameplay telemetry log files, bug counts)</span>
+                    </label>
+                    <label class="checkbox-label" for="stage-6">
+                      <input type="checkbox" id="stage-6" value="Post-Purchase Evaluation">
+                      <span>Post-Purchase Evaluation (Store review sentiment, refund rates)</span>
+                    </label>
+                    <label class="checkbox-label" for="stage-7">
+                      <input type="checkbox" id="stage-7" value="Advocacy & Community">
+                      <span>Advocacy & Community Continuation (Discord streams, surveys)</span>
+                    </label>
+                  </div>
+                </div>
+              </fieldset>
+
+              <fieldset>
+                <legend>Risk & Data Limitations</legend>
+                <div class="form-group">
+                  <label for="ws-limitations">5. What evidence was missing, delayed, too expensive, or unavailable? How did that constrain your choice?</label>
+                  <textarea id="ws-limitations" rows="3" placeholder="Cite emails, delays, or blocked datasets..." required></textarea>
+                </div>
+
+                <div class="form-group">
+                  <label for="ws-risks">6. What are the main risks associated with your chosen project path? (e.g. execution risk, market saturation)</label>
+                  <textarea id="ws-risks" rows="3" placeholder="Discuss capabilities, tech risk, and competitor moves..." required></textarea>
+                </div>
+
+                <div class="form-group">
+                  <label for="ws-future">7. What additional data would you recommend collecting or commissioning before final project sign-off?</label>
+                  <textarea id="ws-future" rows="3" placeholder="What studies or validation should occur next?" required></textarea>
+                </div>
+              </fieldset>
+
+              <div class="form-actions">
+                <button type="submit" class="btn btn-primary" id="save-ws-btn">Save Progress</button>
+                <button type="button" class="btn btn-outline" id="print-ws-btn">Print / Export Recommendation Report (PDF)</button>
+              </div>
+            </form>
+          </div>
+        </section>
+        
+      </div>
+    </main>
+  </div>
+
+  <!-- Custom Dialog Overlay (Native Modal) -->
+  <dialog id="data-modal" class="data-modal glass-panel">
+    <div class="modal-wrapper">
+      <header class="modal-header">
+        <h2 id="modal-data-name">Data Source</h2>
+        <button type="button" class="btn-close" id="modal-close-btn" aria-label="Close dialog">&times;</button>
+      </header>
+      
+      <div class="modal-body">
+        
+        <!-- Metadata Sidebar -->
+        <aside class="modal-meta-sidebar" aria-label="Metadata">
+          <div class="meta-item">
+            <span class="meta-label">Journey Stage:</span>
+            <span id="modal-meta-stage" class="meta-val">Needs Recognition</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Format:</span>
+            <span id="modal-meta-format" class="meta-val">Structured CSV</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Owner:</span>
+            <span id="modal-meta-owner" class="meta-val">Internal Analytics</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Refresh Rate:</span>
+            <span id="modal-meta-refresh" class="meta-val">Real-time</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Availability:</span>
+            <span id="modal-meta-avail" class="meta-val">Immediate</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Cost / Delay:</span>
+            <span id="modal-meta-cost" class="meta-val">Free / Instant</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Analytical Use:</span>
+            <span id="modal-meta-use" class="meta-val">Descriptive</span>
+          </div>
+        </aside>
+        
+        <!-- Main Details Content Area -->
+        <main class="modal-main-content">
+          <section class="description-section">
+            <h3>Description</h3>
+            <p id="modal-description">Detailed description of this specific data type.</p>
+          </section>
+          
+          <section class="limitations-section">
+            <h3>Limitations</h3>
+            <p id="modal-limitations">Important constraints, bias warnings, or format concerns for this source.</p>
+          </section>
+          
+          <section class="interactive-workspace" id="modal-workspace">
+            <h3>Workspace Interactive Area</h3>
+            <div id="modal-workspace-actions">
+              <!-- Dynamically rendered action buttons / alerts / forms -->
+            </div>
+            <div id="modal-workspace-viewer" class="workspace-viewer hidden">
+              <!-- Dynamically rendered custom charts or details -->
+            </div>
+          </section>
+        </main>
+        
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Script files -->
+  <script src="app.js"></script>
+</body>
+</html>

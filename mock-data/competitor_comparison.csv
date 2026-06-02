@@ -1,0 +1,1001 @@
+WeekID,CompetitorTitle,Genre,EstActiveUsersMAU,AverageReviewScore,LaunchPriceUSD,ModdingSupport,DLCFrequency,CrossPlaySupport,VisualStyle,CommunitySentiment
+WK-10001,Turbo Asphalt 9,Racing,3718410,81,59.99,No,Medium (Quarterly),Yes,Photorealistic,Positive
+WK-10002,TownLife,Life Simulation,14074720,68,0,Yes,Very High,Yes,Cartoonish,Mixed
+WK-10003,Pixel Society,Life Simulation,4000522,84,14.99,Yes,Low,No,Retro Pixel,Positive
+WK-10004,Skate Park Legends,Skateboarding,1073960,74,19.99,Yes,Medium,No,Stylized,Neutral
+WK-10005,Skate Park Legends,Skateboarding,934729,74,19.99,Yes,Medium,No,Stylized,Neutral
+WK-10006,Speedway Unlimited,Racing,3575783,78,59.99,No,High (Monthly),Yes,Photorealistic,Neutral
+WK-10007,Turbo Asphalt 9,Racing,3703873,81,59.99,No,Medium (Quarterly),Yes,Photorealistic,Positive
+WK-10008,TownLife,Life Simulation,16050292,68,0,Yes,Very High,Yes,Cartoonish,Mixed
+WK-10009,Pixel Society,Life Simulation,3754657,84,14.99,Yes,Low,No,Retro Pixel,Positive
+WK-10010,Turbo Asphalt 9,Racing,3480680,81,59.99,No,Medium (Quarterly),Yes,Photorealistic,Positive
+WK-10011,TownLife,Life Simulation,15190991,68,0,Yes,Very High,Yes,Cartoonish,Mixed
+WK-10012,Skate Park Legends,Skateboarding,988821,74,19.99,Yes,Medium,No,Stylized,Neutral
+WK-10013,Grind & Slide,Skateboarding,989451,88,29.99,Yes,Low,No,Stylized,Highly Positive
+WK-10014,Turbo Asphalt 9,Racing,3638695,81,59.99,No,Medium (Quarterly),Yes,Photorealistic,Positive
+WK-10015,Speedway Unlimited,Racing,3718950,78,59.99,No,High (Monthly),Yes,Photorealistic,Neutral
+WK-10016,Skate Park Legends,Skateboarding,1012221,74,19.99,Yes,Medium,No,Stylized,Neutral
+WK-10017,Cosy Valley,Life Simulation,3931993,92,24.99,No,Low,Yes,Stylized,Highly Positive
+WK-10018,Turbo Asphalt 9,Racing,3742558,81,59.99,No,Medium (Quarterly),Yes,Photorealistic,Positive
+WK-10019,Pixel Society,Life Simulation,4166745,84,14.99,Yes,Low,No,Retro Pixel,Positive
+WK-10020,Skate Park Legends,Skateboarding,1019256,74,19.99,Yes,Medium,No,Stylized,Neutral
+WK-10021,Skate Park Legends,Skateboarding,947923,74,19.99,Yes,Medium,No,Stylized,Neutral
+WK-10022,Grind & Slide,Skateboarding,1010523,88,29.99,Yes,Low,No,Stylized,Highly Positive
+WK-10023,Turbo Asphalt 9,Racing,3385010,81,59.99,No,Medium (Quarterly),Yes,Photorealistic,Positive
+WK-10024,Pixel Society,Life Simulation,4230849,84,14.99,Yes,Low,No,Retro Pixel,Positive
+WK-10025,Turbo Asphalt 9,Racing,3462754,81,59.99,No,Medium (Quarterly),Yes,Photorealistic,Positive
+WK-10026,Speedway Unlimited,Racing,3342499,78,59.99,No,High (Monthly),Yes,Photorealistic,Neutral
+WK-10027,Speedway Unlimited,Racing,3324571,78,59.99,No,High (Monthly),Yes,Photorealistic,Neutral
+WK-10028,Cosy Valley,Life Simulation,3794739,92,24.99,No,Low,Yes,Stylized,Highly Positive
+WK-10029,TownLife,Life Simulation,15247689,68,0,Yes,Very High,Yes,Cartoonish,Mixed
+WK-10030,TownLife,Life Simulation,14186348,68,0,Yes,Very High,Yes,Cartoonish,Mixed
+WK-10031,Speedway Unlimited,Racing,3488160,78,59.99,No,High (Monthly),Yes,Photorealistic,Neutral
+WK-10032,Pixel Society,Life Simulation,4038900,84,14.99,Yes,Low,No,Retro Pixel,Positive
+WK-10033,Speedway Unlimited,Racing,3759700,78,59.99,No,High (Monthly),Yes,Photorealistic,Neutral
+WK-10034,TownLife,Life Simulation,14449492,68,0,Yes,Very High,Yes,Cartoonish,Mixed
+WK-10035,TownLife,Life Simulation,15868675,68,0,Yes,Very High,Yes,Cartoonish,Mixed
+WK-10036,Pixel Society,Life Simulation,4032509,84,14.99,Yes,Low,No,Retro Pixel,Positive
+WK-10037,Skate Park Legends,Skateboarding,957040,74,19.99,Yes,Medium,No,Stylized,Neutral
+WK-10038,Grind & Slide,Skateboarding,928371,88,29.99,Yes,Low,No,Stylized,Highly Positive
+WK-10039,Pixel Society,Life Simulation,3922815,84,14.99,Yes,Low,No,Retro Pixel,Positive
+WK-10040,Cosy Valley,Life Simulation,3849998,92,24.99,No,Low,Yes,Stylized,Highly Positive
+WK-10041,Skate Park Legends,Skateboarding,969619,74,19.99,Yes,Medium,No,Stylized,Neutral
+WK-10042,Cosy Valley,Life Simulation,3756410,92,24.99,No,Low,Yes,Stylized,Highly Positive
+WK-10043,TownLife,Life Simulation,13951367,68,0,Yes,Very High,Yes,Cartoonish,Mixed
+WK-10044,Pixel Society,Life Simulation,4160345,84,14.99,Yes,Low,No,Retro Pixel,Positive
+WK-10045,Speedway Unlimited,Racing,3520185,78,59.99,No,High (Monthly),Yes,Photorealistic,Neutral
+WK-10046,Cosy Valley,Life Simulation,4053190,92,24.99,No,Low,Yes,Stylized,Highly Positive
+WK-10047,Speedway Unlimited,Racing,3296697,78,59.99,No,High (Monthly),Yes,Photorealistic,Neutral
+WK-10048,Speedway Unlimited,Racing,3329501,78,59.99,No,High (Monthly),Yes,Photorealistic,Neutral
+WK-10049,Cosy Valley,Life Simulation,4231834,92,24.99,No,Low,Yes,Stylized,Highly Positive
+WK-10050,TownLife,Life Simulation,14727191,68,0,Yes,Very High,Yes,Cartoonish,Mixed
+WK-10051,Cosy Valley,Life Simulation,3968012,92,24.99,No,Low,Yes,Stylized,Highly Positive
+WK-10052,Grind & Slide,Skateboarding,976736,88,29.99,Yes,Low,No,Stylized,Highly Positive
+WK-10053,Speedway Unlimited,Racing,3624928,78,59.99,No,High (Monthly),Yes,Photorealistic,Neutral
+WK-10054,Grind & Slide,Skateboarding,981003,88,29.99,Yes,Low,No,Stylized,Highly Positive
+WK-10055,Speedway Unlimited,Racing,3592454,78,59.99,No,High (Monthly),Yes,Photorealistic,Neutral
+WK-10056,Pixel Society,Life Simulation,4163236,84,14.99,Yes,Low,No,Retro Pixel,Positive
+WK-10057,Turbo Asphalt 9,Racing,3263185,81,59.99,No,Medium (Quarterly),Yes,Photorealistic,Positive
+WK-10058,Turbo Asphalt 9,Racing,3514550,81,59.99,No,Medium (Quarterly),Yes,Photorealistic,Positive
+WK-10059,Grind & Slide,Skateboarding,966242,88,29.99,Yes,Low,No,Stylized,Highly Positive
+WK-10060,Grind & Slide,Skateboarding,1074950,88,29.99,Yes,Low,No,Stylized,Highly Positive
+WK-10061,Skate Park Legends,Skateboarding,934112,74,19.99,Yes,Medium,No,Stylized,Neutral
+WK-10062,TownLife,Life Simulation,15834457,68,0,Yes,Very High,Yes,Cartoonish,Mixed
+WK-10063,TownLife,Life Simulation,15877568,68,0,Yes,Very High,Yes,Cartoonish,Mixed
+WK-10064,TownLife,Life Simulation,14531295,68,0,Yes,Very High,Yes,Cartoonish,Mixed
+WK-10065,Turbo Asphalt 9,Racing,3687410,81,59.99,No,Medium (Quarterly),Yes,Photorealistic,Positive
+WK-10066,Speedway Unlimited,Racing,3365428,78,59.99,No,High (Monthly),Yes,Photorealistic,Neutral
+WK-10067,Grind & Slide,Skateboarding,993454,88,29.99,Yes,Low,No,Stylized,Highly Positive
+WK-10068,Grind & Slide,Skateboarding,972616,88,29.99,Yes,Low,No,Stylized,Highly Positive
+WK-10069,Pixel Society,Life Simulation,4110011,84,14.99,Yes,Low,No,Retro Pixel,Positive
+WK-10070,Speedway Unlimited,Racing,3303351,78,59.99,No,High (Monthly),Yes,Photorealistic,Neutral
+WK-10071,Turbo Asphalt 9,Racing,3663842,81,59.99,No,Medium (Quarterly),Yes,Photorealistic,Positive
+WK-10072,Grind & Slide,Skateboarding,1053488,88,29.99,Yes,Low,No,Stylized,Highly Positive
+WK-10073,TownLife,Life Simulation,15935449,68,0,Yes,Very High,Yes,Cartoonish,Mixed
+WK-10074,Turbo Asphalt 9,Racing,3243608,81,59.99,No,Medium (Quarterly),Yes,Photorealistic,Positive
+WK-10075,Skate Park Legends,Skateboarding,1045557,74,19.99,Yes,Medium,No,Stylized,Neutral
+WK-10076,Speedway Unlimited,Racing,3594462,78,59.99,No,High (Monthly),Yes,Photorealistic,Neutral
+WK-10077,Turbo Asphalt 9,Racing,3634061,81,59.99,No,Medium (Quarterly),Yes,Photorealistic,Positive
+WK-10078,Skate Park Legends,Skateboarding,1042236,74,19.99,Yes,Medium,No,Stylized,Neutral
+WK-10079,TownLife,Life Simulation,14523432,68,0,Yes,Very High,Yes,Cartoonish,Mixed
+WK-10080,Skate Park Legends,Skateboarding,1018833,74,19.99,Yes,Medium,No,Stylized,Neutral
+WK-10081,Speedway Unlimited,Racing,3506291,78,59.99,No,High (Monthly),Yes,Photorealistic,Neutral
+WK-10082,Skate Park Legends,Skateboarding,990989,74,19.99,Yes,Medium,No,Stylized,Neutral
+WK-10083,Cosy Valley,Life Simulation,3769099,92,24.99,No,Low,Yes,Stylized,Highly Positive
+WK-10084,Grind & Slide,Skateboarding,1058039,88,29.99,Yes,Low,No,Stylized,Highly Positive
+WK-10085,Cosy Valley,Life Simulation,4282448,92,24.99,No,Low,Yes,Stylized,Highly Positive
+WK-10086,TownLife,Life Simulation,14917640,68,0,Yes,Very High,Yes,Cartoonish,Mixed
+WK-10087,Skate Park Legends,Skateboarding,1033547,74,19.99,Yes,Medium,No,Stylized,Neutral
+WK-10088,Cosy Valley,Life Simulation,3829107,92,24.99,No,Low,Yes,Stylized,Highly Positive
+WK-10089,Turbo Asphalt 9,Racing,3368211,81,59.99,No,Medium (Quarterly),Yes,Photorealistic,Positive
+WK-10090,Pixel Society,Life Simulation,3993446,84,14.99,Yes,Low,No,Retro Pixel,Positive
+WK-10091,TownLife,Life Simulation,15967714,68,0,Yes,Very High,Yes,Cartoonish,Mixed
+WK-10092,TownLife,Life Simulation,13893063,68,0,Yes,Very High,Yes,Cartoonish,Mixed
+WK-10093,Pixel Society,Life Simulation,3825635,84,14.99,Yes,Low,No,Retro Pixel,Positive
+WK-10094,Grind & Slide,Skateboarding,1036662,88,29.99,Yes,Low,No,Stylized,Highly Positive
+WK-10095,Grind & Slide,Skateboarding,1019662,88,29.99,Yes,Low,No,Stylized,Highly Positive
+WK-10096,TownLife,Life Simulation,16051612,68,0,Yes,Very High,Yes,Cartoonish,Mixed
+WK-10097,Cosy Valley,Life Simulation,4086626,92,24.99,No,Low,Yes,Stylized,Highly Positive
+WK-10098,TownLife,Life Simulation,14558714,68,0,Yes,Very High,Yes,Cartoonish,Mixed
+WK-10099,Cosy Valley,Life Simulation,4035309,92,24.99,No,Low,Yes,Stylized,Highly Positive
+WK-10100,Speedway Unlimited,Racing,3465148,78,59.99,No,High (Monthly),Yes,Photorealistic,Neutral
+WK-10101,TownLife,Life Simulation,14349815,68,0,Yes,Very High,Yes,Cartoonish,Mixed
+WK-10102,Speedway Unlimited,Racing,3418108,78,59.99,No,High (Monthly),Yes,Photorealistic,Neutral
+WK-10103,TownLife,Life Simulation,15499827,68,0,Yes,Very High,Yes,Cartoonish,Mixed
+WK-10104,Skate Park Legends,Skateboarding,1011157,74,19.99,Yes,Medium,No,Stylized,Neutral
+WK-10105,Turbo Asphalt 9,Racing,3535221,81,59.99,No,Medium (Quarterly),Yes,Photorealistic,Positive
+WK-10106,Speedway Unlimited,Racing,3366308,78,59.99,No,High (Monthly),Yes,Photorealistic,Neutral
+WK-10107,Grind & Slide,Skateboarding,960023,88,29.99,Yes,Low,No,Stylized,Highly Positive
+WK-10108,Cosy Valley,Life Simulation,4089938,92,24.99,No,Low,Yes,Stylized,Highly Positive
+WK-10109,Turbo Asphalt 9,Racing,3420671,81,59.99,No,Medium (Quarterly),Yes,Photorealistic,Positive
+WK-10110,TownLife,Life Simulation,15567161,68,0,Yes,Very High,Yes,Cartoonish,Mixed
+WK-10111,Turbo Asphalt 9,Racing,3756957,81,59.99,No,Medium (Quarterly),Yes,Photorealistic,Positive
+WK-10112,Grind & Slide,Skateboarding,1002452,88,29.99,Yes,Low,No,Stylized,Highly Positive
+WK-10113,Turbo Asphalt 9,Racing,3484034,81,59.99,No,Medium (Quarterly),Yes,Photorealistic,Positive
+WK-10114,Speedway Unlimited,Racing,3671007,78,59.99,No,High (Monthly),Yes,Photorealistic,Neutral
+WK-10115,Turbo Asphalt 9,Racing,3444014,81,59.99,No,Medium (Quarterly),Yes,Photorealistic,Positive
+WK-10116,Grind & Slide,Skateboarding,967509,88,29.99,Yes,Low,No,Stylized,Highly Positive
+WK-10117,Cosy Valley,Life Simulation,3867185,92,24.99,No,Low,Yes,Stylized,Highly Positive
+WK-10118,Cosy Valley,Life Simulation,3705528,92,24.99,No,Low,Yes,Stylized,Highly Positive
+WK-10119,Pixel Society,Life Simulation,3752401,84,14.99,Yes,Low,No,Retro Pixel,Positive
+WK-10120,Skate Park Legends,Skateboarding,1068282,74,19.99,Yes,Medium,No,Stylized,Neutral
+WK-10121,Pixel Society,Life Simulation,4265589,84,14.99,Yes,Low,No,Retro Pixel,Positive
+WK-10122,Cosy Valley,Life Simulation,3910049,92,24.99,No,Low,Yes,Stylized,Highly Positive
+WK-10123,TownLife,Life Simulation,14074597,68,0,Yes,Very High,Yes,Cartoonish,Mixed
+WK-10124,Pixel Society,Life Simulation,4137974,84,14.99,Yes,Low,No,Retro Pixel,Positive
+WK-10125,TownLife,Life Simulation,13927501,68,0,Yes,Very High,Yes,Cartoonish,Mixed
+WK-10126,Grind & Slide,Skateboarding,1044785,88,29.99,Yes,Low,No,Stylized,Highly Positive
+WK-10127,Cosy Valley,Life Simulation,3979564,92,24.99,No,Low,Yes,Stylized,Highly Positive
+WK-10128,Speedway Unlimited,Racing,3287223,78,59.99,No,High (Monthly),Yes,Photorealistic,Neutral
+WK-10129,Skate Park Legends,Skateboarding,942841,74,19.99,Yes,Medium,No,Stylized,Neutral
+WK-10130,Turbo Asphalt 9,Racing,3525107,81,59.99,No,Medium (Quarterly),Yes,Photorealistic,Positive
+WK-10131,Turbo Asphalt 9,Racing,3467643,81,59.99,No,Medium (Quarterly),Yes,Photorealistic,Positive
+WK-10132,Speedway Unlimited,Racing,3613052,78,59.99,No,High (Monthly),Yes,Photorealistic,Neutral
+WK-10133,Cosy Valley,Life Simulation,3987935,92,24.99,No,Low,Yes,Stylized,Highly Positive
+WK-10134,Cosy Valley,Life Simulation,3773036,92,24.99,No,Low,Yes,Stylized,Highly Positive
+WK-10135,TownLife,Life Simulation,14718053,68,0,Yes,Very High,Yes,Cartoonish,Mixed
+WK-10136,Grind & Slide,Skateboarding,1011329,88,29.99,Yes,Low,No,Stylized,Highly Positive
+WK-10137,Grind & Slide,Skateboarding,1028243,88,29.99,Yes,Low,No,Stylized,Highly Positive
+WK-10138,Skate Park Legends,Skateboarding,962772,74,19.99,Yes,Medium,No,Stylized,Neutral
+WK-10139,Skate Park Legends,Skateboarding,967492,74,19.99,Yes,Medium,No,Stylized,Neutral
+WK-10140,Cosy Valley,Life Simulation,4000814,92,24.99,No,Low,Yes,Stylized,Highly Positive
+WK-10141,Cosy Valley,Life Simulation,4284035,92,24.99,No,Low,Yes,Stylized,Highly Positive
+WK-10142,Skate Park Legends,Skateboarding,987364,74,19.99,Yes,Medium,No,Stylized,Neutral
+WK-10143,Grind & Slide,Skateboarding,958911,88,29.99,Yes,Low,No,Stylized,Highly Positive
+WK-10144,Cosy Valley,Life Simulation,4148207,92,24.99,No,Low,Yes,Stylized,Highly Positive
+WK-10145,Cosy Valley,Life Simulation,3973511,92,24.99,No,Low,Yes,Stylized,Highly Positive
+WK-10146,Pixel Society,Life Simulation,3721506,84,14.99,Yes,Low,No,Retro Pixel,Positive
+WK-10147,Skate Park Legends,Skateboarding,1038958,74,19.99,Yes,Medium,No,Stylized,Neutral
+WK-10148,Speedway Unlimited,Racing,3255392,78,59.99,No,High (Monthly),Yes,Photorealistic,Neutral
+WK-10149,Pixel Society,Life Simulation,3872858,84,14.99,Yes,Low,No,Retro Pixel,Positive
+WK-10150,TownLife,Life Simulation,14735896,68,0,Yes,Very High,Yes,Cartoonish,Mixed
+WK-10151,TownLife,Life Simulation,13973175,68,0,Yes,Very High,Yes,Cartoonish,Mixed
+WK-10152,Cosy Valley,Life Simulation,3809960,92,24.99,No,Low,Yes,Stylized,Highly Positive
+WK-10153,Turbo Asphalt 9,Racing,3604546,81,59.99,No,Medium (Quarterly),Yes,Photorealistic,Positive
+WK-10154,TownLife,Life Simulation,13978751,68,0,Yes,Very High,Yes,Cartoonish,Mixed
+WK-10155,Pixel Society,Life Simulation,4216175,84,14.99,Yes,Low,No,Retro Pixel,Positive
+WK-10156,Grind & Slide,Skateboarding,925775,88,29.99,Yes,Low,No,Stylized,Highly Positive
+WK-10157,Speedway Unlimited,Racing,3303366,78,59.99,No,High (Monthly),Yes,Photorealistic,Neutral
+WK-10158,Skate Park Legends,Skateboarding,936748,74,19.99,Yes,Medium,No,Stylized,Neutral
+WK-10159,TownLife,Life Simulation,14487201,68,0,Yes,Very High,Yes,Cartoonish,Mixed
+WK-10160,Turbo Asphalt 9,Racing,3334533,81,59.99,No,Medium (Quarterly),Yes,Photorealistic,Positive
+WK-10161,Cosy Valley,Life Simulation,4099074,92,24.99,No,Low,Yes,Stylized,Highly Positive
+WK-10162,Skate Park Legends,Skateboarding,945338,74,19.99,Yes,Medium,No,Stylized,Neutral
+WK-10163,Skate Park Legends,Skateboarding,973697,74,19.99,Yes,Medium,No,Stylized,Neutral
+WK-10164,Pixel Society,Life Simulation,3855562,84,14.99,Yes,Low,No,Retro Pixel,Positive
+WK-10165,Pixel Society,Life Simulation,4004318,84,14.99,Yes,Low,No,Retro Pixel,Positive
+WK-10166,Skate Park Legends,Skateboarding,998640,74,19.99,Yes,Medium,No,Stylized,Neutral
+WK-10167,TownLife,Life Simulation,15203006,68,0,Yes,Very High,Yes,Cartoonish,Mixed
+WK-10168,Speedway Unlimited,Racing,3556778,78,59.99,No,High (Monthly),Yes,Photorealistic,Neutral
+WK-10169,Grind & Slide,Skateboarding,945557,88,29.99,Yes,Low,No,Stylized,Highly Positive
+WK-10170,Pixel Society,Life Simulation,4264771,84,14.99,Yes,Low,No,Retro Pixel,Positive
+WK-10171,Cosy Valley,Life Simulation,3825975,92,24.99,No,Low,Yes,Stylized,Highly Positive
+WK-10172,Pixel Society,Life Simulation,4265051,84,14.99,Yes,Low,No,Retro Pixel,Positive
+WK-10173,Turbo Asphalt 9,Racing,3674555,81,59.99,No,Medium (Quarterly),Yes,Photorealistic,Positive
+WK-10174,Speedway Unlimited,Racing,3244577,78,59.99,No,High (Monthly),Yes,Photorealistic,Neutral
+WK-10175,Speedway Unlimited,Racing,3691585,78,59.99,No,High (Monthly),Yes,Photorealistic,Neutral
+WK-10176,Speedway Unlimited,Racing,3615034,78,59.99,No,High (Monthly),Yes,Photorealistic,Neutral
+WK-10177,Skate Park Legends,Skateboarding,999229,74,19.99,Yes,Medium,No,Stylized,Neutral
+WK-10178,TownLife,Life Simulation,15898192,68,0,Yes,Very High,Yes,Cartoonish,Mixed
+WK-10179,Skate Park Legends,Skateboarding,983207,74,19.99,Yes,Medium,No,Stylized,Neutral
+WK-10180,TownLife,Life Simulation,13934630,68,0,Yes,Very High,Yes,Cartoonish,Mixed
+WK-10181,Cosy Valley,Life Simulation,4278213,92,24.99,No,Low,Yes,Stylized,Highly Positive
+WK-10182,Pixel Society,Life Simulation,4153004,84,14.99,Yes,Low,No,Retro Pixel,Positive
+WK-10183,Skate Park Legends,Skateboarding,1054661,74,19.99,Yes,Medium,No,Stylized,Neutral
+WK-10184,Turbo Asphalt 9,Racing,3534758,81,59.99,No,Medium (Quarterly),Yes,Photorealistic,Positive
+WK-10185,Turbo Asphalt 9,Racing,3634432,81,59.99,No,Medium (Quarterly),Yes,Photorealistic,Positive
+WK-10186,Cosy Valley,Life Simulation,3801513,92,24.99,No,Low,Yes,Stylized,Highly Positive
+WK-10187,Skate Park Legends,Skateboarding,929307,74,19.99,Yes,Medium,No,Stylized,Neutral
+WK-10188,Pixel Society,Life Simulation,4118150,84,14.99,Yes,Low,No,Retro Pixel,Positive
+WK-10189,TownLife,Life Simulation,16003663,68,0,Yes,Very High,Yes,Cartoonish,Mixed
+WK-10190,Speedway Unlimited,Racing,3458026,78,59.99,No,High (Monthly),Yes,Photorealistic,Neutral
+WK-10191,Cosy Valley,Life Simulation,4119496,92,24.99,No,Low,Yes,Stylized,Highly Positive
+WK-10192,Speedway Unlimited,Racing,3613115,78,59.99,No,High (Monthly),Yes,Photorealistic,Neutral
+WK-10193,Cosy Valley,Life Simulation,4084171,92,24.99,No,Low,Yes,Stylized,Highly Positive
+WK-10194,TownLife,Life Simulation,15508273,68,0,Yes,Very High,Yes,Cartoonish,Mixed
+WK-10195,Pixel Society,Life Simulation,3799102,84,14.99,Yes,Low,No,Retro Pixel,Positive
+WK-10196,Cosy Valley,Life Simulation,4090192,92,24.99,No,Low,Yes,Stylized,Highly Positive
+WK-10197,Speedway Unlimited,Racing,3498985,78,59.99,No,High (Monthly),Yes,Photorealistic,Neutral
+WK-10198,TownLife,Life Simulation,15670177,68,0,Yes,Very High,Yes,Cartoonish,Mixed
+WK-10199,Grind & Slide,Skateboarding,1051461,88,29.99,Yes,Low,No,Stylized,Highly Positive
+WK-10200,Speedway Unlimited,Racing,3424811,78,59.99,No,High (Monthly),Yes,Photorealistic,Neutral
+WK-10201,Grind & Slide,Skateboarding,1000910,88,29.99,Yes,Low,No,Stylized,Highly Positive
+WK-10202,Skate Park Legends,Skateboarding,1061260,74,19.99,Yes,Medium,No,Stylized,Neutral
+WK-10203,Speedway Unlimited,Racing,3262010,78,59.99,No,High (Monthly),Yes,Photorealistic,Neutral
+WK-10204,Skate Park Legends,Skateboarding,1029561,74,19.99,Yes,Medium,No,Stylized,Neutral
+WK-10205,Skate Park Legends,Skateboarding,1045839,74,19.99,Yes,Medium,No,Stylized,Neutral
+WK-10206,Skate Park Legends,Skateboarding,1057609,74,19.99,Yes,Medium,No,Stylized,Neutral
+WK-10207,Turbo Asphalt 9,Racing,3734156,81,59.99,No,Medium (Quarterly),Yes,Photorealistic,Positive
+WK-10208,TownLife,Life Simulation,15593725,68,0,Yes,Very High,Yes,Cartoonish,Mixed
+WK-10209,Skate Park Legends,Skateboarding,947084,74,19.99,Yes,Medium,No,Stylized,Neutral
+WK-10210,TownLife,Life Simulation,15473191,68,0,Yes,Very High,Yes,Cartoonish,Mixed
+WK-10211,Pixel Society,Life Simulation,4283924,84,14.99,Yes,Low,No,Retro Pixel,Positive
+WK-10212,Turbo Asphalt 9,Racing,3454984,81,59.99,No,Medium (Quarterly),Yes,Photorealistic,Positive
+WK-10213,Cosy Valley,Life Simulation,3740234,92,24.99,No,Low,Yes,Stylized,Highly Positive
+WK-10214,Pixel Society,Life Simulation,3835704,84,14.99,Yes,Low,No,Retro Pixel,Positive
+WK-10215,TownLife,Life Simulation,15343814,68,0,Yes,Very High,Yes,Cartoonish,Mixed
+WK-10216,Grind & Slide,Skateboarding,1010482,88,29.99,Yes,Low,No,Stylized,Highly Positive
+WK-10217,Turbo Asphalt 9,Racing,3481789,81,59.99,No,Medium (Quarterly),Yes,Photorealistic,Positive
+WK-10218,Turbo Asphalt 9,Racing,3470208,81,59.99,No,Medium (Quarterly),Yes,Photorealistic,Positive
+WK-10219,TownLife,Life Simulation,15481605,68,0,Yes,Very High,Yes,Cartoonish,Mixed
+WK-10220,Skate Park Legends,Skateboarding,1041443,74,19.99,Yes,Medium,No,Stylized,Neutral
+WK-10221,Grind & Slide,Skateboarding,1006738,88,29.99,Yes,Low,No,Stylized,Highly Positive
+WK-10222,Grind & Slide,Skateboarding,949418,88,29.99,Yes,Low,No,Stylized,Highly Positive
+WK-10223,Speedway Unlimited,Racing,3420450,78,59.99,No,High (Monthly),Yes,Photorealistic,Neutral
+WK-10224,Cosy Valley,Life Simulation,3806840,92,24.99,No,Low,Yes,Stylized,Highly Positive
+WK-10225,Turbo Asphalt 9,Racing,3748944,81,59.99,No,Medium (Quarterly),Yes,Photorealistic,Positive
+WK-10226,Cosy Valley,Life Simulation,3833018,92,24.99,No,Low,Yes,Stylized,Highly Positive
+WK-10227,TownLife,Life Simulation,13962504,68,0,Yes,Very High,Yes,Cartoonish,Mixed
+WK-10228,Skate Park Legends,Skateboarding,1060646,74,19.99,Yes,Medium,No,Stylized,Neutral
+WK-10229,TownLife,Life Simulation,14386533,68,0,Yes,Very High,Yes,Cartoonish,Mixed
+WK-10230,Grind & Slide,Skateboarding,956111,88,29.99,Yes,Low,No,Stylized,Highly Positive
+WK-10231,Turbo Asphalt 9,Racing,3486049,81,59.99,No,Medium (Quarterly),Yes,Photorealistic,Positive
+WK-10232,Cosy Valley,Life Simulation,4158316,92,24.99,No,Low,Yes,Stylized,Highly Positive
+WK-10233,Turbo Asphalt 9,Racing,3391801,81,59.99,No,Medium (Quarterly),Yes,Photorealistic,Positive
+WK-10234,Pixel Society,Life Simulation,4103731,84,14.99,Yes,Low,No,Retro Pixel,Positive
+WK-10235,Pixel Society,Life Simulation,3794023,84,14.99,Yes,Low,No,Retro Pixel,Positive
+WK-10236,Pixel Society,Life Simulation,4286322,84,14.99,Yes,Low,No,Retro Pixel,Positive
+WK-10237,Cosy Valley,Life Simulation,4083462,92,24.99,No,Low,Yes,Stylized,Highly Positive
+WK-10238,Skate Park Legends,Skateboarding,953249,74,19.99,Yes,Medium,No,Stylized,Neutral
+WK-10239,Cosy Valley,Life Simulation,4014211,92,24.99,No,Low,Yes,Stylized,Highly Positive
+WK-10240,TownLife,Life Simulation,14586853,68,0,Yes,Very High,Yes,Cartoonish,Mixed
+WK-10241,Skate Park Legends,Skateboarding,1038054,74,19.99,Yes,Medium,No,Stylized,Neutral
+WK-10242,Pixel Society,Life Simulation,3705180,84,14.99,Yes,Low,No,Retro Pixel,Positive
+WK-10243,Grind & Slide,Skateboarding,988300,88,29.99,Yes,Low,No,Stylized,Highly Positive
+WK-10244,Cosy Valley,Life Simulation,3915937,92,24.99,No,Low,Yes,Stylized,Highly Positive
+WK-10245,Skate Park Legends,Skateboarding,965717,74,19.99,Yes,Medium,No,Stylized,Neutral
+WK-10246,Cosy Valley,Life Simulation,3872099,92,24.99,No,Low,Yes,Stylized,Highly Positive
+WK-10247,Cosy Valley,Life Simulation,4298105,92,24.99,No,Low,Yes,Stylized,Highly Positive
+WK-10248,Skate Park Legends,Skateboarding,928688,74,19.99,Yes,Medium,No,Stylized,Neutral
+WK-10249,TownLife,Life Simulation,15810578,68,0,Yes,Very High,Yes,Cartoonish,Mixed
+WK-10250,Cosy Valley,Life Simulation,3926685,92,24.99,No,Low,Yes,Stylized,Highly Positive
+WK-10251,Skate Park Legends,Skateboarding,1012082,74,19.99,Yes,Medium,No,Stylized,Neutral
+WK-10252,TownLife,Life Simulation,14273994,68,0,Yes,Very High,Yes,Cartoonish,Mixed
+WK-10253,Turbo Asphalt 9,Racing,3470791,81,59.99,No,Medium (Quarterly),Yes,Photorealistic,Positive
+WK-10254,Speedway Unlimited,Racing,3330775,78,59.99,No,High (Monthly),Yes,Photorealistic,Neutral
+WK-10255,Pixel Society,Life Simulation,4255939,84,14.99,Yes,Low,No,Retro Pixel,Positive
+WK-10256,Pixel Society,Life Simulation,3910332,84,14.99,Yes,Low,No,Retro Pixel,Positive
+WK-10257,TownLife,Life Simulation,16069408,68,0,Yes,Very High,Yes,Cartoonish,Mixed
+WK-10258,Turbo Asphalt 9,Racing,3532436,81,59.99,No,Medium (Quarterly),Yes,Photorealistic,Positive
+WK-10259,Grind & Slide,Skateboarding,926764,88,29.99,Yes,Low,No,Stylized,Highly Positive
+WK-10260,Speedway Unlimited,Racing,3248741,78,59.99,No,High (Monthly),Yes,Photorealistic,Neutral
+WK-10261,Speedway Unlimited,Racing,3284871,78,59.99,No,High (Monthly),Yes,Photorealistic,Neutral
+WK-10262,Turbo Asphalt 9,Racing,3669072,81,59.99,No,Medium (Quarterly),Yes,Photorealistic,Positive
+WK-10263,Pixel Society,Life Simulation,4063727,84,14.99,Yes,Low,No,Retro Pixel,Positive
+WK-10264,Speedway Unlimited,Racing,3578041,78,59.99,No,High (Monthly),Yes,Photorealistic,Neutral
+WK-10265,Grind & Slide,Skateboarding,1047143,88,29.99,Yes,Low,No,Stylized,Highly Positive
+WK-10266,Cosy Valley,Life Simulation,4157600,92,24.99,No,Low,Yes,Stylized,Highly Positive
+WK-10267,TownLife,Life Simulation,15921626,68,0,Yes,Very High,Yes,Cartoonish,Mixed
+WK-10268,Grind & Slide,Skateboarding,1033036,88,29.99,Yes,Low,No,Stylized,Highly Positive
+WK-10269,Grind & Slide,Skateboarding,1002521,88,29.99,Yes,Low,No,Stylized,Highly Positive
+WK-10270,Speedway Unlimited,Racing,3490561,78,59.99,No,High (Monthly),Yes,Photorealistic,Neutral
+WK-10271,Cosy Valley,Life Simulation,4138792,92,24.99,No,Low,Yes,Stylized,Highly Positive
+WK-10272,TownLife,Life Simulation,14243905,68,0,Yes,Very High,Yes,Cartoonish,Mixed
+WK-10273,Skate Park Legends,Skateboarding,1031444,74,19.99,Yes,Medium,No,Stylized,Neutral
+WK-10274,Pixel Society,Life Simulation,4021627,84,14.99,Yes,Low,No,Retro Pixel,Positive
+WK-10275,Turbo Asphalt 9,Racing,3292507,81,59.99,No,Medium (Quarterly),Yes,Photorealistic,Positive
+WK-10276,Cosy Valley,Life Simulation,3916535,92,24.99,No,Low,Yes,Stylized,Highly Positive
+WK-10277,Skate Park Legends,Skateboarding,985485,74,19.99,Yes,Medium,No,Stylized,Neutral
+WK-10278,Skate Park Legends,Skateboarding,1051248,74,19.99,Yes,Medium,No,Stylized,Neutral
+WK-10279,Skate Park Legends,Skateboarding,992748,74,19.99,Yes,Medium,No,Stylized,Neutral
+WK-10280,Pixel Society,Life Simulation,4208716,84,14.99,Yes,Low,No,Retro Pixel,Positive
+WK-10281,Speedway Unlimited,Racing,3687119,78,59.99,No,High (Monthly),Yes,Photorealistic,Neutral
+WK-10282,Speedway Unlimited,Racing,3258855,78,59.99,No,High (Monthly),Yes,Photorealistic,Neutral
+WK-10283,Cosy Valley,Life Simulation,3728013,92,24.99,No,Low,Yes,Stylized,Highly Positive
+WK-10284,Speedway Unlimited,Racing,3589834,78,59.99,No,High (Monthly),Yes,Photorealistic,Neutral
+WK-10285,Grind & Slide,Skateboarding,961636,88,29.99,Yes,Low,No,Stylized,Highly Positive
+WK-10286,Grind & Slide,Skateboarding,1013097,88,29.99,Yes,Low,No,Stylized,Highly Positive
+WK-10287,Cosy Valley,Life Simulation,4206642,92,24.99,No,Low,Yes,Stylized,Highly Positive
+WK-10288,TownLife,Life Simulation,16067796,68,0,Yes,Very High,Yes,Cartoonish,Mixed
+WK-10289,Grind & Slide,Skateboarding,963206,88,29.99,Yes,Low,No,Stylized,Highly Positive
+WK-10290,Cosy Valley,Life Simulation,4072846,92,24.99,No,Low,Yes,Stylized,Highly Positive
+WK-10291,Pixel Society,Life Simulation,3971792,84,14.99,Yes,Low,No,Retro Pixel,Positive
+WK-10292,Cosy Valley,Life Simulation,3881692,92,24.99,No,Low,Yes,Stylized,Highly Positive
+WK-10293,Grind & Slide,Skateboarding,1027648,88,29.99,Yes,Low,No,Stylized,Highly Positive
+WK-10294,Grind & Slide,Skateboarding,1020257,88,29.99,Yes,Low,No,Stylized,Highly Positive
+WK-10295,Speedway Unlimited,Racing,3397977,78,59.99,No,High (Monthly),Yes,Photorealistic,Neutral
+WK-10296,Turbo Asphalt 9,Racing,3245687,81,59.99,No,Medium (Quarterly),Yes,Photorealistic,Positive
+WK-10297,Speedway Unlimited,Racing,3731363,78,59.99,No,High (Monthly),Yes,Photorealistic,Neutral
+WK-10298,Turbo Asphalt 9,Racing,3410655,81,59.99,No,Medium (Quarterly),Yes,Photorealistic,Positive
+WK-10299,Skate Park Legends,Skateboarding,1054102,74,19.99,Yes,Medium,No,Stylized,Neutral
+WK-10300,Pixel Society,Life Simulation,4138727,84,14.99,Yes,Low,No,Retro Pixel,Positive
+WK-10301,Grind & Slide,Skateboarding,941680,88,29.99,Yes,Low,No,Stylized,Highly Positive
+WK-10302,Pixel Society,Life Simulation,4117326,84,14.99,Yes,Low,No,Retro Pixel,Positive
+WK-10303,Skate Park Legends,Skateboarding,1001250,74,19.99,Yes,Medium,No,Stylized,Neutral
+WK-10304,Cosy Valley,Life Simulation,3782644,92,24.99,No,Low,Yes,Stylized,Highly Positive
+WK-10305,Skate Park Legends,Skateboarding,1050178,74,19.99,Yes,Medium,No,Stylized,Neutral
+WK-10306,Speedway Unlimited,Racing,3478914,78,59.99,No,High (Monthly),Yes,Photorealistic,Neutral
+WK-10307,Speedway Unlimited,Racing,3261684,78,59.99,No,High (Monthly),Yes,Photorealistic,Neutral
+WK-10308,Grind & Slide,Skateboarding,961077,88,29.99,Yes,Low,No,Stylized,Highly Positive
+WK-10309,Skate Park Legends,Skateboarding,955153,74,19.99,Yes,Medium,No,Stylized,Neutral
+WK-10310,Grind & Slide,Skateboarding,1023294,88,29.99,Yes,Low,No,Stylized,Highly Positive
+WK-10311,Grind & Slide,Skateboarding,981008,88,29.99,Yes,Low,No,Stylized,Highly Positive
+WK-10312,Skate Park Legends,Skateboarding,938654,74,19.99,Yes,Medium,No,Stylized,Neutral
+WK-10313,Skate Park Legends,Skateboarding,994132,74,19.99,Yes,Medium,No,Stylized,Neutral
+WK-10314,Pixel Society,Life Simulation,4073730,84,14.99,Yes,Low,No,Retro Pixel,Positive
+WK-10315,Grind & Slide,Skateboarding,1000423,88,29.99,Yes,Low,No,Stylized,Highly Positive
+WK-10316,TownLife,Life Simulation,15919617,68,0,Yes,Very High,Yes,Cartoonish,Mixed
+WK-10317,Pixel Society,Life Simulation,3885011,84,14.99,Yes,Low,No,Retro Pixel,Positive
+WK-10318,Speedway Unlimited,Racing,3279926,78,59.99,No,High (Monthly),Yes,Photorealistic,Neutral
+WK-10319,Cosy Valley,Life Simulation,4105947,92,24.99,No,Low,Yes,Stylized,Highly Positive
+WK-10320,Speedway Unlimited,Racing,3418395,78,59.99,No,High (Monthly),Yes,Photorealistic,Neutral
+WK-10321,Skate Park Legends,Skateboarding,1072258,74,19.99,Yes,Medium,No,Stylized,Neutral
+WK-10322,Cosy Valley,Life Simulation,4102344,92,24.99,No,Low,Yes,Stylized,Highly Positive
+WK-10323,Skate Park Legends,Skateboarding,1001875,74,19.99,Yes,Medium,No,Stylized,Neutral
+WK-10324,Grind & Slide,Skateboarding,1028263,88,29.99,Yes,Low,No,Stylized,Highly Positive
+WK-10325,Turbo Asphalt 9,Racing,3293441,81,59.99,No,Medium (Quarterly),Yes,Photorealistic,Positive
+WK-10326,Pixel Society,Life Simulation,3936575,84,14.99,Yes,Low,No,Retro Pixel,Positive
+WK-10327,Pixel Society,Life Simulation,4227454,84,14.99,Yes,Low,No,Retro Pixel,Positive
+WK-10328,Skate Park Legends,Skateboarding,930940,74,19.99,Yes,Medium,No,Stylized,Neutral
+WK-10329,Pixel Society,Life Simulation,3745782,84,14.99,Yes,Low,No,Retro Pixel,Positive
+WK-10330,Turbo Asphalt 9,Racing,3715442,81,59.99,No,Medium (Quarterly),Yes,Photorealistic,Positive
+WK-10331,Turbo Asphalt 9,Racing,3491886,81,59.99,No,Medium (Quarterly),Yes,Photorealistic,Positive
+WK-10332,Cosy Valley,Life Simulation,4146186,92,24.99,No,Low,Yes,Stylized,Highly Positive
+WK-10333,Turbo Asphalt 9,Racing,3722976,81,59.99,No,Medium (Quarterly),Yes,Photorealistic,Positive
+WK-10334,Turbo Asphalt 9,Racing,3287571,81,59.99,No,Medium (Quarterly),Yes,Photorealistic,Positive
+WK-10335,Pixel Society,Life Simulation,3991452,84,14.99,Yes,Low,No,Retro Pixel,Positive
+WK-10336,Grind & Slide,Skateboarding,986003,88,29.99,Yes,Low,No,Stylized,Highly Positive
+WK-10337,Cosy Valley,Life Simulation,3955499,92,24.99,No,Low,Yes,Stylized,Highly Positive
+WK-10338,Skate Park Legends,Skateboarding,955347,74,19.99,Yes,Medium,No,Stylized,Neutral
+WK-10339,Turbo Asphalt 9,Racing,3271036,81,59.99,No,Medium (Quarterly),Yes,Photorealistic,Positive
+WK-10340,Grind & Slide,Skateboarding,1028256,88,29.99,Yes,Low,No,Stylized,Highly Positive
+WK-10341,Grind & Slide,Skateboarding,962957,88,29.99,Yes,Low,No,Stylized,Highly Positive
+WK-10342,TownLife,Life Simulation,15004621,68,0,Yes,Very High,Yes,Cartoonish,Mixed
+WK-10343,Cosy Valley,Life Simulation,4070767,92,24.99,No,Low,Yes,Stylized,Highly Positive
+WK-10344,Cosy Valley,Life Simulation,4244192,92,24.99,No,Low,Yes,Stylized,Highly Positive
+WK-10345,Speedway Unlimited,Racing,3265026,78,59.99,No,High (Monthly),Yes,Photorealistic,Neutral
+WK-10346,Speedway Unlimited,Racing,3710420,78,59.99,No,High (Monthly),Yes,Photorealistic,Neutral
+WK-10347,Grind & Slide,Skateboarding,949259,88,29.99,Yes,Low,No,Stylized,Highly Positive
+WK-10348,Cosy Valley,Life Simulation,3731976,92,24.99,No,Low,Yes,Stylized,Highly Positive
+WK-10349,Pixel Society,Life Simulation,4102923,84,14.99,Yes,Low,No,Retro Pixel,Positive
+WK-10350,Skate Park Legends,Skateboarding,1045547,74,19.99,Yes,Medium,No,Stylized,Neutral
+WK-10351,Cosy Valley,Life Simulation,4136839,92,24.99,No,Low,Yes,Stylized,Highly Positive
+WK-10352,Turbo Asphalt 9,Racing,3675818,81,59.99,No,Medium (Quarterly),Yes,Photorealistic,Positive
+WK-10353,Turbo Asphalt 9,Racing,3532153,81,59.99,No,Medium (Quarterly),Yes,Photorealistic,Positive
+WK-10354,Cosy Valley,Life Simulation,4169141,92,24.99,No,Low,Yes,Stylized,Highly Positive
+WK-10355,Speedway Unlimited,Racing,3240714,78,59.99,No,High (Monthly),Yes,Photorealistic,Neutral
+WK-10356,TownLife,Life Simulation,14501364,68,0,Yes,Very High,Yes,Cartoonish,Mixed
+WK-10357,Speedway Unlimited,Racing,3519196,78,59.99,No,High (Monthly),Yes,Photorealistic,Neutral
+WK-10358,TownLife,Life Simulation,14868109,68,0,Yes,Very High,Yes,Cartoonish,Mixed
+WK-10359,Grind & Slide,Skateboarding,1029156,88,29.99,Yes,Low,No,Stylized,Highly Positive
+WK-10360,TownLife,Life Simulation,16076512,68,0,Yes,Very High,Yes,Cartoonish,Mixed
+WK-10361,Speedway Unlimited,Racing,3536196,78,59.99,No,High (Monthly),Yes,Photorealistic,Neutral
+WK-10362,Turbo Asphalt 9,Racing,3291610,81,59.99,No,Medium (Quarterly),Yes,Photorealistic,Positive
+WK-10363,Turbo Asphalt 9,Racing,3696142,81,59.99,No,Medium (Quarterly),Yes,Photorealistic,Positive
+WK-10364,Speedway Unlimited,Racing,3532205,78,59.99,No,High (Monthly),Yes,Photorealistic,Neutral
+WK-10365,TownLife,Life Simulation,15383942,68,0,Yes,Very High,Yes,Cartoonish,Mixed
+WK-10366,Cosy Valley,Life Simulation,4001856,92,24.99,No,Low,Yes,Stylized,Highly Positive
+WK-10367,Skate Park Legends,Skateboarding,937311,74,19.99,Yes,Medium,No,Stylized,Neutral
+WK-10368,TownLife,Life Simulation,15552212,68,0,Yes,Very High,Yes,Cartoonish,Mixed
+WK-10369,Speedway Unlimited,Racing,3691322,78,59.99,No,High (Monthly),Yes,Photorealistic,Neutral
+WK-10370,Speedway Unlimited,Racing,3397257,78,59.99,No,High (Monthly),Yes,Photorealistic,Neutral
+WK-10371,Grind & Slide,Skateboarding,1055106,88,29.99,Yes,Low,No,Stylized,Highly Positive
+WK-10372,Turbo Asphalt 9,Racing,3548300,81,59.99,No,Medium (Quarterly),Yes,Photorealistic,Positive
+WK-10373,Pixel Society,Life Simulation,4095875,84,14.99,Yes,Low,No,Retro Pixel,Positive
+WK-10374,Pixel Society,Life Simulation,3953761,84,14.99,Yes,Low,No,Retro Pixel,Positive
+WK-10375,Skate Park Legends,Skateboarding,983471,74,19.99,Yes,Medium,No,Stylized,Neutral
+WK-10376,Turbo Asphalt 9,Racing,3618065,81,59.99,No,Medium (Quarterly),Yes,Photorealistic,Positive
+WK-10377,Speedway Unlimited,Racing,3352878,78,59.99,No,High (Monthly),Yes,Photorealistic,Neutral
+WK-10378,Grind & Slide,Skateboarding,1004866,88,29.99,Yes,Low,No,Stylized,Highly Positive
+WK-10379,Turbo Asphalt 9,Racing,3602945,81,59.99,No,Medium (Quarterly),Yes,Photorealistic,Positive
+WK-10380,Skate Park Legends,Skateboarding,1004860,74,19.99,Yes,Medium,No,Stylized,Neutral
+WK-10381,Pixel Society,Life Simulation,3867342,84,14.99,Yes,Low,No,Retro Pixel,Positive
+WK-10382,Turbo Asphalt 9,Racing,3605234,81,59.99,No,Medium (Quarterly),Yes,Photorealistic,Positive
+WK-10383,Grind & Slide,Skateboarding,959123,88,29.99,Yes,Low,No,Stylized,Highly Positive
+WK-10384,Skate Park Legends,Skateboarding,966211,74,19.99,Yes,Medium,No,Stylized,Neutral
+WK-10385,Turbo Asphalt 9,Racing,3355177,81,59.99,No,Medium (Quarterly),Yes,Photorealistic,Positive
+WK-10386,Speedway Unlimited,Racing,3454579,78,59.99,No,High (Monthly),Yes,Photorealistic,Neutral
+WK-10387,TownLife,Life Simulation,15132561,68,0,Yes,Very High,Yes,Cartoonish,Mixed
+WK-10388,Skate Park Legends,Skateboarding,949838,74,19.99,Yes,Medium,No,Stylized,Neutral
+WK-10389,Turbo Asphalt 9,Racing,3316990,81,59.99,No,Medium (Quarterly),Yes,Photorealistic,Positive
+WK-10390,Cosy Valley,Life Simulation,3709026,92,24.99,No,Low,Yes,Stylized,Highly Positive
+WK-10391,Turbo Asphalt 9,Racing,3520997,81,59.99,No,Medium (Quarterly),Yes,Photorealistic,Positive
+WK-10392,Skate Park Legends,Skateboarding,1019240,74,19.99,Yes,Medium,No,Stylized,Neutral
+WK-10393,Turbo Asphalt 9,Racing,3597883,81,59.99,No,Medium (Quarterly),Yes,Photorealistic,Positive
+WK-10394,Skate Park Legends,Skateboarding,1065848,74,19.99,Yes,Medium,No,Stylized,Neutral
+WK-10395,Turbo Asphalt 9,Racing,3553799,81,59.99,No,Medium (Quarterly),Yes,Photorealistic,Positive
+WK-10396,Skate Park Legends,Skateboarding,974711,74,19.99,Yes,Medium,No,Stylized,Neutral
+WK-10397,Skate Park Legends,Skateboarding,952154,74,19.99,Yes,Medium,No,Stylized,Neutral
+WK-10398,Skate Park Legends,Skateboarding,1010718,74,19.99,Yes,Medium,No,Stylized,Neutral
+WK-10399,Cosy Valley,Life Simulation,4125122,92,24.99,No,Low,Yes,Stylized,Highly Positive
+WK-10400,Skate Park Legends,Skateboarding,1026489,74,19.99,Yes,Medium,No,Stylized,Neutral
+WK-10401,TownLife,Life Simulation,15169210,68,0,Yes,Very High,Yes,Cartoonish,Mixed
+WK-10402,TownLife,Life Simulation,15073635,68,0,Yes,Very High,Yes,Cartoonish,Mixed
+WK-10403,TownLife,Life Simulation,14726096,68,0,Yes,Very High,Yes,Cartoonish,Mixed
+WK-10404,Grind & Slide,Skateboarding,1010184,88,29.99,Yes,Low,No,Stylized,Highly Positive
+WK-10405,Cosy Valley,Life Simulation,4014494,92,24.99,No,Low,Yes,Stylized,Highly Positive
+WK-10406,TownLife,Life Simulation,14779230,68,0,Yes,Very High,Yes,Cartoonish,Mixed
+WK-10407,Grind & Slide,Skateboarding,1012300,88,29.99,Yes,Low,No,Stylized,Highly Positive
+WK-10408,Grind & Slide,Skateboarding,1013291,88,29.99,Yes,Low,No,Stylized,Highly Positive
+WK-10409,Grind & Slide,Skateboarding,1034948,88,29.99,Yes,Low,No,Stylized,Highly Positive
+WK-10410,Cosy Valley,Life Simulation,4171317,92,24.99,No,Low,Yes,Stylized,Highly Positive
+WK-10411,Skate Park Legends,Skateboarding,931872,74,19.99,Yes,Medium,No,Stylized,Neutral
+WK-10412,Speedway Unlimited,Racing,3673241,78,59.99,No,High (Monthly),Yes,Photorealistic,Neutral
+WK-10413,Skate Park Legends,Skateboarding,935806,74,19.99,Yes,Medium,No,Stylized,Neutral
+WK-10414,Pixel Society,Life Simulation,4078387,84,14.99,Yes,Low,No,Retro Pixel,Positive
+WK-10415,Skate Park Legends,Skateboarding,958692,74,19.99,Yes,Medium,No,Stylized,Neutral
+WK-10416,Skate Park Legends,Skateboarding,974209,74,19.99,Yes,Medium,No,Stylized,Neutral
+WK-10417,Turbo Asphalt 9,Racing,3633477,81,59.99,No,Medium (Quarterly),Yes,Photorealistic,Positive
+WK-10418,TownLife,Life Simulation,14818977,68,0,Yes,Very High,Yes,Cartoonish,Mixed
+WK-10419,Cosy Valley,Life Simulation,4246708,92,24.99,No,Low,Yes,Stylized,Highly Positive
+WK-10420,Skate Park Legends,Skateboarding,925680,74,19.99,Yes,Medium,No,Stylized,Neutral
+WK-10421,Grind & Slide,Skateboarding,1020185,88,29.99,Yes,Low,No,Stylized,Highly Positive
+WK-10422,Cosy Valley,Life Simulation,3715812,92,24.99,No,Low,Yes,Stylized,Highly Positive
+WK-10423,Speedway Unlimited,Racing,3522369,78,59.99,No,High (Monthly),Yes,Photorealistic,Neutral
+WK-10424,Grind & Slide,Skateboarding,959297,88,29.99,Yes,Low,No,Stylized,Highly Positive
+WK-10425,Cosy Valley,Life Simulation,3925314,92,24.99,No,Low,Yes,Stylized,Highly Positive
+WK-10426,Speedway Unlimited,Racing,3697293,78,59.99,No,High (Monthly),Yes,Photorealistic,Neutral
+WK-10427,Grind & Slide,Skateboarding,957035,88,29.99,Yes,Low,No,Stylized,Highly Positive
+WK-10428,Turbo Asphalt 9,Racing,3624033,81,59.99,No,Medium (Quarterly),Yes,Photorealistic,Positive
+WK-10429,Grind & Slide,Skateboarding,1053040,88,29.99,Yes,Low,No,Stylized,Highly Positive
+WK-10430,Skate Park Legends,Skateboarding,1025662,74,19.99,Yes,Medium,No,Stylized,Neutral
+WK-10431,Speedway Unlimited,Racing,3398853,78,59.99,No,High (Monthly),Yes,Photorealistic,Neutral
+WK-10432,Skate Park Legends,Skateboarding,925607,74,19.99,Yes,Medium,No,Stylized,Neutral
+WK-10433,Turbo Asphalt 9,Racing,3568996,81,59.99,No,Medium (Quarterly),Yes,Photorealistic,Positive
+WK-10434,Turbo Asphalt 9,Racing,3246405,81,59.99,No,Medium (Quarterly),Yes,Photorealistic,Positive
+WK-10435,TownLife,Life Simulation,15547917,68,0,Yes,Very High,Yes,Cartoonish,Mixed
+WK-10436,Grind & Slide,Skateboarding,938869,88,29.99,Yes,Low,No,Stylized,Highly Positive
+WK-10437,Grind & Slide,Skateboarding,1023035,88,29.99,Yes,Low,No,Stylized,Highly Positive
+WK-10438,Grind & Slide,Skateboarding,1050433,88,29.99,Yes,Low,No,Stylized,Highly Positive
+WK-10439,Pixel Society,Life Simulation,4138093,84,14.99,Yes,Low,No,Retro Pixel,Positive
+WK-10440,Skate Park Legends,Skateboarding,997078,74,19.99,Yes,Medium,No,Stylized,Neutral
+WK-10441,Grind & Slide,Skateboarding,1054572,88,29.99,Yes,Low,No,Stylized,Highly Positive
+WK-10442,Skate Park Legends,Skateboarding,998200,74,19.99,Yes,Medium,No,Stylized,Neutral
+WK-10443,Pixel Society,Life Simulation,3797787,84,14.99,Yes,Low,No,Retro Pixel,Positive
+WK-10444,Pixel Society,Life Simulation,4234091,84,14.99,Yes,Low,No,Retro Pixel,Positive
+WK-10445,Skate Park Legends,Skateboarding,946641,74,19.99,Yes,Medium,No,Stylized,Neutral
+WK-10446,Pixel Society,Life Simulation,3822632,84,14.99,Yes,Low,No,Retro Pixel,Positive
+WK-10447,TownLife,Life Simulation,14830688,68,0,Yes,Very High,Yes,Cartoonish,Mixed
+WK-10448,Cosy Valley,Life Simulation,3794966,92,24.99,No,Low,Yes,Stylized,Highly Positive
+WK-10449,Turbo Asphalt 9,Racing,3367296,81,59.99,No,Medium (Quarterly),Yes,Photorealistic,Positive
+WK-10450,Turbo Asphalt 9,Racing,3579777,81,59.99,No,Medium (Quarterly),Yes,Photorealistic,Positive
+WK-10451,Pixel Society,Life Simulation,3720292,84,14.99,Yes,Low,No,Retro Pixel,Positive
+WK-10452,Skate Park Legends,Skateboarding,1009709,74,19.99,Yes,Medium,No,Stylized,Neutral
+WK-10453,Grind & Slide,Skateboarding,1023206,88,29.99,Yes,Low,No,Stylized,Highly Positive
+WK-10454,Speedway Unlimited,Racing,3572646,78,59.99,No,High (Monthly),Yes,Photorealistic,Neutral
+WK-10455,Grind & Slide,Skateboarding,927346,88,29.99,Yes,Low,No,Stylized,Highly Positive
+WK-10456,Grind & Slide,Skateboarding,993302,88,29.99,Yes,Low,No,Stylized,Highly Positive
+WK-10457,Speedway Unlimited,Racing,3551679,78,59.99,No,High (Monthly),Yes,Photorealistic,Neutral
+WK-10458,TownLife,Life Simulation,14408257,68,0,Yes,Very High,Yes,Cartoonish,Mixed
+WK-10459,TownLife,Life Simulation,14176842,68,0,Yes,Very High,Yes,Cartoonish,Mixed
+WK-10460,Pixel Society,Life Simulation,3711517,84,14.99,Yes,Low,No,Retro Pixel,Positive
+WK-10461,Cosy Valley,Life Simulation,4138711,92,24.99,No,Low,Yes,Stylized,Highly Positive
+WK-10462,Cosy Valley,Life Simulation,3979132,92,24.99,No,Low,Yes,Stylized,Highly Positive
+WK-10463,Pixel Society,Life Simulation,4135121,84,14.99,Yes,Low,No,Retro Pixel,Positive
+WK-10464,Grind & Slide,Skateboarding,962944,88,29.99,Yes,Low,No,Stylized,Highly Positive
+WK-10465,Cosy Valley,Life Simulation,3770082,92,24.99,No,Low,Yes,Stylized,Highly Positive
+WK-10466,Turbo Asphalt 9,Racing,3533848,81,59.99,No,Medium (Quarterly),Yes,Photorealistic,Positive
+WK-10467,Cosy Valley,Life Simulation,3814405,92,24.99,No,Low,Yes,Stylized,Highly Positive
+WK-10468,Pixel Society,Life Simulation,4023163,84,14.99,Yes,Low,No,Retro Pixel,Positive
+WK-10469,Skate Park Legends,Skateboarding,966504,74,19.99,Yes,Medium,No,Stylized,Neutral
+WK-10470,Speedway Unlimited,Racing,3678935,78,59.99,No,High (Monthly),Yes,Photorealistic,Neutral
+WK-10471,Skate Park Legends,Skateboarding,1013849,74,19.99,Yes,Medium,No,Stylized,Neutral
+WK-10472,Cosy Valley,Life Simulation,4120075,92,24.99,No,Low,Yes,Stylized,Highly Positive
+WK-10473,Pixel Society,Life Simulation,4014679,84,14.99,Yes,Low,No,Retro Pixel,Positive
+WK-10474,Cosy Valley,Life Simulation,4058226,92,24.99,No,Low,Yes,Stylized,Highly Positive
+WK-10475,Cosy Valley,Life Simulation,4042154,92,24.99,No,Low,Yes,Stylized,Highly Positive
+WK-10476,Pixel Society,Life Simulation,3815460,84,14.99,Yes,Low,No,Retro Pixel,Positive
+WK-10477,Skate Park Legends,Skateboarding,1041672,74,19.99,Yes,Medium,No,Stylized,Neutral
+WK-10478,Speedway Unlimited,Racing,3708290,78,59.99,No,High (Monthly),Yes,Photorealistic,Neutral
+WK-10479,Cosy Valley,Life Simulation,4073505,92,24.99,No,Low,Yes,Stylized,Highly Positive
+WK-10480,Speedway Unlimited,Racing,3271613,78,59.99,No,High (Monthly),Yes,Photorealistic,Neutral
+WK-10481,Pixel Society,Life Simulation,3992618,84,14.99,Yes,Low,No,Retro Pixel,Positive
+WK-10482,Speedway Unlimited,Racing,3659170,78,59.99,No,High (Monthly),Yes,Photorealistic,Neutral
+WK-10483,Cosy Valley,Life Simulation,3715563,92,24.99,No,Low,Yes,Stylized,Highly Positive
+WK-10484,TownLife,Life Simulation,15694432,68,0,Yes,Very High,Yes,Cartoonish,Mixed
+WK-10485,Turbo Asphalt 9,Racing,3713805,81,59.99,No,Medium (Quarterly),Yes,Photorealistic,Positive
+WK-10486,Skate Park Legends,Skateboarding,1070090,74,19.99,Yes,Medium,No,Stylized,Neutral
+WK-10487,Cosy Valley,Life Simulation,4143694,92,24.99,No,Low,Yes,Stylized,Highly Positive
+WK-10488,Skate Park Legends,Skateboarding,1036625,74,19.99,Yes,Medium,No,Stylized,Neutral
+WK-10489,Pixel Society,Life Simulation,3852952,84,14.99,Yes,Low,No,Retro Pixel,Positive
+WK-10490,TownLife,Life Simulation,14115753,68,0,Yes,Very High,Yes,Cartoonish,Mixed
+WK-10491,Grind & Slide,Skateboarding,991342,88,29.99,Yes,Low,No,Stylized,Highly Positive
+WK-10492,Pixel Society,Life Simulation,3973026,84,14.99,Yes,Low,No,Retro Pixel,Positive
+WK-10493,Speedway Unlimited,Racing,3741400,78,59.99,No,High (Monthly),Yes,Photorealistic,Neutral
+WK-10494,Grind & Slide,Skateboarding,974408,88,29.99,Yes,Low,No,Stylized,Highly Positive
+WK-10495,TownLife,Life Simulation,14661491,68,0,Yes,Very High,Yes,Cartoonish,Mixed
+WK-10496,Skate Park Legends,Skateboarding,1041347,74,19.99,Yes,Medium,No,Stylized,Neutral
+WK-10497,Skate Park Legends,Skateboarding,1054159,74,19.99,Yes,Medium,No,Stylized,Neutral
+WK-10498,Skate Park Legends,Skateboarding,931911,74,19.99,Yes,Medium,No,Stylized,Neutral
+WK-10499,Speedway Unlimited,Racing,3568985,78,59.99,No,High (Monthly),Yes,Photorealistic,Neutral
+WK-10500,Skate Park Legends,Skateboarding,1026476,74,19.99,Yes,Medium,No,Stylized,Neutral
+WK-10501,TownLife,Life Simulation,15450722,68,0,Yes,Very High,Yes,Cartoonish,Mixed
+WK-10502,Skate Park Legends,Skateboarding,967670,74,19.99,Yes,Medium,No,Stylized,Neutral
+WK-10503,Turbo Asphalt 9,Racing,3738234,81,59.99,No,Medium (Quarterly),Yes,Photorealistic,Positive
+WK-10504,Speedway Unlimited,Racing,3573855,78,59.99,No,High (Monthly),Yes,Photorealistic,Neutral
+WK-10505,Pixel Society,Life Simulation,4146702,84,14.99,Yes,Low,No,Retro Pixel,Positive
+WK-10506,Cosy Valley,Life Simulation,3725748,92,24.99,No,Low,Yes,Stylized,Highly Positive
+WK-10507,Pixel Society,Life Simulation,4253479,84,14.99,Yes,Low,No,Retro Pixel,Positive
+WK-10508,Speedway Unlimited,Racing,3673320,78,59.99,No,High (Monthly),Yes,Photorealistic,Neutral
+WK-10509,Speedway Unlimited,Racing,3681083,78,59.99,No,High (Monthly),Yes,Photorealistic,Neutral
+WK-10510,Skate Park Legends,Skateboarding,1009914,74,19.99,Yes,Medium,No,Stylized,Neutral
+WK-10511,Cosy Valley,Life Simulation,4215260,92,24.99,No,Low,Yes,Stylized,Highly Positive
+WK-10512,Turbo Asphalt 9,Racing,3492582,81,59.99,No,Medium (Quarterly),Yes,Photorealistic,Positive
+WK-10513,Turbo Asphalt 9,Racing,3586603,81,59.99,No,Medium (Quarterly),Yes,Photorealistic,Positive
+WK-10514,Grind & Slide,Skateboarding,1067837,88,29.99,Yes,Low,No,Stylized,Highly Positive
+WK-10515,Grind & Slide,Skateboarding,1054145,88,29.99,Yes,Low,No,Stylized,Highly Positive
+WK-10516,Skate Park Legends,Skateboarding,956322,74,19.99,Yes,Medium,No,Stylized,Neutral
+WK-10517,Grind & Slide,Skateboarding,1049014,88,29.99,Yes,Low,No,Stylized,Highly Positive
+WK-10518,Speedway Unlimited,Racing,3733054,78,59.99,No,High (Monthly),Yes,Photorealistic,Neutral
+WK-10519,Pixel Society,Life Simulation,4144763,84,14.99,Yes,Low,No,Retro Pixel,Positive
+WK-10520,Cosy Valley,Life Simulation,4256986,92,24.99,No,Low,Yes,Stylized,Highly Positive
+WK-10521,TownLife,Life Simulation,15214053,68,0,Yes,Very High,Yes,Cartoonish,Mixed
+WK-10522,Cosy Valley,Life Simulation,3939871,92,24.99,No,Low,Yes,Stylized,Highly Positive
+WK-10523,TownLife,Life Simulation,15478436,68,0,Yes,Very High,Yes,Cartoonish,Mixed
+WK-10524,Pixel Society,Life Simulation,4275150,84,14.99,Yes,Low,No,Retro Pixel,Positive
+WK-10525,TownLife,Life Simulation,15118999,68,0,Yes,Very High,Yes,Cartoonish,Mixed
+WK-10526,Speedway Unlimited,Racing,3417419,78,59.99,No,High (Monthly),Yes,Photorealistic,Neutral
+WK-10527,Skate Park Legends,Skateboarding,999762,74,19.99,Yes,Medium,No,Stylized,Neutral
+WK-10528,TownLife,Life Simulation,15798071,68,0,Yes,Very High,Yes,Cartoonish,Mixed
+WK-10529,Cosy Valley,Life Simulation,4116550,92,24.99,No,Low,Yes,Stylized,Highly Positive
+WK-10530,Speedway Unlimited,Racing,3543439,78,59.99,No,High (Monthly),Yes,Photorealistic,Neutral
+WK-10531,Speedway Unlimited,Racing,3471126,78,59.99,No,High (Monthly),Yes,Photorealistic,Neutral
+WK-10532,Turbo Asphalt 9,Racing,3720841,81,59.99,No,Medium (Quarterly),Yes,Photorealistic,Positive
+WK-10533,TownLife,Life Simulation,15738727,68,0,Yes,Very High,Yes,Cartoonish,Mixed
+WK-10534,Skate Park Legends,Skateboarding,975624,74,19.99,Yes,Medium,No,Stylized,Neutral
+WK-10535,Turbo Asphalt 9,Racing,3558496,81,59.99,No,Medium (Quarterly),Yes,Photorealistic,Positive
+WK-10536,Skate Park Legends,Skateboarding,946196,74,19.99,Yes,Medium,No,Stylized,Neutral
+WK-10537,TownLife,Life Simulation,14886850,68,0,Yes,Very High,Yes,Cartoonish,Mixed
+WK-10538,Pixel Society,Life Simulation,4268243,84,14.99,Yes,Low,No,Retro Pixel,Positive
+WK-10539,Speedway Unlimited,Racing,3240257,78,59.99,No,High (Monthly),Yes,Photorealistic,Neutral
+WK-10540,TownLife,Life Simulation,14846531,68,0,Yes,Very High,Yes,Cartoonish,Mixed
+WK-10541,Speedway Unlimited,Racing,3558198,78,59.99,No,High (Monthly),Yes,Photorealistic,Neutral
+WK-10542,Cosy Valley,Life Simulation,4159729,92,24.99,No,Low,Yes,Stylized,Highly Positive
+WK-10543,Speedway Unlimited,Racing,3280839,78,59.99,No,High (Monthly),Yes,Photorealistic,Neutral
+WK-10544,Turbo Asphalt 9,Racing,3347793,81,59.99,No,Medium (Quarterly),Yes,Photorealistic,Positive
+WK-10545,Turbo Asphalt 9,Racing,3540252,81,59.99,No,Medium (Quarterly),Yes,Photorealistic,Positive
+WK-10546,Skate Park Legends,Skateboarding,972233,74,19.99,Yes,Medium,No,Stylized,Neutral
+WK-10547,Speedway Unlimited,Racing,3759882,78,59.99,No,High (Monthly),Yes,Photorealistic,Neutral
+WK-10548,Turbo Asphalt 9,Racing,3680215,81,59.99,No,Medium (Quarterly),Yes,Photorealistic,Positive
+WK-10549,Turbo Asphalt 9,Racing,3566382,81,59.99,No,Medium (Quarterly),Yes,Photorealistic,Positive
+WK-10550,Cosy Valley,Life Simulation,3855069,92,24.99,No,Low,Yes,Stylized,Highly Positive
+WK-10551,Speedway Unlimited,Racing,3576063,78,59.99,No,High (Monthly),Yes,Photorealistic,Neutral
+WK-10552,Grind & Slide,Skateboarding,938007,88,29.99,Yes,Low,No,Stylized,Highly Positive
+WK-10553,Speedway Unlimited,Racing,3320939,78,59.99,No,High (Monthly),Yes,Photorealistic,Neutral
+WK-10554,TownLife,Life Simulation,13925738,68,0,Yes,Very High,Yes,Cartoonish,Mixed
+WK-10555,Cosy Valley,Life Simulation,4251099,92,24.99,No,Low,Yes,Stylized,Highly Positive
+WK-10556,Grind & Slide,Skateboarding,1066302,88,29.99,Yes,Low,No,Stylized,Highly Positive
+WK-10557,TownLife,Life Simulation,15512124,68,0,Yes,Very High,Yes,Cartoonish,Mixed
+WK-10558,TownLife,Life Simulation,15659882,68,0,Yes,Very High,Yes,Cartoonish,Mixed
+WK-10559,Cosy Valley,Life Simulation,3862628,92,24.99,No,Low,Yes,Stylized,Highly Positive
+WK-10560,Grind & Slide,Skateboarding,985832,88,29.99,Yes,Low,No,Stylized,Highly Positive
+WK-10561,Speedway Unlimited,Racing,3720902,78,59.99,No,High (Monthly),Yes,Photorealistic,Neutral
+WK-10562,Grind & Slide,Skateboarding,1029126,88,29.99,Yes,Low,No,Stylized,Highly Positive
+WK-10563,Skate Park Legends,Skateboarding,1061824,74,19.99,Yes,Medium,No,Stylized,Neutral
+WK-10564,Skate Park Legends,Skateboarding,988037,74,19.99,Yes,Medium,No,Stylized,Neutral
+WK-10565,Cosy Valley,Life Simulation,4239105,92,24.99,No,Low,Yes,Stylized,Highly Positive
+WK-10566,Speedway Unlimited,Racing,3421854,78,59.99,No,High (Monthly),Yes,Photorealistic,Neutral
+WK-10567,Speedway Unlimited,Racing,3381893,78,59.99,No,High (Monthly),Yes,Photorealistic,Neutral
+WK-10568,Turbo Asphalt 9,Racing,3316169,81,59.99,No,Medium (Quarterly),Yes,Photorealistic,Positive
+WK-10569,Turbo Asphalt 9,Racing,3288298,81,59.99,No,Medium (Quarterly),Yes,Photorealistic,Positive
+WK-10570,TownLife,Life Simulation,15474425,68,0,Yes,Very High,Yes,Cartoonish,Mixed
+WK-10571,Skate Park Legends,Skateboarding,988850,74,19.99,Yes,Medium,No,Stylized,Neutral
+WK-10572,Grind & Slide,Skateboarding,1052665,88,29.99,Yes,Low,No,Stylized,Highly Positive
+WK-10573,Skate Park Legends,Skateboarding,988509,74,19.99,Yes,Medium,No,Stylized,Neutral
+WK-10574,Grind & Slide,Skateboarding,1014089,88,29.99,Yes,Low,No,Stylized,Highly Positive
+WK-10575,TownLife,Life Simulation,15309878,68,0,Yes,Very High,Yes,Cartoonish,Mixed
+WK-10576,Cosy Valley,Life Simulation,4065758,92,24.99,No,Low,Yes,Stylized,Highly Positive
+WK-10577,Cosy Valley,Life Simulation,4116687,92,24.99,No,Low,Yes,Stylized,Highly Positive
+WK-10578,Skate Park Legends,Skateboarding,968432,74,19.99,Yes,Medium,No,Stylized,Neutral
+WK-10579,TownLife,Life Simulation,14827914,68,0,Yes,Very High,Yes,Cartoonish,Mixed
+WK-10580,TownLife,Life Simulation,14266186,68,0,Yes,Very High,Yes,Cartoonish,Mixed
+WK-10581,TownLife,Life Simulation,13971767,68,0,Yes,Very High,Yes,Cartoonish,Mixed
+WK-10582,Skate Park Legends,Skateboarding,942305,74,19.99,Yes,Medium,No,Stylized,Neutral
+WK-10583,Grind & Slide,Skateboarding,925816,88,29.99,Yes,Low,No,Stylized,Highly Positive
+WK-10584,Skate Park Legends,Skateboarding,973266,74,19.99,Yes,Medium,No,Stylized,Neutral
+WK-10585,Pixel Society,Life Simulation,4153753,84,14.99,Yes,Low,No,Retro Pixel,Positive
+WK-10586,TownLife,Life Simulation,15540857,68,0,Yes,Very High,Yes,Cartoonish,Mixed
+WK-10587,Pixel Society,Life Simulation,4035732,84,14.99,Yes,Low,No,Retro Pixel,Positive
+WK-10588,Skate Park Legends,Skateboarding,998964,74,19.99,Yes,Medium,No,Stylized,Neutral
+WK-10589,Grind & Slide,Skateboarding,1064141,88,29.99,Yes,Low,No,Stylized,Highly Positive
+WK-10590,Pixel Society,Life Simulation,3747261,84,14.99,Yes,Low,No,Retro Pixel,Positive
+WK-10591,Skate Park Legends,Skateboarding,1024608,74,19.99,Yes,Medium,No,Stylized,Neutral
+WK-10592,Grind & Slide,Skateboarding,1014337,88,29.99,Yes,Low,No,Stylized,Highly Positive
+WK-10593,Cosy Valley,Life Simulation,3726015,92,24.99,No,Low,Yes,Stylized,Highly Positive
+WK-10594,Pixel Society,Life Simulation,3834310,84,14.99,Yes,Low,No,Retro Pixel,Positive
+WK-10595,TownLife,Life Simulation,14513626,68,0,Yes,Very High,Yes,Cartoonish,Mixed
+WK-10596,Pixel Society,Life Simulation,3813837,84,14.99,Yes,Low,No,Retro Pixel,Positive
+WK-10597,Pixel Society,Life Simulation,3923444,84,14.99,Yes,Low,No,Retro Pixel,Positive
+WK-10598,Pixel Society,Life Simulation,4236897,84,14.99,Yes,Low,No,Retro Pixel,Positive
+WK-10599,Speedway Unlimited,Racing,3299736,78,59.99,No,High (Monthly),Yes,Photorealistic,Neutral
+WK-10600,Speedway Unlimited,Racing,3365925,78,59.99,No,High (Monthly),Yes,Photorealistic,Neutral
+WK-10601,Speedway Unlimited,Racing,3306708,78,59.99,No,High (Monthly),Yes,Photorealistic,Neutral
+WK-10602,Skate Park Legends,Skateboarding,1026027,74,19.99,Yes,Medium,No,Stylized,Neutral
+WK-10603,Pixel Society,Life Simulation,3961813,84,14.99,Yes,Low,No,Retro Pixel,Positive
+WK-10604,Skate Park Legends,Skateboarding,976028,74,19.99,Yes,Medium,No,Stylized,Neutral
+WK-10605,Skate Park Legends,Skateboarding,1024765,74,19.99,Yes,Medium,No,Stylized,Neutral
+WK-10606,Turbo Asphalt 9,Racing,3306182,81,59.99,No,Medium (Quarterly),Yes,Photorealistic,Positive
+WK-10607,Pixel Society,Life Simulation,3982413,84,14.99,Yes,Low,No,Retro Pixel,Positive
+WK-10608,Pixel Society,Life Simulation,3929101,84,14.99,Yes,Low,No,Retro Pixel,Positive
+WK-10609,TownLife,Life Simulation,15266158,68,0,Yes,Very High,Yes,Cartoonish,Mixed
+WK-10610,Grind & Slide,Skateboarding,1033824,88,29.99,Yes,Low,No,Stylized,Highly Positive
+WK-10611,TownLife,Life Simulation,15550973,68,0,Yes,Very High,Yes,Cartoonish,Mixed
+WK-10612,Cosy Valley,Life Simulation,4013078,92,24.99,No,Low,Yes,Stylized,Highly Positive
+WK-10613,Grind & Slide,Skateboarding,1015424,88,29.99,Yes,Low,No,Stylized,Highly Positive
+WK-10614,Turbo Asphalt 9,Racing,3405484,81,59.99,No,Medium (Quarterly),Yes,Photorealistic,Positive
+WK-10615,Skate Park Legends,Skateboarding,996041,74,19.99,Yes,Medium,No,Stylized,Neutral
+WK-10616,Speedway Unlimited,Racing,3406847,78,59.99,No,High (Monthly),Yes,Photorealistic,Neutral
+WK-10617,Grind & Slide,Skateboarding,932331,88,29.99,Yes,Low,No,Stylized,Highly Positive
+WK-10618,Pixel Society,Life Simulation,3812038,84,14.99,Yes,Low,No,Retro Pixel,Positive
+WK-10619,Pixel Society,Life Simulation,3926546,84,14.99,Yes,Low,No,Retro Pixel,Positive
+WK-10620,TownLife,Life Simulation,15605589,68,0,Yes,Very High,Yes,Cartoonish,Mixed
+WK-10621,TownLife,Life Simulation,13905498,68,0,Yes,Very High,Yes,Cartoonish,Mixed
+WK-10622,Grind & Slide,Skateboarding,935028,88,29.99,Yes,Low,No,Stylized,Highly Positive
+WK-10623,Skate Park Legends,Skateboarding,999985,74,19.99,Yes,Medium,No,Stylized,Neutral
+WK-10624,Grind & Slide,Skateboarding,944798,88,29.99,Yes,Low,No,Stylized,Highly Positive
+WK-10625,Turbo Asphalt 9,Racing,3493347,81,59.99,No,Medium (Quarterly),Yes,Photorealistic,Positive
+WK-10626,Turbo Asphalt 9,Racing,3401410,81,59.99,No,Medium (Quarterly),Yes,Photorealistic,Positive
+WK-10627,Pixel Society,Life Simulation,4107380,84,14.99,Yes,Low,No,Retro Pixel,Positive
+WK-10628,Speedway Unlimited,Racing,3505100,78,59.99,No,High (Monthly),Yes,Photorealistic,Neutral
+WK-10629,Speedway Unlimited,Racing,3643287,78,59.99,No,High (Monthly),Yes,Photorealistic,Neutral
+WK-10630,Skate Park Legends,Skateboarding,965074,74,19.99,Yes,Medium,No,Stylized,Neutral
+WK-10631,Turbo Asphalt 9,Racing,3257777,81,59.99,No,Medium (Quarterly),Yes,Photorealistic,Positive
+WK-10632,Speedway Unlimited,Racing,3548878,78,59.99,No,High (Monthly),Yes,Photorealistic,Neutral
+WK-10633,Cosy Valley,Life Simulation,3981106,92,24.99,No,Low,Yes,Stylized,Highly Positive
+WK-10634,Skate Park Legends,Skateboarding,972402,74,19.99,Yes,Medium,No,Stylized,Neutral
+WK-10635,TownLife,Life Simulation,14450737,68,0,Yes,Very High,Yes,Cartoonish,Mixed
+WK-10636,Cosy Valley,Life Simulation,3947287,92,24.99,No,Low,Yes,Stylized,Highly Positive
+WK-10637,TownLife,Life Simulation,14490822,68,0,Yes,Very High,Yes,Cartoonish,Mixed
+WK-10638,Cosy Valley,Life Simulation,4077374,92,24.99,No,Low,Yes,Stylized,Highly Positive
+WK-10639,Speedway Unlimited,Racing,3255395,78,59.99,No,High (Monthly),Yes,Photorealistic,Neutral
+WK-10640,Pixel Society,Life Simulation,3908677,84,14.99,Yes,Low,No,Retro Pixel,Positive
+WK-10641,Cosy Valley,Life Simulation,3988326,92,24.99,No,Low,Yes,Stylized,Highly Positive
+WK-10642,Grind & Slide,Skateboarding,1056262,88,29.99,Yes,Low,No,Stylized,Highly Positive
+WK-10643,Turbo Asphalt 9,Racing,3460622,81,59.99,No,Medium (Quarterly),Yes,Photorealistic,Positive
+WK-10644,Grind & Slide,Skateboarding,927997,88,29.99,Yes,Low,No,Stylized,Highly Positive
+WK-10645,Grind & Slide,Skateboarding,984813,88,29.99,Yes,Low,No,Stylized,Highly Positive
+WK-10646,Grind & Slide,Skateboarding,997529,88,29.99,Yes,Low,No,Stylized,Highly Positive
+WK-10647,Skate Park Legends,Skateboarding,1059584,74,19.99,Yes,Medium,No,Stylized,Neutral
+WK-10648,Pixel Society,Life Simulation,3719010,84,14.99,Yes,Low,No,Retro Pixel,Positive
+WK-10649,Cosy Valley,Life Simulation,4168748,92,24.99,No,Low,Yes,Stylized,Highly Positive
+WK-10650,TownLife,Life Simulation,14850005,68,0,Yes,Very High,Yes,Cartoonish,Mixed
+WK-10651,Skate Park Legends,Skateboarding,1031050,74,19.99,Yes,Medium,No,Stylized,Neutral
+WK-10652,Skate Park Legends,Skateboarding,926608,74,19.99,Yes,Medium,No,Stylized,Neutral
+WK-10653,TownLife,Life Simulation,15858438,68,0,Yes,Very High,Yes,Cartoonish,Mixed
+WK-10654,Pixel Society,Life Simulation,4002043,84,14.99,Yes,Low,No,Retro Pixel,Positive
+WK-10655,Grind & Slide,Skateboarding,1013419,88,29.99,Yes,Low,No,Stylized,Highly Positive
+WK-10656,Skate Park Legends,Skateboarding,997371,74,19.99,Yes,Medium,No,Stylized,Neutral
+WK-10657,Pixel Society,Life Simulation,4090283,84,14.99,Yes,Low,No,Retro Pixel,Positive
+WK-10658,Grind & Slide,Skateboarding,1000647,88,29.99,Yes,Low,No,Stylized,Highly Positive
+WK-10659,Grind & Slide,Skateboarding,1000365,88,29.99,Yes,Low,No,Stylized,Highly Positive
+WK-10660,Grind & Slide,Skateboarding,968688,88,29.99,Yes,Low,No,Stylized,Highly Positive
+WK-10661,Skate Park Legends,Skateboarding,940893,74,19.99,Yes,Medium,No,Stylized,Neutral
+WK-10662,Cosy Valley,Life Simulation,4187615,92,24.99,No,Low,Yes,Stylized,Highly Positive
+WK-10663,Grind & Slide,Skateboarding,980283,88,29.99,Yes,Low,No,Stylized,Highly Positive
+WK-10664,Speedway Unlimited,Racing,3255459,78,59.99,No,High (Monthly),Yes,Photorealistic,Neutral
+WK-10665,Turbo Asphalt 9,Racing,3449934,81,59.99,No,Medium (Quarterly),Yes,Photorealistic,Positive
+WK-10666,Speedway Unlimited,Racing,3314229,78,59.99,No,High (Monthly),Yes,Photorealistic,Neutral
+WK-10667,TownLife,Life Simulation,15836910,68,0,Yes,Very High,Yes,Cartoonish,Mixed
+WK-10668,TownLife,Life Simulation,14097401,68,0,Yes,Very High,Yes,Cartoonish,Mixed
+WK-10669,Grind & Slide,Skateboarding,977163,88,29.99,Yes,Low,No,Stylized,Highly Positive
+WK-10670,TownLife,Life Simulation,15141428,68,0,Yes,Very High,Yes,Cartoonish,Mixed
+WK-10671,Pixel Society,Life Simulation,3957287,84,14.99,Yes,Low,No,Retro Pixel,Positive
+WK-10672,Pixel Society,Life Simulation,4064439,84,14.99,Yes,Low,No,Retro Pixel,Positive
+WK-10673,Grind & Slide,Skateboarding,949707,88,29.99,Yes,Low,No,Stylized,Highly Positive
+WK-10674,Grind & Slide,Skateboarding,933151,88,29.99,Yes,Low,No,Stylized,Highly Positive
+WK-10675,Grind & Slide,Skateboarding,1055571,88,29.99,Yes,Low,No,Stylized,Highly Positive
+WK-10676,Turbo Asphalt 9,Racing,3727641,81,59.99,No,Medium (Quarterly),Yes,Photorealistic,Positive
+WK-10677,Pixel Society,Life Simulation,3923260,84,14.99,Yes,Low,No,Retro Pixel,Positive
+WK-10678,Cosy Valley,Life Simulation,3853269,92,24.99,No,Low,Yes,Stylized,Highly Positive
+WK-10679,Pixel Society,Life Simulation,3883565,84,14.99,Yes,Low,No,Retro Pixel,Positive
+WK-10680,TownLife,Life Simulation,15780798,68,0,Yes,Very High,Yes,Cartoonish,Mixed
+WK-10681,Cosy Valley,Life Simulation,4050716,92,24.99,No,Low,Yes,Stylized,Highly Positive
+WK-10682,Cosy Valley,Life Simulation,3740631,92,24.99,No,Low,Yes,Stylized,Highly Positive
+WK-10683,Cosy Valley,Life Simulation,4122758,92,24.99,No,Low,Yes,Stylized,Highly Positive
+WK-10684,Speedway Unlimited,Racing,3448698,78,59.99,No,High (Monthly),Yes,Photorealistic,Neutral
+WK-10685,Speedway Unlimited,Racing,3371082,78,59.99,No,High (Monthly),Yes,Photorealistic,Neutral
+WK-10686,Cosy Valley,Life Simulation,3897656,92,24.99,No,Low,Yes,Stylized,Highly Positive
+WK-10687,Turbo Asphalt 9,Racing,3346350,81,59.99,No,Medium (Quarterly),Yes,Photorealistic,Positive
+WK-10688,Turbo Asphalt 9,Racing,3701554,81,59.99,No,Medium (Quarterly),Yes,Photorealistic,Positive
+WK-10689,Pixel Society,Life Simulation,4208333,84,14.99,Yes,Low,No,Retro Pixel,Positive
+WK-10690,TownLife,Life Simulation,14209175,68,0,Yes,Very High,Yes,Cartoonish,Mixed
+WK-10691,Skate Park Legends,Skateboarding,1047633,74,19.99,Yes,Medium,No,Stylized,Neutral
+WK-10692,TownLife,Life Simulation,14094546,68,0,Yes,Very High,Yes,Cartoonish,Mixed
+WK-10693,Skate Park Legends,Skateboarding,989458,74,19.99,Yes,Medium,No,Stylized,Neutral
+WK-10694,Grind & Slide,Skateboarding,936421,88,29.99,Yes,Low,No,Stylized,Highly Positive
+WK-10695,Grind & Slide,Skateboarding,1022353,88,29.99,Yes,Low,No,Stylized,Highly Positive
+WK-10696,Turbo Asphalt 9,Racing,3446205,81,59.99,No,Medium (Quarterly),Yes,Photorealistic,Positive
+WK-10697,Pixel Society,Life Simulation,3956020,84,14.99,Yes,Low,No,Retro Pixel,Positive
+WK-10698,Pixel Society,Life Simulation,3986868,84,14.99,Yes,Low,No,Retro Pixel,Positive
+WK-10699,TownLife,Life Simulation,14680690,68,0,Yes,Very High,Yes,Cartoonish,Mixed
+WK-10700,Turbo Asphalt 9,Racing,3539855,81,59.99,No,Medium (Quarterly),Yes,Photorealistic,Positive
+WK-10701,Grind & Slide,Skateboarding,955903,88,29.99,Yes,Low,No,Stylized,Highly Positive
+WK-10702,Skate Park Legends,Skateboarding,944225,74,19.99,Yes,Medium,No,Stylized,Neutral
+WK-10703,TownLife,Life Simulation,14831350,68,0,Yes,Very High,Yes,Cartoonish,Mixed
+WK-10704,Speedway Unlimited,Racing,3300262,78,59.99,No,High (Monthly),Yes,Photorealistic,Neutral
+WK-10705,Speedway Unlimited,Racing,3547068,78,59.99,No,High (Monthly),Yes,Photorealistic,Neutral
+WK-10706,Skate Park Legends,Skateboarding,993077,74,19.99,Yes,Medium,No,Stylized,Neutral
+WK-10707,Turbo Asphalt 9,Racing,3650535,81,59.99,No,Medium (Quarterly),Yes,Photorealistic,Positive
+WK-10708,TownLife,Life Simulation,15809322,68,0,Yes,Very High,Yes,Cartoonish,Mixed
+WK-10709,Pixel Society,Life Simulation,3888178,84,14.99,Yes,Low,No,Retro Pixel,Positive
+WK-10710,Grind & Slide,Skateboarding,948395,88,29.99,Yes,Low,No,Stylized,Highly Positive
+WK-10711,Grind & Slide,Skateboarding,1058852,88,29.99,Yes,Low,No,Stylized,Highly Positive
+WK-10712,Cosy Valley,Life Simulation,4135605,92,24.99,No,Low,Yes,Stylized,Highly Positive
+WK-10713,TownLife,Life Simulation,14761472,68,0,Yes,Very High,Yes,Cartoonish,Mixed
+WK-10714,Turbo Asphalt 9,Racing,3281927,81,59.99,No,Medium (Quarterly),Yes,Photorealistic,Positive
+WK-10715,Pixel Society,Life Simulation,3982718,84,14.99,Yes,Low,No,Retro Pixel,Positive
+WK-10716,Pixel Society,Life Simulation,3807342,84,14.99,Yes,Low,No,Retro Pixel,Positive
+WK-10717,Pixel Society,Life Simulation,3785289,84,14.99,Yes,Low,No,Retro Pixel,Positive
+WK-10718,Turbo Asphalt 9,Racing,3366771,81,59.99,No,Medium (Quarterly),Yes,Photorealistic,Positive
+WK-10719,Speedway Unlimited,Racing,3490264,78,59.99,No,High (Monthly),Yes,Photorealistic,Neutral
+WK-10720,TownLife,Life Simulation,15335685,68,0,Yes,Very High,Yes,Cartoonish,Mixed
+WK-10721,Pixel Society,Life Simulation,4172667,84,14.99,Yes,Low,No,Retro Pixel,Positive
+WK-10722,Turbo Asphalt 9,Racing,3558028,81,59.99,No,Medium (Quarterly),Yes,Photorealistic,Positive
+WK-10723,Speedway Unlimited,Racing,3700168,78,59.99,No,High (Monthly),Yes,Photorealistic,Neutral
+WK-10724,Skate Park Legends,Skateboarding,994160,74,19.99,Yes,Medium,No,Stylized,Neutral
+WK-10725,Speedway Unlimited,Racing,3617410,78,59.99,No,High (Monthly),Yes,Photorealistic,Neutral
+WK-10726,Pixel Society,Life Simulation,3998897,84,14.99,Yes,Low,No,Retro Pixel,Positive
+WK-10727,TownLife,Life Simulation,15983809,68,0,Yes,Very High,Yes,Cartoonish,Mixed
+WK-10728,Cosy Valley,Life Simulation,3906585,92,24.99,No,Low,Yes,Stylized,Highly Positive
+WK-10729,Skate Park Legends,Skateboarding,932764,74,19.99,Yes,Medium,No,Stylized,Neutral
+WK-10730,Pixel Society,Life Simulation,3746672,84,14.99,Yes,Low,No,Retro Pixel,Positive
+WK-10731,Skate Park Legends,Skateboarding,955786,74,19.99,Yes,Medium,No,Stylized,Neutral
+WK-10732,Turbo Asphalt 9,Racing,3734004,81,59.99,No,Medium (Quarterly),Yes,Photorealistic,Positive
+WK-10733,Cosy Valley,Life Simulation,4226505,92,24.99,No,Low,Yes,Stylized,Highly Positive
+WK-10734,Grind & Slide,Skateboarding,990962,88,29.99,Yes,Low,No,Stylized,Highly Positive
+WK-10735,Turbo Asphalt 9,Racing,3308759,81,59.99,No,Medium (Quarterly),Yes,Photorealistic,Positive
+WK-10736,Cosy Valley,Life Simulation,3783241,92,24.99,No,Low,Yes,Stylized,Highly Positive
+WK-10737,TownLife,Life Simulation,15082737,68,0,Yes,Very High,Yes,Cartoonish,Mixed
+WK-10738,Grind & Slide,Skateboarding,970198,88,29.99,Yes,Low,No,Stylized,Highly Positive
+WK-10739,Speedway Unlimited,Racing,3344754,78,59.99,No,High (Monthly),Yes,Photorealistic,Neutral
+WK-10740,Speedway Unlimited,Racing,3659081,78,59.99,No,High (Monthly),Yes,Photorealistic,Neutral
+WK-10741,Cosy Valley,Life Simulation,4282018,92,24.99,No,Low,Yes,Stylized,Highly Positive
+WK-10742,Speedway Unlimited,Racing,3726839,78,59.99,No,High (Monthly),Yes,Photorealistic,Neutral
+WK-10743,Grind & Slide,Skateboarding,936368,88,29.99,Yes,Low,No,Stylized,Highly Positive
+WK-10744,Turbo Asphalt 9,Racing,3265610,81,59.99,No,Medium (Quarterly),Yes,Photorealistic,Positive
+WK-10745,Cosy Valley,Life Simulation,4213445,92,24.99,No,Low,Yes,Stylized,Highly Positive
+WK-10746,Grind & Slide,Skateboarding,1011455,88,29.99,Yes,Low,No,Stylized,Highly Positive
+WK-10747,Speedway Unlimited,Racing,3728256,78,59.99,No,High (Monthly),Yes,Photorealistic,Neutral
+WK-10748,TownLife,Life Simulation,15947642,68,0,Yes,Very High,Yes,Cartoonish,Mixed
+WK-10749,Skate Park Legends,Skateboarding,1047029,74,19.99,Yes,Medium,No,Stylized,Neutral
+WK-10750,Cosy Valley,Life Simulation,3746900,92,24.99,No,Low,Yes,Stylized,Highly Positive
+WK-10751,Turbo Asphalt 9,Racing,3324965,81,59.99,No,Medium (Quarterly),Yes,Photorealistic,Positive
+WK-10752,Pixel Society,Life Simulation,3831863,84,14.99,Yes,Low,No,Retro Pixel,Positive
+WK-10753,Grind & Slide,Skateboarding,1063268,88,29.99,Yes,Low,No,Stylized,Highly Positive
+WK-10754,Skate Park Legends,Skateboarding,1056739,74,19.99,Yes,Medium,No,Stylized,Neutral
+WK-10755,Grind & Slide,Skateboarding,992459,88,29.99,Yes,Low,No,Stylized,Highly Positive
+WK-10756,TownLife,Life Simulation,14976283,68,0,Yes,Very High,Yes,Cartoonish,Mixed
+WK-10757,Cosy Valley,Life Simulation,3825746,92,24.99,No,Low,Yes,Stylized,Highly Positive
+WK-10758,Cosy Valley,Life Simulation,4252439,92,24.99,No,Low,Yes,Stylized,Highly Positive
+WK-10759,Skate Park Legends,Skateboarding,1064433,74,19.99,Yes,Medium,No,Stylized,Neutral
+WK-10760,Grind & Slide,Skateboarding,974091,88,29.99,Yes,Low,No,Stylized,Highly Positive
+WK-10761,Pixel Society,Life Simulation,3889007,84,14.99,Yes,Low,No,Retro Pixel,Positive
+WK-10762,TownLife,Life Simulation,14611902,68,0,Yes,Very High,Yes,Cartoonish,Mixed
+WK-10763,Pixel Society,Life Simulation,4297770,84,14.99,Yes,Low,No,Retro Pixel,Positive
+WK-10764,Skate Park Legends,Skateboarding,962541,74,19.99,Yes,Medium,No,Stylized,Neutral
+WK-10765,TownLife,Life Simulation,14840918,68,0,Yes,Very High,Yes,Cartoonish,Mixed
+WK-10766,TownLife,Life Simulation,15588248,68,0,Yes,Very High,Yes,Cartoonish,Mixed
+WK-10767,Skate Park Legends,Skateboarding,1003479,74,19.99,Yes,Medium,No,Stylized,Neutral
+WK-10768,Grind & Slide,Skateboarding,1045908,88,29.99,Yes,Low,No,Stylized,Highly Positive
+WK-10769,Speedway Unlimited,Racing,3635866,78,59.99,No,High (Monthly),Yes,Photorealistic,Neutral
+WK-10770,Grind & Slide,Skateboarding,1054599,88,29.99,Yes,Low,No,Stylized,Highly Positive
+WK-10771,Skate Park Legends,Skateboarding,1048864,74,19.99,Yes,Medium,No,Stylized,Neutral
+WK-10772,Cosy Valley,Life Simulation,4094351,92,24.99,No,Low,Yes,Stylized,Highly Positive
+WK-10773,Turbo Asphalt 9,Racing,3396549,81,59.99,No,Medium (Quarterly),Yes,Photorealistic,Positive
+WK-10774,Pixel Society,Life Simulation,4261286,84,14.99,Yes,Low,No,Retro Pixel,Positive
+WK-10775,Grind & Slide,Skateboarding,1073528,88,29.99,Yes,Low,No,Stylized,Highly Positive
+WK-10776,Skate Park Legends,Skateboarding,1002569,74,19.99,Yes,Medium,No,Stylized,Neutral
+WK-10777,Turbo Asphalt 9,Racing,3634527,81,59.99,No,Medium (Quarterly),Yes,Photorealistic,Positive
+WK-10778,Speedway Unlimited,Racing,3721104,78,59.99,No,High (Monthly),Yes,Photorealistic,Neutral
+WK-10779,Pixel Society,Life Simulation,4012691,84,14.99,Yes,Low,No,Retro Pixel,Positive
+WK-10780,TownLife,Life Simulation,14452743,68,0,Yes,Very High,Yes,Cartoonish,Mixed
+WK-10781,Turbo Asphalt 9,Racing,3554842,81,59.99,No,Medium (Quarterly),Yes,Photorealistic,Positive
+WK-10782,Skate Park Legends,Skateboarding,953672,74,19.99,Yes,Medium,No,Stylized,Neutral
+WK-10783,Speedway Unlimited,Racing,3565440,78,59.99,No,High (Monthly),Yes,Photorealistic,Neutral
+WK-10784,Pixel Society,Life Simulation,3796344,84,14.99,Yes,Low,No,Retro Pixel,Positive
+WK-10785,Speedway Unlimited,Racing,3285732,78,59.99,No,High (Monthly),Yes,Photorealistic,Neutral
+WK-10786,Skate Park Legends,Skateboarding,1024186,74,19.99,Yes,Medium,No,Stylized,Neutral
+WK-10787,Speedway Unlimited,Racing,3650426,78,59.99,No,High (Monthly),Yes,Photorealistic,Neutral
+WK-10788,TownLife,Life Simulation,15434792,68,0,Yes,Very High,Yes,Cartoonish,Mixed
+WK-10789,Turbo Asphalt 9,Racing,3578219,81,59.99,No,Medium (Quarterly),Yes,Photorealistic,Positive
+WK-10790,Grind & Slide,Skateboarding,976034,88,29.99,Yes,Low,No,Stylized,Highly Positive
+WK-10791,Grind & Slide,Skateboarding,976461,88,29.99,Yes,Low,No,Stylized,Highly Positive
+WK-10792,TownLife,Life Simulation,14205075,68,0,Yes,Very High,Yes,Cartoonish,Mixed
+WK-10793,Cosy Valley,Life Simulation,4201697,92,24.99,No,Low,Yes,Stylized,Highly Positive
+WK-10794,Speedway Unlimited,Racing,3303571,78,59.99,No,High (Monthly),Yes,Photorealistic,Neutral
+WK-10795,Grind & Slide,Skateboarding,1069014,88,29.99,Yes,Low,No,Stylized,Highly Positive
+WK-10796,Skate Park Legends,Skateboarding,990272,74,19.99,Yes,Medium,No,Stylized,Neutral
+WK-10797,Turbo Asphalt 9,Racing,3259016,81,59.99,No,Medium (Quarterly),Yes,Photorealistic,Positive
+WK-10798,TownLife,Life Simulation,16000096,68,0,Yes,Very High,Yes,Cartoonish,Mixed
+WK-10799,Pixel Society,Life Simulation,4039832,84,14.99,Yes,Low,No,Retro Pixel,Positive
+WK-10800,Speedway Unlimited,Racing,3278139,78,59.99,No,High (Monthly),Yes,Photorealistic,Neutral
+WK-10801,Skate Park Legends,Skateboarding,1013693,74,19.99,Yes,Medium,No,Stylized,Neutral
+WK-10802,Cosy Valley,Life Simulation,3825092,92,24.99,No,Low,Yes,Stylized,Highly Positive
+WK-10803,Speedway Unlimited,Racing,3519615,78,59.99,No,High (Monthly),Yes,Photorealistic,Neutral
+WK-10804,Skate Park Legends,Skateboarding,1065979,74,19.99,Yes,Medium,No,Stylized,Neutral
+WK-10805,TownLife,Life Simulation,14197422,68,0,Yes,Very High,Yes,Cartoonish,Mixed
+WK-10806,TownLife,Life Simulation,14601163,68,0,Yes,Very High,Yes,Cartoonish,Mixed
+WK-10807,Turbo Asphalt 9,Racing,3413129,81,59.99,No,Medium (Quarterly),Yes,Photorealistic,Positive
+WK-10808,Speedway Unlimited,Racing,3365491,78,59.99,No,High (Monthly),Yes,Photorealistic,Neutral
+WK-10809,Turbo Asphalt 9,Racing,3366546,81,59.99,No,Medium (Quarterly),Yes,Photorealistic,Positive
+WK-10810,Speedway Unlimited,Racing,3250482,78,59.99,No,High (Monthly),Yes,Photorealistic,Neutral
+WK-10811,Cosy Valley,Life Simulation,3777969,92,24.99,No,Low,Yes,Stylized,Highly Positive
+WK-10812,Pixel Society,Life Simulation,4157778,84,14.99,Yes,Low,No,Retro Pixel,Positive
+WK-10813,Cosy Valley,Life Simulation,3809197,92,24.99,No,Low,Yes,Stylized,Highly Positive
+WK-10814,Grind & Slide,Skateboarding,994351,88,29.99,Yes,Low,No,Stylized,Highly Positive
+WK-10815,Skate Park Legends,Skateboarding,1059747,74,19.99,Yes,Medium,No,Stylized,Neutral
+WK-10816,Skate Park Legends,Skateboarding,1032028,74,19.99,Yes,Medium,No,Stylized,Neutral
+WK-10817,Turbo Asphalt 9,Racing,3251938,81,59.99,No,Medium (Quarterly),Yes,Photorealistic,Positive
+WK-10818,Grind & Slide,Skateboarding,1014054,88,29.99,Yes,Low,No,Stylized,Highly Positive
+WK-10819,Cosy Valley,Life Simulation,3975842,92,24.99,No,Low,Yes,Stylized,Highly Positive
+WK-10820,Speedway Unlimited,Racing,3753329,78,59.99,No,High (Monthly),Yes,Photorealistic,Neutral
+WK-10821,Skate Park Legends,Skateboarding,1059899,74,19.99,Yes,Medium,No,Stylized,Neutral
+WK-10822,Pixel Society,Life Simulation,4120680,84,14.99,Yes,Low,No,Retro Pixel,Positive
+WK-10823,Turbo Asphalt 9,Racing,3488644,81,59.99,No,Medium (Quarterly),Yes,Photorealistic,Positive
+WK-10824,Skate Park Legends,Skateboarding,1026978,74,19.99,Yes,Medium,No,Stylized,Neutral
+WK-10825,Cosy Valley,Life Simulation,4189515,92,24.99,No,Low,Yes,Stylized,Highly Positive
+WK-10826,Grind & Slide,Skateboarding,1019054,88,29.99,Yes,Low,No,Stylized,Highly Positive
+WK-10827,Cosy Valley,Life Simulation,3962089,92,24.99,No,Low,Yes,Stylized,Highly Positive
+WK-10828,Turbo Asphalt 9,Racing,3273235,81,59.99,No,Medium (Quarterly),Yes,Photorealistic,Positive
+WK-10829,Speedway Unlimited,Racing,3598112,78,59.99,No,High (Monthly),Yes,Photorealistic,Neutral
+WK-10830,Grind & Slide,Skateboarding,1027694,88,29.99,Yes,Low,No,Stylized,Highly Positive
+WK-10831,Pixel Society,Life Simulation,4293689,84,14.99,Yes,Low,No,Retro Pixel,Positive
+WK-10832,Speedway Unlimited,Racing,3701044,78,59.99,No,High (Monthly),Yes,Photorealistic,Neutral
+WK-10833,Skate Park Legends,Skateboarding,1011836,74,19.99,Yes,Medium,No,Stylized,Neutral
+WK-10834,Turbo Asphalt 9,Racing,3507122,81,59.99,No,Medium (Quarterly),Yes,Photorealistic,Positive
+WK-10835,TownLife,Life Simulation,14421313,68,0,Yes,Very High,Yes,Cartoonish,Mixed
+WK-10836,Pixel Society,Life Simulation,3748351,84,14.99,Yes,Low,No,Retro Pixel,Positive
+WK-10837,Grind & Slide,Skateboarding,976977,88,29.99,Yes,Low,No,Stylized,Highly Positive
+WK-10838,Speedway Unlimited,Racing,3464563,78,59.99,No,High (Monthly),Yes,Photorealistic,Neutral
+WK-10839,Pixel Society,Life Simulation,3972364,84,14.99,Yes,Low,No,Retro Pixel,Positive
+WK-10840,Skate Park Legends,Skateboarding,957373,74,19.99,Yes,Medium,No,Stylized,Neutral
+WK-10841,Turbo Asphalt 9,Racing,3348997,81,59.99,No,Medium (Quarterly),Yes,Photorealistic,Positive
+WK-10842,TownLife,Life Simulation,16096507,68,0,Yes,Very High,Yes,Cartoonish,Mixed
+WK-10843,TownLife,Life Simulation,14868581,68,0,Yes,Very High,Yes,Cartoonish,Mixed
+WK-10844,Turbo Asphalt 9,Racing,3561761,81,59.99,No,Medium (Quarterly),Yes,Photorealistic,Positive
+WK-10845,Cosy Valley,Life Simulation,3743498,92,24.99,No,Low,Yes,Stylized,Highly Positive
+WK-10846,Speedway Unlimited,Racing,3473309,78,59.99,No,High (Monthly),Yes,Photorealistic,Neutral
+WK-10847,Pixel Society,Life Simulation,3834290,84,14.99,Yes,Low,No,Retro Pixel,Positive
+WK-10848,TownLife,Life Simulation,14087463,68,0,Yes,Very High,Yes,Cartoonish,Mixed
+WK-10849,Grind & Slide,Skateboarding,993775,88,29.99,Yes,Low,No,Stylized,Highly Positive
+WK-10850,Turbo Asphalt 9,Racing,3739017,81,59.99,No,Medium (Quarterly),Yes,Photorealistic,Positive
+WK-10851,Turbo Asphalt 9,Racing,3485218,81,59.99,No,Medium (Quarterly),Yes,Photorealistic,Positive
+WK-10852,TownLife,Life Simulation,14522328,68,0,Yes,Very High,Yes,Cartoonish,Mixed
+WK-10853,Speedway Unlimited,Racing,3717907,78,59.99,No,High (Monthly),Yes,Photorealistic,Neutral
+WK-10854,Skate Park Legends,Skateboarding,962109,74,19.99,Yes,Medium,No,Stylized,Neutral
+WK-10855,TownLife,Life Simulation,14879427,68,0,Yes,Very High,Yes,Cartoonish,Mixed
+WK-10856,Speedway Unlimited,Racing,3301549,78,59.99,No,High (Monthly),Yes,Photorealistic,Neutral
+WK-10857,Pixel Society,Life Simulation,4064444,84,14.99,Yes,Low,No,Retro Pixel,Positive
+WK-10858,Skate Park Legends,Skateboarding,935891,74,19.99,Yes,Medium,No,Stylized,Neutral
+WK-10859,Skate Park Legends,Skateboarding,1009177,74,19.99,Yes,Medium,No,Stylized,Neutral
+WK-10860,Grind & Slide,Skateboarding,930003,88,29.99,Yes,Low,No,Stylized,Highly Positive
+WK-10861,Grind & Slide,Skateboarding,991414,88,29.99,Yes,Low,No,Stylized,Highly Positive
+WK-10862,Turbo Asphalt 9,Racing,3470047,81,59.99,No,Medium (Quarterly),Yes,Photorealistic,Positive
+WK-10863,Cosy Valley,Life Simulation,4042975,92,24.99,No,Low,Yes,Stylized,Highly Positive
+WK-10864,TownLife,Life Simulation,14099449,68,0,Yes,Very High,Yes,Cartoonish,Mixed
+WK-10865,Speedway Unlimited,Racing,3649773,78,59.99,No,High (Monthly),Yes,Photorealistic,Neutral
+WK-10866,Pixel Society,Life Simulation,4142715,84,14.99,Yes,Low,No,Retro Pixel,Positive
+WK-10867,TownLife,Life Simulation,14159401,68,0,Yes,Very High,Yes,Cartoonish,Mixed
+WK-10868,TownLife,Life Simulation,14995548,68,0,Yes,Very High,Yes,Cartoonish,Mixed
+WK-10869,Cosy Valley,Life Simulation,4237872,92,24.99,No,Low,Yes,Stylized,Highly Positive
+WK-10870,Grind & Slide,Skateboarding,955451,88,29.99,Yes,Low,No,Stylized,Highly Positive
+WK-10871,Pixel Society,Life Simulation,4131167,84,14.99,Yes,Low,No,Retro Pixel,Positive
+WK-10872,TownLife,Life Simulation,15673015,68,0,Yes,Very High,Yes,Cartoonish,Mixed
+WK-10873,Skate Park Legends,Skateboarding,928635,74,19.99,Yes,Medium,No,Stylized,Neutral
+WK-10874,Skate Park Legends,Skateboarding,1026215,74,19.99,Yes,Medium,No,Stylized,Neutral
+WK-10875,Cosy Valley,Life Simulation,3888239,92,24.99,No,Low,Yes,Stylized,Highly Positive
+WK-10876,Speedway Unlimited,Racing,3670594,78,59.99,No,High (Monthly),Yes,Photorealistic,Neutral
+WK-10877,Cosy Valley,Life Simulation,3763068,92,24.99,No,Low,Yes,Stylized,Highly Positive
+WK-10878,Cosy Valley,Life Simulation,3948988,92,24.99,No,Low,Yes,Stylized,Highly Positive
+WK-10879,Turbo Asphalt 9,Racing,3530889,81,59.99,No,Medium (Quarterly),Yes,Photorealistic,Positive
+WK-10880,Turbo Asphalt 9,Racing,3325095,81,59.99,No,Medium (Quarterly),Yes,Photorealistic,Positive
+WK-10881,Speedway Unlimited,Racing,3331720,78,59.99,No,High (Monthly),Yes,Photorealistic,Neutral
+WK-10882,Grind & Slide,Skateboarding,1029238,88,29.99,Yes,Low,No,Stylized,Highly Positive
+WK-10883,Cosy Valley,Life Simulation,4236823,92,24.99,No,Low,Yes,Stylized,Highly Positive
+WK-10884,TownLife,Life Simulation,14964948,68,0,Yes,Very High,Yes,Cartoonish,Mixed
+WK-10885,Turbo Asphalt 9,Racing,3372782,81,59.99,No,Medium (Quarterly),Yes,Photorealistic,Positive
+WK-10886,Speedway Unlimited,Racing,3568456,78,59.99,No,High (Monthly),Yes,Photorealistic,Neutral
+WK-10887,Skate Park Legends,Skateboarding,928025,74,19.99,Yes,Medium,No,Stylized,Neutral
+WK-10888,Cosy Valley,Life Simulation,3759315,92,24.99,No,Low,Yes,Stylized,Highly Positive
+WK-10889,Turbo Asphalt 9,Racing,3495933,81,59.99,No,Medium (Quarterly),Yes,Photorealistic,Positive
+WK-10890,Skate Park Legends,Skateboarding,969821,74,19.99,Yes,Medium,No,Stylized,Neutral
+WK-10891,Grind & Slide,Skateboarding,1001033,88,29.99,Yes,Low,No,Stylized,Highly Positive
+WK-10892,Turbo Asphalt 9,Racing,3702144,81,59.99,No,Medium (Quarterly),Yes,Photorealistic,Positive
+WK-10893,Grind & Slide,Skateboarding,942787,88,29.99,Yes,Low,No,Stylized,Highly Positive
+WK-10894,Speedway Unlimited,Racing,3538119,78,59.99,No,High (Monthly),Yes,Photorealistic,Neutral
+WK-10895,Cosy Valley,Life Simulation,4254344,92,24.99,No,Low,Yes,Stylized,Highly Positive
+WK-10896,Cosy Valley,Life Simulation,4251652,92,24.99,No,Low,Yes,Stylized,Highly Positive
+WK-10897,Pixel Society,Life Simulation,4110368,84,14.99,Yes,Low,No,Retro Pixel,Positive
+WK-10898,Skate Park Legends,Skateboarding,967018,74,19.99,Yes,Medium,No,Stylized,Neutral
+WK-10899,TownLife,Life Simulation,13903485,68,0,Yes,Very High,Yes,Cartoonish,Mixed
+WK-10900,Grind & Slide,Skateboarding,925876,88,29.99,Yes,Low,No,Stylized,Highly Positive
+WK-10901,Skate Park Legends,Skateboarding,1060897,74,19.99,Yes,Medium,No,Stylized,Neutral
+WK-10902,Cosy Valley,Life Simulation,4221948,92,24.99,No,Low,Yes,Stylized,Highly Positive
+WK-10903,Speedway Unlimited,Racing,3671765,78,59.99,No,High (Monthly),Yes,Photorealistic,Neutral
+WK-10904,TownLife,Life Simulation,15257981,68,0,Yes,Very High,Yes,Cartoonish,Mixed
+WK-10905,Grind & Slide,Skateboarding,927081,88,29.99,Yes,Low,No,Stylized,Highly Positive
+WK-10906,TownLife,Life Simulation,14942111,68,0,Yes,Very High,Yes,Cartoonish,Mixed
+WK-10907,TownLife,Life Simulation,14809193,68,0,Yes,Very High,Yes,Cartoonish,Mixed
+WK-10908,Grind & Slide,Skateboarding,1040358,88,29.99,Yes,Low,No,Stylized,Highly Positive
+WK-10909,Skate Park Legends,Skateboarding,1070481,74,19.99,Yes,Medium,No,Stylized,Neutral
+WK-10910,Turbo Asphalt 9,Racing,3601544,81,59.99,No,Medium (Quarterly),Yes,Photorealistic,Positive
+WK-10911,TownLife,Life Simulation,15294828,68,0,Yes,Very High,Yes,Cartoonish,Mixed
+WK-10912,Skate Park Legends,Skateboarding,946066,74,19.99,Yes,Medium,No,Stylized,Neutral
+WK-10913,Cosy Valley,Life Simulation,4010522,92,24.99,No,Low,Yes,Stylized,Highly Positive
+WK-10914,Speedway Unlimited,Racing,3760169,78,59.99,No,High (Monthly),Yes,Photorealistic,Neutral
+WK-10915,Pixel Society,Life Simulation,3827527,84,14.99,Yes,Low,No,Retro Pixel,Positive
+WK-10916,Turbo Asphalt 9,Racing,3359506,81,59.99,No,Medium (Quarterly),Yes,Photorealistic,Positive
+WK-10917,TownLife,Life Simulation,14038788,68,0,Yes,Very High,Yes,Cartoonish,Mixed
+WK-10918,Pixel Society,Life Simulation,3892672,84,14.99,Yes,Low,No,Retro Pixel,Positive
+WK-10919,Turbo Asphalt 9,Racing,3522990,81,59.99,No,Medium (Quarterly),Yes,Photorealistic,Positive
+WK-10920,Turbo Asphalt 9,Racing,3239197,81,59.99,No,Medium (Quarterly),Yes,Photorealistic,Positive
+WK-10921,Skate Park Legends,Skateboarding,982705,74,19.99,Yes,Medium,No,Stylized,Neutral
+WK-10922,Turbo Asphalt 9,Racing,3652714,81,59.99,No,Medium (Quarterly),Yes,Photorealistic,Positive
+WK-10923,TownLife,Life Simulation,14490677,68,0,Yes,Very High,Yes,Cartoonish,Mixed
+WK-10924,Speedway Unlimited,Racing,3753264,78,59.99,No,High (Monthly),Yes,Photorealistic,Neutral
+WK-10925,Speedway Unlimited,Racing,3319499,78,59.99,No,High (Monthly),Yes,Photorealistic,Neutral
+WK-10926,Grind & Slide,Skateboarding,1010398,88,29.99,Yes,Low,No,Stylized,Highly Positive
+WK-10927,Pixel Society,Life Simulation,3847147,84,14.99,Yes,Low,No,Retro Pixel,Positive
+WK-10928,Turbo Asphalt 9,Racing,3726708,81,59.99,No,Medium (Quarterly),Yes,Photorealistic,Positive
+WK-10929,Grind & Slide,Skateboarding,967170,88,29.99,Yes,Low,No,Stylized,Highly Positive
+WK-10930,Speedway Unlimited,Racing,3360102,78,59.99,No,High (Monthly),Yes,Photorealistic,Neutral
+WK-10931,Cosy Valley,Life Simulation,3775373,92,24.99,No,Low,Yes,Stylized,Highly Positive
+WK-10932,Pixel Society,Life Simulation,4298946,84,14.99,Yes,Low,No,Retro Pixel,Positive
+WK-10933,TownLife,Life Simulation,15173438,68,0,Yes,Very High,Yes,Cartoonish,Mixed
+WK-10934,Cosy Valley,Life Simulation,3731176,92,24.99,No,Low,Yes,Stylized,Highly Positive
+WK-10935,Grind & Slide,Skateboarding,982992,88,29.99,Yes,Low,No,Stylized,Highly Positive
+WK-10936,TownLife,Life Simulation,15623035,68,0,Yes,Very High,Yes,Cartoonish,Mixed
+WK-10937,Turbo Asphalt 9,Racing,3711432,81,59.99,No,Medium (Quarterly),Yes,Photorealistic,Positive
+WK-10938,TownLife,Life Simulation,14057788,68,0,Yes,Very High,Yes,Cartoonish,Mixed
+WK-10939,Turbo Asphalt 9,Racing,3756470,81,59.99,No,Medium (Quarterly),Yes,Photorealistic,Positive
+WK-10940,Grind & Slide,Skateboarding,936014,88,29.99,Yes,Low,No,Stylized,Highly Positive
+WK-10941,Cosy Valley,Life Simulation,4103011,92,24.99,No,Low,Yes,Stylized,Highly Positive
+WK-10942,Speedway Unlimited,Racing,3308806,78,59.99,No,High (Monthly),Yes,Photorealistic,Neutral
+WK-10943,Cosy Valley,Life Simulation,3824955,92,24.99,No,Low,Yes,Stylized,Highly Positive
+WK-10944,Grind & Slide,Skateboarding,982822,88,29.99,Yes,Low,No,Stylized,Highly Positive
+WK-10945,TownLife,Life Simulation,14585700,68,0,Yes,Very High,Yes,Cartoonish,Mixed
+WK-10946,Speedway Unlimited,Racing,3548754,78,59.99,No,High (Monthly),Yes,Photorealistic,Neutral
+WK-10947,TownLife,Life Simulation,15102280,68,0,Yes,Very High,Yes,Cartoonish,Mixed
+WK-10948,Pixel Society,Life Simulation,4206523,84,14.99,Yes,Low,No,Retro Pixel,Positive
+WK-10949,Cosy Valley,Life Simulation,4151163,92,24.99,No,Low,Yes,Stylized,Highly Positive
+WK-10950,Cosy Valley,Life Simulation,4090559,92,24.99,No,Low,Yes,Stylized,Highly Positive
+WK-10951,Pixel Society,Life Simulation,4176338,84,14.99,Yes,Low,No,Retro Pixel,Positive
+WK-10952,Pixel Society,Life Simulation,4228559,84,14.99,Yes,Low,No,Retro Pixel,Positive
+WK-10953,Turbo Asphalt 9,Racing,3706725,81,59.99,No,Medium (Quarterly),Yes,Photorealistic,Positive
+WK-10954,Grind & Slide,Skateboarding,1047351,88,29.99,Yes,Low,No,Stylized,Highly Positive
+WK-10955,Cosy Valley,Life Simulation,3715700,92,24.99,No,Low,Yes,Stylized,Highly Positive
+WK-10956,TownLife,Life Simulation,14995521,68,0,Yes,Very High,Yes,Cartoonish,Mixed
+WK-10957,Skate Park Legends,Skateboarding,1033155,74,19.99,Yes,Medium,No,Stylized,Neutral
+WK-10958,Skate Park Legends,Skateboarding,942165,74,19.99,Yes,Medium,No,Stylized,Neutral
+WK-10959,TownLife,Life Simulation,14954920,68,0,Yes,Very High,Yes,Cartoonish,Mixed
+WK-10960,Turbo Asphalt 9,Racing,3587788,81,59.99,No,Medium (Quarterly),Yes,Photorealistic,Positive
+WK-10961,Cosy Valley,Life Simulation,3783184,92,24.99,No,Low,Yes,Stylized,Highly Positive
+WK-10962,Turbo Asphalt 9,Racing,3684078,81,59.99,No,Medium (Quarterly),Yes,Photorealistic,Positive
+WK-10963,Skate Park Legends,Skateboarding,1047875,74,19.99,Yes,Medium,No,Stylized,Neutral
+WK-10964,TownLife,Life Simulation,15986671,68,0,Yes,Very High,Yes,Cartoonish,Mixed
+WK-10965,Cosy Valley,Life Simulation,4250130,92,24.99,No,Low,Yes,Stylized,Highly Positive
+WK-10966,Pixel Society,Life Simulation,4233595,84,14.99,Yes,Low,No,Retro Pixel,Positive
+WK-10967,Pixel Society,Life Simulation,4251070,84,14.99,Yes,Low,No,Retro Pixel,Positive
+WK-10968,TownLife,Life Simulation,15720951,68,0,Yes,Very High,Yes,Cartoonish,Mixed
+WK-10969,Pixel Society,Life Simulation,4190602,84,14.99,Yes,Low,No,Retro Pixel,Positive
+WK-10970,Pixel Society,Life Simulation,3810408,84,14.99,Yes,Low,No,Retro Pixel,Positive
+WK-10971,Cosy Valley,Life Simulation,3804395,92,24.99,No,Low,Yes,Stylized,Highly Positive
+WK-10972,TownLife,Life Simulation,14757678,68,0,Yes,Very High,Yes,Cartoonish,Mixed
+WK-10973,Cosy Valley,Life Simulation,3814249,92,24.99,No,Low,Yes,Stylized,Highly Positive
+WK-10974,Pixel Society,Life Simulation,4126758,84,14.99,Yes,Low,No,Retro Pixel,Positive
+WK-10975,Pixel Society,Life Simulation,4126883,84,14.99,Yes,Low,No,Retro Pixel,Positive
+WK-10976,Grind & Slide,Skateboarding,967580,88,29.99,Yes,Low,No,Stylized,Highly Positive
+WK-10977,TownLife,Life Simulation,14409116,68,0,Yes,Very High,Yes,Cartoonish,Mixed
+WK-10978,Skate Park Legends,Skateboarding,1054688,74,19.99,Yes,Medium,No,Stylized,Neutral
+WK-10979,Cosy Valley,Life Simulation,3908243,92,24.99,No,Low,Yes,Stylized,Highly Positive
+WK-10980,Grind & Slide,Skateboarding,1072384,88,29.99,Yes,Low,No,Stylized,Highly Positive
+WK-10981,TownLife,Life Simulation,15548087,68,0,Yes,Very High,Yes,Cartoonish,Mixed
+WK-10982,Cosy Valley,Life Simulation,3970048,92,24.99,No,Low,Yes,Stylized,Highly Positive
+WK-10983,Speedway Unlimited,Racing,3512815,78,59.99,No,High (Monthly),Yes,Photorealistic,Neutral
+WK-10984,Grind & Slide,Skateboarding,1032352,88,29.99,Yes,Low,No,Stylized,Highly Positive
+WK-10985,Turbo Asphalt 9,Racing,3273207,81,59.99,No,Medium (Quarterly),Yes,Photorealistic,Positive
+WK-10986,Grind & Slide,Skateboarding,1010187,88,29.99,Yes,Low,No,Stylized,Highly Positive
+WK-10987,Skate Park Legends,Skateboarding,1064380,74,19.99,Yes,Medium,No,Stylized,Neutral
+WK-10988,Skate Park Legends,Skateboarding,1023817,74,19.99,Yes,Medium,No,Stylized,Neutral
+WK-10989,Grind & Slide,Skateboarding,1048118,88,29.99,Yes,Low,No,Stylized,Highly Positive
+WK-10990,Cosy Valley,Life Simulation,4062388,92,24.99,No,Low,Yes,Stylized,Highly Positive
+WK-10991,Pixel Society,Life Simulation,3930759,84,14.99,Yes,Low,No,Retro Pixel,Positive
+WK-10992,Turbo Asphalt 9,Racing,3590188,81,59.99,No,Medium (Quarterly),Yes,Photorealistic,Positive
+WK-10993,Skate Park Legends,Skateboarding,925327,74,19.99,Yes,Medium,No,Stylized,Neutral
+WK-10994,Grind & Slide,Skateboarding,1041955,88,29.99,Yes,Low,No,Stylized,Highly Positive
+WK-10995,Pixel Society,Life Simulation,4169585,84,14.99,Yes,Low,No,Retro Pixel,Positive
+WK-10996,Turbo Asphalt 9,Racing,3441923,81,59.99,No,Medium (Quarterly),Yes,Photorealistic,Positive
+WK-10997,Pixel Society,Life Simulation,3915002,84,14.99,Yes,Low,No,Retro Pixel,Positive
+WK-10998,Skate Park Legends,Skateboarding,967719,74,19.99,Yes,Medium,No,Stylized,Neutral
+WK-10999,Skate Park Legends,Skateboarding,1046978,74,19.99,Yes,Medium,No,Stylized,Neutral
+WK-11000,TownLife,Life Simulation,15007716,68,0,Yes,Very High,Yes,Cartoonish,Mixed

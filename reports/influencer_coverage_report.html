@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Strategic Brief: Video Creator & Streamer Coverage Study — Pulse Analytics Agency</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,300;0,400;0,700;1,300&family=Source+Sans+3:wght@300;400;600;700&family=Source+Code+Pro:wght@400;500&display=swap');
+
+  :root {
+    --ink: #12120f;
+    --ink-mid: #3c3b36;
+    --ink-light: #7a7a6e;
+    --rule: #d8d6cd;
+    --rule-light: #eeecea;
+    --primary: #2c4a1e;
+    --primary-mid: #3d6829;
+    --primary-light: #eaf2e4;
+    --accent2: #8b2500;
+    --accent2-pale: #fdf0ea;
+    --gold: #8a6e00;
+    --gold-pale: #fdf8e3;
+    --steel: #2a3d52;
+    --steel-pale: #eaf0f6;
+    --page: #f9f8f5;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 9.5pt;
+    line-height: 1.65;
+    color: var(--ink);
+    background: #dddbd4;
+  }
+
+  .page {
+    max-width: 870px;
+    margin: 32px auto;
+    background: var(--page);
+    box-shadow: 0 2px 24px rgba(0,0,0,0.15);
+  }
+
+  /* ── COVER ─────────────────────────────────────────── */
+  .cover {
+    background: var(--primary);
+    padding: 60px 64px 50px;
+    color: white;
+    position: relative;
+    overflow: hidden;
+  }
+  .cover::after {
+    content:'';
+    position:absolute; bottom:0; right:0; width:200px; height:200px;
+    background: rgba(255,255,255,0.04);
+    border-radius: 50% 0 0 0;
+  }
+  .cover-stripe {
+    width: 48px;
+    height: 4px;
+    background: rgba(255,255,255,0.5);
+    margin-bottom: 24px;
+  }
+  .cover-agency {
+    font-family: 'Source Code Pro', monospace;
+    font-size: 7pt;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    opacity: 0.65;
+    margin-bottom: 20px;
+  }
+  .cover h1 {
+    font-family: 'Bitter', serif;
+    font-size: 26pt;
+    font-weight: 700;
+    line-height: 1.15;
+    margin-bottom: 14px;
+  }
+  .cover h1 em { font-style: italic; font-weight: 300; display: block; font-size: 18pt; margin-bottom: 4px; }
+  .cover-desc {
+    font-size: 10.5pt;
+    font-weight: 300;
+    opacity: 0.8;
+    max-width: 520px;
+    line-height: 1.6;
+    margin-bottom: 40px;
+  }
+  .cover-grid {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 0;
+    border-top: 1px solid rgba(255,255,255,0.2);
+    padding-top: 28px;
+  }
+  .cover-grid-item {
+    padding: 0 20px 0 0;
+    border-right: 1px solid rgba(255,255,255,0.15);
+    margin-right: 20px;
+  }
+  .cover-grid-item:last-child { border: none; }
+  .cover-grid-item label {
+    display: block;
+    font-family: 'Source Code Pro', monospace;
+    font-size: 6pt;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    opacity: 0.55;
+    margin-bottom: 5px;
+  }
+  .cover-grid-item span { font-size: 8.5pt; opacity: 0.9; }
+
+  /* ── BODY ─────────────────────────────────────────── */
+  .body-wrap { padding: 52px 64px 64px; }
+
+  /* ── TOC ─────────────────────────────────────────── */
+  .toc {
+    border: 1px solid var(--rule);
+    padding: 26px 30px;
+    margin-bottom: 44px;
+    background: white;
+  }
+  .toc-head {
+    font-family: 'Source Code Pro', monospace;
+    font-size: 6.5pt;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--primary-mid);
+    margin-bottom: 16px;
+  }
+  .toc ol { list-style: none; }
+  .toc ol li {
+    display: flex;
+    justify-content: space-between;
+    padding: 6px 0;
+    border-bottom: 1px dotted var(--rule);
+    align-items: baseline;
+    font-size: 8.5pt;
+  }
+  .toc ol li:last-child { border: none; }
+  .toc-num {
+    font-family: 'Source Code Pro', monospace;
+    font-size: 7.5pt;
+    color: var(--primary-mid);
+    margin-right: 10px;
+    min-width: 22px;
+  }
+  .toc-text { flex: 1; color: var(--ink-mid); }
+  .toc-pg { font-family: 'Source Code Pro', monospace; font-size: 7pt; color: var(--ink-light); }
+
+  /* ── SECTIONS ─────────────────────────────────────── */
+  .section { margin-bottom: 48px; }
+  .section-label {
+    font-family: 'Source Code Pro', monospace;
+    font-size: 6.5pt;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--primary-mid);
+    margin-bottom: 8px;
+  }
+  .section h2 {
+    font-family: 'Bitter', serif;
+    font-size: 16pt;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 4px;
+    line-height: 1.2;
+  }
+  .section-rule {
+    height: 3px;
+    background: linear-gradient(to right, var(--primary), transparent);
+    margin-bottom: 24px;
+    margin-top: 12px;
+  }
+  h3.sub {
+    font-size: 9pt;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink);
+    margin: 24px 0 10px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid var(--rule);
+  }
+  p { margin-bottom: 12px; color: var(--ink-mid); }
+  p:last-child { margin-bottom: 0; }
+
+  /* ── EXEC SUMMARY ─────────────────────────────────── */
+  .exec-box {
+    background: var(--primary);
+    color: white;
+    padding: 34px 38px;
+    margin-bottom: 44px;
+  }
+  .exec-box .exec-head {
+    font-family: 'Source Code Pro', monospace;
+    font-size: 6.5pt;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    opacity: 0.6;
+    margin-bottom: 14px;
+  }
+  .exec-box p {
+    color: rgba(255,255,255,0.85);
+    font-size: 10pt;
+    line-height: 1.75;
+    font-family: 'Bitter', serif;
+    font-weight: 300;
+    margin-bottom: 14px;
+  }
+  .exec-stats {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 14px;
+    margin-top: 26px;
+    padding-top: 22px;
+    border-top: 1px solid rgba(255,255,255,0.2);
+  }
+  .es-item {
+    background: rgba(255,255,255,0.1);
+    padding: 14px 12px;
+    border-bottom: 3px solid rgba(255,255,255,0.4);
+  }
+  .es-val {
+    font-family: 'Source Code Pro', monospace;
+    font-size: 18pt;
+    font-weight: 500;
+    display: block;
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+  .es-lbl { font-size: 7pt; opacity: 0.7; line-height: 1.35; }
+
+  /* ── CALLOUTS ─────────────────────────────────────── */
+  .callout {
+    padding: 16px 20px;
+    margin: 20px 0;
+    border-left: 4px solid var(--primary-mid);
+    background: var(--primary-light);
+  }
+  .callout.warn { border-color: var(--accent2); background: var(--accent2-pale); }
+  .callout.gold { border-color: var(--gold); background: var(--gold-pale); }
+  .callout.steel { border-color: var(--steel); background: var(--steel-pale); }
+  .callout-tag {
+    font-family: 'Source Code Pro', monospace;
+    font-size: 6.5pt;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--primary-mid);
+    margin-bottom: 6px;
+  }
+  .callout.warn .callout-tag { color: var(--accent2); }
+  .callout.gold .callout-tag { color: var(--gold); }
+  .callout.steel .callout-tag { color: var(--steel); }
+  .callout p { font-size: 9pt; margin: 0; }
+
+  /* ── TABLES ───────────────────────────────────────── */
+  table.dt { width: 100%; border-collapse: collapse; margin: 18px 0 24px; font-size: 8.5pt; }
+  table.dt thead tr { background: var(--primary); color: white; }
+  table.dt thead th {
+    padding: 9px 12px; text-align: left;
+    font-family: 'Source Code Pro', monospace;
+    font-size: 7pt; letter-spacing: 0.07em;
+    text-transform: uppercase; font-weight: 500;
+  }
+  table.dt tbody tr { border-bottom: 1px solid var(--rule-light); }
+  table.dt tbody tr:nth-child(even) { background: var(--primary-light); }
+  table.dt tbody td { padding: 8px 12px; color: var(--ink-mid); }
+  table.dt tbody td:first-child { font-weight: 600; color: var(--ink); }
+  .hi { background: var(--gold-pale) !important; }
+  .vhi { color: var(--primary-mid); font-weight: 700; }
+  .vlo { color: var(--accent2); font-weight: 700; }
+  .vmid { color: var(--gold); font-weight: 700; }
+
+  /* ── CHARTS ───────────────────────────────────────── */
+  .chart-wrap {
+    background: white;
+    border: 1px solid var(--rule);
+    padding: 22px 26px;
+    margin: 20px 0 28px;
+  }
+  .ct { font-family: 'Source Code Pro', monospace; font-size: 7pt; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-light); margin-bottom: 4px; }
+  .cs { font-size: 9pt; font-weight: 600; color: var(--ink); margin-bottom: 18px; }
+  .cn { font-size: 7pt; color: var(--ink-light); margin-top: 10px; font-family: 'Source Code Pro', monospace; }
+
+  /* ── STAT PANELS ──────────────────────────────────── */
+  .stat-row { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; margin: 22px 0; }
+  .stat-panel {
+    background: white;
+    border: 1px solid var(--rule);
+    border-top: 3px solid var(--primary-mid);
+    padding: 18px 16px;
+  }
+  .sp-val {
+    font-family: 'Source Code Pro', monospace;
+    font-size: 22pt;
+    color: var(--primary);
+    font-weight: 500;
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+  .sp-label { font-size: 7.5pt; color: var(--ink-light); line-height: 1.4; }
+  .sp-trend { font-size: 7.5pt; font-family: 'Source Code Pro', monospace; margin-top: 8px; }
+  .up { color: var(--primary-mid); }
+  .dn { color: var(--accent2); }
+
+  /* ── TWO COL ──────────────────────────────────────── */
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+
+  /* ── PULL QUOTE ───────────────────────────────────── */
+  .pull-quote {
+    border-top: 2px solid var(--primary);
+    border-bottom: 2px solid var(--primary);
+    padding: 20px 0;
+    margin: 28px 0;
+    text-align: center;
+  }
+  .pull-quote p {
+    font-family: 'Bitter', serif;
+    font-size: 13pt;
+    font-style: italic;
+    font-weight: 300;
+    color: var(--primary);
+    line-height: 1.5;
+  }
+  .pull-quote cite { display: block; font-size: 7.5pt; font-style: normal; color: var(--ink-light); margin-top: 8px; font-family: 'Source Code Pro', monospace; text-transform: uppercase; letter-spacing: 0.1em; }
+
+  .divider { height: 1px; background: var(--rule); margin: 36px 0; }
+
+  /* ── APPENDIX ─────────────────────────────────────── */
+  .appendix { background: var(--rule-light); padding: 30px 36px; margin-top: 40px; border-top: 2px solid var(--rule); }
+  .appendix h3 { font-family: 'Source Code Pro', monospace; font-size: 7pt; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-light); margin-bottom: 14px; }
+  .appendix p { font-size: 8pt; color: var(--ink-light); }
+
+  /* ── FOOTER ───────────────────────────────────────── */
+  .doc-footer {
+    background: var(--primary);
+    padding: 18px 64px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .doc-footer .fb { font-family: 'Source Code Pro', monospace; font-size: 7pt; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.6); }
+  .doc-footer .fi { font-size: 7pt; color: rgba(255,255,255,0.5); text-align: right; }
+
+  /* ── PLATFORM BADGES ──────────────────────────────── */
+  .platform-row { display: flex; gap: 12px; margin: 18px 0; flex-wrap: wrap; }
+  .p-badge {
+    display: flex; align-items: center; gap: 8px;
+    background: white; border: 1px solid var(--rule);
+    padding: 10px 14px;
+    font-size: 8.5pt;
+  }
+  .p-badge .p-dot {
+    width: 10px; height: 10px; border-radius: 50%;
+    flex-shrink: 0;
+  }
+  .p-badge .p-name { font-weight: 600; color: var(--ink); }
+  .p-badge .p-hrs { font-family: 'Source Code Pro', monospace; font-size: 8pt; color: var(--primary-mid); margin-left: 6px; }
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <!-- COVER -->
+  <div class="cover">
+    <div class="cover-stripe"></div>
+    <div class="cover-agency">Pulse Analytics Agency · Creator Intelligence Practice</div>
+    <h1><em>Strategic Brief:</em>Video Creator &<br>Streamer Coverage Study</h1>
+    <div class="cover-desc">An empirical analysis of creator-driven demand generation, spectator behaviour, and organic marketing value across gaming genres — with implications for studio project prioritisation.</div>
+    <div class="cover-grid">
+      <div class="cover-grid-item"><label>Prepared By</label><span>Pulse Analytics Agency</span></div>
+      <div class="cover-grid-item"><label>Target Period</label><span>H1 2026</span></div>
+      <div class="cover-grid-item"><label>Reference No.</label><span>PAA-CI-2026-07</span></div>
+      <div class="cover-grid-item"><label>Classification</label><span>Restricted — Client Only</span></div>
+    </div>
+  </div>
+
+  <div class="body-wrap">
+
+    <!-- TOC -->
+    <div class="toc">
+      <div class="toc-head">Table of Contents</div>
+      <ol>
+        <li><span class="toc-num">01</span><span class="toc-text">Executive Summary & Strategic Highlights</span><span class="toc-pg">2</span></li>
+        <li><span class="toc-num">02</span><span class="toc-text">Research Methodology</span><span class="toc-pg">3</span></li>
+        <li><span class="toc-num">03</span><span class="toc-text">The Influencer Loop: Structural Framework</span><span class="toc-pg">4</span></li>
+        <li><span class="toc-num">04</span><span class="toc-text">Spectator Hours by Genre — Platform Breakdown</span><span class="toc-pg">5</span></li>
+        <li><span class="toc-num">05</span><span class="toc-text">Creator Sentiment Analysis & DLC Pricing Friction</span><span class="toc-pg">7</span></li>
+        <li><span class="toc-num">06</span><span class="toc-text">Organic Marketing Value Modelling</span><span class="toc-pg">9</span></li>
+        <li><span class="toc-num">07</span><span class="toc-text">Competitive Market Gap Analysis</span><span class="toc-pg">11</span></li>
+        <li><span class="toc-num">08</span><span class="toc-text">Genre Opportunity Matrix & Recommendations</span><span class="toc-pg">13</span></li>
+        <li><span class="toc-num">09</span><span class="toc-text">Appendix: Survey Instrument & Platform API Notes</span><span class="toc-pg">15</span></li>
+      </ol>
+    </div>
+
+    <!-- EXEC SUMMARY -->
+    <div class="exec-box">
+      <div class="exec-head">Executive Summary</div>
+      <p>This strategic brief was commissioned to evaluate the role of video creator and live-streaming coverage as a demand-generation mechanism for game titles across primary gaming genres. Drawing on spectator analytics from Twitch, YouTube Gaming, and TikTok, supplemented by a proprietary creator sentiment survey (n = 2,340 active gaming creators), the report maps the relationship between genre characteristics, organic streaming adoption, and the compounding commercial value of creator-driven marketing.</p>
+      <p>The central finding is that creator coverage operates as a <em>force multiplier</em> for game sales — but the amplification factor is not uniform across genres. It is governed by the degree to which a title supports emergent, shareable, and unpredictable gameplay. Simulation titles lead in raw volume; action-sports and skateboarding titles outperform in conversion efficiency and short-form viral potential. Racing titles present the weakest organic creator profile, dependent on specialist esports audiences with limited cross-demographic appeal.</p>
+      <p>A secondary finding of significant commercial relevance is that creator sentiment toward the dominant simulation franchise is measurably negative, driven by aggressive DLC monetisation. This creates a quantifiable market opening for a mod-friendly alternative with a stable engine.</p>
+      <div class="exec-stats">
+        <div class="es-item"><span class="es-val">22.4M</span><span class="es-lbl">Monthly simulation stream hours — dominant genre by volume</span></div>
+        <div class="es-item"><span class="es-val">1.2M</span><span class="es-lbl">Monthly racing stream hours — lowest tracked genre</span></div>
+        <div class="es-item"><span class="es-val">3.8M</span><span class="es-lbl">Skateboarding/action-sports hours; +31.7% YoY growth</span></div>
+        <div class="es-item"><span class="es-val">73%</span><span class="es-lbl">Of simulation creators express negative DLC pricing sentiment</span></div>
+      </div>
+    </div>
+
+    <!-- SECTION 2: METHODOLOGY -->
+    <div class="section">
+      <div class="section-label">Section 01</div>
+      <h2>Research Methodology</h2>
+      <div class="section-rule"></div>
+
+      <h3 class="sub">1.1 Primary Data Sources</h3>
+      <div class="two-col">
+        <div>
+          <p>Spectator hour data was aggregated across three primary platforms via API integrations and licensed data partnerships maintained by Pulse Analytics Agency. For each platform, data covers the period January 2025 to December 2025, with monthly resolution. Game-to-genre classification uses the Pulse Genre Framework 4.0 (PGF-4.0), a 14-category taxonomy aligned with major storefront classification standards.</p>
+          <p>Creator sentiment data was collected via a structured online survey administered to an opted-in panel of 3,880 active gaming creators. After quality filters (minimum 3 months of consistent streaming activity, response time screening), the valid response set comprises <strong>2,340 creators</strong>.</p>
+        </div>
+        <div>
+          <p>Organic marketing value (OMV) estimates use the Pulse Earned Media Equivalency (EME) model, which values creator stream hours and social clip impressions against equivalent paid media CPM benchmarks, adjusted for audience quality scores. OMV figures are presented in estimated USD equivalents.</p>
+          <p>All figures in this report represent estimates derived from sampled data. Platform API coverage is not universal; figures carry an estimated margin of ±8–12% depending on platform and genre. Racing figures carry higher uncertainty given lower sample volumes.</p>
+        </div>
+      </div>
+
+      <h3 class="sub">1.2 Platforms Covered</h3>
+      <div class="platform-row">
+        <div class="p-badge"><div class="p-dot" style="background:#9146ff"></div><span class="p-name">Twitch</span><span class="p-hrs">Live concurrent viewer streams; 18-month archive</span></div>
+        <div class="p-badge"><div class="p-dot" style="background:#ff0000"></div><span class="p-name">YouTube Gaming</span><span class="p-hrs">VOD watch-hours, live sessions, Shorts analytics</span></div>
+        <div class="p-badge"><div class="p-dot" style="background:#000000"></div><span class="p-name">TikTok</span><span class="p-hrs">Gaming hashtag impressions, LIVE session data</span></div>
+      </div>
+    </div>
+
+    <!-- SECTION 3: INFLUENCER LOOP -->
+    <div class="section">
+      <div class="section-label">Section 02</div>
+      <h2>The Influencer Loop as a Growth Vector</h2>
+      <div class="section-rule"></div>
+
+      <p>Spectator analytics on Twitch, YouTube Gaming, and TikTok confirm that creator coverage acts as a force multiplier for game sales. The mechanism — which we term the <em>Influencer Loop</em> — operates through three sequential phases: discovery (a viewer encounters a game for the first time through a creator's stream or clip), validation (continued viewership builds familiarity and social proof), and conversion (the viewer purchases the game). However, the organic visibility of different genres varies dramatically based on how well they support emergent gameplay.</p>
+
+      <div class="pull-quote">
+        <p>"The degree to which a title generates genuinely unpredictable, creator-unique moments is the strongest single predictor of organic streaming adoption we have identified."</p>
+        <cite>Pulse Analytics Agency, Creator Intelligence Practice, 2026</cite>
+      </div>
+
+      <h3 class="sub">2.1 The Emergent Gameplay Premium</h3>
+      <p>Games with high emergent gameplay density — where player choices, random system interactions, or community tools produce unique, unscripted outcomes — consistently outperform scripted or linear titles in organic streaming adoption. This is driven by a fundamental content economics principle: creators require a reliable supply of <em>novel content</em> to maintain audience engagement. A racing title with a fixed track set and deterministic physics offers a finite content supply. A simulation title where a character can spontaneously develop a feudal village, or a skateboarding title where a community park layout produces unexpected combo interactions, generates effectively unlimited novel content moments.</p>
+
+      <div class="callout steel">
+        <div class="callout-tag">Framework Note</div>
+        <p>The Pulse Emergent Gameplay Score (EGS) is a composite index rating a title's structural capacity to generate novel, unique streaming moments. Racing titles typically score 12–18/100. Simulation and sandbox titles score 72–91/100. Action-sports with custom park builders score 55–74/100. EGS is a statistically significant predictor of long-tail stream hour accumulation (r = 0.81, p &lt; 0.001 in FY2025 panel).</p>
+      </div>
+
+      <h3 class="sub">2.2 Audience Segmentation in the Influencer Loop</h3>
+      <p>The composition of the creator audience varies significantly by genre, which has direct implications for the commercial impact of the Influencer Loop. Simulation genre audiences are characterised by high proportion of existing game owners watching for entertainment (estimated 38–44%), reducing the addressable conversion pool. Action-sports and skateboarding audiences are more heavily weighted toward discovery viewers — people who have not yet purchased the title — yielding a higher per-viewer commercial value.</p>
+    </div>
+
+    <!-- SECTION 4: SPECTATOR HOURS -->
+    <div class="section">
+      <div class="section-label">Section 03</div>
+      <h2>Spectator Hours by Genre — Platform Breakdown</h2>
+      <div class="section-rule"></div>
+
+      <div class="stat-row">
+        <div class="stat-panel">
+          <div class="sp-val">22.4M</div>
+          <div class="sp-label">Simulation / Life — monthly hours</div>
+          <div class="sp-trend up">▲ 12.3% YoY · Stable growth</div>
+        </div>
+        <div class="stat-panel">
+          <div class="sp-val">3.8M</div>
+          <div class="sp-label">Skateboarding / Action-Sports — monthly hours</div>
+          <div class="sp-trend up">▲ 31.7% YoY · Fastest growing genre</div>
+        </div>
+        <div class="stat-panel">
+          <div class="sp-val">1.2M</div>
+          <div class="sp-label">Racing / Motorsport — monthly hours</div>
+          <div class="sp-trend dn">▼ 6.8% YoY · Declining audience</div>
+        </div>
+      </div>
+
+      <!-- GROUPED BAR CHART -->
+      <div class="chart-wrap">
+        <div class="ct">Fig. 1 — Monthly Spectator Hours by Genre & Platform</div>
+        <div class="cs">Estimated monthly hours (000s) — FY2025 annual average</div>
+        <svg viewBox="0 0 700 310" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;">
+          <defs>
+            <linearGradient id="g1" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#9146ff"/><stop offset="100%" stop-color="#7230d0"/></linearGradient>
+            <linearGradient id="g2" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#ff4444"/><stop offset="100%" stop-color="#cc2222"/></linearGradient>
+            <linearGradient id="g3" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#1a1a1a"/><stop offset="100%" stop-color="#444"/></linearGradient>
+          </defs>
+          <!-- Y axis labels -->
+          <line x1="90" y1="20" x2="90" y2="240" stroke="#d8d6cd" stroke-width="1"/>
+          <line x1="90" y1="240" x2="680" y2="240" stroke="#d8d6cd" stroke-width="1"/>
+          <!-- Gridlines -->
+          <line x1="90" y1="60" x2="680" y2="60" stroke="#eeecea" stroke-width="1" stroke-dasharray="4,3"/>
+          <text x="82" y="64" text-anchor="end" font-size="8" fill="#7a7a6e" font-family="Source Code Pro, monospace">15,000</text>
+          <line x1="90" y1="100" x2="680" y2="100" stroke="#eeecea" stroke-width="1" stroke-dasharray="4,3"/>
+          <text x="82" y="104" text-anchor="end" font-size="8" fill="#7a7a6e" font-family="Source Code Pro, monospace">11,000</text>
+          <line x1="90" y1="140" x2="680" y2="140" stroke="#eeecea" stroke-width="1" stroke-dasharray="4,3"/>
+          <text x="82" y="144" text-anchor="end" font-size="8" fill="#7a7a6e" font-family="Source Code Pro, monospace">7,500</text>
+          <line x1="90" y1="180" x2="680" y2="180" stroke="#eeecea" stroke-width="1" stroke-dasharray="4,3"/>
+          <text x="82" y="184" text-anchor="end" font-size="8" fill="#7a7a6e" font-family="Source Code Pro, monospace">3,500</text>
+          <!-- Genre label positions -->
+          <text x="195" y="260" text-anchor="middle" font-size="9" fill="#3c3b36" font-family="Source Sans 3, sans-serif" font-weight="600">Simulation</text>
+          <text x="390" y="260" text-anchor="middle" font-size="9" fill="#3c3b36" font-family="Source Sans 3, sans-serif" font-weight="600">Skateboarding</text>
+          <text x="570" y="260" text-anchor="middle" font-size="9" fill="#3c3b36" font-family="Source Sans 3, sans-serif" font-weight="600">Racing</text>
+          <!-- Simulation bars: Twitch 8.4M, YouTube 9.6M, TikTok 4.4M (total 22.4M) scaled 240px range = ~18M  -->
+          <!-- Twitch 8.4M → 8400/18000 * 220 = 102.7 -->
+          <rect x="110" y="137" width="30" height="103" fill="url(#g1)"/>
+          <text x="125" y="132" text-anchor="middle" font-size="7" fill="#7230d0" font-family="Source Code Pro, monospace">8.4M</text>
+          <!-- YouTube 9.6M → 117 -->
+          <rect x="148" y="124" width="30" height="116" fill="url(#g2)"/>
+          <text x="163" y="119" text-anchor="middle" font-size="7" fill="#cc2222" font-family="Source Code Pro, monospace">9.6M</text>
+          <!-- TikTok 4.4M → 54 -->
+          <rect x="186" y="186" width="30" height="54" fill="url(#g3)"/>
+          <text x="201" y="181" text-anchor="middle" font-size="7" fill="#444" font-family="Source Code Pro, monospace">4.4M</text>
+          <!-- Skateboarding: Twitch 1.2M, YouTube 1.1M, TikTok 1.5M (total 3.8M) -->
+          <rect x="305" y="225" width="30" height="15" fill="url(#g1)"/>
+          <text x="320" y="220" text-anchor="middle" font-size="7" fill="#7230d0" font-family="Source Code Pro, monospace">1.2M</text>
+          <rect x="343" y="226" width="30" height="14" fill="url(#g2)"/>
+          <text x="358" y="221" text-anchor="middle" font-size="7" fill="#cc2222" font-family="Source Code Pro, monospace">1.1M</text>
+          <rect x="381" y="221" width="30" height="19" fill="url(#g3)"/>
+          <text x="396" y="216" text-anchor="middle" font-size="7" fill="#444" font-family="Source Code Pro, monospace">1.5M</text>
+          <!-- Racing: Twitch 0.9M, YouTube 0.2M, TikTok 0.1M (total 1.2M) -->
+          <rect x="490" y="229" width="30" height="11" fill="url(#g1)"/>
+          <text x="505" y="224" text-anchor="middle" font-size="7" fill="#7230d0" font-family="Source Code Pro, monospace">0.9M</text>
+          <rect x="528" y="237" width="30" height="3" fill="url(#g2)"/>
+          <text x="543" y="232" text-anchor="middle" font-size="7" fill="#cc2222" font-family="Source Code Pro, monospace">0.2M</text>
+          <rect x="566" y="239" width="30" height="1" fill="url(#g3)"/>
+          <text x="581" y="234" text-anchor="middle" font-size="7" fill="#444" font-family="Source Code Pro, monospace">0.1M</text>
+          <!-- Legend -->
+          <rect x="110" y="280" width="12" height="9" fill="url(#g1)"/>
+          <text x="128" y="288" font-size="8.5" fill="#3c3b36" font-family="Source Sans 3, sans-serif">Twitch</text>
+          <rect x="190" y="280" width="12" height="9" fill="url(#g2)"/>
+          <text x="208" y="288" font-size="8.5" fill="#3c3b36" font-family="Source Sans 3, sans-serif">YouTube Gaming</text>
+          <rect x="330" y="280" width="12" height="9" fill="url(#g3)"/>
+          <text x="348" y="288" font-size="8.5" fill="#3c3b36" font-family="Source Sans 3, sans-serif">TikTok</text>
+        </svg>
+        <div class="cn">Estimates based on Pulse Analytics API aggregation. Monthly average across FY2025. Mobile and other platforms excluded. Margin of error ±9%.</div>
+      </div>
+
+      <h3 class="sub">3.1 Simulation Content (22.4M hrs/month)</h3>
+      <p>Simulation content accumulates the highest volume of streaming hours by a significant margin. The primary driver is the genre's structural compatibility with long-form, narrative streaming formats. Character customisation, sandbox house-building, and AI-driven emergent social interactions generate high viewer retention because streamers can tell genuinely unique stories — no two playthroughs are identical. This makes simulation content the premier format for long-session Twitch and YouTube streams, where audiences return repeatedly to follow a specific creator's story arc.</p>
+      <p>YouTube Gaming is the largest platform for simulation content, accounting for an estimated 9.6M of the 22.4M monthly hours, reflecting the genre's strong representation in VOD and long-form content formats. TikTok simulation content is primarily driven by "life highlight" clip compilations and build showcase shorts, accounting for approximately 4.4M hours of equivalent engagement.</p>
+
+      <div class="callout">
+        <div class="callout-tag">Creator Volume Note</div>
+        <p>Simulation content is produced by the broadest creator base of any tracked genre. Our data identifies approximately 84,000 unique channels that produced at least one qualifying simulation gaming stream in FY2025. This diversity of creator production is a structural asset for titles in this space.</p>
+      </div>
+
+      <h3 class="sub">3.2 Skateboarding & Action-Sports Content (3.8M hrs/month)</h3>
+      <p>While significantly smaller in absolute volume, skateboarding and action-sports content is the fastest-growing genre category in our tracking data, posting +31.7% year-on-year growth. The genre's dynamics are fundamentally different from simulation: content is short-form, clip-driven, and oriented toward highlight moments — trick combos, custom park showcases, and challenge completions. TikTok is disproportionately important for this genre, with short-form clips generating impression volumes that translate into significant discovery-phase traffic.</p>
+
+      <h3 class="sub">3.3 Racing Content (1.2M hrs/month)</h3>
+      <p>Racing content is structurally constrained in its streaming potential. The genre is confined almost entirely to specialised esports channels on Twitch. Audiences find realistic track racing repetitive and predictable as a spectator format after multiple sessions. The content ceiling is driven by the limited diversity of possible outcomes in a well-understood competitive racing format. There is negligible TikTok or short-form presence: racing gameplay does not lend itself to viral highlight moments accessible to non-specialist audiences.</p>
+
+      <div class="callout warn">
+        <div class="callout-tag">Risk Assessment</div>
+        <p>Racing's 1.2M monthly streaming hours compare unfavourably to simulation at 22.4M — an 18.7× gap. With viewership further declining at –6.8% YoY, the organic streaming opportunity for racing titles is deteriorating, not growing. Studios relying on organic creator coverage as a marketing channel will face materially higher paid-media requirements for racing titles.</p>
+      </div>
+    </div>
+
+    <!-- SECTION 5: CREATOR SENTIMENT -->
+    <div class="section">
+      <div class="section-label">Section 04</div>
+      <h2>Creator Sentiment Analysis & DLC Pricing Friction</h2>
+      <div class="section-rule"></div>
+      <p>The creator sentiment survey (n = 2,340) reveals a significant and commercially exploitable tension within the simulation genre. Despite the genre's dominant viewership position, creators are disproportionately critical of the market-leading simulation title, citing aggressive DLC monetisation as a primary grievance. This sentiment has measurable implications for the organic marketing value of the incumbent title and represents a quantifiable opening for new entrants.</p>
+
+      <h3 class="sub">4.1 Sentiment Distribution — Simulation Genre Creators</h3>
+      <!-- Horizontal stacked bar SVG -->
+      <div class="chart-wrap">
+        <div class="ct">Fig. 2 — Creator Sentiment Toward Dominant Simulation Franchise</div>
+        <div class="cs">Survey respondents: active simulation genre creators (n = 612)</div>
+        <svg viewBox="0 0 600 120" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;">
+          <!-- Stacked bar: Strongly Negative 31%, Somewhat Negative 42%, Neutral 16%, Positive 11% -->
+          <rect x="40" y="30" width="186" height="40" fill="#8b2500"/>
+          <text x="40" y="22" font-size="8" fill="#8b2500" font-family="Source Code Pro, monospace">Strongly negative  31%</text>
+          <rect x="226" y="30" width="252" height="40" fill="#c85500"/>
+          <text x="316" y="22" font-size="8" fill="#c85500" font-family="Source Code Pro, monospace">Somewhat negative  42%</text>
+          <rect x="478" y="30" width="96" height="40" fill="#8a6e00"/>
+          <text x="450" y="90" font-size="8" fill="#8a6e00" font-family="Source Code Pro, monospace">Neutral  16%</text>
+          <rect x="574" y="30" width="12" height="40" fill="#3d6829" opacity="0.8"/>
+          <text x="566" y="100" font-size="7" fill="#3d6829" font-family="Source Code Pro, monospace">+11%</text>
+          <!-- Total negative callout -->
+          <line x1="40" y1="80" x2="478" y2="80" stroke="#8b2500" stroke-width="1" stroke-dasharray="3,2"/>
+          <text x="258" y="95" text-anchor="middle" font-size="9" fill="#8b2500" font-family="Source Code Pro, monospace" font-weight="600">73% negative sentiment total</text>
+        </svg>
+        <div class="cn">Q: "How do you feel about the primary simulation franchise's approach to DLC and content monetisation?" — Survey scale: Strongly negative, Somewhat negative, Neutral, Positive, Strongly positive. Strongly positive responses (&lt;1%) omitted for visual clarity.</div>
+      </div>
+
+      <p>The top three grievances cited by negatively-rated creators are: (1) DLC pack pricing that increases the total ownership cost to an estimated £220+ for full content access, (2) frequent fractional releases that create a sense of value fragmentation, and (3) the absence of mod-friendly tools that would allow creators to generate their own content and reduce dependence on paid expansions. These grievances are consistently expressed across creator size tiers, suggesting they are not isolated to a particular segment.</p>
+
+      <div class="callout gold">
+        <div class="callout-tag">Market Opening</div>
+        <p>Simulation games generate the highest organic co-marketing loop of any tracked genre. However, creators are highly critical of the dominant title's DLC economics. There is a clear, quantifiable market opening for a mod-friendly PC and console alternative — provided the engine is stable and the content access model is perceived as fair. Creator survey data indicates 68% of negatively-aligned simulation creators would actively cover a viable alternative at launch.</p>
+      </div>
+    </div>
+
+    <!-- SECTION 6: OMV -->
+    <div class="section">
+      <div class="section-label">Section 05</div>
+      <h2>Organic Marketing Value Modelling</h2>
+      <div class="section-rule"></div>
+      <p>The Pulse Earned Media Equivalency (EME) model estimates the USD value of organic creator coverage by applying adjusted CPM rates to stream hours and social impressions. The model accounts for platform-specific audience quality scores and gaming-specific conversion multipliers. OMV estimates are intended as directional benchmarks for comparing the relative cost efficiency of organic creator ecosystems across genres.</p>
+
+      <table class="dt">
+        <thead>
+          <tr>
+            <th>Genre</th>
+            <th>Monthly Stream Hrs</th>
+            <th>Adj. CPM ($)</th>
+            <th>OMV (USD/month)</th>
+            <th>VPCI-Adj. Revenue Index</th>
+            <th>YoY OMV Change</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Simulation / Life</td>
+            <td>22.4M</td>
+            <td class="vmid">$4.80</td>
+            <td class="vhi">$107.5M</td>
+            <td>72</td>
+            <td class="vhi">+12.3%</td>
+          </tr>
+          <tr class="hi">
+            <td>Action-Sports / Custom</td>
+            <td>5.1M</td>
+            <td class="vhi">$7.20</td>
+            <td class="vhi">$36.7M</td>
+            <td><strong>100</strong></td>
+            <td class="vhi">+28.4%</td>
+          </tr>
+          <tr>
+            <td>Skateboarding</td>
+            <td>3.8M</td>
+            <td class="vhi">$6.90</td>
+            <td>$26.2M</td>
+            <td>91</td>
+            <td class="vhi">+31.7%</td>
+          </tr>
+          <tr>
+            <td>Racing / Motorsport</td>
+            <td>1.2M</td>
+            <td class="vmid">$3.40</td>
+            <td class="vlo">$4.1M</td>
+            <td class="vlo">18</td>
+            <td class="vlo">–6.8%</td>
+          </tr>
+        </tbody>
+      </table>
+      <p style="font-size:7.5pt;color:var(--ink-light);font-family:'Source Code Pro',monospace;">OMV = Estimated USD organic media value using Pulse EME model. VPCI-Adj Revenue Index normalises for conversion efficiency; Action-Sports indexed at 100. Table represents FY2025 annual averages.</p>
+
+      <h3 class="sub">5.1 The Efficiency-Volume Reframe</h3>
+      <p>The VPCI-Adjusted Revenue Index reframes the standard viewership comparison in commercially relevant terms. While simulation leads on raw OMV ($107.5M/month), its lower conversion efficiency means the action-sports cluster generates a higher revenue-per-viewer-hour value (index score 100 vs 72 for simulation). For studios evaluating where to invest in genre, the action-sports cluster offers a more efficient marketing return per unit of organic coverage generated.</p>
+    </div>
+
+    <!-- SECTION 7: RECOMMENDATIONS -->
+    <div class="section">
+      <div class="section-label">Section 06</div>
+      <h2>Genre Opportunity Matrix & Recommendations</h2>
+      <div class="section-rule"></div>
+
+      <table class="dt">
+        <thead>
+          <tr>
+            <th>Criterion</th>
+            <th>Simulation</th>
+            <th>Action-Sports</th>
+            <th>Skateboarding</th>
+            <th>Racing</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Raw Streaming Volume</td><td class="vhi">★★★★★</td><td class="vmid">★★★</td><td class="vmid">★★★</td><td class="vlo">★</td></tr>
+          <tr><td>Conversion Efficiency (VPCI)</td><td class="vmid">★★★</td><td class="vhi">★★★★★</td><td class="vhi">★★★★</td><td class="vlo">★</td></tr>
+          <tr><td>Organic Creator Adoption</td><td class="vhi">★★★★★</td><td class="vhi">★★★★</td><td class="vhi">★★★★</td><td class="vlo">★★</td></tr>
+          <tr><td>Long-tail Content Potential</td><td class="vhi">★★★★★</td><td class="vmid">★★★</td><td class="vmid">★★★</td><td class="vlo">★</td></tr>
+          <tr><td>Short-form Viral Potential</td><td class="vmid">★★★</td><td class="vhi">★★★★★</td><td class="vhi">★★★★★</td><td class="vlo">★</td></tr>
+          <tr><td>Competitive Market Opening</td><td class="vhi">★★★★★</td><td class="vhi">★★★★</td><td class="vmid">★★★</td><td class="vlo">★</td></tr>
+        </tbody>
+      </table>
+
+      <p><strong>R-1:</strong> Simulation and action-sports genres offer the strongest organic creator ecosystems for new studio projects. A title entering the simulation space with a mod-friendly architecture and fair content pricing would encounter a creator base actively seeking an alternative to the incumbent franchise.</p>
+      <p><strong>R-2:</strong> Racing titles cannot rely on organic creator coverage as a material marketing channel. A studio investing in a racing title should budget for significantly higher paid media spend to compensate for the estimated $103M/month OMV gap between racing ($4.1M) and simulation ($107.5M).</p>
+      <p><strong>R-3:</strong> Action-sports and skateboarding genres offer exceptional short-form viral clip potential. Studio investment in highlight-generation mechanics — trick combo systems, custom build showcases, challenge structures — directly amplifies TikTok and YouTube Shorts organic reach, which is the fastest-growing creator traffic channel in our data.</p>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="appendix">
+      <h3>Appendix A — Survey Instrument Notes</h3>
+      <p>The creator sentiment survey was conducted via the Pulse Analytics Creator Panel, administered online in November–December 2025. Respondents were recruited from an opt-in panel of active gaming creators verified against platform activity data. Survey instrument available on request under NDA. Raw data is retained by Pulse Analytics Agency in accordance with our data retention policy (PAA-DRP-2024).</p>
+      <p style="margin-top:10px;"><em>Classification: Restricted · Client Distribution Only · © 2026 Pulse Analytics Agency · Reference PAA-CI-2026-07</em></p>
+    </div>
+  </div>
+
+  <div class="doc-footer">
+    <div class="fb">Pulse Analytics Agency · Creator Intelligence Practice · PAA-CI-2026-07</div>
+    <div class="fi">H1 2026 · Restricted — Client Only<br>© 2026 Pulse Analytics Agency</div>
+  </div>
+
+</div>
+</body>
+</html>

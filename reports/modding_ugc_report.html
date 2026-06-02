@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UGC & Modding Longevity Audit — Community Relations Operations</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap');
+
+  :root {
+    --ink: #141210;
+    --ink-mid: #3d3a35;
+    --ink-light: #79746c;
+    --rule: #d6d2c8;
+    --rule-light: #eeece7;
+    --brand: #2b4520;
+    --brand-mid: #3d6030;
+    --brand-light: #eaf3e5;
+    --red: #952a00;
+    --red-pale: #fdf0ea;
+    --amber: #7a5800;
+    --amber-pale: #fdf8e4;
+    --blue: #1e3d5c;
+    --blue-pale: #e6edf5;
+    --page: #f8f7f3;
+    --white: #ffffff;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 9.5pt;
+    line-height: 1.68;
+    color: var(--ink);
+    background: #d8d4ca;
+  }
+
+  .page { max-width: 870px; margin: 32px auto; background: var(--page); box-shadow: 0 2px 28px rgba(0,0,0,0.15); }
+
+  /* ── COVER ─────────────────────────────────────────── */
+  .cover {
+    background: var(--brand);
+    padding: 0;
+    color: white;
+    display: grid;
+    grid-template-columns: 1fr 220px;
+    min-height: 320px;
+  }
+  .cover-left { padding: 52px 52px 48px; }
+  .cover-right {
+    background: rgba(0,0,0,0.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 28px 24px;
+  }
+  .cover-eyebrow {
+    font-family: 'DM Mono', monospace;
+    font-size: 6.5pt;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    opacity: 0.6;
+    margin-bottom: 22px;
+  }
+  .cover h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 28pt;
+    font-weight: 400;
+    line-height: 1.1;
+    margin-bottom: 14px;
+  }
+  .cover h1 span { display: block; font-style: italic; opacity: 0.75; font-size: 18pt; margin-bottom: 4px; }
+  .cover-desc { font-size: 9.5pt; font-weight: 300; opacity: 0.8; line-height: 1.6; max-width: 440px; }
+  .cover-right-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 5.5pt;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    opacity: 0.5;
+    margin-bottom: 8px;
+  }
+  .cover-right-val { font-size: 28pt; font-family: 'DM Serif Display', serif; line-height: 1; margin-bottom: 4px; }
+  .cover-right-sub { font-size: 8pt; opacity: 0.7; line-height: 1.4; }
+  .cover-meta-strip {
+    background: rgba(0,0,0,0.3);
+    padding: 16px 52px;
+    display: flex;
+    gap: 40px;
+  }
+  .cms { display: flex; flex-direction: column; gap: 2px; }
+  .cms label { font-family: 'DM Mono', monospace; font-size: 5.5pt; letter-spacing: 0.18em; text-transform: uppercase; opacity: 0.55; }
+  .cms span { font-size: 8.5pt; opacity: 0.85; }
+  .cover-approved {
+    display: inline-block;
+    background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.35);
+    padding: 3px 10px;
+    font-family: 'DM Mono', monospace;
+    font-size: 7pt;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 18px;
+    align-self: flex-start;
+  }
+
+  /* ── BODY ─────────────────────────────────────────── */
+  .body-wrap { padding: 52px 64px 64px; }
+
+  /* ── TOC ─────────────────────────────────────────── */
+  .toc {
+    background: var(--brand-light);
+    border-left: 4px solid var(--brand-mid);
+    padding: 26px 30px;
+    margin-bottom: 44px;
+  }
+  .toc-head { font-family: 'DM Mono', monospace; font-size: 6.5pt; letter-spacing: 0.2em; text-transform: uppercase; color: var(--brand-mid); margin-bottom: 16px; }
+  .toc ol { list-style: none; }
+  .toc ol li { display: flex; justify-content: space-between; padding: 6px 0; border-bottom: 1px dotted var(--rule); font-size: 8.5pt; align-items: baseline; }
+  .toc ol li:last-child { border: none; }
+  .toc-n { font-family: 'DM Mono', monospace; font-size: 7.5pt; color: var(--brand-mid); margin-right: 10px; min-width: 24px; }
+  .toc-t { flex: 1; color: var(--ink-mid); }
+  .toc-p { font-family: 'DM Mono', monospace; font-size: 7pt; color: var(--ink-light); }
+
+  /* ── EXEC SUMMARY ─────────────────────────────────── */
+  .exec {
+    background: var(--brand);
+    color: white;
+    padding: 34px 40px;
+    margin-bottom: 46px;
+  }
+  .exec-head { font-family: 'DM Mono', monospace; font-size: 6pt; letter-spacing: 0.22em; text-transform: uppercase; opacity: 0.6; margin-bottom: 14px; }
+  .exec p { color: rgba(255,255,255,0.85); font-family: 'DM Serif Display', serif; font-size: 10.5pt; line-height: 1.75; margin-bottom: 14px; }
+  .exec-kpis { display: grid; grid-template-columns: repeat(4,1fr); gap: 12px; margin-top: 24px; padding-top: 22px; border-top: 1px solid rgba(255,255,255,0.2); }
+  .kpi { background: rgba(255,255,255,0.1); padding: 14px 12px; border-top: 3px solid rgba(255,255,255,0.4); }
+  .kpi-v { font-family: 'DM Mono', monospace; font-size: 20pt; font-weight: 500; display: block; line-height: 1; margin-bottom: 4px; }
+  .kpi-l { font-size: 7pt; opacity: 0.7; line-height: 1.35; }
+
+  /* ── SECTIONS ─────────────────────────────────────── */
+  .section { margin-bottom: 50px; }
+  .section-num { font-family: 'DM Mono', monospace; font-size: 6.5pt; letter-spacing: 0.2em; text-transform: uppercase; color: var(--brand-mid); margin-bottom: 8px; }
+  .section h2 { font-family: 'DM Serif Display', serif; font-size: 16pt; color: var(--brand); margin-bottom: 16px; line-height: 1.2; }
+  .section-rule { height: 2px; background: linear-gradient(to right, var(--brand), var(--brand-light), transparent); margin-bottom: 24px; }
+
+  h3.sub {
+    font-size: 8.5pt; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em;
+    color: var(--ink); margin: 24px 0 10px;
+    padding-bottom: 5px; border-bottom: 1px solid var(--rule);
+  }
+  p { margin-bottom: 12px; color: var(--ink-mid); }
+
+  /* ── CALLOUTS ─────────────────────────────────────── */
+  .callout { padding: 16px 20px; margin: 20px 0; border-left: 4px solid var(--brand-mid); background: var(--brand-light); }
+  .callout.warn { border-color: var(--red); background: var(--red-pale); }
+  .callout.neutral { border-color: var(--amber); background: var(--amber-pale); }
+  .callout.blue { border-color: var(--blue); background: var(--blue-pale); }
+  .ctag { font-family: 'DM Mono', monospace; font-size: 6.5pt; letter-spacing: 0.15em; text-transform: uppercase; color: var(--brand-mid); margin-bottom: 6px; }
+  .callout.warn .ctag { color: var(--red); }
+  .callout.neutral .ctag { color: var(--amber); }
+  .callout.blue .ctag { color: var(--blue); }
+  .callout p { font-size: 9pt; margin: 0; }
+
+  /* ── TABLES ───────────────────────────────────────── */
+  table.dt { width: 100%; border-collapse: collapse; margin: 18px 0 24px; font-size: 8.5pt; }
+  table.dt thead tr { background: var(--brand); color: white; }
+  table.dt thead th { padding: 9px 12px; text-align: left; font-family: 'DM Mono', monospace; font-size: 7pt; letter-spacing: 0.07em; text-transform: uppercase; font-weight: 500; }
+  table.dt tbody tr { border-bottom: 1px solid var(--rule-light); }
+  table.dt tbody tr:nth-child(even) { background: var(--brand-light); }
+  table.dt tbody td { padding: 8px 12px; color: var(--ink-mid); }
+  table.dt tbody td:first-child { font-weight: 600; color: var(--ink); }
+  .hi { background: var(--amber-pale) !important; }
+  .vhi { color: var(--brand-mid); font-weight: 700; }
+  .vlo { color: var(--red); font-weight: 700; }
+  .vmid { color: var(--amber); font-weight: 700; }
+
+  /* ── CHARTS ───────────────────────────────────────── */
+  .chart-wrap { background: white; border: 1px solid var(--rule); padding: 22px 26px; margin: 20px 0 28px; }
+  .ct { font-family: 'DM Mono', monospace; font-size: 7pt; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-light); margin-bottom: 4px; }
+  .cs { font-size: 9pt; font-weight: 600; color: var(--ink); margin-bottom: 18px; }
+  .cn { font-size: 7pt; color: var(--ink-light); margin-top: 10px; font-family: 'DM Mono', monospace; }
+
+  /* ── METRIC GRID ──────────────────────────────────── */
+  .mg { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; margin: 20px 0 28px; }
+  .mc { background: white; border: 1px solid var(--rule); border-top: 3px solid var(--brand-mid); padding: 18px 16px; }
+  .mc-v { font-family: 'DM Mono', monospace; font-size: 22pt; color: var(--brand); font-weight: 500; line-height: 1; margin-bottom: 6px; }
+  .mc-l { font-size: 7.5pt; color: var(--ink-light); line-height: 1.4; }
+
+  /* ── CASE STUDY BOX ───────────────────────────────── */
+  .case-study {
+    border: 1px solid var(--rule);
+    padding: 24px 28px;
+    margin: 22px 0;
+    background: white;
+    position: relative;
+  }
+  .cs-tag {
+    position: absolute; top: -10px; left: 20px;
+    background: var(--brand);
+    color: white;
+    font-family: 'DM Mono', monospace;
+    font-size: 6.5pt;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 3px 10px;
+  }
+  .case-study h4 { font-size: 10pt; font-weight: 600; color: var(--brand); margin-bottom: 10px; }
+  .case-study p { font-size: 8.5pt; margin-bottom: 8px; }
+
+  /* ── TWO COL ──────────────────────────────────────── */
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+
+  .divider { height: 1px; background: var(--rule); margin: 36px 0; }
+
+  /* ── APPENDIX ─────────────────────────────────────── */
+  .appendix { background: var(--rule-light); padding: 30px 36px; margin-top: 40px; border-top: 2px solid var(--rule); }
+  .appendix h3 { font-family: 'DM Mono', monospace; font-size: 7pt; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-light); margin-bottom: 14px; }
+  .appendix p { font-size: 8pt; color: var(--ink-light); }
+
+  /* ── FOOTER ───────────────────────────────────────── */
+  .doc-footer { background: var(--brand); padding: 18px 64px; display: flex; justify-content: space-between; align-items: center; }
+  .doc-footer .fb { font-family: 'DM Mono', monospace; font-size: 7pt; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.55); }
+  .doc-footer .fi { font-size: 7pt; color: rgba(255,255,255,0.45); text-align: right; }
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <!-- COVER -->
+  <div class="cover">
+    <div class="cover-left">
+      <div class="cover-approved">✓ Approved for Internal Distribution</div>
+      <div class="cover-eyebrow">Community Relations Operations · Highland Studios</div>
+      <h1><span>Approved:</span>User Generated Content & Modding Longevity Audit</h1>
+      <div class="cover-desc">A competitive analysis of UGC adoption rates, mod-driven retention multipliers, and long-tail player lifetime value extension across key genre comparators — drawn from FY2025 Steam Workshop data.</div>
+    </div>
+    <div class="cover-right">
+      <div class="cover-right-label">Headline Multiplier</div>
+      <div class="cover-right-val">3.4×</div>
+      <div class="cover-right-sub">Average player lifetime value extension for titles supporting open modding vs locked-asset titles</div>
+    </div>
+  </div>
+  <div class="cover-meta-strip">
+    <div class="cms"><label>Prepared By</label><span>Community Relations Operations</span></div>
+    <div class="cms"><label>Data Set</label><span>FY2025 Steam Workshop Scrapes</span></div>
+    <div class="cms"><label>Reference</label><span>CRO-UGC-2026-FY25</span></div>
+    <div class="cms"><label>Classification</label><span>Internal — Restricted</span></div>
+  </div>
+
+  <div class="body-wrap">
+
+    <!-- TOC -->
+    <div class="toc">
+      <div class="toc-head">Table of Contents</div>
+      <ol>
+        <li><span class="toc-n">01</span><span class="toc-t">Executive Summary & Headline Findings</span><span class="toc-p">2</span></li>
+        <li><span class="toc-n">02</span><span class="toc-t">Methodology: Steam Workshop Data Extraction & Scope</span><span class="toc-p">3</span></li>
+        <li><span class="toc-n">03</span><span class="toc-t">The UGC Retention Multiplier — Sector-Wide Analysis</span><span class="toc-p">4</span></li>
+        <li><span class="toc-n">04</span><span class="toc-t">Genre-Level Breakdowns: Simulation & Action-Sports</span><span class="toc-p">6</span></li>
+        <li><span class="toc-n">05</span><span class="toc-t">Case Studies: TownLife & Streetline Skate</span><span class="toc-p">8</span></li>
+        <li><span class="toc-n">06</span><span class="toc-t">The Community Content Flywheel Model</span><span class="toc-p">10</span></li>
+        <li><span class="toc-n">07</span><span class="toc-t">Production & Security Risk Assessment</span><span class="toc-p">11</span></li>
+        <li><span class="toc-n">08</span><span class="toc-t">Lessons from LifeSpace: Architecture Failure Analysis</span><span class="toc-p">13</span></li>
+        <li><span class="toc-n">09</span><span class="toc-t">Implementation Framework & Staffing Recommendations</span><span class="toc-p">14</span></li>
+        <li><span class="toc-n">10</span><span class="toc-t">Appendix: Variable Definitions & Source Notes</span><span class="toc-p">16</span></li>
+      </ol>
+    </div>
+
+    <!-- EXEC SUMMARY -->
+    <div class="exec">
+      <div class="exec-head">Executive Summary</div>
+      <p>This audit analyses the impact of user-generated content (UGC) and community modding infrastructure on player retention and long-tail commercial performance across a sample of 34 titles active on Steam, covering the FY2025 measurement window. The primary finding is unambiguous: open modding support is the single most impactful post-launch intervention available to studios aiming to extend player lifetime value (LTV).</p>
+      <p>Titles that support open modding demonstrate an average LTV extension of 3.4× compared to equivalent titles with locked asset structures. Within the simulation genre, the adoption floor is remarkably high — 72% of active simulation game players install at least one community mod within their first 90 days. For action-sports titles with integrated park/track builder tools, community content maintains monthly active user counts at 40% of launch peaks a full twelve months post-release.</p>
+      <p>The audit also surfaces a critical risk profile: modding pipelines, if improperly architectured, introduce security vulnerabilities and QA obligations. The LifeSpace project failure provides a detailed negative case study in this report. Implementation success requires deliberate technical planning and dedicated resourcing, but the commercial returns justify the investment at scale.</p>
+      <div class="exec-kpis">
+        <div class="kpi"><span class="kpi-v">3.4×</span><span class="kpi-l">Average LTV extension for open-modding titles vs locked-asset titles</span></div>
+        <div class="kpi"><span class="kpi-v">72%</span><span class="kpi-l">Simulation players who install mods within 90 days of purchase</span></div>
+        <div class="kpi"><span class="kpi-v">450K</span><span class="kpi-l">Custom map downloads on Streetline Skate 12 months post-launch</span></div>
+        <div class="kpi"><span class="kpi-v">40%</span><span class="kpi-l">MAU retention at month 12 for action-sports titles with UGC tools</span></div>
+      </div>
+    </div>
+
+    <!-- SECTION 1: METHODOLOGY -->
+    <div class="section">
+      <div class="section-num">Section 01</div>
+      <h2>Methodology: Steam Workshop Data Extraction & Scope</h2>
+      <div class="section-rule"></div>
+
+      <p>The data underpinning this audit was collected via structured scraping of Steam Workshop metadata, supplemented by Steam's publicly available achievement and review analytics. The scraping methodology was approved by the Community Relations Operations data governance committee and conducted in compliance with Valve's public API terms of service. Where data required supplementary validation, cross-referencing was performed against SteamSpy public estimates and direct developer disclosures where available.</p>
+
+      <h3 class="sub">1.1 Sample Composition</h3>
+      <div class="two-col">
+        <div>
+          <p>The FY2025 sample comprises 34 titles with Steam Workshop integration, spanning three genre categories: simulation/life (n=14), action-sports/skateboarding (n=11), and racing (n=9). Titles were selected using the following inclusion criteria: minimum 100,000 Steam owners at time of data collection, minimum 12 months post-launch, and active Steam Workshop presence with at least 500 published items.</p>
+        </div>
+        <div>
+          <p>For the control group comparison (locked-asset titles), a matched sample of 28 titles was assembled using equivalent owner-count, genre, and age criteria, excluding titles with any Workshop or modding infrastructure. Matching was conducted on launch-window review score, owner count at 30 days post-launch, and price point, to minimise confounding variables in the LTV multiplier calculation.</p>
+        </div>
+      </div>
+
+      <h3 class="sub">1.2 Key Metrics Defined</h3>
+      <table class="dt">
+        <thead>
+          <tr><th>Metric</th><th>Definition</th><th>Data Source</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Player LTV (estimated)</td><td>Total estimated spend per player across base game, DLC, and in-game purchases over a 24-month window</td><td>Steam review cohort analysis + developer disclosures</td></tr>
+          <tr><td>Mod Adoption Rate</td><td>% of active players who have downloaded ≥1 mod item from Steam Workshop or equivalent</td><td>Steam Workshop API download counts vs owner estimates</td></tr>
+          <tr><td>MAU Retention Index</td><td>Monthly Active Users at month N as % of month-1 MAU (launch window peak)</td><td>Steam achievement unlock timing + review posting patterns</td></tr>
+          <tr><td>UGC Content Volume</td><td>Total number of unique Workshop items published by the community</td><td>Steam Workshop API</td></tr>
+          <tr><td>Organic Social Posts</td><td>Estimated social media posts referencing UGC/mod content, derived from hashtag volume data</td><td>Social listening panel (Pulse Analytics partnership)</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- SECTION 2: UGC RETENTION MULTIPLIER -->
+    <div class="section">
+      <div class="section-num">Section 02</div>
+      <h2>The UGC Retention Multiplier — Sector-Wide Analysis</h2>
+      <div class="section-rule"></div>
+
+      <p>An audit of top competitor games reveals that user-created assets and custom maps are the single largest drivers of long-tail player retention. Games that support open modding show an average player lifetime value extension of <strong>3.4×</strong> compared to games with locked assets. This figure is remarkably consistent across the simulation and action-sports genre clusters in our sample, suggesting the retention mechanism is a property of the modding infrastructure itself, rather than genre-specific audience behaviour.</p>
+
+      <div class="mg">
+        <div class="mc">
+          <div class="mc-v">3.4×</div>
+          <div class="mc-l">Mean LTV extension — open-mod vs locked-asset comparator group</div>
+        </div>
+        <div class="mc">
+          <div class="mc-v">+67%</div>
+          <div class="mc-l">Average increase in 12-month MAU retention for modding-enabled titles</div>
+        </div>
+        <div class="mc">
+          <div class="mc-v">84K</div>
+          <div class="mc-l">Average Workshop item count for top-quartile simulation titles at 24 months</div>
+        </div>
+      </div>
+
+      <!-- SCATTER CHART SVG: LTV multiplier vs mod adoption rate -->
+      <div class="chart-wrap">
+        <div class="ct">Fig. 1 — UGC Adoption Rate vs. Estimated Player LTV Multiplier</div>
+        <div class="cs">Sample of 34 mod-enabled titles — FY2025 Steam Workshop data</div>
+        <svg viewBox="0 0 660 300" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;">
+          <!-- Axes -->
+          <line x1="70" y1="20" x2="70" y2="250" stroke="#d6d2c8" stroke-width="1"/>
+          <line x1="70" y1="250" x2="640" y2="250" stroke="#d6d2c8" stroke-width="1"/>
+          <!-- Y gridlines -->
+          <line x1="68" y1="50" x2="640" y2="50" stroke="#eeece7" stroke-dasharray="4,3" stroke-width="1"/>
+          <text x="60" y="54" text-anchor="end" font-size="8" fill="#79746c" font-family="DM Mono, monospace">5×</text>
+          <line x1="68" y1="100" x2="640" y2="100" stroke="#eeece7" stroke-dasharray="4,3" stroke-width="1"/>
+          <text x="60" y="104" text-anchor="end" font-size="8" fill="#79746c" font-family="DM Mono, monospace">4×</text>
+          <line x1="68" y1="150" x2="640" y2="150" stroke="#eeece7" stroke-dasharray="4,3" stroke-width="1"/>
+          <text x="60" y="154" text-anchor="end" font-size="8" fill="#79746c" font-family="DM Mono, monospace">3×</text>
+          <line x1="68" y1="200" x2="640" y2="200" stroke="#eeece7" stroke-dasharray="4,3" stroke-width="1"/>
+          <text x="60" y="204" text-anchor="end" font-size="8" fill="#79746c" font-family="DM Mono, monospace">2×</text>
+          <!-- X labels -->
+          <text x="70" y="268" text-anchor="middle" font-size="8" fill="#79746c" font-family="DM Mono, monospace">0%</text>
+          <text x="170" y="268" text-anchor="middle" font-size="8" fill="#79746c" font-family="DM Mono, monospace">20%</text>
+          <text x="270" y="268" text-anchor="middle" font-size="8" fill="#79746c" font-family="DM Mono, monospace">40%</text>
+          <text x="370" y="268" text-anchor="middle" font-size="8" fill="#79746c" font-family="DM Mono, monospace">60%</text>
+          <text x="470" y="268" text-anchor="middle" font-size="8" fill="#79746c" font-family="DM Mono, monospace">80%</text>
+          <text x="570" y="268" text-anchor="middle" font-size="8" fill="#79746c" font-family="DM Mono, monospace">100%</text>
+          <!-- Axis labels -->
+          <text x="355" y="286" text-anchor="middle" font-size="8" fill="#79746c" font-family="DM Sans, sans-serif" font-style="italic">Mod Adoption Rate (% of active players with ≥1 mod installed)</text>
+          <text x="16" y="140" text-anchor="middle" font-size="8" fill="#79746c" font-family="DM Sans, sans-serif" transform="rotate(-90, 16, 140)" font-style="italic">Player LTV Multiplier</text>
+          <!-- Trendline -->
+          <line x1="70" y1="235" x2="630" y2="38" stroke="#3d6030" stroke-width="1.5" stroke-dasharray="6,3" opacity="0.6"/>
+          <!-- Scatter dots — simulation (dark green), action-sports (amber), racing (red) -->
+          <!-- Simulation cluster: high adoption (55-85%), high LTV (3.2-5.0x) -->
+          <circle cx="390" cy="95" r="5.5" fill="#2b4520" opacity="0.8"/><text x="400" y="91" font-size="7" fill="#2b4520" font-family="DM Mono, monospace">TownLife</text>
+          <circle cx="450" cy="60" r="5" fill="#2b4520" opacity="0.7"/>
+          <circle cx="360" cy="110" r="5" fill="#2b4520" opacity="0.7"/>
+          <circle cx="480" cy="75" r="5" fill="#2b4520" opacity="0.7"/>
+          <circle cx="420" cy="80" r="5" fill="#2b4520" opacity="0.7"/>
+          <circle cx="510" cy="55" r="5.5" fill="#2b4520" opacity="0.8"/>
+          <circle cx="540" cy="50" r="5" fill="#2b4520" opacity="0.7"/>
+          <circle cx="330" cy="120" r="5" fill="#2b4520" opacity="0.7"/>
+          <!-- Action-sports cluster: moderate adoption (35-55%), moderate LTV (2.5-3.8x) -->
+          <circle cx="310" cy="130" r="5.5" fill="#7a5800" opacity="0.8"/><text x="320" y="127" font-size="7" fill="#7a5800" font-family="DM Mono, monospace">Streetline</text>
+          <circle cx="270" cy="145" r="5" fill="#7a5800" opacity="0.7"/>
+          <circle cx="340" cy="120" r="5" fill="#7a5800" opacity="0.7"/>
+          <circle cx="280" cy="138" r="5" fill="#7a5800" opacity="0.7"/>
+          <circle cx="250" cy="152" r="5" fill="#7a5800" opacity="0.7"/>
+          <!-- Low modding / racing cluster: low adoption (5-20%), low LTV (1.1-1.6x) -->
+          <circle cx="100" cy="218" r="5" fill="#952a00" opacity="0.8"/>
+          <circle cx="130" cy="208" r="5" fill="#952a00" opacity="0.7"/>
+          <circle cx="90" cy="224" r="5" fill="#952a00" opacity="0.7"/>
+          <circle cx="145" cy="212" r="5" fill="#952a00" opacity="0.7"/>
+          <!-- Mean line annotation -->
+          <line x1="70" y1="160" x2="640" y2="160" stroke="#952a00" stroke-width="1" stroke-dasharray="3,3" opacity="0.5"/>
+          <text x="645" y="163" font-size="7.5" fill="#952a00" font-family="DM Mono, monospace">3.4× avg.</text>
+          <!-- Legend -->
+          <circle cx="100" cy="292" r="5" fill="#2b4520" opacity="0.8"/>
+          <text x="112" y="296" font-size="8" fill="#3d3a35" font-family="DM Sans, sans-serif">Simulation / Life</text>
+          <circle cx="220" cy="292" r="5" fill="#7a5800" opacity="0.8"/>
+          <text x="232" y="296" font-size="8" fill="#3d3a35" font-family="DM Sans, sans-serif">Action-Sports</text>
+          <circle cx="340" cy="292" r="5" fill="#952a00" opacity="0.8"/>
+          <text x="352" y="296" font-size="8" fill="#3d3a35" font-family="DM Sans, sans-serif">Low-mod / Racing comparators</text>
+        </svg>
+        <div class="cn">Each point represents one title. LTV multiplier = estimated 24-month LTV relative to same-genre locked-asset comparator. Trendline is OLS. r = 0.79, p &lt; 0.001.</div>
+      </div>
+
+      <h3 class="sub">2.1 Mechanism: Why Modding Drives Retention</h3>
+      <p>The retention mechanism is not merely content volume — it is the perception of infinite content potential. Players who install mods develop a qualitatively different relationship with a title: they cease to be passive consumers of developer-produced content and become active participants in a living ecosystem. This psychological shift from consumer to co-creator has been consistently identified in academic gaming research (Sotamaa, 2010; Kücklich, 2005; Paul, 2018) as a primary driver of long-duration play engagement.</p>
+      <p>The economic implications are significant. Each UGC item published is a free content asset that extends the title's effective content library without developer production cost. Community-run asset ecosystems additionally generate millions of organic social posts, reducing developer content creation spend while simultaneously driving discovery traffic among potential new buyers.</p>
+    </div>
+
+    <!-- SECTION 3: GENRE BREAKDOWNS -->
+    <div class="section">
+      <div class="section-num">Section 03</div>
+      <h2>Genre-Level Breakdowns: Simulation & Action-Sports</h2>
+      <div class="section-rule"></div>
+
+      <p>The UGC retention multiplier is not uniformly distributed across genres. It is highest in categories where modded content serves the core game loop — where new assets, maps, characters, or mechanics are directly consumable within standard play sessions. This section provides genre-level breakdowns for the two primary categories of interest: simulation/life games and action-sports games.</p>
+
+      <!-- MAU RETENTION COMPARISON CHART -->
+      <div class="chart-wrap">
+        <div class="ct">Fig. 2 — MAU Retention at 12 Months Post-Launch</div>
+        <div class="cs">Modding-enabled vs locked-asset comparators, by genre</div>
+        <svg viewBox="0 0 600 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;">
+          <defs>
+            <linearGradient id="mod" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#2b4520"/><stop offset="100%" stop-color="#3d6030"/></linearGradient>
+            <linearGradient id="locked" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#b0aca4"/><stop offset="100%" stop-color="#928e88"/></linearGradient>
+          </defs>
+          <!-- Axes -->
+          <line x1="80" y1="20" x2="80" y2="170" stroke="#d6d2c8" stroke-width="1"/>
+          <line x1="80" y1="170" x2="560" y2="170" stroke="#d6d2c8" stroke-width="1"/>
+          <!-- Y gridlines -->
+          <line x1="78" y1="50" x2="560" y2="50" stroke="#eeece7" stroke-dasharray="3,3" stroke-width="1"/>
+          <text x="72" y="54" text-anchor="end" font-size="8" fill="#79746c" font-family="DM Mono, monospace">75%</text>
+          <line x1="78" y1="90" x2="560" y2="90" stroke="#eeece7" stroke-dasharray="3,3" stroke-width="1"/>
+          <text x="72" y="94" text-anchor="end" font-size="8" fill="#79746c" font-family="DM Mono, monospace">50%</text>
+          <line x1="78" y1="130" x2="560" y2="130" stroke="#eeece7" stroke-dasharray="3,3" stroke-width="1"/>
+          <text x="72" y="134" text-anchor="end" font-size="8" fill="#79746c" font-family="DM Mono, monospace">25%</text>
+          <!-- Simulation pair -->
+          <rect x="120" y="52" width="50" height="118" fill="url(#mod)"/>
+          <text x="145" y="47" text-anchor="middle" font-size="8.5" fill="#2b4520" font-family="DM Mono, monospace" font-weight="500">68%</text>
+          <rect x="180" y="120" width="50" height="50" fill="url(#locked)"/>
+          <text x="205" y="115" text-anchor="middle" font-size="8.5" fill="#928e88" font-family="DM Mono, monospace" font-weight="500">20%</text>
+          <text x="175" y="192" text-anchor="middle" font-size="8.5" fill="#3d3a35" font-family="DM Sans, sans-serif">Simulation</text>
+          <!-- Action-sports pair -->
+          <rect x="300" y="90" width="50" height="80" fill="url(#mod)"/>
+          <text x="325" y="85" text-anchor="middle" font-size="8.5" fill="#2b4520" font-family="DM Mono, monospace" font-weight="500">40%</text>
+          <rect x="360" y="138" width="50" height="32" fill="url(#locked)"/>
+          <text x="385" y="133" text-anchor="middle" font-size="8.5" fill="#928e88" font-family="DM Mono, monospace" font-weight="500">12%</text>
+          <text x="355" y="192" text-anchor="middle" font-size="8.5" fill="#3d3a35" font-family="DM Sans, sans-serif">Action-Sports</text>
+          <!-- Legend -->
+          <rect x="100" y="205" width="12" height="9" fill="url(#mod)"/>
+          <text x="118" y="213" font-size="8" fill="#3d3a35" font-family="DM Sans, sans-serif">Mod-enabled</text>
+          <rect x="220" y="205" width="12" height="9" fill="url(#locked)"/>
+          <text x="238" y="213" font-size="8" fill="#3d3a35" font-family="DM Sans, sans-serif">Locked-asset comparator</text>
+        </svg>
+        <div class="cn">MAU Retention = Monthly Active Users at month 12 as % of month-1 MAU. Bars show genre-group medians. Source: Steam Workshop scrape FY2025 + SteamSpy estimates.</div>
+      </div>
+
+      <h3 class="sub">3.1 Simulation Genre</h3>
+      <p>In games like TownLife, 72% of active users install custom mods within the first 90 days of purchase. The scope of community content in top simulation titles is extraordinary in scale: leading titles have accumulated upward of 80,000–120,000 individual Workshop items spanning character models, build packs, scenario scripts, gameplay mechanic overhauls, and UI replacements. Community-run assets generate millions of organic social posts per month, effectively functioning as an unpaid marketing department while simultaneously reducing the developer's own content cadence obligations.</p>
+      <p>The commercial implications are direct: simulation titles with strong mod ecosystems generate an estimated 68% of their installed player base as monthly active at the 12-month mark, compared to approximately 20% for equivalent locked-asset titles. The 3.4× LTV multiplier is largely driven by this retention premium compounding over DLC and in-game purchase cycles.</p>
+
+      <h3 class="sub">3.2 Action-Sports Genre</h3>
+      <p>Reusing track/park builder tools inside Streetline Skate resulted in over 450,000 custom map downloads, maintaining monthly active users at 40% of launch peaks even 12 months post-release. The action-sports genre presents a different but equally compelling modding profile. Content is more focused: custom maps and park layouts are the primary UGC vector, rather than the broad asset ecosystem seen in simulation. However, the builder tool functions doubly as both a retention mechanism (players spend significant time in creation mode) and a social content generator (custom parks are shared, rated, and featured by streaming creators).</p>
+
+      <div class="callout">
+        <div class="ctag">Notable Datapoint</div>
+        <p>The 450,000 custom map downloads recorded for Streetline Skate represent a ratio of approximately 1.8 custom map downloads per active player at the 12-month mark. This ratio is substantially higher than equivalent sports game comparators without builder tools (average 0.1 per player), confirming the builder mechanism's unique capacity to sustain community engagement.</p>
+      </div>
+    </div>
+
+    <!-- SECTION 4: CASE STUDIES -->
+    <div class="section">
+      <div class="section-num">Section 04</div>
+      <h2>Case Studies</h2>
+      <div class="section-rule"></div>
+
+      <div class="case-study">
+        <div class="cs-tag">Case Study A</div>
+        <h4>TownLife — Simulation Genre Benchmark</h4>
+        <p>TownLife is the primary simulation genre benchmark in this dataset, representing the highest mod adoption rate and largest Workshop ecosystem of any title in the tracked sample. With approximately 72% of active users having installed at least one mod, and a Workshop library exceeding 94,000 items at FY2025 close, TownLife demonstrates the full potential of the community content flywheel.</p>
+        <p>The estimated player LTV for TownLife (modding cohort) is approximately 4.1× that of equivalent simulation titles without Workshop support, driven by: (1) sustained engagement preventing subscription churn, (2) higher DLC attach rates among modding-active players, and (3) word-of-mouth amplification through community content channels.</p>
+        <p>Creator content production for TownLife is primarily driven by Tier 3 (niche-authority) YouTube creators who build long-form narrative playthroughs using community-created scenario packs. These creators function as effective organic advertisers at zero cost to the studio.</p>
+      </div>
+
+      <div class="case-study" style="margin-top:24px;">
+        <div class="cs-tag">Case Study B</div>
+        <h4>Streetline Skate — Action-Sports Park Builder</h4>
+        <p>Streetline Skate's park builder tool was introduced as a post-launch update six weeks after release, responding to community requests. Within 60 days of the builder's launch, community-created park downloads surpassed the cumulative download count of the game's official DLC content, confirming player preference for community-created environments over developer-produced alternatives at equivalent or lower price points.</p>
+        <p>Monthly active user retention at the 12-month mark was measured at 40% of launch peak, compared to an action-sports genre average (without builder tools) of approximately 12%. The 3.3× MAU retention premium is directly attributable to the builder mechanic and associated community sharing infrastructure.</p>
+        <p>The TikTok virality coefficient of builder-enabled titles is significantly higher: custom park showcase clips generate on average 4.2× the impressions of standard gameplay clips in this genre, driving ongoing discovery-phase traffic from non-owners.</p>
+      </div>
+    </div>
+
+    <!-- SECTION 5: RISK -->
+    <div class="section">
+      <div class="section-num">Section 05</div>
+      <h2>Production & Security Risk Assessment</h2>
+      <div class="section-rule"></div>
+      <p>While mod support extends product lifetime and commercial performance, it introduces a distinct set of production and security risks that require deliberate management. These risks are real but manageable with appropriate resourcing and architectural discipline.</p>
+
+      <h3 class="sub">5.1 Security Vulnerability Surface</h3>
+      <p>Modding pipelines require dedicated QA staff to monitor tools and prevent buffer overflow exploits. The introduction of community-submitted asset injection into a game's runtime environment creates an attack surface that does not exist in locked-asset titles. The primary vulnerability categories are: (1) maliciously crafted asset files designed to trigger buffer overflow or heap corruption in the asset loading pipeline, (2) script injection where modding frameworks permit scripted content, and (3) social engineering attacks targeting creator credentials to distribute malware through trusted Workshop accounts.</p>
+
+      <div class="callout warn">
+        <div class="ctag">Critical Risk Flag</div>
+        <p>Modding pipelines require a minimum of 2.0 FTE dedicated QA staff for a mid-scale implementation, and a security-reviewed sandboxed asset loader as a non-negotiable architectural component. Studios that deploy community asset pipelines without this infrastructure are exposed to both player harm risk and potential legal liability. This is not a cost that can be deferred post-launch.</p>
+      </div>
+
+      <h3 class="sub">5.2 The LifeSpace Failure: Architecture Lessons</h3>
+      <p>The previous LifeSpace project failed to support mods because its save-state structure could not handle unverified community asset injections. LifeSpace provides the most directly relevant negative case study for Highland Studios given our own organisational proximity to the project. The failure had two root causes: first, the save-state serialisation format was tightly coupled to a fixed asset manifest compiled at build time, making runtime injection of external assets architecturally impossible without corruption; second, the decision to defer modding infrastructure to a post-launch update was made under schedule pressure and was never revisited.</p>
+      <p>The consequence was not merely the absence of a mod ecosystem — it was the absence of the long-tail retention and LTV multiplier that would have meaningfully changed the title's commercial trajectory. LifeSpace reached an estimated 8% MAU retention at month 12, consistent with locked-asset comparators, despite a strong launch window.</p>
+
+      <div class="callout neutral">
+        <div class="ctag">Lesson for Future Projects</div>
+        <p>Modding support cannot be retrofitted onto an architecture designed without it. Asset loader sandboxing, external manifest support, and save-state schema flexibility must be specified at the engine design stage. If modding is a strategic objective, it must be a non-negotiable architectural requirement from pre-production.</p>
+      </div>
+
+      <h3 class="sub">5.3 Staffing & Resource Implications</h3>
+      <table class="dt">
+        <thead>
+          <tr><th>Modding Implementation Scale</th><th>Min. Dedicated Staff (FTE)</th><th>Estimated Annual Cost</th><th>Key Roles</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Minimal (read-only texture/mesh)</td><td>1.0</td><td>~£55,000</td><td>QA Specialist</td></tr>
+          <tr class="hi"><td>Standard (map/level builder)</td><td>2.5</td><td>~£140,000</td><td>QA, Tools Engineer, Community Mgr</td></tr>
+          <tr><td>Full (script + asset injection)</td><td>5.0+</td><td>~£280,000+</td><td>QA × 2, Security Eng., Tools × 2, Community Mgr</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="appendix">
+      <h3>Appendix A — Variable Definitions & Source Notes</h3>
+      <p>LTV multiplier figures are derived from matched-sample comparison and carry an estimated uncertainty range of ±0.4×. Steam Workshop item counts scraped at FY2025 close (31 December 2025). MAU retention estimates derived from Steam achievement unlock timing as a proxy; actual MAU figures are studio-reported where available, otherwise estimated. All figures are directionally indicative and should be treated as estimates, not audited data.</p>
+      <p style="margin-top:10px;">SteamSpy estimates were used to supplement owner counts where direct data was unavailable. Social listening data sourced via Pulse Analytics Agency partnership.</p>
+      <p style="margin-top:10px;"><em>Classification: Internal — Restricted · © 2026 Highland Studios · Community Relations Operations · Ref: CRO-UGC-2026-FY25</em></p>
+    </div>
+
+  </div>
+
+  <div class="doc-footer">
+    <div class="fb">Community Relations Operations · Highland Studios · CRO-UGC-2026-FY25</div>
+    <div class="fi">FY2025 Data · Internal Restricted<br>© 2026 Highland Studios</div>
+  </div>
+
+</div>
+</body>
+</html>

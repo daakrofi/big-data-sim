@@ -1,0 +1,947 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Industry Snapshot: Creator & Streaming Metrics — StreamMetrics Platform</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,300;0,400;0,600;1,300&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap');
+
+  :root {
+    --ink: #0f1117;
+    --ink-mid: #3a3d47;
+    --ink-light: #696c7a;
+    --rule: #d8dae0;
+    --rule-light: #eceef2;
+    --accent: #1a3a6b;
+    --accent-mid: #2a5298;
+    --accent-light: #e8edf5;
+    --highlight: #c8392b;
+    --highlight-pale: #fdf0ee;
+    --green: #1b6b4a;
+    --green-pale: #e8f4ef;
+    --amber: #8a5c00;
+    --amber-pale: #fdf6e3;
+    --page: #fafafa;
+    --white: #ffffff;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 9.5pt;
+    line-height: 1.65;
+    color: var(--ink);
+    background: #e8e8e8;
+  }
+
+  .page {
+    max-width: 870px;
+    margin: 32px auto;
+    background: var(--page);
+    box-shadow: 0 2px 24px rgba(0,0,0,0.13);
+  }
+
+  /* ── COVER ─────────────────────────────────────────── */
+  .cover {
+    background: var(--accent);
+    padding: 64px 64px 52px;
+    color: white;
+    position: relative;
+    overflow: hidden;
+  }
+  .cover::before {
+    content:'';
+    position:absolute; top:0; right:0; width:320px; height:100%;
+    background: linear-gradient(135deg, transparent 40%, rgba(255,255,255,0.04) 40%);
+  }
+  .cover-eyebrow {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 7.5pt;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    opacity: 0.7;
+    margin-bottom: 22px;
+  }
+  .cover h1 {
+    font-family: 'IBM Plex Serif', serif;
+    font-size: 28pt;
+    font-weight: 300;
+    line-height: 1.2;
+    margin-bottom: 10px;
+    letter-spacing: -0.01em;
+  }
+  .cover h1 strong { font-weight: 600; display: block; }
+  .cover-sub {
+    font-size: 12pt;
+    font-weight: 300;
+    opacity: 0.8;
+    margin-bottom: 40px;
+    font-family: 'IBM Plex Serif', serif;
+    font-style: italic;
+  }
+  .cover-meta {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 24px;
+    border-top: 1px solid rgba(255,255,255,0.25);
+    padding-top: 28px;
+    margin-top: 8px;
+  }
+  .cover-meta-item label {
+    display: block;
+    font-size: 6.5pt;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    opacity: 0.6;
+    margin-bottom: 4px;
+    font-family: 'IBM Plex Mono', monospace;
+  }
+  .cover-meta-item span { font-size: 9pt; opacity: 0.9; }
+  .cover-badge {
+    display: inline-block;
+    margin-top: 18px;
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.3);
+    padding: 4px 12px;
+    font-size: 7pt;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-family: 'IBM Plex Mono', monospace;
+  }
+
+  /* ── BODY LAYOUT ─────────────────────────────────────── */
+  .body-wrap { padding: 52px 64px 64px; }
+
+  /* ── TOC ─────────────────────────────────────────────── */
+  .toc {
+    background: var(--accent-light);
+    border-left: 3px solid var(--accent);
+    padding: 28px 32px;
+    margin-bottom: 44px;
+  }
+  .toc h2 {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 7pt;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 16px;
+  }
+  .toc ol { list-style: none; counter-reset: toc; }
+  .toc ol li {
+    counter-increment: toc;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 5px 0;
+    border-bottom: 1px dotted var(--rule);
+  }
+  .toc ol li:last-child { border: none; }
+  .toc ol li::before {
+    content: counter(toc, decimal-leading-zero);
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 7.5pt;
+    color: var(--accent-mid);
+    margin-right: 12px;
+    min-width: 24px;
+  }
+  .toc-title { font-size: 8.5pt; color: var(--ink); }
+  .toc-page { font-family: 'IBM Plex Mono', monospace; font-size: 7.5pt; color: var(--ink-light); }
+
+  /* ── SECTION STRUCTURE ───────────────────────────────── */
+  .section { margin-bottom: 48px; }
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    border-bottom: 2px solid var(--accent);
+    padding-bottom: 10px;
+    margin-bottom: 24px;
+  }
+  .section-num {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 8pt;
+    color: var(--accent);
+    font-weight: 500;
+    min-width: 28px;
+  }
+  .section-header h2 {
+    font-family: 'IBM Plex Serif', serif;
+    font-size: 14pt;
+    font-weight: 600;
+    color: var(--accent);
+    letter-spacing: -0.01em;
+  }
+
+  h3.subsection {
+    font-size: 9.5pt;
+    font-weight: 600;
+    color: var(--ink);
+    margin: 22px 0 10px;
+    padding-bottom: 4px;
+    border-bottom: 1px solid var(--rule);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+
+  p { margin-bottom: 12px; color: var(--ink-mid); font-size: 9.5pt; }
+  p:last-child { margin-bottom: 0; }
+
+  /* ── EXECUTIVE SUMMARY ───────────────────────────────── */
+  .exec-summary {
+    background: var(--accent);
+    color: white;
+    padding: 32px 36px;
+    margin-bottom: 44px;
+  }
+  .exec-summary h2 {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 7pt;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    opacity: 0.7;
+    margin-bottom: 16px;
+  }
+  .exec-summary p {
+    color: rgba(255,255,255,0.88);
+    font-family: 'IBM Plex Serif', serif;
+    font-size: 10.5pt;
+    line-height: 1.7;
+    font-weight: 300;
+    margin-bottom: 14px;
+  }
+  .key-findings {
+    margin-top: 24px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+  .kf-item {
+    background: rgba(255,255,255,0.1);
+    border-left: 3px solid rgba(255,255,255,0.5);
+    padding: 12px 14px;
+  }
+  .kf-item .kf-stat {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 16pt;
+    font-weight: 500;
+    display: block;
+    margin-bottom: 2px;
+  }
+  .kf-item .kf-label {
+    font-size: 7.5pt;
+    opacity: 0.75;
+    line-height: 1.4;
+  }
+
+  /* ── DATA TABLE ──────────────────────────────────────── */
+  .data-table { width: 100%; border-collapse: collapse; margin: 18px 0 22px; font-size: 8.5pt; }
+  .data-table thead tr { background: var(--accent); color: white; }
+  .data-table thead th {
+    padding: 9px 12px;
+    text-align: left;
+    font-weight: 500;
+    font-size: 7.5pt;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    font-family: 'IBM Plex Mono', monospace;
+  }
+  .data-table tbody tr { border-bottom: 1px solid var(--rule-light); }
+  .data-table tbody tr:nth-child(even) { background: var(--accent-light); }
+  .data-table tbody td { padding: 8px 12px; color: var(--ink-mid); }
+  .data-table tbody td:first-child { font-weight: 500; color: var(--ink); }
+  .data-table .highlight-row { background: var(--highlight-pale) !important; }
+  .data-table .highlight-row td { color: var(--ink) !important; }
+  .val-high { color: var(--green); font-weight: 600; }
+  .val-low { color: var(--highlight); font-weight: 600; }
+  .val-mid { color: var(--amber); font-weight: 600; }
+
+  /* ── CHART CONTAINERS ────────────────────────────────── */
+  .chart-wrap {
+    background: white;
+    border: 1px solid var(--rule);
+    padding: 24px 28px;
+    margin: 20px 0 28px;
+  }
+  .chart-title {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 7.5pt;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-light);
+    margin-bottom: 4px;
+  }
+  .chart-subtitle {
+    font-size: 9pt;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 20px;
+  }
+  .chart-note {
+    font-size: 7.5pt;
+    color: var(--ink-light);
+    margin-top: 10px;
+    font-style: italic;
+    font-family: 'IBM Plex Mono', monospace;
+  }
+
+  /* ── CALLOUT / INSIGHT BOX ───────────────────────────── */
+  .callout {
+    padding: 18px 22px 18px 20px;
+    margin: 22px 0;
+    border-left: 4px solid var(--accent-mid);
+    background: var(--accent-light);
+  }
+  .callout.warn { border-color: var(--highlight); background: var(--highlight-pale); }
+  .callout.positive { border-color: var(--green); background: var(--green-pale); }
+  .callout.neutral { border-color: var(--amber); background: var(--amber-pale); }
+  .callout-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 6.5pt;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--accent-mid);
+    margin-bottom: 6px;
+    font-weight: 500;
+  }
+  .callout.warn .callout-label { color: var(--highlight); }
+  .callout.positive .callout-label { color: var(--green); }
+  .callout.neutral .callout-label { color: var(--amber); }
+  .callout p { font-size: 9pt; margin: 0; }
+
+  /* ── METRICS GRID ────────────────────────────────────── */
+  .metrics-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; margin: 20px 0 28px; }
+  .metric-card {
+    background: white;
+    border: 1px solid var(--rule);
+    padding: 20px 18px;
+    border-top: 3px solid var(--accent);
+  }
+  .metric-card .m-val {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 22pt;
+    font-weight: 500;
+    color: var(--accent);
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+  .metric-card .m-label { font-size: 7.5pt; color: var(--ink-light); line-height: 1.4; }
+  .metric-card .m-delta {
+    font-size: 7.5pt;
+    margin-top: 8px;
+    font-family: 'IBM Plex Mono', monospace;
+  }
+  .delta-up { color: var(--green); }
+  .delta-down { color: var(--highlight); }
+
+  /* ── PAGE FOOTER ─────────────────────────────────────── */
+  .doc-footer {
+    border-top: 2px solid var(--accent);
+    padding: 20px 64px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--accent-light);
+  }
+  .doc-footer .footer-brand {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 7pt;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent-mid);
+  }
+  .doc-footer .footer-info {
+    font-size: 7pt;
+    color: var(--ink-light);
+    text-align: right;
+  }
+
+  /* ── METHODOLOGY BOX ─────────────────────────────────── */
+  .methodology {
+    border: 1px solid var(--rule);
+    padding: 24px 28px;
+    margin: 18px 0;
+    background: white;
+  }
+  .methodology h4 {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 7pt;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ink-light);
+    margin-bottom: 12px;
+  }
+  .methodology ul { list-style: none; padding: 0; }
+  .methodology ul li {
+    padding: 6px 0 6px 18px;
+    border-bottom: 1px solid var(--rule-light);
+    font-size: 8.5pt;
+    color: var(--ink-mid);
+    position: relative;
+  }
+  .methodology ul li::before {
+    content: '›';
+    position: absolute; left: 0;
+    color: var(--accent-mid);
+    font-weight: bold;
+  }
+  .methodology ul li:last-child { border: none; }
+
+  /* ── DIVIDER ─────────────────────────────────────────── */
+  .divider {
+    height: 1px;
+    background: var(--rule);
+    margin: 36px 0;
+  }
+
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+  .three-col { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; }
+
+  /* ── APPENDIX ────────────────────────────────────────── */
+  .appendix {
+    background: var(--rule-light);
+    padding: 32px 36px;
+    margin-top: 40px;
+    border-top: 2px solid var(--rule);
+  }
+  .appendix h3 {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 7.5pt;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--ink-light);
+    margin-bottom: 16px;
+  }
+  .appendix p { font-size: 8pt; color: var(--ink-light); }
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <!-- COVER -->
+  <div class="cover">
+    <div class="cover-eyebrow">StreamMetrics Platform · Industry Research Division</div>
+    <h1>Industry Snapshot:<br><strong>Creator & Streaming Metrics</strong></h1>
+    <div class="cover-sub">Cross-Genre Viewer Behaviour, Conversion Analysis & Longevity Benchmarking</div>
+    <div class="cover-meta">
+      <div class="cover-meta-item"><label>Publication Date</label><span>March 2026</span></div>
+      <div class="cover-meta-item"><label>Report Series</label><span>SMX-CR-2026-03</span></div>
+      <div class="cover-meta-item"><label>Data Coverage</label><span>Q3 2024 – Q4 2025</span></div>
+    </div>
+    <div class="cover-badge">Industry Benchmark Edition · Not for External Distribution</div>
+  </div>
+
+  <div class="body-wrap">
+
+    <!-- TOC -->
+    <div class="toc">
+      <h2>Contents</h2>
+      <ol>
+        <li><span class="toc-title">Executive Summary & Key Findings</span><span class="toc-page">2</span></li>
+        <li><span class="toc-title">Methodology & Data Sources</span><span class="toc-page">3</span></li>
+        <li><span class="toc-title">Viewer-to-Player Conversion Indices</span><span class="toc-page">4</span></li>
+        <li><span class="toc-title">Streaming Viewership Volume by Genre</span><span class="toc-page">5</span></li>
+        <li><span class="toc-title">Content Longevity & Post-Launch Decay Analysis</span><span class="toc-page">7</span></li>
+        <li><span class="toc-title">Creator Tier Distribution & Audience Reach</span><span class="toc-page">9</span></li>
+        <li><span class="toc-title">Platform-Level Breakdown (Twitch / YouTube / TikTok)</span><span class="toc-page">11</span></li>
+        <li><span class="toc-title">Strategic Implications & Recommendations</span><span class="toc-page">13</span></li>
+        <li><span class="toc-title">Appendix: Variable Definitions & Index Methodology</span><span class="toc-page">15</span></li>
+      </ol>
+    </div>
+
+    <!-- EXECUTIVE SUMMARY -->
+    <div class="exec-summary">
+      <h2>Executive Summary</h2>
+      <p>This report synthesises StreamMetrics Platform data drawn from over 4.8 million individual stream sessions across Twitch, YouTube Gaming, and TikTok between Q3 2024 and Q4 2025. The analysis focuses on two primary dimensions: the rate at which passive viewership converts into active game purchases (the Viewer-to-Player Conversion Index, VPCI), and the longevity of streaming engagement relative to a title's launch window.</p>
+      <p>Our data presents a counterintuitive finding for studios evaluating genre investment. While simulation-category games dominate raw viewership volume, they exhibit comparatively low conversion efficiency. Action-sports and heavy-customisation titles convert at nearly 2.6× the rate, making them disproportionately powerful demand-generation tools relative to their streaming footprint.</p>
+      <div class="key-findings">
+        <div class="kf-item"><span class="kf-stat">8.4%</span><span class="kf-label">Action-sports & customisation VPCI vs 3.2% for simulation</span></div>
+        <div class="kf-item"><span class="kf-stat">–85%</span><span class="kf-label">Racing genre viewership decay within 30 days of launch</span></div>
+        <div class="kf-item"><span class="kf-stat">22.4M</span><span class="kf-label">Monthly simulation stream hours — highest in tracked genres</span></div>
+        <div class="kf-item"><span class="kf-stat">24 mo.</span><span class="kf-label">Sustained simulation viewership window driven by modding cycles</span></div>
+      </div>
+    </div>
+
+    <!-- SECTION 1: METHODOLOGY -->
+    <div class="section">
+      <div class="section-header">
+        <span class="section-num">01</span>
+        <h2>Methodology & Data Sources</h2>
+      </div>
+      <p>StreamMetrics Platform aggregates live and archived session data from first-party API integrations with Twitch, YouTube Gaming Live, and TikTok LIVE. The VPCI (Viewer-to-Player Conversion Index) is a proprietary composite metric derived by matching anonymised viewer session fingerprints against game purchase records through our retail partner data-sharing agreements, covering approximately 68% of PC game sales and 41% of console game sales in the measurement window.</p>
+
+      <h3 class="subsection">1.1 Measurement Scope</h3>
+      <div class="methodology">
+        <h4>Data Sources & Panel Composition</h4>
+        <ul>
+          <li>Twitch API v6 — session-level concurrent viewer data, game category metadata, channel tier classifications</li>
+          <li>YouTube Gaming Live — watch-time hours, retention curves, and subscriber-to-viewer conversion overlays</li>
+          <li>TikTok LIVE Analytics Partner Feed — short-form gaming clip impressions and hashtag engagement volumes</li>
+          <li>Retail Partner Network (4 major platform storefronts) — anonymised purchase signal matching via device fingerprint cohorts</li>
+          <li>StreamMetrics Direct Survey Panel — 18,400 verified panel respondents who self-reported purchase actions following stream viewership (supplementary validation only)</li>
+        </ul>
+      </div>
+
+      <h3 class="subsection">1.2 Definitions</h3>
+      <div class="two-col">
+        <div>
+          <p><strong>Viewer-to-Player Conversion Index (VPCI):</strong> The percentage of unique viewers who, within a 14-day window following a qualifying stream session of ≥8 minutes, complete a verified purchase of the game being streamed. Calculated at the genre level by aggregating title-level signals within defined genre taxonomies.</p>
+          <p><strong>Launch Window:</strong> Defined as 0–30 days post commercial release. Data in the longevity section uses indexed viewership (Launch Day = 100) to enable cross-genre comparison regardless of absolute volume differences.</p>
+        </div>
+        <div>
+          <p><strong>Long-tail Viewership:</strong> Stream hours recorded beyond month 3 post-launch. Used as the primary metric in Content Longevity analysis (Section 4).</p>
+          <p><strong>Genre Taxonomy:</strong> Titles are classified under the StreamMetrics 11-category genre framework (SMX-GT-22). Multi-genre titles are classified by primary gameplay loop. Racing, Simulation/Life, and Action-Sports are the three genres with sufficient title volume for statistical confidence at 95% CI in this report cycle.</p>
+        </div>
+      </div>
+
+      <div class="callout neutral">
+        <div class="callout-label">Scope Limitation</div>
+        <p>Mobile-exclusive titles are excluded from this report. Purchase signal matching is estimated for console; PC retail coverage is materially stronger. VPCI figures for console-skewed titles should be treated as directionally indicative.</p>
+      </div>
+    </div>
+
+    <!-- SECTION 2: VPCI -->
+    <div class="section">
+      <div class="section-header">
+        <span class="section-num">02</span>
+        <h2>Viewer-to-Player Conversion Indices</h2>
+      </div>
+      <p>The VPCI is the most commercially actionable metric in this report. A high VPCI indicates that viewing a game on stream is a reliable precursor to purchase — signifying that the streaming loop functions as an effective paid-marketing substitute. The figure below presents VPCI by genre, weighted by title count within each genre bucket.</p>
+
+      <!-- BAR CHART SVG -->
+      <div class="chart-wrap">
+        <div class="chart-title">Fig. 1 — Viewer-to-Player Conversion Index (VPCI)</div>
+        <div class="chart-subtitle">Percentage of qualifying viewers completing purchase within 14-day attribution window, by genre</div>
+        <svg viewBox="0 0 700 280" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;">
+          <defs>
+            <linearGradient id="barGrad1" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0%" stop-color="#1a3a6b"/>
+              <stop offset="100%" stop-color="#2a5298"/>
+            </linearGradient>
+            <linearGradient id="barGrad2" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0%" stop-color="#1b6b4a"/>
+              <stop offset="100%" stop-color="#2e9e6e"/>
+            </linearGradient>
+            <linearGradient id="barGrad3" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0%" stop-color="#c8392b"/>
+              <stop offset="100%" stop-color="#e05242"/>
+            </linearGradient>
+            <linearGradient id="barGrad4" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0%" stop-color="#8a5c00"/>
+              <stop offset="100%" stop-color="#c88a00"/>
+            </linearGradient>
+            <linearGradient id="barGrad5" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0%" stop-color="#3d3d6b"/>
+              <stop offset="100%" stop-color="#5c5c9e"/>
+            </linearGradient>
+          </defs>
+          <!-- Grid lines -->
+          <line x1="180" y1="20" x2="180" y2="230" stroke="#d8dae0" stroke-width="1"/>
+          <line x1="180" y1="230" x2="680" y2="230" stroke="#d8dae0" stroke-width="1"/>
+          <!-- X-axis ticks -->
+          <line x1="230" y1="228" x2="230" y2="234" stroke="#aaa" stroke-width="1"/>
+          <text x="230" y="245" text-anchor="middle" font-size="8" fill="#696c7a" font-family="IBM Plex Mono, monospace">2%</text>
+          <line x1="305" y1="228" x2="305" y2="234" stroke="#aaa" stroke-width="1"/>
+          <text x="305" y="245" text-anchor="middle" font-size="8" fill="#696c7a" font-family="IBM Plex Mono, monospace">4%</text>
+          <line x1="380" y1="228" x2="380" y2="234" stroke="#aaa" stroke-width="1"/>
+          <text x="380" y="245" text-anchor="middle" font-size="8" fill="#696c7a" font-family="IBM Plex Mono, monospace">6%</text>
+          <line x1="455" y1="228" x2="455" y2="234" stroke="#aaa" stroke-width="1"/>
+          <text x="455" y="245" text-anchor="middle" font-size="8" fill="#696c7a" font-family="IBM Plex Mono, monospace">8%</text>
+          <line x1="530" y1="228" x2="530" y2="234" stroke="#aaa" stroke-width="1"/>
+          <text x="530" y="245" text-anchor="middle" font-size="8" fill="#696c7a" font-family="IBM Plex Mono, monospace">10%</text>
+          <line x1="605" y1="228" x2="605" y2="234" stroke="#aaa" stroke-width="1"/>
+          <text x="605" y="245" text-anchor="middle" font-size="8" fill="#696c7a" font-family="IBM Plex Mono, monospace">12%</text>
+          <!-- Subtle gridlines -->
+          <line x1="230" y1="20" x2="230" y2="228" stroke="#eceef2" stroke-width="1" stroke-dasharray="4,3"/>
+          <line x1="305" y1="20" x2="305" y2="228" stroke="#eceef2" stroke-width="1" stroke-dasharray="4,3"/>
+          <line x1="380" y1="20" x2="380" y2="228" stroke="#eceef2" stroke-width="1" stroke-dasharray="4,3"/>
+          <line x1="455" y1="20" x2="455" y2="228" stroke="#eceef2" stroke-width="1" stroke-dasharray="4,3"/>
+          <line x1="530" y1="20" x2="530" y2="228" stroke="#eceef2" stroke-width="1" stroke-dasharray="4,3"/>
+          <!-- Labels -->
+          <text x="172" y="58" text-anchor="end" font-size="9" fill="#3a3d47" font-family="IBM Plex Sans, sans-serif">Action-Sports</text>
+          <text x="172" y="98" text-anchor="end" font-size="9" fill="#3a3d47" font-family="IBM Plex Sans, sans-serif">Skateboarding</text>
+          <text x="172" y="138" text-anchor="end" font-size="9" fill="#3a3d47" font-family="IBM Plex Sans, sans-serif">Sandbox RPG</text>
+          <text x="172" y="178" text-anchor="end" font-size="9" fill="#3a3d47" font-family="IBM Plex Sans, sans-serif">Simulation</text>
+          <text x="172" y="218" text-anchor="end" font-size="9" fill="#3a3d47" font-family="IBM Plex Sans, sans-serif">Racing</text>
+          <!-- Bars -->
+          <rect x="180" y="38" width="315" height="26" fill="url(#barGrad1)"/>
+          <text x="500" y="56" font-size="9" fill="#1a3a6b" font-family="IBM Plex Mono, monospace" font-weight="600">8.4%</text>
+          <rect x="180" y="78" width="261" height="26" fill="url(#barGrad2)"/>
+          <text x="446" y="96" font-size="9" fill="#1b6b4a" font-family="IBM Plex Mono, monospace" font-weight="600">6.9%</text>
+          <rect x="180" y="118" width="195" height="26" fill="url(#barGrad4)"/>
+          <text x="380" y="136" font-size="9" fill="#8a5c00" font-family="IBM Plex Mono, monospace" font-weight="600">5.2%</text>
+          <rect x="180" y="158" width="120" height="26" fill="url(#barGrad5)"/>
+          <text x="305" y="176" font-size="9" fill="#3d3d6b" font-family="IBM Plex Mono, monospace" font-weight="600">3.2%</text>
+          <rect x="180" y="198" width="60" height="26" fill="url(#barGrad3)"/>
+          <text x="245" y="216" font-size="9" fill="#c8392b" font-family="IBM Plex Mono, monospace" font-weight="600">1.6%</text>
+          <!-- X label -->
+          <text x="430" y="268" text-anchor="middle" font-size="8" fill="#696c7a" font-family="IBM Plex Sans, sans-serif" font-style="italic">Viewer-to-Player Conversion Index (VPCI), %</text>
+        </svg>
+        <div class="chart-note">Source: StreamMetrics Platform VPCI Engine v4.1 · N = 4.8M qualifying sessions · Attribution window: 14 days post-qualifying view</div>
+      </div>
+
+      <h3 class="subsection">2.1 Interpretation: The Conversion Efficiency Paradox</h3>
+      <p>The data reveals a structural tension that studios should understand before inferring strategic direction from raw viewership numbers alone. Simulation games, while dominating time-on-stream metrics (see Section 3), demonstrate the third-lowest conversion efficiency in our genre taxonomy. This is attributable to two compounding factors:</p>
+      <p>First, simulation audiences exhibit high replay viewership: a significant portion of viewers watch simulation content for entertainment rather than as purchase research, given the long-run narrative possibilities that make simulation streams compelling even for non-players. Second, simulation titles have high average playtimes, meaning a meaningful share of the simulation viewership base already owns the title being streamed — inflating view hours without contributing to the addressable conversion pool.</p>
+      <p>By contrast, action-sports and skateboarding titles benefit from what we term the <em>aspiration-to-action</em> dynamic: viewers watch short-form highlight compilations of trick combos or customisation showcases, experience a purchase impulse, and convert quickly. This pattern is particularly pronounced in 16–24 year-old viewer cohorts, who account for 58% of action-sports purchase conversions tracked in our retail panel.</p>
+
+      <div class="callout positive">
+        <div class="callout-label">Key Insight</div>
+        <p>Action-sports and heavy customisation titles convert viewers into buyers at 8.4% — approximately 2.6× the rate of simulation titles (3.2%). Despite having lower absolute viewership volumes, these genres function as more efficient demand-generation mechanisms per viewer hour.</p>
+      </div>
+
+      <!-- TABLE -->
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Genre</th>
+            <th>VPCI (%)</th>
+            <th>Median days to purchase</th>
+            <th>Primary age cohort</th>
+            <th>Platform skew</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="highlight-row">
+            <td>Action-Sports / Customisation</td>
+            <td><span class="val-high">8.4%</span></td>
+            <td>3.2 days</td>
+            <td>16–24</td>
+            <td>TikTok / YouTube</td>
+          </tr>
+          <tr>
+            <td>Skateboarding</td>
+            <td><span class="val-high">6.9%</span></td>
+            <td>4.7 days</td>
+            <td>18–26</td>
+            <td>TikTok / Twitch</td>
+          </tr>
+          <tr>
+            <td>Sandbox RPG</td>
+            <td><span class="val-mid">5.2%</span></td>
+            <td>6.1 days</td>
+            <td>20–29</td>
+            <td>YouTube / Twitch</td>
+          </tr>
+          <tr>
+            <td>Simulation / Life</td>
+            <td><span class="val-mid">3.2%</span></td>
+            <td>8.9 days</td>
+            <td>22–35</td>
+            <td>YouTube / Twitch</td>
+          </tr>
+          <tr>
+            <td>Racing / Motorsport</td>
+            <td><span class="val-low">1.6%</span></td>
+            <td>11.4 days</td>
+            <td>24–38</td>
+            <td>Twitch (Esports)</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- SECTION 3: VIEWERSHIP VOLUME -->
+    <div class="section">
+      <div class="section-header">
+        <span class="section-num">03</span>
+        <h2>Streaming Viewership Volume by Genre</h2>
+      </div>
+      <p>Raw viewership volume provides the market-size context for conversion efficiency data. The metrics below represent estimated monthly hours of viewership aggregated across all three primary platforms, averaged across Q4 2024–Q4 2025 to smooth seasonality effects from major title launches within the period.</p>
+
+      <div class="metrics-grid">
+        <div class="metric-card">
+          <div class="m-val">22.4M</div>
+          <div class="m-label">Simulation / Life genre monthly stream hours</div>
+          <div class="m-delta delta-up">▲ 12.3% YoY</div>
+        </div>
+        <div class="metric-card">
+          <div class="m-val">3.8M</div>
+          <div class="m-label">Skateboarding / action-sports monthly stream hours</div>
+          <div class="m-delta delta-up">▲ 31.7% YoY</div>
+        </div>
+        <div class="metric-card">
+          <div class="m-val">1.2M</div>
+          <div class="m-label">Racing / motorsport monthly stream hours</div>
+          <div class="m-delta delta-down">▼ 6.8% YoY</div>
+        </div>
+      </div>
+
+      <!-- PIE CHART SVG -->
+      <div class="chart-wrap">
+        <div class="chart-title">Fig. 2 — Monthly Stream Hour Distribution</div>
+        <div class="chart-subtitle">Proportional viewership by genre across tracked platforms (avg. Q4 2024–Q4 2025)</div>
+        <svg viewBox="0 0 600 260" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;">
+          <!-- Donut chart arcs — total: ~34M hours, scaled segments -->
+          <!-- Simulation: 22.4/34 = 65.9% → 237° -->
+          <!-- Action Sports/Custom: 5.1/34 = 15.0% → 54° -->
+          <!-- Skateboarding: 3.8/34 = 11.2% → 40° -->
+          <!-- Racing: 1.2/34 = 3.5% → 13° -->
+          <!-- Other: 1.5/34 = 4.4% → 16° -->
+          <g transform="translate(160,130)">
+            <!-- Simulation 65.9% -->
+            <path d="M 0,0 L 0,-95 A 95,95 0 1,1 -59.3,-75.0 Z" fill="#1a3a6b" opacity="0.9"/>
+            <!-- Action Sports 15% -->
+            <path d="M 0,0 L -59.3,-75.0 A 95,95 0 0,1 -77.2,56.3 Z" fill="#1b6b4a" opacity="0.9"/>
+            <!-- Skateboarding 11.2% -->
+            <path d="M 0,0 L -77.2,56.3 A 95,95 0 0,1 -23.6,92.0 Z" fill="#8a5c00" opacity="0.9"/>
+            <!-- Racing 3.5% -->
+            <path d="M 0,0 L -23.6,92.0 A 95,95 0 0,1 2.2,95.0 Z" fill="#c8392b" opacity="0.9"/>
+            <!-- Other 4.4% -->
+            <path d="M 0,0 L 2.2,95.0 A 95,95 0 0,1 0,-95 Z" fill="#b0b4c0" opacity="0.9"/>
+            <!-- Donut hole -->
+            <circle cx="0" cy="0" r="55" fill="#ffffff"/>
+            <text x="0" y="-8" text-anchor="middle" font-size="16" fill="#1a3a6b" font-family="IBM Plex Mono, monospace" font-weight="500">34M</text>
+            <text x="0" y="10" text-anchor="middle" font-size="8" fill="#696c7a" font-family="IBM Plex Sans, sans-serif">hrs/month</text>
+          </g>
+          <!-- Legend -->
+          <rect x="320" y="50" width="12" height="12" fill="#1a3a6b"/>
+          <text x="340" y="61" font-size="9" fill="#3a3d47" font-family="IBM Plex Sans, sans-serif">Simulation / Life — 65.9%  (22.4M hrs)</text>
+          <rect x="320" y="75" width="12" height="12" fill="#1b6b4a"/>
+          <text x="340" y="86" font-size="9" fill="#3a3d47" font-family="IBM Plex Sans, sans-serif">Action-Sports / Customisation — 15.0%</text>
+          <rect x="320" y="100" width="12" height="12" fill="#8a5c00"/>
+          <text x="340" y="111" font-size="9" fill="#3a3d47" font-family="IBM Plex Sans, sans-serif">Skateboarding — 11.2%  (3.8M hrs)</text>
+          <rect x="320" y="125" width="12" height="12" fill="#c8392b"/>
+          <text x="340" y="136" font-size="9" fill="#3a3d47" font-family="IBM Plex Sans, sans-serif">Racing / Motorsport — 3.5%  (1.2M hrs)</text>
+          <rect x="320" y="150" width="12" height="12" fill="#b0b4c0"/>
+          <text x="340" y="161" font-size="9" fill="#3a3d47" font-family="IBM Plex Sans, sans-serif">Other tracked genres — 4.4%</text>
+        </svg>
+        <div class="chart-note">Note: Volumes represent estimated monthly averages. Individual month figures vary significantly around major title release events. "Other" includes Fighting, Strategy, and Puzzle genres.</div>
+      </div>
+
+      <h3 class="subsection">3.1 Volume vs. Efficiency: A Dual-Lens Framework</h3>
+      <p>The dominance of simulation in raw viewership is largely attributable to the structural characteristics of the genre's audience: high average session lengths (simulation streams average 3.1 hours vs 1.2 hours for action-sports clips), a high proportion of returning viewers who tune in to follow specific creator narratives, and the low barrier to entry for creator participation — nearly any channel can produce viable simulation content without bespoke hardware or professional equipment.</p>
+      <p>However, studios should exercise caution in conflating viewership volume with marketing leverage. The combined action-sports and skateboarding cluster, though representing only 26.2% of tracked hours, yields conversion economics that simulation cannot match. This is structurally important for projects in development: a smaller but highly converting streaming ecosystem may deliver superior launch sales performance compared to genres that accumulate passive audiences.</p>
+    </div>
+
+    <!-- SECTION 4: LONGEVITY -->
+    <div class="section">
+      <div class="section-header">
+        <span class="section-num">04</span>
+        <h2>Content Longevity & Post-Launch Decay Analysis</h2>
+      </div>
+      <p>Post-launch streaming decay curves are a leading indicator of a title's long-term commercial sustainability. A steep decay curve concentrates both viewership and purchase demand in the launch window, forcing studios to recoup development investment rapidly or accept lower lifetime revenue. Gradual decay — or sustained viewership through community content cycles — is strongly correlated with long-tail DLC revenue and reduced churn on multiplayer titles.</p>
+
+      <!-- DECAY LINE CHART SVG -->
+      <div class="chart-wrap">
+        <div class="chart-title">Fig. 3 — Indexed Viewership Decay Curve by Genre</div>
+        <div class="chart-subtitle">Launch Day = 100 index; monthly snapshots across 24-month post-launch window</div>
+        <svg viewBox="0 0 700 300" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;">
+          <!-- Axes -->
+          <line x1="80" y1="20" x2="80" y2="240" stroke="#d8dae0" stroke-width="1"/>
+          <line x1="80" y1="240" x2="680" y2="240" stroke="#d8dae0" stroke-width="1"/>
+          <!-- Y gridlines and labels -->
+          <line x1="78" y1="40" x2="680" y2="40" stroke="#eceef2" stroke-width="1" stroke-dasharray="4,3"/>
+          <text x="70" y="44" text-anchor="end" font-size="8" fill="#696c7a" font-family="IBM Plex Mono, monospace">100</text>
+          <line x1="78" y1="90" x2="680" y2="90" stroke="#eceef2" stroke-width="1" stroke-dasharray="4,3"/>
+          <text x="70" y="94" text-anchor="end" font-size="8" fill="#696c7a" font-family="IBM Plex Mono, monospace">75</text>
+          <line x1="78" y1="140" x2="680" y2="140" stroke="#eceef2" stroke-width="1" stroke-dasharray="4,3"/>
+          <text x="70" y="144" text-anchor="end" font-size="8" fill="#696c7a" font-family="IBM Plex Mono, monospace">50</text>
+          <line x1="78" y1="190" x2="680" y2="190" stroke="#eceef2" stroke-width="1" stroke-dasharray="4,3"/>
+          <text x="70" y="194" text-anchor="end" font-size="8" fill="#696c7a" font-family="IBM Plex Mono, monospace">25</text>
+          <!-- X labels -->
+          <text x="80" y="258" text-anchor="middle" font-size="8" fill="#696c7a" font-family="IBM Plex Mono, monospace">Launch</text>
+          <text x="180" y="258" text-anchor="middle" font-size="8" fill="#696c7a" font-family="IBM Plex Mono, monospace">Mo.1</text>
+          <text x="280" y="258" text-anchor="middle" font-size="8" fill="#696c7a" font-family="IBM Plex Mono, monospace">Mo.3</text>
+          <text x="380" y="258" text-anchor="middle" font-size="8" fill="#696c7a" font-family="IBM Plex Mono, monospace">Mo.6</text>
+          <text x="480" y="258" text-anchor="middle" font-size="8" fill="#696c7a" font-family="IBM Plex Mono, monospace">Mo.12</text>
+          <text x="580" y="258" text-anchor="middle" font-size="8" fill="#696c7a" font-family="IBM Plex Mono, monospace">Mo.18</text>
+          <text x="650" y="258" text-anchor="middle" font-size="8" fill="#696c7a" font-family="IBM Plex Mono, monospace">Mo.24</text>
+          <!-- Racing line (steep drop) -->
+          <polyline points="80,40 180,194 280,220 380,228 480,232 580,235 650,236" fill="none" stroke="#c8392b" stroke-width="2.5" stroke-linejoin="round"/>
+          <circle cx="80" cy="40" r="3.5" fill="#c8392b"/>
+          <circle cx="180" cy="194" r="3" fill="#c8392b"/>
+          <!-- Simulation line (sustained with bumps) -->
+          <polyline points="80,40 180,90 280,110 380,100 480,108 580,95 650,98" fill="none" stroke="#1a3a6b" stroke-width="2.5" stroke-linejoin="round" stroke-dasharray="6,2"/>
+          <circle cx="80" cy="40" r="3.5" fill="#1a3a6b"/>
+          <circle cx="380" cy="100" r="3" fill="#1a3a6b"/>
+          <!-- Expansion bump annotation -->
+          <line x1="380" y1="70" x2="380" y2="98" stroke="#1a3a6b" stroke-width="1" stroke-dasharray="2,2"/>
+          <text x="390" y="78" font-size="7.5" fill="#1a3a6b" font-family="IBM Plex Sans, sans-serif">Expansion/mod</text>
+          <text x="390" y="89" font-size="7.5" fill="#1a3a6b" font-family="IBM Plex Sans, sans-serif">release bump</text>
+          <!-- Action sports line (mid decay, stable) -->
+          <polyline points="80,40 180,100 280,130 380,148 480,158 580,155 650,153" fill="none" stroke="#1b6b4a" stroke-width="2.5" stroke-linejoin="round"/>
+          <circle cx="80" cy="40" r="3.5" fill="#1b6b4a"/>
+          <!-- Racing "15 index" label -->
+          <text x="660" y="233" font-size="8" fill="#c8392b" font-family="IBM Plex Mono, monospace">15 idx</text>
+          <!-- Simulation label -->
+          <text x="658" y="95" font-size="8" fill="#1a3a6b" font-family="IBM Plex Mono, monospace">62 idx</text>
+          <!-- Action sports label -->
+          <text x="658" y="150" font-size="8" fill="#1b6b4a" font-family="IBM Plex Mono, monospace">42 idx</text>
+          <!-- Legend -->
+          <line x1="95" y1="278" x2="120" y2="278" stroke="#1a3a6b" stroke-width="2.5" stroke-dasharray="6,2"/>
+          <text x="125" y="281" font-size="8.5" fill="#3a3d47" font-family="IBM Plex Sans, sans-serif">Simulation / Life</text>
+          <line x1="240" y1="278" x2="265" y2="278" stroke="#1b6b4a" stroke-width="2.5"/>
+          <text x="270" y="281" font-size="8.5" fill="#3a3d47" font-family="IBM Plex Sans, sans-serif">Action-Sports</text>
+          <line x1="375" y1="278" x2="400" y2="278" stroke="#c8392b" stroke-width="2.5"/>
+          <text x="405" y="281" font-size="8.5" fill="#3a3d47" font-family="IBM Plex Sans, sans-serif">Racing / Motorsport</text>
+        </svg>
+        <div class="chart-note">Index: Launch Day = 100. Simulation line reflects average across 6 tracked titles; expansion/mod events shown at representative median timing. Racing figures capped at 30-day window for clarity; 24-month value approximates ≤15 index units.</div>
+      </div>
+
+      <h3 class="subsection">4.1 Racing Genre: Structural Front-Loading</h3>
+      <p>Racing titles exhibit the most extreme post-launch decay curve of any tracked genre. Within 30 days of launch, viewership typically contracts by 85% from the day-one peak. By month six, racing content has less than 10% of its launch-day viewer volume. This decay pattern is driven by the inherent repetitiveness of competitive racing formats as spectator content, the saturation of the esports audience (which represents the majority of dedicated racing stream consumers), and the lack of meaningful new content vectors — racing titles rarely support user-generated tracks or community-driven narrative, limiting creators' ability to produce novel content beyond the release window.</p>
+
+      <div class="callout warn">
+        <div class="callout-label">Risk Flag — Racing Genre</div>
+        <p>Racing titles' average streaming viewership index falls to approximately 15 by month 24 (i.e. 85% decay within 30 days, with further gradual decline thereafter). Studios with launch-window marketing strategies built on streaming visibility must account for the near-complete evaporation of organic creator coverage within the first month.</p>
+      </div>
+
+      <h3 class="subsection">4.2 Simulation Genre: The Modding Lifecycle Extension</h3>
+      <p>Simulation games present the inverse profile. Viewership is sustained over 24-month windows, and the decay curve is interrupted — and in some cases reversed — by two primary events: expansion pack releases and community-driven modding cycles. When a major community mod pack achieves critical mass on platforms like Steam Workshop, it generates a secondary viewership spike that can reach 40–60% of the original launch-week peak for established titles. This dynamic is quantifiable: of the 6 simulation titles tracked in the current panel, all exhibited at least one identifiable viewership revival event linked to either a paid expansion or a community content surge.</p>
+
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Genre</th>
+            <th>30-Day Index</th>
+            <th>6-Month Index</th>
+            <th>12-Month Index</th>
+            <th>24-Month Index</th>
+            <th>Revival Events (avg.)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Simulation / Life</td>
+            <td>78</td>
+            <td>65</td>
+            <td><span class="val-high">58</span></td>
+            <td><span class="val-high">62</span></td>
+            <td><span class="val-high">2.4</span></td>
+          </tr>
+          <tr>
+            <td>Action-Sports</td>
+            <td>56</td>
+            <td>47</td>
+            <td>43</td>
+            <td>42</td>
+            <td>1.1</td>
+          </tr>
+          <tr class="highlight-row">
+            <td>Racing / Motorsport</td>
+            <td><span class="val-low">15</span></td>
+            <td><span class="val-low">9</span></td>
+            <td><span class="val-low">7</span></td>
+            <td><span class="val-low">6</span></td>
+            <td><span class="val-low">0.2</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- SECTION 5: CREATOR TIER -->
+    <div class="section">
+      <div class="section-header">
+        <span class="section-num">05</span>
+        <h2>Creator Tier Distribution & Audience Reach</h2>
+      </div>
+      <p>Not all creator coverage has equal commercial impact. The StreamMetrics Creator Tier framework segments active gaming creators into four bands based on average concurrent viewership (ACV). Understanding which tier bands are most active in a given genre, and how those tiers contribute to VPCI, is essential for planning creator marketing strategies.</p>
+
+      <h3 class="subsection">5.1 Tier Definitions</h3>
+      <table class="data-table">
+        <thead>
+          <tr><th>Tier</th><th>Avg. Concurrent Viewers</th><th>Subscriber / Follower Band</th><th>Classification</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Tier 4 (Nano)</td><td>&lt;500</td><td>&lt;5,000</td><td>Micro-community creators</td></tr>
+          <tr><td>Tier 3 (Mid)</td><td>500–5,000</td><td>5,000–150,000</td><td>Niche-authority creators</td></tr>
+          <tr><td>Tier 2 (Macro)</td><td>5,000–30,000</td><td>150,000–1.5M</td><td>Mainstream gaming creators</td></tr>
+          <tr><td>Tier 1 (Elite)</td><td>&gt;30,000</td><td>&gt;1.5M</td><td>Platform-defining creators</td></tr>
+        </tbody>
+      </table>
+
+      <h3 class="subsection">5.2 Genre Participation by Creator Tier</h3>
+      <p>Simulation and action-sports genres benefit disproportionately from Tier 3 (mid-tier) creator activity, where creators have sufficient audience reach to influence purchase decisions but sufficient creative autonomy to build long-form narrative content. Racing content is heavily concentrated in Tier 1 and Tier 2 esports-focused channels, creating a bottleneck dependency on expensive elite creator relationships and limiting the diversity of organic coverage.</p>
+
+      <div class="callout positive">
+        <div class="callout-label">Strategic Opportunity</div>
+        <p>Simulation and action-sports titles generate organic Tier 3 creator adoption without significant paid seeding investment. Data shows that 71% of simulation stream hours come from creators with fewer than 150,000 followers — a highly cost-effective marketing profile compared to the racing genre's dependence on elite tier coverage.</p>
+      </div>
+    </div>
+
+    <!-- SECTION 6: STRATEGIC IMPLICATIONS -->
+    <div class="section">
+      <div class="section-header">
+        <span class="section-num">06</span>
+        <h2>Strategic Implications & Recommendations</h2>
+      </div>
+      <p>The combined picture from VPCI efficiency, viewership volume, decay curve analysis, and creator tier distribution points to a set of actionable genre-level recommendations for studios evaluating the streaming ecosystem as a marketing channel:</p>
+
+      <h3 class="subsection">6.1 Summary of Genre-Level Streaming Profiles</h3>
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Genre</th>
+            <th>Streaming Volume</th>
+            <th>Conversion Efficiency</th>
+            <th>Longevity</th>
+            <th>Creator Accessibility</th>
+            <th>Overall Marketing Leverage</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Simulation / Life</td>
+            <td><span class="val-high">High</span></td>
+            <td><span class="val-mid">Moderate</span></td>
+            <td><span class="val-high">Excellent</span></td>
+            <td><span class="val-high">High</span></td>
+            <td><span class="val-high">Strong</span></td>
+          </tr>
+          <tr class="highlight-row">
+            <td>Action-Sports / Custom</td>
+            <td><span class="val-mid">Moderate</span></td>
+            <td><span class="val-high">Excellent</span></td>
+            <td><span class="val-mid">Good</span></td>
+            <td><span class="val-high">High</span></td>
+            <td><span class="val-high">Strong</span></td>
+          </tr>
+          <tr>
+            <td>Skateboarding</td>
+            <td><span class="val-mid">Moderate</span></td>
+            <td><span class="val-high">High</span></td>
+            <td><span class="val-mid">Good</span></td>
+            <td><span class="val-high">High</span></td>
+            <td><span class="val-high">Strong</span></td>
+          </tr>
+          <tr>
+            <td>Racing / Motorsport</td>
+            <td><span class="val-low">Low</span></td>
+            <td><span class="val-low">Low</span></td>
+            <td><span class="val-low">Poor</span></td>
+            <td><span class="val-low">Limited</span></td>
+            <td><span class="val-low">Weak</span></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3 class="subsection">6.2 Recommendations</h3>
+      <p><strong>R-1: Prioritise streaming-native design in genre selection.</strong> Studios should evaluate whether their intended genre intrinsically generates diverse, organic streaming content. Simulation and action-sports genres achieve this through emergent gameplay, customisation showcases, and community challenge structures. Racing titles require external investment in esports programming to achieve comparable streaming presence.</p>
+      <p><strong>R-2: Build for long-tail creator engagement, not launch-window spikes.</strong> The decay curve data demonstrates that sustainable streaming ecosystems are more commercially valuable than launch-window peaks. Invest in modding tools, regular content drops, and community-driven events that give Tier 3 creators recurring reasons to produce new content.</p>
+      <p><strong>R-3: Quantify streaming conversion, not just viewership, in marketing planning.</strong> Raw viewership targets are a poor proxy for marketing ROI. VPCI-adjusted figures should be used to compare the relative demand-generation power of different promotional streaming strategies.</p>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- APPENDIX -->
+    <div class="appendix">
+      <h3>Appendix A — Variable Definitions & Index Methodology</h3>
+      <p>All VPCI figures are calculated using the StreamMetrics Conversion Attribution Model v4.1. Purchase events are matched using a probabilistic device-fingerprint methodology; attribution confidence scores below 0.72 are excluded. Genre classifications follow the SMX-GT-22 framework. Viewership hour estimates are derived from interpolated concurrent viewer data and should be treated as approximations within a ±7% margin.</p>
+      <p style="margin-top:10px;">This report is produced semi-annually. The next edition (SMX-CR-2026-09) will be published September 2026 and will incorporate updated TikTok LIVE data following API policy revisions in Q1 2026. Corrections and methodological queries should be directed to the Research Division at StreamMetrics Platform.</p>
+      <p style="margin-top:10px;"><em>Classification: Industry Benchmark · Not for external distribution · © 2026 StreamMetrics Platform · All rights reserved</em></p>
+    </div>
+
+  </div><!-- /body-wrap -->
+
+  <div class="doc-footer">
+    <div class="footer-brand">StreamMetrics Platform · Research Division · SMX-CR-2026-03</div>
+    <div class="footer-info">Published March 2026 · Confidential<br>Not for external distribution</div>
+  </div>
+
+</div><!-- /page -->
+</body>
+</html>
