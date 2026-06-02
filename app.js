@@ -487,54 +487,178 @@ const DATA_SOURCES = {
   }
 };
 
-// Simulated Slack communications script (significantly expanded)
+// Simulated Slack communications script (five-day archive)
+const SLACK_USERS = {
+  Sarah: { role: "Executive Producer", avatarClass: "avatar-pm" },
+  Dave: { role: "Lead Game Designer", avatarClass: "avatar-des" },
+  Marcus: { role: "Technical Director", avatarClass: "avatar-eng" },
+  Elena: { role: "Lead Programmer", avatarClass: "avatar-eng" },
+  Chloe: { role: "Marketing Director", avatarClass: "avatar-mkt" },
+  Victoria: { role: "VP of Product Strategy", avatarClass: "avatar-exe" }
+};
+
+const slackMessage = (sender, time, text) => ({
+  sender,
+  role: SLACK_USERS[sender].role,
+  avatarClass: SLACK_USERS[sender].avatarClass,
+  time,
+  text
+});
+
 const SLACK_COMMUNICATIONS = {
   "general": [
-    { sender: "Sarah", role: "Executive Producer", avatarClass: "avatar-pm", text: "Morning team! Remember, we need to finalize our strategy proposal for the board by the end of today. We're choosing the direction for our next project.", time: "09:00 AM" },
-    { sender: "Dave", role: "Lead Game Designer", avatarClass: "avatar-des", text: "Exciting times! I've been sketching out some design ideas for a skateboarding sequel, but also looking at the macro trends. The demand for cosy/lifestyle games is crazy right now.", time: "09:03 AM" },
-    { sender: "Sarah", role: "Executive Producer", avatarClass: "avatar-pm", text: "Yes, the board is looking closely at the life sim market because the potential ROI is massive. But we have to make sure we can actually build it. Let's make sure we back up our suggestions with evidence.", time: "09:05 AM" },
-    { sender: "Marcus", role: "Technical Director", avatarClass: "avatar-eng", text: "I'll join #dev-team now. We need a serious sync on what is realistic. We can't let taste or instinct dictate this. Board constraints are tight.", time: "09:08 AM" },
-    { sender: "Victoria", role: "VP of Product Strategy", avatarClass: "avatar-exe", text: "Welcome all strategy group members. The Board has set our budget limit for external analytics research to £10k. Keep in mind that we need to choose our purchases wisely. We can't afford everything.", time: "09:10 AM" },
-    { sender: "Chloe", role: "Marketing Director", avatarClass: "avatar-mkt", text: "Already seeing some solid search referral query differences. The PC simulation demand seems very distinct compared to typical console racers.", time: "09:12 AM" },
-    { sender: "Dave", role: "Lead Game Designer", avatarClass: "avatar-des", text: "Let's be clear: a standard racing game (Option 1) will perform well at launch. But does it create the kind of long-tail community engagement the parent company wants?", time: "09:15 AM" },
-    { sender: "Victoria", role: "VP of Product Strategy", avatarClass: "avatar-exe", text: "Exactly. The parent company owns massive lifestyle brands. An audience overlap is crucial. We need data that proves whatever path we choose aligns with corporate-wide entertainment targets.", time: "09:18 AM" },
-    { sender: "Sarah", role: "Executive Producer", avatarClass: "avatar-pm", text: "Let's make sure we document all limitations too. If platform partners redact conversion metrics, we need to report that. Real analysis has gaps.", time: "09:22 AM" },
-    { sender: "Marcus", role: "Technical Director", avatarClass: "avatar-eng", text: "Agreed. If we over-promise on a Life Sim Reboot and the engine buckles again, we will destroy team morale. We need data on past refund causes.", time: "09:25 AM" },
-    { sender: "Chloe", role: "Marketing Director", avatarClass: "avatar-mkt", text: "I'll upload the competitor comparison and search trends summaries. Everyone please inspect these files.", time: "09:28 AM" },
-    { sender: "Elena", role: "Lead Programmer", avatarClass: "avatar-eng", text: "Heading to #dev-team to outline the technical limitations. Talk there.", time: "09:30 AM" }
+    slackMessage("Sarah", "Mon 09:00", "Morning, strategy task force. This week is about narrowing the next Highland project direction into a defensible board recommendation, not just picking the idea we personally like most."),
+    slackMessage("Victoria", "Mon 09:07", "Reminder from the parent-company side: external analytics spend is capped at £10k. Every dataset request needs a clear decision use. Please do not buy broad reports just because they look useful."),
+    slackMessage("Dave", "Mon 09:14", "I am putting the six options into a design comparison doc. The big question for me is whether we want a familiar production path or a project that changes what Highland can become."),
+    slackMessage("Chloe", "Mon 09:22", "Marketing will map each option against search demand, creator content, and parent-company audience overlap. Those are different questions, so one dashboard will not answer all of them."),
+    slackMessage("Marcus", "Mon 09:31", "Engineering will keep a capability register in #dev-team. I want the board pack to distinguish market upside from build confidence. They are not the same thing."),
+    slackMessage("Sarah", "Mon 10:18", "Good framing. Please flag assumptions in plain language. The students reviewing this should be able to see what each team believes, what they know, and where they are guessing."),
+    slackMessage("Victoria", "Mon 15:40", "The board will challenge any recommendation that relies only on a trend report. They will ask: does Highland have the systems, people, brand permission, and channel support to execute?"),
+
+    slackMessage("Sarah", "Tue 08:55", "Day two priority: request only the reports that let us test conflicting claims. We already know every option has a sales story. We need evidence that separates them."),
+    slackMessage("Chloe", "Tue 09:10", "Search and wishlist data should arrive by lunch if approved. I am especially interested in keyword specificity, not just volume. 'life sim' by itself is not a strategy."),
+    slackMessage("Dave", "Tue 09:24", "Design note: Option 3 should not be treated as 'a bigger skate game'. If it works, it is a wider street sports platform with movement, identity, and social space."),
+    slackMessage("Marcus", "Tue 09:41", "Agree, but the word 'platform' raises support expectations. Larger social worlds need moderation, server uptime, seasonal tools, and production support after launch."),
+    slackMessage("Victoria", "Tue 11:05", "Parent-company stakeholders are already asking which concepts can travel through streaming, fashion, short-form creator clips, and licensed talent. Racing is not impossible, but it is narrower."),
+    slackMessage("Sarah", "Tue 14:20", "Please keep discussion civil around the LifeSpace history. It matters, but we need to treat it as evidence, not folklore."),
+    slackMessage("Elena", "Tue 16:12", "Worth noting for the full group: past technical incidents were not just 'bugs'. Some were architectural constraints. That distinction matters for any reboot proposal."),
+
+    slackMessage("Sarah", "Wed 09:02", "Midweek checkpoint. We now have enough preliminary evidence to avoid ranking purely by expected revenue. Please start noting what data you still need before Friday."),
+    slackMessage("Chloe", "Wed 09:17", "Marketing readout so far: customization and self-expression are showing up repeatedly across search, community, and parent-company overlap. That supports more than one option, so we need specificity."),
+    slackMessage("Dave", "Wed 09:33", "From design, the difference is player fantasy. Life sim is about everyday agency and systems depth. Open-world street sports is about identity, movement, and public performance."),
+    slackMessage("Marcus", "Wed 10:04", "From engineering, the difference is state complexity. Movement and customization are manageable extensions. Persistent NPC life simulation is a different order of system risk."),
+    slackMessage("Victoria", "Wed 11:20", "I want students to see that strong evidence can point in different directions depending on the decision criterion. Do not flatten this into a single obvious answer."),
+    slackMessage("Sarah", "Wed 15:35", "Agreed. The final simulation should reward teams that compare trade-offs, not teams that simply find the biggest chart number."),
+
+    slackMessage("Sarah", "Thu 08:48", "Thursday focus: convert evidence into board language. Each option needs a short case for, a short case against, and the unresolved question that would decide it."),
+    slackMessage("Chloe", "Thu 09:13", "For Option 1, the case for is predictable launch conversion. The case against is weak lifestyle amplification and shallow long-tail marketing."),
+    slackMessage("Dave", "Thu 09:26", "For Option 2, the case for is morale and production efficiency. The case against is whether a straight sequel is ambitious enough for the parent-company brief."),
+    slackMessage("Marcus", "Thu 09:44", "For Option 3, the case for is reuse of proven movement tech plus a bigger social/customization opportunity. The case against is scope control."),
+    slackMessage("Elena", "Thu 10:02", "For Option 4, the case for is genre upside and capacity-building. The case against is whether the required systems foundation can be made credible before greenlight."),
+    slackMessage("Victoria", "Thu 14:10", "For Option 6, the case for is an efficient niche strategy. The case against is whether it is too small for the corporate-wide growth objective."),
+    slackMessage("Sarah", "Thu 16:55", "This is the structure I want in the briefing. Do not include the internal shorthand labels that make the answer feel pre-solved."),
+
+    slackMessage("Sarah", "Fri 08:45", "Final day. Before the board dry run, please check that every department's evidence is represented fairly. No cherry-picking."),
+    slackMessage("Chloe", "Fri 09:04", "I have tightened the marketing appendix. It now separates volume, specificity, creator behavior, and parent-company channel fit."),
+    slackMessage("Marcus", "Fri 09:18", "Engineering appendix is updated. It separates code reuse, team familiarity, new systems complexity, and live operations burden."),
+    slackMessage("Dave", "Fri 09:33", "Design appendix now has player fantasy, content pipeline, social loop, and progression model notes for each option."),
+    slackMessage("Victoria", "Fri 10:05", "Good. In the live exercise, I expect students to disagree. The reports should give them enough evidence to make a reasoned recommendation without one department simply announcing the correct answer."),
+    slackMessage("Sarah", "Fri 11:30", "Thanks, everyone. Final board pack is not a vote tally. It is a decision argument. Students should have to defend what matters most and why.")
   ],
   "dev-team": [
-    { sender: "Marcus", role: "Technical Director", avatarClass: "avatar-eng", text: "Guys, I need to voice some real concerns here. If we even talk about doing a Life Simulation game again, we need to completely overhaul our codebase.", time: "09:12 AM" },
-    { sender: "Marcus", role: "Technical Director", avatarClass: "avatar-eng", text: "Remember the nightmare that was *LifeSpace*? Our custom state-tracking engine crashed constantly when handling NPC relationships, and the QA tooling was non-existent. Our engineers are still burnt out from that.", time: "09:15 AM" },
-    { sender: "Elena", role: "Lead Programmer", avatarClass: "avatar-eng", text: "Seconded. Our current physics systems are optimized for wheels and skateboards (Streetline Skate has incredibly solid mechanics). Moving to a complex AI agent system with hundreds of variables would require hiring at least 4 new senior systems programmers and extending pre-production by 9 months.", time: "09:18 AM" },
-    { sender: "Dave", role: "Lead Game Designer", avatarClass: "avatar-des", text: "Understood, Marcus. What about expanding the street sports idea? We keep our physics and movement-based strength, but test whether social spaces and creator tools can broaden the audience without building a full NPC life sim from scratch.", time: "09:22 AM" },
-    { sender: "Marcus", role: "Technical Director", avatarClass: "avatar-eng", text: "That is much more doable. We could reuse the customization modules from Streetline Skate, which our team knows inside out. It lowers the technical risk significantly.", time: "09:25 AM" },
-    { sender: "Elena", role: "Lead Programmer", avatarClass: "avatar-eng", text: "Let's review the LifeSpace crash dumps. 74% of our steam refunds were due to technical instability. If we attempt a full reboot, we must rewrite the serialization code. Our database save states lacked transaction rollbacks.", time: "09:28 AM" },
-    { sender: "Elena", role: "Lead Programmer", avatarClass: "avatar-eng", text: "Specifically, when players customized their houses and characters simultaneously, the memory buffer overflowed, corrupting the save games. It was a core architectural flaw.", time: "09:31 AM" },
-    { sender: "Marcus", role: "Technical Director", avatarClass: "avatar-eng", text: "Correct. Whereas on Streetline Skate, the memory utilization was flat. Reusing the skating movement vectors is zero-risk. Our track editors on Apex Circuit also give us a solid foundation for player-built content.", time: "09:34 AM" },
-    { sender: "Dave", role: "Lead Game Designer", avatarClass: "avatar-des", text: "Right, but the design demands for a pure simulation game are massive. You need system designers to write relationship algorithms, economy tuning, NPC scheduling logic, custom apparel shaders... the hiring list is massive.", time: "09:37 AM" },
-    { sender: "Elena", role: "Lead Programmer", avatarClass: "avatar-eng", text: "And if we hire 6 new systems guys, we need 3 months just to onboard them into our proprietary engine toolset. That pushes release from late 2028 into mid 2029.", time: "09:40 AM" },
-    { sender: "Marcus", role: "Technical Director", avatarClass: "avatar-eng", text: "The open-world street sports concept could bridge some gaps. It uses our proven physics nodes but expands the social and customization surface area, which gives us a wider product question to evaluate.", time: "09:43 AM" },
-    { sender: "Elena", role: "Lead Programmer", avatarClass: "avatar-eng", text: "Yes, we can write a simple matchmaking server for customization lobbies. That is well within our current backend capacity.", time: "09:45 AM" }
+    slackMessage("Marcus", "Mon 09:12", "Starting the technical thread here. I want a sober capability map for all options: engine fit, content tooling, live operations, QA risk, and team familiarity."),
+    slackMessage("Elena", "Mon 09:18", "Current engine strengths: movement physics, replay capture, custom park tools, input feel, collision tuning, and deterministic challenge scoring. Weaknesses: large-scale autonomous agents and persistent world-state rollback."),
+    slackMessage("Dave", "Mon 09:22", "Useful. For the design side, Option 3 can keep the movement foundation but add social hubs, character expression, and mixed street sports. It is expansion, not total reinvention."),
+    slackMessage("Marcus", "Mon 09:30", "Option 1 is the cleanest technically. The racing stack already exists through Apex Circuit. Risk is mostly content volume and market differentiation, not engine feasibility."),
+    slackMessage("Elena", "Mon 09:41", "Option 2 is also clean. Streetline Skate has the strongest tooling health in the studio. We could improve animation blending, park sharing, and console performance without rewriting core systems."),
+    slackMessage("Marcus", "Mon 10:05", "Option 6 is efficient but still needs management-sim UI, data tables, and season logic. It is not technically scary, but it may not use our strongest technology in a visible way."),
+    slackMessage("Dave", "Mon 16:20", "Design risk for Option 2 is ambition. A sequel is buildable, but does it give the board enough growth story? Option 3 is where the ambition starts to show."),
+
+    slackMessage("Marcus", "Tue 09:05", "Looking at old LifeSpace engineering notes this morning. We should not describe the past issue as a single failure. It was a cluster: save serialization, NPC scheduling, memory pressure, and incomplete QA instrumentation."),
+    slackMessage("Elena", "Tue 09:17", "The save-state issue was especially damaging because it appeared late in long sessions. Standard smoke tests did not catch it. Any reboot would need long-run automated simulation tests from the start."),
+    slackMessage("Dave", "Tue 09:34", "Would a smaller Life Sim slice avoid that? Fewer NPCs, smaller neighborhoods, more focus on decorating and relationships?"),
+    slackMessage("Marcus", "Tue 09:45", "Maybe, but then the design promise changes. A life sim with shallow simulation will be compared harshly with the market leader. The product expectation is already high."),
+    slackMessage("Elena", "Tue 10:02", "Also mod support multiplies edge cases. If players can add items, routines, relationships, and rooms, our validation tools need to be much stronger than last time."),
+    slackMessage("Marcus", "Tue 13:25", "For Option 3, the risk is different. Server capacity, moderation, city streaming, and activity variety. Hard, but closer to problems we have solved before."),
+    slackMessage("Dave", "Tue 15:48", "That helps the student exercise. Life Sim risk is systems depth. Street Sports risk is scope and service design. Racing risk is strategic, not build feasibility."),
+
+    slackMessage("Elena", "Wed 08:52", "I ran a quick dependency sketch. Option 3 could reuse character customization, replay capture, park object placement, controller feel, and challenge scoring from Streetline Skate."),
+    slackMessage("Marcus", "Wed 09:11", "What would be new for Option 3?"),
+    slackMessage("Elena", "Wed 09:14", "Larger streaming city zones, multiplayer social hub rules, mixed traversal animation, event matchmaking, creator moderation queue, and a more robust avatar inventory service."),
+    slackMessage("Dave", "Wed 09:36", "Those new systems support the fantasy directly, though. If players can show style, move through the city, and share clips, the tech becomes visible."),
+    slackMessage("Marcus", "Wed 10:02", "That is why I am more comfortable with Option 3 than a pure Life Sim reboot. The technical extensions map to things Highland already understands."),
+    slackMessage("Elena", "Wed 11:40", "Still not cheap. Larger world plus social tools means more QA permutations. We should not call it low risk."),
+    slackMessage("Marcus", "Wed 15:05", "Agreed. Option 3 is moderate-high risk with controllable scope. Option 4 is high risk unless the studio commits to a multi-year capacity plan."),
+
+    slackMessage("Marcus", "Thu 09:08", "Draft technical scoring: Option 2 highest confidence, Option 1 close behind, Option 3 feasible with scope discipline, Option 6 feasible but less strategic, Option 4 highest capability gap."),
+    slackMessage("Sarah", "Thu 09:20", "Can you make sure that does not read like engineering vetoing ambition? The board needs to understand upside and risk together."),
+    slackMessage("Marcus", "Thu 09:31", "Fair. I will phrase it as 'investment required for credible execution', not 'do not do this'."),
+    slackMessage("Elena", "Thu 10:14", "For Option 4, credible execution means prototype milestones before full greenlight: relationship scheduler, save integrity under load, mod validation, and long-session stability."),
+    slackMessage("Dave", "Thu 11:02", "For Option 3, credible execution means a vertical slice with one dense city district, two movement types, avatar styling, and one social challenge loop."),
+    slackMessage("Marcus", "Thu 14:35", "Good distinction. Option 3 can be proven with a gameplay slice. Option 4 needs a systems reliability slice."),
+    slackMessage("Elena", "Thu 16:18", "Please also note team morale. People are excited by ambitious ideas, but they get nervous when plans ignore past tooling pain."),
+
+    slackMessage("Marcus", "Fri 08:50", "Final engineering appendix is uploaded. It includes a capability matrix, required proof milestones, and hidden dependencies for each option."),
+    slackMessage("Elena", "Fri 09:07", "I added a note that previous LifeSpace lessons can be assets if treated seriously. The studio did learn, but the tooling has to change."),
+    slackMessage("Dave", "Fri 09:29", "That is a useful nuance. Students should not read the history as 'never attempt the genre'. It is a capacity-building question."),
+    slackMessage("Marcus", "Fri 10:11", "Exactly. The wrong answer is pretending the issue is only market demand. The right debate is whether upside justifies the investment and risk controls."),
+    slackMessage("Sarah", "Fri 10:44", "This channel now has the strongest evidence for capability fit. Thank you. It will force students to compare production reality with market temptation.")
   ],
   "marketing": [
-    { sender: "Chloe", role: "Marketing Director", avatarClass: "avatar-mkt", text: "Just looked at the organic search query logs. The keyword 'life sim alternative' has grown by 38% month-over-month. People are desperate for something new in that space.", time: "09:30 AM" },
-    { sender: "Chloe", role: "Marketing Director", avatarClass: "avatar-mkt", text: "On the other hand, traditional racing keywords are flat or declining. 'Realistic car handling mods' is down 5% this quarter. The market is saturated with photorealistic racing sims.", time: "09:33 AM" },
-    { sender: "Sarah", role: "Executive Producer", avatarClass: "avatar-pm", text: "Great insights, Chloe. What about skateboarding?", time: "09:35 AM" },
-    { sender: "Chloe", role: "Marketing Director", avatarClass: "avatar-mkt", text: "Skateboarding keywords are growing slowly (+15%), but the engagement ratios on our gameplay clips are massive. Players love showing off their custom characters and custom parks. It's a very advocacy-driven genre.", time: "09:38 AM" },
-    { sender: "Chloe", role: "Marketing Director", avatarClass: "avatar-mkt", text: "If we check the competitor pipeline, TownLife is dominating simulation but their user scores are dropping due to a major backlash against their latest £35 expansion pack. The community is looking for competitors.", time: "09:42 AM" },
-    { sender: "Sarah", role: "Executive Producer", avatarClass: "avatar-pm", text: "Interesting. What about Cosy Valley? They have a 92% positive rating.", time: "09:45 AM" },
-    { sender: "Chloe", role: "Marketing Director", avatarClass: "avatar-mkt", text: "Yes, but they are Switch-only and cartoonish. There's a massive void on PC/Steam and PlayStation for a mod-friendly, lifestyle simulation alternative with expressive movement.", time: "09:48 AM" },
-    { sender: "Chloe", role: "Marketing Director", avatarClass: "avatar-mkt", text: "Also, influencer coverage reports highlight that simulation drives 6x more stream hours than racing. Creators generate tutorial loops and custom story builds. Racing streamers only stream competitive matches which lose heat fast.", time: "09:51 AM" },
-    { sender: "Sarah", role: "Executive Producer", avatarClass: "avatar-pm", text: "So from a pure brand visibility perspective, simulation has much higher organic marketing potential.", time: "09:54 AM" },
-    { sender: "Chloe", role: "Marketing Director", avatarClass: "avatar-mkt", text: "Absolutely. But we must be careful. If the game crashes, influencers will stream the bugs and destroy our credibility (just like with LifeSpace). The engineering team must guarantee stability.", time: "09:57 AM" }
+    slackMessage("Chloe", "Mon 09:30", "Marketing thread starts here. I am separating demand signals into four buckets: search trend, wishlist behavior, creator ecosystem, and parent-company channel fit."),
+    slackMessage("Sarah", "Mon 09:35", "Please keep the distinction visible. In previous student runs, teams treated search volume as if it automatically meant sales."),
+    slackMessage("Chloe", "Mon 09:44", "Exactly. Search volume tells us curiosity. Keyword specificity tells us intent. Wishlist growth tells us pre-purchase pull. Creator behavior tells us whether the game can keep producing conversation."),
+    slackMessage("Dave", "Mon 10:12", "From design, I would expect Life Sim to win on tutorial/story content, Street Sports to win on clips and identity, Racing to win on specialist comparison videos."),
+    slackMessage("Chloe", "Mon 10:25", "That matches my hypothesis. The risk is that Racing has clean buyers but poor broader amplification. It sells to a known audience but may not activate the parent-company ecosystem."),
+    slackMessage("Victoria", "Mon 14:10", "Parent-company channels are most useful when a game gives them lifestyle hooks. Fashion, music, rooms, social identity, and creator moments travel better than technical handling claims."),
+
+    slackMessage("Chloe", "Tue 09:08", "First search export is in. 'life sim alternative', 'mod friendly life game', and 'custom home social sim' are all rising. But the queries also show distrust around stability and DLC pricing."),
+    slackMessage("Sarah", "Tue 09:21", "So Life Sim demand is real but not clean."),
+    slackMessage("Chloe", "Tue 09:24", "Yes. Players want a competitor, but they are alert to quality. A weak launch would be punished quickly because the audience has recent examples of disappointment."),
+    slackMessage("Dave", "Tue 09:50", "What about Option 3 terms?"),
+    slackMessage("Chloe", "Tue 10:02", "'open world skate bike parkour game', 'custom street sports avatar', and 'multiplayer trick city' are smaller than life sim terms, but much more feature-specific than I expected."),
+    slackMessage("Victoria", "Tue 11:18", "Feature-specific language is useful. It means players can describe what they want, not just a genre label."),
+    slackMessage("Chloe", "Tue 15:42", "Racing is comparatively stable. Strong terms around 'career mode', 'licensed cars', and 'wheel support', but low growth and lower lifestyle crossover."),
+
+    slackMessage("Chloe", "Wed 08:58", "Creator ecosystem report is interesting. Racing videos spike around launch, reviews, and competitive events. Simulation and customization videos keep producing after launch because players generate examples."),
+    slackMessage("Sarah", "Wed 09:06", "Is that why stream hours look so different from units sold?"),
+    slackMessage("Chloe", "Wed 09:14", "Exactly. A game can sell well but produce limited repeatable content. The parent company cares about repeatable cultural presence, not only launch week."),
+    slackMessage("Dave", "Wed 09:47", "Open-world street sports could produce trick clips, outfit reveals, city challenges, and creator route competitions. That sounds closer to repeatable content than a fixed track racer."),
+    slackMessage("Chloe", "Wed 10:15", "Yes, but it needs clarity. If the pitch sounds like every youth-culture feature at once, marketing cannot explain it. One strong fantasy beats five vague hooks."),
+    slackMessage("Victoria", "Wed 13:32", "Good line. Add that to the board notes: 'channel fit requires product clarity'."),
+    slackMessage("Chloe", "Wed 16:05", "Parent-company overlap report also favors customization-led concepts. It does not automatically pick a project, but it weakens a pure racing recommendation."),
+
+    slackMessage("Chloe", "Thu 09:03", "Building the marketing scorecard now. Option 4 wins addressable audience and long-tail content if execution is strong. Option 3 wins cross-channel clarity with lower explanation cost."),
+    slackMessage("Sarah", "Thu 09:19", "What does 'lower explanation cost' mean for students?"),
+    slackMessage("Chloe", "Thu 09:28", "It means owned media can show the value quickly: avatar, movement, social space, trick, outfit, clip. Life Sim can also show value, but the promise depends heavily on invisible systems depth."),
+    slackMessage("Dave", "Thu 10:00", "That is helpful. Students should not just ask 'which genre is bigger?' They should ask which concept can be communicated credibly."),
+    slackMessage("Chloe", "Thu 11:22", "Option 2 has very high advocacy among existing fans. The question is whether that advocacy is enough for the corporate growth target."),
+    slackMessage("Victoria", "Thu 14:48", "And Option 6?"),
+    slackMessage("Chloe", "Thu 15:02", "Efficient but narrow. Motorsport management creates thoughtful content, but not much broad lifestyle energy. It is probably a disciplined smaller bet rather than a flagship answer."),
+
+    slackMessage("Chloe", "Fri 08:55", "Final marketing readout uploaded. I avoided ranking by one metric. The appendix now shows demand volume, intent specificity, creator repeatability, channel fit, and conversion risk."),
+    slackMessage("Sarah", "Fri 09:12", "Good. Which evidence do you think students are most likely to overuse?"),
+    slackMessage("Chloe", "Fri 09:18", "The biggest market chart. It is tempting, but the market chart alone ignores production credibility and launch trust."),
+    slackMessage("Victoria", "Fri 09:40", "That is exactly why the Slack archive matters. Internal stakeholders should complicate the neat external reports."),
+    slackMessage("Dave", "Fri 10:05", "Marketing makes Option 3 and Option 4 both plausible, for different reasons. That is a better simulation than a single obvious winner."),
+    slackMessage("Chloe", "Fri 10:37", "Agreed. My recommendation to students would be: show which metric you prioritize, then justify why that metric matters for Highland now.")
   ],
   "executive": [
-    { sender: "Victoria", role: "VP of Product Strategy", avatarClass: "avatar-exe", text: "Strategists, the parent company is looking for a project that maximizes long-term lifetime value. A standard racing game might be safe and front-loaded, but we want long-tail engagement.", time: "09:45 AM" },
-    { sender: "Victoria", role: "VP of Product Strategy", avatarClass: "avatar-exe", text: "The board will support a high-risk project (like a Life Sim reboot) ONLY if we can prove we've addressed the technical failures of the past. If not, they'll want us to stay in our lane or find a smart middle ground.", time: "09:48 AM" },
-    { sender: "Sarah", role: "Executive Producer", avatarClass: "avatar-pm", text: "Understood, Victoria. The team is interested in whether an open-world street sports game can extend Streetline momentum into a larger social and customization-led product.", time: "09:52 AM" },
-    { sender: "Victoria", role: "VP of Product Strategy", avatarClass: "avatar-exe", text: "That sounds promising. Let's make sure the report outlines the ROI multipliers. Racing sales decay rapidly after Month 1, whereas simulation expansions hold value for years.", time: "09:55 AM" },
-    { sender: "Victoria", role: "VP of Product Strategy", avatarClass: "avatar-exe", text: "Remember, the board wants evidence of capability fit. If we choose Option 4, we need a credible plan for building capacity in that genre while still protecting the launch budget.", time: "10:00 AM" }
+    slackMessage("Victoria", "Mon 09:45", "Executive thread. The parent company wants a recommendation that balances growth, brand leverage, production credibility, and long-term portfolio value."),
+    slackMessage("Sarah", "Mon 09:52", "The team understands. I am trying to prevent the board pack from becoming 'safe option versus exciting option'. The reality is more complex."),
+    slackMessage("Victoria", "Mon 10:05", "Correct. A safe project can be strategically weak. An ambitious project can be commercially right but operationally reckless. The recommendation needs to name that trade-off."),
+    slackMessage("Chloe", "Mon 11:12", "Do you want parent-company synergy treated as a hard requirement or a multiplier?"),
+    slackMessage("Victoria", "Mon 11:25", "A multiplier. The board will not greenlight a bad game because it fits a fashion campaign. But if two options are close, corporate reach can matter."),
+    slackMessage("Marcus", "Mon 15:18", "Engineering asks that capability fit also be treated as a multiplier, not a veto. We can grow capacity, but students should price that growth honestly."),
+
+    slackMessage("Victoria", "Tue 08:58", "Board concern this morning: if Highland chooses a racing sequel, what makes it more than a predictable but declining revenue event?"),
+    slackMessage("Sarah", "Tue 09:16", "The answer would be production certainty, known audience, and less organizational disruption. The weakness is long-tail engagement."),
+    slackMessage("Victoria", "Tue 09:40", "Good. If Highland chooses a skateboarding sequel, what makes it more than operational comfort?"),
+    slackMessage("Dave", "Tue 10:05", "Existing fan love, team morale, strong mechanics, and clear quality bar. Weakness is whether it meaningfully expands Highland's strategic position."),
+    slackMessage("Victoria", "Tue 10:38", "If Highland chooses open-world street sports, what is the board challenge?"),
+    slackMessage("Sarah", "Tue 10:55", "Scope discipline. It has a strong bridge from current capability to a broader audience, but it needs a precise product definition."),
+    slackMessage("Victoria", "Tue 14:30", "If Highland chooses Life Sim, the challenge is proof of capability-building. The board will want to know what must be true before full production begins."),
+
+    slackMessage("Victoria", "Wed 09:05", "I reviewed the first analytics packet. Biggest issue: some evidence favors market size, some favors studio capability, some favors corporate amplification. This is good for the exercise."),
+    slackMessage("Sarah", "Wed 09:18", "Agreed. I am making the student worksheet ask them to identify which evidence they weighted most heavily."),
+    slackMessage("Chloe", "Wed 09:46", "Parent-company overlap is not neutral. It clearly benefits customization-led concepts. That should create pressure against a default racing sequel."),
+    slackMessage("Marcus", "Wed 10:11", "Technical history is also not neutral. It clearly pressures the Life Sim reboot. That should create friction against simply following the biggest market."),
+    slackMessage("Victoria", "Wed 11:02", "Exactly. The best student groups will explain how they resolved that conflict."),
+    slackMessage("Dave", "Wed 15:15", "Design is somewhere between those poles. Option 3 may be the compromise, but only if it avoids becoming vague."),
+
+    slackMessage("Victoria", "Thu 09:00", "Dry-run prompt: 'Which option gives Highland the best chance to grow without losing operational control?' That may be more useful than 'which option has the largest opportunity?'"),
+    slackMessage("Sarah", "Thu 09:28", "That phrasing should make students compare ambition and feasibility."),
+    slackMessage("Marcus", "Thu 10:02", "It also makes them define operational control. For engineering, that means scope, milestones, testability, and support commitments."),
+    slackMessage("Chloe", "Thu 10:35", "For marketing, it means a concept that can be explained repeatedly through channels we actually have, not just a large theoretical audience."),
+    slackMessage("Dave", "Thu 11:04", "For design, it means a player fantasy that is sharp enough to guide feature cuts."),
+    slackMessage("Victoria", "Thu 14:12", "Please include those definitions in the simulated conversation. They make the internal evidence feel like a real company thinking through a decision."),
+
+    slackMessage("Victoria", "Fri 08:40", "Final executive position: we are not asking for unanimity. We are asking for a defensible recommendation with acknowledged uncertainty."),
+    slackMessage("Sarah", "Fri 09:02", "The classroom version now has enough disagreement to support that. The reports provide evidence; the Slack channels provide organizational interpretation."),
+    slackMessage("Chloe", "Fri 09:24", "Marketing will not claim any option is risk-free. Even Option 3 needs sharper messaging and proof that its audience is not just a bundle of adjacent trends."),
+    slackMessage("Marcus", "Fri 09:45", "Engineering will not claim ambitious options are impossible. We will state the proof gates and capacity needs."),
+    slackMessage("Dave", "Fri 10:15", "Design will emphasize concept coherence. Bigger is not automatically better."),
+    slackMessage("Victoria", "Fri 11:00", "Good. This is exactly the kind of ambiguity students should learn to work through: data is essential, but judgment still decides how it is weighted.")
   ]
 };
 
