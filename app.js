@@ -35,7 +35,7 @@ const PROJECT_OPTIONS = {
     capability: "Strong (Streetline Skate engine, high team morale)"
   },
   "open_world_sports": {
-    name: "Open-World Action-Sports",
+    name: "Open-World Street Sports",
     risk: "Moderate to High",
     cost: "£16M - £20M",
     devTime: "4 Years",
@@ -49,14 +49,6 @@ const PROJECT_OPTIONS = {
     devTime: "4-5 Years",
     potential: "Extremely High (Modding ecosystem, steady expansion packs)",
     capability: "Weak (Previous failure damaged morale, fragile AI simulation tools)"
-  },
-  "hybrid_lifestyle": {
-    name: "Hybrid Lifestyle Sports Game",
-    risk: "Moderate",
-    cost: "£12M - £14M",
-    devTime: "3 Years",
-    potential: "Distinctive market positioning, self-expression",
-    capability: "Good (Combines skating systems with avatar social features)"
   },
   "motorsport_mgmt": {
     name: "Motorsport Management & Lifestyle",
@@ -515,14 +507,14 @@ const SLACK_COMMUNICATIONS = {
     { sender: "Marcus", role: "Technical Director", avatarClass: "avatar-eng", text: "Guys, I need to voice some real concerns here. If we even talk about doing a Life Simulation game again, we need to completely overhaul our codebase.", time: "09:12 AM" },
     { sender: "Marcus", role: "Technical Director", avatarClass: "avatar-eng", text: "Remember the nightmare that was *LifeSpace*? Our custom state-tracking engine crashed constantly when handling NPC relationships, and the QA tooling was non-existent. Our engineers are still burnt out from that.", time: "09:15 AM" },
     { sender: "Elena", role: "Lead Programmer", avatarClass: "avatar-eng", text: "Seconded. Our current physics systems are optimized for wheels and skateboards (Streetline Skate has incredibly solid mechanics). Moving to a complex AI agent system with hundreds of variables would require hiring at least 4 new senior systems programmers and extending pre-production by 9 months.", time: "09:18 AM" },
-    { sender: "Dave", role: "Lead Game Designer", avatarClass: "avatar-des", text: "Understood, Marcus. But what about a hybrid option? We keep our physics and movement-based strength, but expand the social spaces and character customization. That way we target the lifestyle players without building a heavy NPC life sim from scratch.", time: "09:22 AM" },
+    { sender: "Dave", role: "Lead Game Designer", avatarClass: "avatar-des", text: "Understood, Marcus. What about expanding the street sports idea? We keep our physics and movement-based strength, but test whether social spaces and creator tools can broaden the audience without building a full NPC life sim from scratch.", time: "09:22 AM" },
     { sender: "Marcus", role: "Technical Director", avatarClass: "avatar-eng", text: "That is much more doable. We could reuse the customization modules from Streetline Skate, which our team knows inside out. It lowers the technical risk significantly.", time: "09:25 AM" },
     { sender: "Elena", role: "Lead Programmer", avatarClass: "avatar-eng", text: "Let's review the LifeSpace crash dumps. 74% of our steam refunds were due to technical instability. If we attempt a full reboot, we must rewrite the serialization code. Our database save states lacked transaction rollbacks.", time: "09:28 AM" },
     { sender: "Elena", role: "Lead Programmer", avatarClass: "avatar-eng", text: "Specifically, when players customized their houses and characters simultaneously, the memory buffer overflowed, corrupting the save games. It was a core architectural flaw.", time: "09:31 AM" },
     { sender: "Marcus", role: "Technical Director", avatarClass: "avatar-eng", text: "Correct. Whereas on Streetline Skate, the memory utilization was flat. Reusing the skating movement vectors is zero-risk. Our track editors on Apex Circuit also give us a solid foundation for player-built content.", time: "09:34 AM" },
     { sender: "Dave", role: "Lead Game Designer", avatarClass: "avatar-des", text: "Right, but the design demands for a pure simulation game are massive. You need system designers to write relationship algorithms, economy tuning, NPC scheduling logic, custom apparel shaders... the hiring list is massive.", time: "09:37 AM" },
     { sender: "Elena", role: "Lead Programmer", avatarClass: "avatar-eng", text: "And if we hire 6 new systems guys, we need 3 months just to onboard them into our proprietary engine toolset. That pushes release from late 2028 into mid 2029.", time: "09:40 AM" },
-    { sender: "Marcus", role: "Technical Director", avatarClass: "avatar-eng", text: "So a hybrid approach (Option 5) allows us to bridge the gaps. We utilize our proven physics nodes but implement stylized customization loops. Minimal hiring, maximum stability.", time: "09:43 AM" },
+    { sender: "Marcus", role: "Technical Director", avatarClass: "avatar-eng", text: "The open-world street sports concept could bridge some gaps. It uses our proven physics nodes but expands the social and customization surface area, which gives us a wider product question to evaluate.", time: "09:43 AM" },
     { sender: "Elena", role: "Lead Programmer", avatarClass: "avatar-eng", text: "Yes, we can write a simple matchmaking server for customization lobbies. That is well within our current backend capacity.", time: "09:45 AM" }
   ],
   "marketing": [
@@ -540,9 +532,9 @@ const SLACK_COMMUNICATIONS = {
   "executive": [
     { sender: "Victoria", role: "VP of Product Strategy", avatarClass: "avatar-exe", text: "Strategists, the parent company is looking for a project that maximizes long-term lifetime value. A standard racing game might be safe and front-loaded, but we want long-tail engagement.", time: "09:45 AM" },
     { sender: "Victoria", role: "VP of Product Strategy", avatarClass: "avatar-exe", text: "The board will support a high-risk project (like a Life Sim reboot) ONLY if we can prove we've addressed the technical failures of the past. If not, they'll want us to stay in our lane or find a smart middle ground.", time: "09:48 AM" },
-    { sender: "Sarah", role: "Executive Producer", avatarClass: "avatar-pm", text: "Understood, Victoria. The team is currently leaning toward a Hybrid Lifestyle Sports Game. It bridges skateboarding momentum with self-expression. Low technical risk, highly alignable with parent company demographics.", time: "09:52 AM" },
+    { sender: "Sarah", role: "Executive Producer", avatarClass: "avatar-pm", text: "Understood, Victoria. The team is interested in whether an open-world street sports game can extend Streetline momentum into a larger social and customization-led product.", time: "09:52 AM" },
     { sender: "Victoria", role: "VP of Product Strategy", avatarClass: "avatar-exe", text: "That sounds promising. Let's make sure the report outlines the ROI multipliers. Racing sales decay rapidly after Month 1, whereas simulation expansions hold value for years.", time: "09:55 AM" },
-    { sender: "Victoria", role: "VP of Product Strategy", avatarClass: "avatar-exe", text: "Remember, the board wants evidence of capability fit. If we choose Option 4 (Reboot), we need to allocate at least £5M to new AI hiring and engine rebuilding, which restricts our marketing spend.", time: "10:00 AM" }
+    { sender: "Victoria", role: "VP of Product Strategy", avatarClass: "avatar-exe", text: "Remember, the board wants evidence of capability fit. If we choose Option 4, we need a credible plan for building capacity in that genre while still protecting the launch budget.", time: "10:00 AM" }
   ]
 };
 
@@ -597,8 +589,8 @@ const MACRO_REPORTS = {
     <ul>
       <li><strong>Racing Sequel (Scope: Moderate):</strong> High predictability. We can reuse our physical track builder tools and wheel physics engine. Estimated cost: £12M - £15M. Technical risk: Low.</li>
       <li><strong>Skateboarding Sequel (Scope: Low-Moderate):</strong> Maximum efficiency. We can reuse 80% of our Streetline Skate codebase. Estimated cost: £8M - £10M. Technical risk: Low.</li>
-      <li><strong>Life Simulation Reboot (Scope: High):</strong> Maximum cost. We would need to build a new multi-threaded AI agent simulator and custom modding SDK. Requires hiring at least 6 new specialists. Estimated cost: £20M - £25M. Technical risk: Extreme.</li>
-      <li><strong>Hybrid Lifestyle Sports (Scope: Moderate):</strong> Balanced. Combines skateboarding movement physics with custom social lobby servers. Reuses styling engines. Estimated cost: £12M - £14M. Technical risk: Moderate.</li>
+      <li><strong>Life Simulation Reboot (Scope: High):</strong> Maximum cost. Represents a major expansion into a different genre, requiring a broader simulation roadmap and a longer capacity-building plan. Estimated cost: £20M - £25M. Technical risk: High.</li>
+      <li><strong>Open-World Street Sports (Scope: High):</strong> Expands skateboarding movement physics into a larger street-culture sandbox with social hub and traversal systems. Estimated cost: £16M - £20M. Technical risk: Moderate to High.</li>
     </ul>
   `,
   "macro-competitors": `
@@ -877,7 +869,7 @@ function generateMarketTrendsChart() {
           <div class="ed-heat">
             <div></div><div class="head">Volume</div><div class="head">Feature</div><div class="head">Brand</div><div class="head">Buy</div><div class="head">Risk</div>
             <div class="rowhead">Life Sim</div><div class="s5">5</div><div class="s5">5</div><div class="s3">3</div><div class="s4">4</div><div class="s3">3</div>
-            <div class="rowhead">Hybrid Sports</div><div class="s4">4</div><div class="s5">5</div><div class="s3">3</div><div class="s3">3</div><div class="s2">2</div>
+            <div class="rowhead">Street Sports</div><div class="s4">4</div><div class="s5">5</div><div class="s3">3</div><div class="s3">3</div><div class="s2">2</div>
             <div class="rowhead">Skate Sequel</div><div class="s3">3</div><div class="s4">4</div><div class="s5">5</div><div class="s3">3</div><div class="s2">2</div>
             <div class="rowhead">Racing</div><div class="s3">3</div><div class="s2">2</div><div class="s4">4</div><div class="s2">2</div><div class="s1">1</div>
           </div>
@@ -888,7 +880,7 @@ function generateMarketTrendsChart() {
           <div class="ed-keyword-grid">
             <div class="ed-keyword-card"><strong>life sim alternative with better customization</strong><span>High-volume dissatisfaction with dominant competitors; good early signal for Option 4 if execution risk is solved.</span></div>
             <div class="ed-keyword-card"><strong>streetline skate multiplayer custom parks</strong><span>Direct evidence that Highland's sports audience already searches for UGC and social creation loops.</span></div>
-            <div class="ed-keyword-card"><strong>open world skate bike parkour game</strong><span>Supports Option 3/5 adjacency; users describe activity mix and world structure rather than only franchise names.</span></div>
+            <div class="ed-keyword-card"><strong>open world skate bike parkour game</strong><span>Supports Option 3; users describe activity mix and world structure rather than only franchise names.</span></div>
           </div>
         </div>
       </div>
@@ -949,7 +941,7 @@ function generateWebClicksDashboard() {
               <tr><td>life sim alternative search</td><td>LifeSpace patch log</td><td><span class="ed-status warn">Trust gap</span></td><td>Demand exists, but historical reliability concerns shape research behavior.</td></tr>
               <tr><td>Streetline Skate social clip</td><td>Park builder gallery</td><td><span class="ed-status good">Creation pull</span></td><td>Current audience already moves toward UGC, not just highlight viewing.</td></tr>
               <tr><td>racing career mode query</td><td>Apex Circuit spec page</td><td><span class="ed-status info">Feature compare</span></td><td>Users compare content depth; lower evidence of broader lifestyle spillover.</td></tr>
-              <tr><td>open-world sports referral</td><td>Newsletter sign-up</td><td><span class="ed-status good">Concept lift</span></td><td>Hybrid concepts generate opt-in before franchise confirmation.</td></tr>
+              <tr><td>open-world sports referral</td><td>Newsletter sign-up</td><td><span class="ed-status good">Concept lift</span></td><td>Street-sports concepts generate opt-in before franchise confirmation.</td></tr>
             </tbody>
           </table>
         </div>
@@ -1047,7 +1039,7 @@ function generateWishlistDashboard() {
           <h4>Growth Rate by Genre</h4>
           <div class="ed-bars">
             <div class="ed-bar-row"><span class="ed-bar-label">Life Simulation</span><span class="ed-bar-track"><span class="ed-bar-fill good" style="--v:92%"></span></span><span class="ed-bar-value">3.2x</span></div>
-            <div class="ed-bar-row"><span class="ed-bar-label">Hybrid Lifestyle Sports</span><span class="ed-bar-track"><span class="ed-bar-fill good" style="--v:74%"></span></span><span class="ed-bar-value">2.4x</span></div>
+            <div class="ed-bar-row"><span class="ed-bar-label">Open-World Street Sports</span><span class="ed-bar-track"><span class="ed-bar-fill good" style="--v:74%"></span></span><span class="ed-bar-value">2.4x</span></div>
             <div class="ed-bar-row"><span class="ed-bar-label">Skateboarding</span><span class="ed-bar-track"><span class="ed-bar-fill" style="--v:58%"></span></span><span class="ed-bar-value">1.8x</span></div>
             <div class="ed-bar-row"><span class="ed-bar-label">Racing</span><span class="ed-bar-track"><span class="ed-bar-fill bad" style="--v:33%"></span></span><span class="ed-bar-value">1.1x</span></div>
           </div>
@@ -1069,10 +1061,10 @@ function generateWishlistDashboard() {
         <div class="ed-panel wide">
           <h4>Leading Indicators for Greenlight Discussion</h4>
           <table class="ed-table">
-            <thead><tr><th>Signal</th><th>Option 1 Racing</th><th>Option 4 Life Sim</th><th>Option 5 Hybrid</th><th>Readout</th></tr></thead>
+            <thead><tr><th>Signal</th><th>Option 1 Racing</th><th>Option 3 Street Sports</th><th>Option 4 Life Sim</th><th>Readout</th></tr></thead>
             <tbody>
               <tr><td>Wishlist growth</td><td><span class="ed-status bad">Low</span></td><td><span class="ed-status good">High</span></td><td><span class="ed-status good">High</span></td><td>High-upside categories are pulling early demand without paid spend.</td></tr>
-              <tr><td>Proof required</td><td><span class="ed-status info">Medium</span></td><td><span class="ed-status bad">High</span></td><td><span class="ed-status warn">Medium</span></td><td>Life-sim interest must be paired with credible technical proof.</td></tr>
+              <tr><td>Proof required</td><td><span class="ed-status info">Medium</span></td><td><span class="ed-status warn">Medium</span></td><td><span class="ed-status bad">High</span></td><td>Life-sim interest must be paired with credible product proof.</td></tr>
               <tr><td>Creator lift</td><td><span class="ed-status bad">Low</span></td><td><span class="ed-status good">High</span></td><td><span class="ed-status good">High</span></td><td>Customization loops create repeatable pre-launch content.</td></tr>
             </tbody>
           </table>
@@ -1260,7 +1252,7 @@ function generatePricingDecayDashboard() {
             <thead><tr><th>Genre</th><th>Base Game</th><th>DLC/Exp.</th><th>Discount Risk</th></tr></thead>
             <tbody>
               <tr><td>Life Sim</td><td>46%</td><td>41%</td><td><span class="ed-status good">Low</span></td></tr>
-              <tr><td>Hybrid Sports</td><td>61%</td><td>24%</td><td><span class="ed-status info">Medium</span></td></tr>
+              <tr><td>Street Sports</td><td>61%</td><td>24%</td><td><span class="ed-status info">Medium</span></td></tr>
               <tr><td>Skateboarding</td><td>68%</td><td>18%</td><td><span class="ed-status info">Medium</span></td></tr>
               <tr><td>Racing</td><td>82%</td><td>9%</td><td><span class="ed-status bad">High</span></td></tr>
             </tbody>
@@ -1269,11 +1261,11 @@ function generatePricingDecayDashboard() {
 
         <div class="ed-panel">
           <h4>Pricing Implication</h4>
-          <p class="ed-panel-note">Racing can launch predictably but loses price power quickly. Simulation and hybrid concepts carry more support risk, but they can earn over a longer monetization window if content pipelines and tooling are reliable.</p>
+          <p class="ed-panel-note">Racing can launch predictably but loses price power quickly. Simulation and open-world street sports concepts carry more support risk, but they can earn over a longer monetization window if content pipelines and tooling are reliable.</p>
           <div class="ed-bars">
             <div class="ed-bar-row"><span class="ed-bar-label">Launch spike reliance</span><span class="ed-bar-track"><span class="ed-bar-fill bad" style="--v:86%"></span></span><span class="ed-bar-value">Racing</span></div>
             <div class="ed-bar-row"><span class="ed-bar-label">Expansion runway</span><span class="ed-bar-track"><span class="ed-bar-fill good" style="--v:78%"></span></span><span class="ed-bar-value">Life Sim</span></div>
-            <div class="ed-bar-row"><span class="ed-bar-label">UGC retention</span><span class="ed-bar-track"><span class="ed-bar-fill good" style="--v:71%"></span></span><span class="ed-bar-value">Hybrid</span></div>
+            <div class="ed-bar-row"><span class="ed-bar-label">UGC retention</span><span class="ed-bar-track"><span class="ed-bar-fill good" style="--v:71%"></span></span><span class="ed-bar-value">Street</span></div>
           </div>
         </div>
       </div>
@@ -1317,17 +1309,17 @@ function generateTelemetryDashboard() {
           <table class="ed-table">
             <thead><tr><th>Signal</th><th>Evidence</th><th>Option Fit</th></tr></thead>
             <tbody>
-              <tr><td>Self-expression</td><td>High customization dwell in Streetline Skate</td><td><span class="ed-status good">Option 5</span></td></tr>
+              <tr><td>Self-expression</td><td>High customization dwell in Streetline Skate</td><td><span class="ed-status good">Option 3</span></td></tr>
               <tr><td>Pure simulation</td><td>LifeSpace concept had demand but poor crash-free play</td><td><span class="ed-status warn">Option 4</span></td></tr>
               <tr><td>Track mastery</td><td>Racing sessions are focused but narrow</td><td><span class="ed-status info">Option 1</span></td></tr>
-              <tr><td>Social loop</td><td>Park sharing increases return sessions</td><td><span class="ed-status good">Option 3/5</span></td></tr>
+              <tr><td>Social loop</td><td>Park sharing increases return sessions</td><td><span class="ed-status good">Option 3</span></td></tr>
             </tbody>
           </table>
         </div>
 
         <div class="ed-panel wide">
           <h4>Telemetry Conclusion</h4>
-          <p class="ed-panel-note">The useful evidence is not that Highland “makes skate games”. It is that Highland already has proven physics, expressive movement, and player creation behavior. That is a stronger bridge into a hybrid lifestyle-sports concept than into a full life-simulation reboot with unresolved AI and save-state risk.</p>
+          <p class="ed-panel-note">The useful evidence is not that Highland “makes skate games”. It is that Highland already has proven physics, expressive movement, and player creation behavior. That is a stronger bridge into an open-world street sports concept than into a full life-simulation reboot.</p>
         </div>
       </div>
     </div>
@@ -1386,7 +1378,7 @@ function generateCommunityEngagementDashboard() {
           <h4>Strategic Fit</h4>
           <div class="ed-heat">
             <div></div><div class="head">UGC</div><div class="head">Creator</div><div class="head">Support</div><div class="head">DLC</div><div class="head">Trust</div>
-            <div class="rowhead">Option 5</div><div class="s5">5</div><div class="s5">5</div><div class="s3">3</div><div class="s4">4</div><div class="s4">4</div>
+            <div class="rowhead">Option 3</div><div class="s5">5</div><div class="s5">5</div><div class="s3">3</div><div class="s4">4</div><div class="s4">4</div>
             <div class="rowhead">Option 4</div><div class="s5">5</div><div class="s5">5</div><div class="s1">1</div><div class="s5">5</div><div class="s2">2</div>
             <div class="rowhead">Option 1</div><div class="s2">2</div><div class="s2">2</div><div class="s5">5</div><div class="s2">2</div><div class="s4">4</div>
           </div>
@@ -1440,7 +1432,7 @@ function generatePlatformSalesViewer() {
 
         <div class="ed-panel">
           <h4>Portfolio Interpretation</h4>
-          <p class="ed-panel-note">Life simulation has the largest addressable market but also the highest technical expectation. Hybrid lifestyle sports is smaller, but better aligned with Highland capability and parent-company media support. Racing is commercially real but less strategically leveraged.</p>
+          <p class="ed-panel-note">Life simulation has the largest addressable market but also the highest technical expectation. Open-world street sports is smaller, but better aligned with Highland capability and parent-company media support. Racing is commercially real but less strategically leveraged.</p>
         </div>
       </div>
     </div>
@@ -2714,7 +2706,6 @@ const FORECAST_DATA = {
   skate: { cost: 9000000, time: "2.5 Years", sales: 35000000, tail: "Medium", risk: "Low" },
   openworld: { cost: 18000000, time: "4 Years", sales: 55000000, tail: "High", risk: "Medium" },
   lifesim: { cost: 22000000, time: "5 Years", sales: 95000000, tail: "Extreme", risk: "High" },
-  hybrid: { cost: 13000000, time: "3 Years", sales: 42000000, tail: "High", risk: "Medium" },
   motorsport: { cost: 7000000, time: "2 Years", sales: 22000000, tail: "Medium", risk: "Low" }
 };
 
