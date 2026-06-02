@@ -825,6 +825,7 @@ let State = {
   budget: 10000, // Reduced from 20000 to 10000
   purchased: [],
   requests: {}, // dataSourceId -> { requestedAt: timestamp, delay: randomSeconds }
+  slackPermissionRequest: null,
   viewed: [],
   emails: [
     {
@@ -871,6 +872,9 @@ function loadState(passcode) {
   const data = localStorage.getItem(`highland_state_${passcode}`);
   if (data) {
     State = JSON.parse(data);
+    if (typeof State.slackPermissionRequest === "undefined") {
+      State.slackPermissionRequest = null;
+    }
   } else {
     // Reset to initial state
     State.activeTeam = Object.keys(TEAMS_CONFIG).find(key => TEAMS_CONFIG[key] === passcode);
@@ -878,6 +882,7 @@ function loadState(passcode) {
     State.budget = 10000;
     State.purchased = [];
     State.requests = {};
+    State.slackPermissionRequest = null;
     State.viewed = [];
     const isAdmin = passcode === "admin1991";
     State.emails = [
@@ -1881,12 +1886,18 @@ function setupEventListeners() {
   });
 
   // Slack sentiment trigger
+  document.getElementById("download-slack-btn").addEventListener("click", openSlackDownloadModal);
+
   document.getElementById("analyze-slack-btn").addEventListener("click", () => {
     document.getElementById("sentiment-analysis-dashboard").classList.remove("hidden");
   });
 
   document.getElementById("close-sentiment-btn").addEventListener("click", () => {
     document.getElementById("sentiment-analysis-dashboard").classList.add("hidden");
+  });
+
+  document.getElementById("slack-permission-close-btn").addEventListener("click", () => {
+    document.getElementById("slack-permission-modal").close();
   });
 
   // Macro reports navigation
@@ -2270,7 +2281,9 @@ ${src.owner} Billing Support`,
   }
 
   // Open native modal dialog
-  modal.showModal();
+  if (!modal.open) {
+    modal.showModal();
+  }
 }
 
 function renderModalDashboard(sourceId, viewerElement) {
@@ -2590,6 +2603,67 @@ function renderSlackMessages(channel) {
   });
 }
 
+function openSlackDownloadModal() {
+  const modal = document.getElementById("slack-permission-modal");
+  const body = document.getElementById("slack-permission-body");
+  const request = State.slackPermissionRequest;
+
+  if (request?.status === "pending") {
+    body.innerHTML = `
+      <div class="permission-alert">
+        <h3>Permission Request Sent</h3>
+        <p>Your request has been sent to Privacy Governance. Estimated response time is five minutes.</p>
+      </div>
+      <div class="permission-actions">
+        <button type="button" class="btn btn-outline" id="slack-permission-ok-btn">Close</button>
+      </div>
+    `;
+  } else if (request?.status === "denied") {
+    body.innerHTML = `
+      <div class="permission-alert">
+        <h3>Download Still Blocked</h3>
+        <p>The Slack archive export remains unavailable while Privacy Governance reviews the escalation status.</p>
+      </div>
+      <div class="permission-actions">
+        <button type="button" class="btn btn-outline" id="slack-permission-ok-btn">Close</button>
+      </div>
+    `;
+  } else {
+    body.innerHTML = `
+      <div class="permission-alert">
+        <h3>Download Blocked</h3>
+        <p>Slack conversation archive downloads are blocked due to privacy permissions. You may request permission from Privacy Governance.</p>
+      </div>
+      <div class="permission-actions">
+        <button type="button" class="btn btn-outline" id="slack-permission-cancel-btn">Cancel</button>
+        <button type="button" class="btn btn-primary" id="slack-permission-request-btn">Request Permission</button>
+      </div>
+    `;
+  }
+
+  document.getElementById("slack-permission-ok-btn")?.addEventListener("click", () => modal.close());
+  document.getElementById("slack-permission-cancel-btn")?.addEventListener("click", () => modal.close());
+  document.getElementById("slack-permission-request-btn")?.addEventListener("click", requestSlackArchivePermission);
+
+  if (!modal.open) {
+    modal.showModal();
+  }
+}
+
+function requestSlackArchivePermission() {
+  State.slackPermissionRequest = {
+    requestedAt: Date.now(),
+    delay: getRandomSlackPermissionDelaySeconds(),
+    status: "pending"
+  };
+  saveState();
+  openSlackDownloadModal();
+}
+
+function getRandomSlackPermissionDelaySeconds() {
+  return Math.floor(Math.random() * 181) + 180;
+}
+
 // Macro Report tab content renderer
 function renderMacroReport(reportId) {
   const content = document.getElementById("macro-report-content");
@@ -2749,9 +2823,35 @@ function tickTimers() {
     }
   });
 
+  const slackRequest = State.slackPermissionRequest;
+  if (slackRequest?.status === "pending") {
+    const elapsed = (now - slackRequest.requestedAt) / 1000;
+    if (elapsed >= slackRequest.delay) {
+      State.slackPermissionRequest = {
+        ...slackRequest,
+        status: "denied",
+        deniedAt: now
+      };
+
+      State.emails.push({
+        sender: "Privacy Governance Office",
+        subject: "Denied: Slack Conversation Archive Export",
+        body: "Strategy Task Force,\n\nYour request to download the full Slack conversation archive has been reviewed and denied.\n\nThe archive contains identifiable employee communications and internal workplace discussion data. Under UK privacy requirements, including UK GDPR and the Data Protection Act 2018, the raw export cannot be released for student-facing analysis in its current form.\n\nThis decision has been escalated for senior review. If permission is granted from above, the earliest likely response window is approximately 2-3 weeks.\n\nRegards,\nPrivacy Governance Office",
+        date: new Date().toLocaleTimeString(),
+        read: false,
+        id: "slack_archive_permission_denied"
+      });
+
+      stateChanged = true;
+    }
+  }
+
   if (stateChanged) {
     saveState();
     updateEmailBadgeCount();
+    if (State.activeTab === "tab-email") {
+      renderEmailInbox();
+    }
     
     if (State.activeTab === "tab-journey") {
       const activeNode = document.querySelector(".journey-node.active");
@@ -2768,6 +2868,11 @@ function tickTimers() {
       if (matchingSource && !State.requests[matchingSource.id]) {
         openDataSourceModal(matchingSource.id);
       }
+    }
+
+    const slackModal = document.getElementById("slack-permission-modal");
+    if (slackModal?.open) {
+      openSlackDownloadModal();
     }
   }
 }

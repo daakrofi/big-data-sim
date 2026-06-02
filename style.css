@@ -1034,6 +1034,9 @@ li {
 
 .sentiment-button-wrapper {
   margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
 }
 
 .slack-chat-area {
@@ -1080,6 +1083,45 @@ li {
 .avatar-des { background-color: var(--color-info); }
 .avatar-mkt { background-color: var(--color-brand); }
 .avatar-exe { background-color: var(--color-success); }
+
+.slack-permission-modal {
+  width: min(520px, calc(100vw - 2rem));
+  border: 1px solid var(--border-glass);
+  padding: 0;
+}
+
+.slack-permission-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.slack-permission-body {
+  padding: 1.5rem;
+}
+
+.permission-alert {
+  border: 1px solid rgba(245, 158, 11, 0.35);
+  background: rgba(245, 158, 11, 0.08);
+  border-radius: var(--border-radius-md);
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.permission-alert h3 {
+  margin-bottom: 0.45rem;
+  color: var(--color-warning);
+}
+
+.permission-alert p {
+  color: var(--text-secondary);
+  line-height: 1.55;
+}
+
+.permission-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.75rem;
+}
 
 .msg-body {
   display: flex;

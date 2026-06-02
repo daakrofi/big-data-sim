@@ -310,6 +310,7 @@
                 </nav>
                 
                 <div class="sentiment-button-wrapper">
+                  <button type="button" class="btn btn-outline btn-sm btn-full" id="download-slack-btn">Download Slack Archive</button>
                   <button type="button" class="btn btn-primary btn-sm btn-full" id="analyze-slack-btn">Analyse Internal Sentiment</button>
                 </div>
               </aside>
@@ -715,6 +716,18 @@
           </section>
         </main>
         
+      </div>
+    </div>
+  </dialog>
+
+  <dialog id="slack-permission-modal" class="slack-permission-modal glass-panel">
+    <div class="slack-permission-wrapper">
+      <header class="modal-header">
+        <h2>Slack Archive Download</h2>
+        <button type="button" class="btn-close" id="slack-permission-close-btn" aria-label="Close dialog">&times;</button>
+      </header>
+      <div class="slack-permission-body" id="slack-permission-body">
+        <!-- Dynamically rendered permission state -->
       </div>
     </div>
   </dialog>
