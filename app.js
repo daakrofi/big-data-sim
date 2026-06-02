@@ -963,20 +963,20 @@ function generateMarketTrendsChart() {
             <div class="grid-line" style="bottom: 75%"></div>
             <div class="grid-line" style="bottom: 100%"></div>
             <svg class="trend-lines-svg" viewBox="0 0 600 220" preserveAspectRatio="none">
-              <path d="M 0 98 Q 130 94 260 101 T 600 108" fill="none" stroke="#64748b" stroke-width="3" />
-              <path d="M 0 162 Q 150 146 290 111 T 600 72" fill="none" stroke="#06b6d4" stroke-width="3" />
-              <path d="M 0 184 Q 120 165 235 112 T 600 25" fill="none" stroke="#7c3aed" stroke-width="4" />
-              <path d="M 0 150 Q 160 139 330 122 T 600 112" fill="none" stroke="#f59e0b" stroke-width="2.5" stroke-dasharray="8 6" />
+              <path d="M 0 98 Q 130 94 260 101 T 600 108" fill="none" stroke="#4d463e" stroke-width="3" />
+              <path d="M 0 162 Q 150 146 290 111 T 600 72" fill="none" stroke="#8a5a2b" stroke-width="3" />
+              <path d="M 0 184 Q 120 165 235 112 T 600 25" fill="none" stroke="#c41c25" stroke-width="4" />
+              <path d="M 0 150 Q 160 139 330 122 T 600 112" fill="none" stroke="#b7791f" stroke-width="2.5" stroke-dasharray="8 6" />
             </svg>
           </div>
           <div class="chart-axis-labels">
             <span>Jun 25</span><span>Sep 25</span><span>Dec 25</span><span>Mar 26</span><span>May 26</span>
           </div>
           <div class="chart-legend" style="margin-top: 1rem; justify-content: center;">
-            <span class="legend-item"><span class="legend-dot" style="background-color: #7c3aed;"></span> Life Simulation</span>
-            <span class="legend-item"><span class="legend-dot" style="background-color: #06b6d4;"></span> Action Sports / Skate</span>
-            <span class="legend-item"><span class="legend-dot" style="background-color: #f59e0b;"></span> Motorsport Management</span>
-            <span class="legend-item"><span class="legend-dot" style="background-color: #64748b;"></span> Racing</span>
+            <span class="legend-item"><span class="legend-dot" style="background-color: #c41c25;"></span> Life Simulation</span>
+            <span class="legend-item"><span class="legend-dot" style="background-color: #8a5a2b;"></span> Action Sports / Skate</span>
+            <span class="legend-item"><span class="legend-dot" style="background-color: #b7791f;"></span> Motorsport Management</span>
+            <span class="legend-item"><span class="legend-dot" style="background-color: #4d463e;"></span> Racing</span>
           </div>
         </div>
 
@@ -1106,16 +1106,16 @@ function generateVideoRetentionDashboard() {
             <div class="grid-line" style="bottom: 50%"></div>
             <div class="grid-line" style="bottom: 75%"></div>
             <svg class="trend-lines-svg" viewBox="0 0 600 220" preserveAspectRatio="none">
-              <path d="M 0 18 Q 100 38 240 52 T 600 68" fill="none" stroke="#06b6d4" stroke-width="3" />
-              <path d="M 0 20 Q 100 32 240 72 T 600 118" fill="none" stroke="#7c3aed" stroke-width="3" />
-              <path d="M 0 20 Q 100 94 290 142 T 600 165" fill="none" stroke="#ef4444" stroke-width="2.5" />
+              <path d="M 0 18 Q 100 38 240 52 T 600 68" fill="none" stroke="#8a5a2b" stroke-width="3" />
+              <path d="M 0 20 Q 100 32 240 72 T 600 118" fill="none" stroke="#c41c25" stroke-width="3" />
+              <path d="M 0 20 Q 100 94 290 142 T 600 165" fill="none" stroke="#4d463e" stroke-width="2.5" />
             </svg>
           </div>
           <div class="chart-axis-labels"><span>Open</span><span>0:30</span><span>1:00</span><span>1:30</span><span>End</span></div>
           <div class="chart-legend" style="margin-top: 1rem; justify-content: center;">
-            <span class="legend-item"><span class="legend-dot" style="background-color:#06b6d4"></span> Skating customization reveal</span>
-            <span class="legend-item"><span class="legend-dot" style="background-color:#7c3aed"></span> Life-sim systems prototype</span>
-            <span class="legend-item"><span class="legend-dot" style="background-color:#ef4444"></span> Racing cinematic reveal</span>
+            <span class="legend-item"><span class="legend-dot" style="background-color:#8a5a2b"></span> Skating customization reveal</span>
+            <span class="legend-item"><span class="legend-dot" style="background-color:#c41c25"></span> Life-sim systems prototype</span>
+            <span class="legend-item"><span class="legend-dot" style="background-color:#4d463e"></span> Racing cinematic reveal</span>
           </div>
         </div>
 
@@ -1362,16 +1362,16 @@ function generatePricingDecayDashboard() {
             <div class="grid-line" style="bottom: 50%"></div>
             <div class="grid-line" style="bottom: 75%"></div>
             <svg class="trend-lines-svg" viewBox="0 0 600 220" preserveAspectRatio="none">
-              <path d="M 0 24 L 90 28 L 180 42 L 300 54 L 600 72" fill="none" stroke="#7c3aed" stroke-width="3" />
-              <path d="M 0 30 L 90 44 L 180 78 L 300 106 L 600 138" fill="none" stroke="#06b6d4" stroke-width="3" />
-              <path d="M 0 30 L 90 62 L 180 114 L 300 145 L 600 168" fill="none" stroke="#64748b" stroke-width="3" />
+              <path d="M 0 24 L 90 28 L 180 42 L 300 54 L 600 72" fill="none" stroke="#c41c25" stroke-width="3" />
+              <path d="M 0 30 L 90 44 L 180 78 L 300 106 L 600 138" fill="none" stroke="#8a5a2b" stroke-width="3" />
+              <path d="M 0 30 L 90 62 L 180 114 L 300 145 L 600 168" fill="none" stroke="#4d463e" stroke-width="3" />
             </svg>
           </div>
           <div class="chart-axis-labels"><span>Launch</span><span>3 mo</span><span>6 mo</span><span>12 mo</span><span>24 mo</span></div>
           <div class="chart-legend" style="margin-top: 1rem; justify-content: center;">
-            <span class="legend-item"><span class="legend-dot" style="background:#7c3aed"></span> Life Simulation</span>
-            <span class="legend-item"><span class="legend-dot" style="background:#06b6d4"></span> Action Sports</span>
-            <span class="legend-item"><span class="legend-dot" style="background:#64748b"></span> Racing</span>
+            <span class="legend-item"><span class="legend-dot" style="background:#c41c25"></span> Life Simulation</span>
+            <span class="legend-item"><span class="legend-dot" style="background:#8a5a2b"></span> Action Sports</span>
+            <span class="legend-item"><span class="legend-dot" style="background:#4d463e"></span> Racing</span>
           </div>
         </div>
 
@@ -1482,9 +1482,9 @@ function generateCommunityEngagementDashboard() {
             <div class="grid-line" style="bottom: 50%"></div>
             <div class="grid-line" style="bottom: 75%"></div>
             <svg class="trend-lines-svg" viewBox="0 0 600 220" preserveAspectRatio="none">
-              <path d="M 0 86 L 100 78 L 220 70 L 420 58 L 600 50" fill="none" stroke="#7c3aed" stroke-width="3" />
-              <path d="M 0 102 L 120 112 L 260 116 L 430 118 L 600 122" fill="none" stroke="#06b6d4" stroke-width="3" />
-              <path d="M 0 78 L 90 142 L 210 164 L 600 184" fill="none" stroke="#64748b" stroke-width="3" />
+              <path d="M 0 86 L 100 78 L 220 70 L 420 58 L 600 50" fill="none" stroke="#c41c25" stroke-width="3" />
+              <path d="M 0 102 L 120 112 L 260 116 L 430 118 L 600 122" fill="none" stroke="#8a5a2b" stroke-width="3" />
+              <path d="M 0 78 L 90 142 L 210 164 L 600 184" fill="none" stroke="#4d463e" stroke-width="3" />
             </svg>
           </div>
           <div class="chart-axis-labels"><span>Launch</span><span>3 mo</span><span>6 mo</span><span>9 mo</span><span>12 mo</span></div>
