@@ -2125,6 +2125,7 @@ RF-500003,2026-04-06,Hearthwild,Survival Crafting,Steam,US,34.99,9.1,TRUE,"Serve
 
 document.addEventListener("DOMContentLoaded", () => {
   setupEventListeners();
+  enforceAdminOnlySession();
   tickTimers();
   setInterval(tickTimers, 1000);
 });
@@ -2286,6 +2287,21 @@ function logout() {
   document.getElementById("login-overlay").classList.remove("hidden");
   document.getElementById("app-wrapper").classList.add("hidden");
   document.getElementById("passcode-input").value = "";
+}
+
+function enforceAdminOnlySession() {
+  if (!State.passcode || State.passcode === ADMIN_PASSCODE) return true;
+
+  State.passcode = "";
+  State.activeTeam = "";
+  updateAdminStateControls();
+  document.getElementById("login-overlay")?.classList.remove("hidden");
+  document.getElementById("app-wrapper")?.classList.add("hidden");
+  const passcodeInput = document.getElementById("passcode-input");
+  if (passcodeInput) passcodeInput.value = "";
+  const loginError = document.getElementById("login-error");
+  if (loginError) loginError.textContent = REVOKED_ACCESS_MESSAGE;
+  return false;
 }
 
 function updateAdminStateControls() {
@@ -3151,6 +3167,8 @@ function updateEmailBadgeCount() {
 
 // Timer loops evaluating pending email requests
 function tickTimers() {
+  if (!enforceAdminOnlySession()) return;
+
   let stateChanged = false;
   const now = Date.now();
   
