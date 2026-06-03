@@ -1,6 +1,6 @@
-/* app.js - Highland Studios Interactive Big Data Analytics Exercise */
+/* app.js - Highland Studios Interactive Big Data Analytics Workspace */
 
-// --- 1. CONFIGURATION & SIMULATION DATA ---
+// --- 1. CONFIGURATION & PORTAL DATA ---
 
 const TEAMS_CONFIG = {
   "Team 1": "HIGHLAND-101",
@@ -512,7 +512,9 @@ const SLACK_COMMUNICATIONS = {
     slackMessage("Dave", "Mon 09:14", "I am putting the six options into a design comparison doc. The big question for me is whether we want a familiar production path or a project that changes what Highland can become."),
     slackMessage("Chloe", "Mon 09:22", "Marketing will map each option against search demand, creator content, and parent-company audience overlap. Those are different questions, so one dashboard will not answer all of them."),
     slackMessage("Marcus", "Mon 09:31", "Engineering will keep a capability register in #dev-team. I want the board pack to distinguish market upside from build confidence. They are not the same thing."),
-    slackMessage("Sarah", "Mon 10:18", "Good framing. Please flag assumptions in plain language. The students reviewing this should be able to see what each team believes, what they know, and where they are guessing."),
+    slackMessage("Sarah", "Mon 10:18", "Good framing. Please flag assumptions in plain language. The board reviewers should be able to see what each team believes, what we know, and where we are still estimating."),
+    slackMessage("Chloe", "Mon 11:04", "I will also tag every marketing claim as volume, intent, channel fit, or conversion risk. Otherwise the evidence gets blended into one vague 'market says yes' paragraph."),
+    slackMessage("Dave", "Mon 13:25", "Design will do the same for player fantasy, content pipeline, progression, social loop, and cuttable features. If the idea cannot survive feature cuts, it is not defined enough."),
     slackMessage("Victoria", "Mon 15:40", "The board will challenge any recommendation that relies only on a trend report. They will ask: does Highland have the systems, people, brand permission, and channel support to execute?"),
 
     slackMessage("Sarah", "Tue 08:55", "Day two priority: request only the reports that let us test conflicting claims. We already know every option has a sales story. We need evidence that separates them."),
@@ -520,6 +522,7 @@ const SLACK_COMMUNICATIONS = {
     slackMessage("Dave", "Tue 09:24", "Design note: Option 3 should not be treated as 'a bigger skate game'. If it works, it is a wider street sports platform with movement, identity, and social space."),
     slackMessage("Marcus", "Tue 09:41", "Agree, but the word 'platform' raises support expectations. Larger social worlds need moderation, server uptime, seasonal tools, and production support after launch."),
     slackMessage("Victoria", "Tue 11:05", "Parent-company stakeholders are already asking which concepts can travel through streaming, fashion, short-form creator clips, and licensed talent. Racing is not impossible, but it is narrower."),
+    slackMessage("Marcus", "Tue 12:34", "Please do not let channel fit become a proxy for build readiness. A concept can be easy to market and still be hard to ship."),
     slackMessage("Sarah", "Tue 14:20", "Please keep discussion civil around the LifeSpace history. It matters, but we need to treat it as evidence, not folklore."),
     slackMessage("Elena", "Tue 16:12", "Worth noting for the full group: past technical incidents were not just 'bugs'. Some were architectural constraints. That distinction matters for any reboot proposal."),
 
@@ -527,14 +530,16 @@ const SLACK_COMMUNICATIONS = {
     slackMessage("Chloe", "Wed 09:17", "Marketing readout so far: customization and self-expression are showing up repeatedly across search, community, and parent-company overlap. That supports more than one option, so we need specificity."),
     slackMessage("Dave", "Wed 09:33", "From design, the difference is player fantasy. Life sim is about everyday agency and systems depth. Open-world street sports is about identity, movement, and public performance."),
     slackMessage("Marcus", "Wed 10:04", "From engineering, the difference is state complexity. Movement and customization are manageable extensions. Persistent NPC life simulation is a different order of system risk."),
-    slackMessage("Victoria", "Wed 11:20", "I want students to see that strong evidence can point in different directions depending on the decision criterion. Do not flatten this into a single obvious answer."),
-    slackMessage("Sarah", "Wed 15:35", "Agreed. The final simulation should reward teams that compare trade-offs, not teams that simply find the biggest chart number."),
+    slackMessage("Chloe", "Wed 10:42", "From marketing, the difference is proof. Street sports proof can be visual in a ten-second clip. Life sim proof depends on trust in the invisible systems behind the clip."),
+    slackMessage("Victoria", "Wed 11:20", "I want the pack to show that strong evidence can point in different directions depending on the decision criterion. Do not flatten this into a single obvious answer."),
+    slackMessage("Sarah", "Wed 15:35", "Agreed. The final board pack should reward trade-off analysis, not whichever department can point to the biggest chart number."),
 
     slackMessage("Sarah", "Thu 08:48", "Thursday focus: convert evidence into board language. Each option needs a short case for, a short case against, and the unresolved question that would decide it."),
     slackMessage("Chloe", "Thu 09:13", "For Option 1, the case for is predictable launch conversion. The case against is weak lifestyle amplification and shallow long-tail marketing."),
     slackMessage("Dave", "Thu 09:26", "For Option 2, the case for is morale and production efficiency. The case against is whether a straight sequel is ambitious enough for the parent-company brief."),
     slackMessage("Marcus", "Thu 09:44", "For Option 3, the case for is reuse of proven movement tech plus a bigger social/customization opportunity. The case against is scope control."),
     slackMessage("Elena", "Thu 10:02", "For Option 4, the case for is genre upside and capacity-building. The case against is whether the required systems foundation can be made credible before greenlight."),
+    slackMessage("Dave", "Thu 10:44", "For the board language, I would avoid saying 'safe' or 'risky' as shorthand. We need to say safe against what, risky in which system, and recoverable by which milestone."),
     slackMessage("Victoria", "Thu 14:10", "For Option 6, the case for is an efficient niche strategy. The case against is whether it is too small for the corporate-wide growth objective."),
     slackMessage("Sarah", "Thu 16:55", "This is the structure I want in the briefing. Do not include the internal shorthand labels that make the answer feel pre-solved."),
 
@@ -542,13 +547,16 @@ const SLACK_COMMUNICATIONS = {
     slackMessage("Chloe", "Fri 09:04", "I have tightened the marketing appendix. It now separates volume, specificity, creator behavior, and parent-company channel fit."),
     slackMessage("Marcus", "Fri 09:18", "Engineering appendix is updated. It separates code reuse, team familiarity, new systems complexity, and live operations burden."),
     slackMessage("Dave", "Fri 09:33", "Design appendix now has player fantasy, content pipeline, social loop, and progression model notes for each option."),
-    slackMessage("Victoria", "Fri 10:05", "Good. In the live exercise, I expect students to disagree. The reports should give them enough evidence to make a reasoned recommendation without one department simply announcing the correct answer."),
-    slackMessage("Sarah", "Fri 11:30", "Thanks, everyone. Final board pack is not a vote tally. It is a decision argument. Students should have to defend what matters most and why.")
+    slackMessage("Elena", "Fri 09:47", "I added a dependency note for backend staffing. Even the concepts that reuse gameplay systems may need new operations support if the community layer expands."),
+    slackMessage("Victoria", "Fri 10:05", "Good. In the board dry run, I expect real disagreement. The reports should provide enough evidence for a reasoned recommendation without one department simply announcing the correct answer."),
+    slackMessage("Chloe", "Fri 10:52", "Marketing will mark assumptions separately from evidence in the final pack. I do not want a confident tone hiding weak inference."),
+    slackMessage("Sarah", "Fri 11:30", "Thanks, everyone. Final board pack is not a vote tally. It is a decision argument. Reviewers should be able to see what matters most and why.")
   ],
   "dev-team": [
     slackMessage("Marcus", "Mon 09:12", "Starting the technical thread here. I want a sober capability map for all options: engine fit, content tooling, live operations, QA risk, and team familiarity."),
     slackMessage("Elena", "Mon 09:18", "Current engine strengths: movement physics, replay capture, custom park tools, input feel, collision tuning, and deterministic challenge scoring. Weaknesses: large-scale autonomous agents and persistent world-state rollback."),
     slackMessage("Dave", "Mon 09:22", "Useful. For the design side, Option 3 can keep the movement foundation but add social hubs, character expression, and mixed street sports. It is expansion, not total reinvention."),
+    slackMessage("Elena", "Mon 09:26", "I am separating 'can reuse code' from 'can reuse confidence'. The code can compile and still need new testing because the surrounding product loop changes."),
     slackMessage("Marcus", "Mon 09:30", "Option 1 is the cleanest technically. The racing stack already exists through Apex Circuit. Risk is mostly content volume and market differentiation, not engine feasibility."),
     slackMessage("Elena", "Mon 09:41", "Option 2 is also clean. Streetline Skate has the strongest tooling health in the studio. We could improve animation blending, park sharing, and console performance without rewriting core systems."),
     slackMessage("Marcus", "Mon 10:05", "Option 6 is efficient but still needs management-sim UI, data tables, and season logic. It is not technically scary, but it may not use our strongest technology in a visible way."),
@@ -559,13 +567,15 @@ const SLACK_COMMUNICATIONS = {
     slackMessage("Dave", "Tue 09:34", "Would a smaller Life Sim slice avoid that? Fewer NPCs, smaller neighborhoods, more focus on decorating and relationships?"),
     slackMessage("Marcus", "Tue 09:45", "Maybe, but then the design promise changes. A life sim with shallow simulation will be compared harshly with the market leader. The product expectation is already high."),
     slackMessage("Elena", "Tue 10:02", "Also mod support multiplies edge cases. If players can add items, routines, relationships, and rooms, our validation tools need to be much stronger than last time."),
+    slackMessage("Marcus", "Tue 11:18", "I want a proof milestone for save integrity that runs longer than normal QA sessions. Long-session bugs are exactly the kind that look invisible until public launch."),
     slackMessage("Marcus", "Tue 13:25", "For Option 3, the risk is different. Server capacity, moderation, city streaming, and activity variety. Hard, but closer to problems we have solved before."),
-    slackMessage("Dave", "Tue 15:48", "That helps the student exercise. Life Sim risk is systems depth. Street Sports risk is scope and service design. Racing risk is strategic, not build feasibility."),
+    slackMessage("Dave", "Tue 15:48", "That helps the board discussion. Life Sim risk is systems depth. Street Sports risk is scope and service design. Racing risk is strategic, not build feasibility."),
 
     slackMessage("Elena", "Wed 08:52", "I ran a quick dependency sketch. Option 3 could reuse character customization, replay capture, park object placement, controller feel, and challenge scoring from Streetline Skate."),
     slackMessage("Marcus", "Wed 09:11", "What would be new for Option 3?"),
     slackMessage("Elena", "Wed 09:14", "Larger streaming city zones, multiplayer social hub rules, mixed traversal animation, event matchmaking, creator moderation queue, and a more robust avatar inventory service."),
     slackMessage("Dave", "Wed 09:36", "Those new systems support the fantasy directly, though. If players can show style, move through the city, and share clips, the tech becomes visible."),
+    slackMessage("Marcus", "Wed 09:48", "Visible tech is good when it works. It is also visible when it fails. The first vertical slice needs ugly internal telemetry, not just a polished demo route."),
     slackMessage("Marcus", "Wed 10:02", "That is why I am more comfortable with Option 3 than a pure Life Sim reboot. The technical extensions map to things Highland already understands."),
     slackMessage("Elena", "Wed 11:40", "Still not cheap. Larger world plus social tools means more QA permutations. We should not call it low risk."),
     slackMessage("Marcus", "Wed 15:05", "Agreed. Option 3 is moderate-high risk with controllable scope. Option 4 is high risk unless the studio commits to a multi-year capacity plan."),
@@ -574,21 +584,24 @@ const SLACK_COMMUNICATIONS = {
     slackMessage("Sarah", "Thu 09:20", "Can you make sure that does not read like engineering vetoing ambition? The board needs to understand upside and risk together."),
     slackMessage("Marcus", "Thu 09:31", "Fair. I will phrase it as 'investment required for credible execution', not 'do not do this'."),
     slackMessage("Elena", "Thu 10:14", "For Option 4, credible execution means prototype milestones before full greenlight: relationship scheduler, save integrity under load, mod validation, and long-session stability."),
+    slackMessage("Marcus", "Thu 10:38", "Add hiring lead time to that. Senior simulation engineers are not sitting around waiting for us, and contractors will not solve architecture ownership."),
     slackMessage("Dave", "Thu 11:02", "For Option 3, credible execution means a vertical slice with one dense city district, two movement types, avatar styling, and one social challenge loop."),
     slackMessage("Marcus", "Thu 14:35", "Good distinction. Option 3 can be proven with a gameplay slice. Option 4 needs a systems reliability slice."),
     slackMessage("Elena", "Thu 16:18", "Please also note team morale. People are excited by ambitious ideas, but they get nervous when plans ignore past tooling pain."),
 
     slackMessage("Marcus", "Fri 08:50", "Final engineering appendix is uploaded. It includes a capability matrix, required proof milestones, and hidden dependencies for each option."),
     slackMessage("Elena", "Fri 09:07", "I added a note that previous LifeSpace lessons can be assets if treated seriously. The studio did learn, but the tooling has to change."),
-    slackMessage("Dave", "Fri 09:29", "That is a useful nuance. Students should not read the history as 'never attempt the genre'. It is a capacity-building question."),
+    slackMessage("Dave", "Fri 09:29", "That is a useful nuance. Reviewers should not read the history as 'never attempt the genre'. It is a capacity-building question."),
+    slackMessage("Elena", "Fri 09:51", "I also added the uncomfortable part: capacity-building is not free just because it is strategically attractive. It changes hiring, QA, support, and schedule assumptions."),
     slackMessage("Marcus", "Fri 10:11", "Exactly. The wrong answer is pretending the issue is only market demand. The right debate is whether upside justifies the investment and risk controls."),
-    slackMessage("Sarah", "Fri 10:44", "This channel now has the strongest evidence for capability fit. Thank you. It will force students to compare production reality with market temptation.")
+    slackMessage("Sarah", "Fri 10:44", "This channel now has the strongest evidence for capability fit. Thank you. It will force decision-makers to compare production reality with market temptation.")
   ],
   "marketing": [
     slackMessage("Chloe", "Mon 09:30", "Marketing thread starts here. I am separating demand signals into four buckets: search trend, wishlist behavior, creator ecosystem, and parent-company channel fit."),
-    slackMessage("Sarah", "Mon 09:35", "Please keep the distinction visible. In previous student runs, teams treated search volume as if it automatically meant sales."),
+    slackMessage("Sarah", "Mon 09:35", "Please keep the distinction visible. In previous review cycles, teams treated search volume as if it automatically meant sales."),
     slackMessage("Chloe", "Mon 09:44", "Exactly. Search volume tells us curiosity. Keyword specificity tells us intent. Wishlist growth tells us pre-purchase pull. Creator behavior tells us whether the game can keep producing conversation."),
     slackMessage("Dave", "Mon 10:12", "From design, I would expect Life Sim to win on tutorial/story content, Street Sports to win on clips and identity, Racing to win on specialist comparison videos."),
+    slackMessage("Chloe", "Mon 10:18", "I am also tracking negative search modifiers. 'broken', 'DLC', 'cash grab', and 'no mods' are useful because they tell us where a promise could collapse."),
     slackMessage("Chloe", "Mon 10:25", "That matches my hypothesis. The risk is that Racing has clean buyers but poor broader amplification. It sells to a known audience but may not activate the parent-company ecosystem."),
     slackMessage("Victoria", "Mon 14:10", "Parent-company channels are most useful when a game gives them lifestyle hooks. Fashion, music, rooms, social identity, and creator moments travel better than technical handling claims."),
 
@@ -598,6 +611,7 @@ const SLACK_COMMUNICATIONS = {
     slackMessage("Dave", "Tue 09:50", "What about Option 3 terms?"),
     slackMessage("Chloe", "Tue 10:02", "'open world skate bike parkour game', 'custom street sports avatar', and 'multiplayer trick city' are smaller than life sim terms, but much more feature-specific than I expected."),
     slackMessage("Victoria", "Tue 11:18", "Feature-specific language is useful. It means players can describe what they want, not just a genre label."),
+    slackMessage("Dave", "Tue 13:05", "That wording also gives design a constraint. If players say avatar, city, movement, and multiplayer, then the pitch has to make those pieces feel connected."),
     slackMessage("Chloe", "Tue 15:42", "Racing is comparatively stable. Strong terms around 'career mode', 'licensed cars', and 'wheel support', but low growth and lower lifestyle crossover."),
 
     slackMessage("Chloe", "Wed 08:58", "Creator ecosystem report is interesting. Racing videos spike around launch, reviews, and competitive events. Simulation and customization videos keep producing after launch because players generate examples."),
@@ -606,30 +620,34 @@ const SLACK_COMMUNICATIONS = {
     slackMessage("Dave", "Wed 09:47", "Open-world street sports could produce trick clips, outfit reveals, city challenges, and creator route competitions. That sounds closer to repeatable content than a fixed track racer."),
     slackMessage("Chloe", "Wed 10:15", "Yes, but it needs clarity. If the pitch sounds like every youth-culture feature at once, marketing cannot explain it. One strong fantasy beats five vague hooks."),
     slackMessage("Victoria", "Wed 13:32", "Good line. Add that to the board notes: 'channel fit requires product clarity'."),
+    slackMessage("Chloe", "Wed 14:08", "I am adding a channel matrix that separates paid media, owned editorial, creator outreach, commerce tie-ins, and community programming. They should not be treated as interchangeable."),
     slackMessage("Chloe", "Wed 16:05", "Parent-company overlap report also favors customization-led concepts. It does not automatically pick a project, but it weakens a pure racing recommendation."),
 
     slackMessage("Chloe", "Thu 09:03", "Building the marketing scorecard now. Option 4 wins addressable audience and long-tail content if execution is strong. Option 3 wins cross-channel clarity with lower explanation cost."),
-    slackMessage("Sarah", "Thu 09:19", "What does 'lower explanation cost' mean for students?"),
+    slackMessage("Sarah", "Thu 09:19", "What does 'lower explanation cost' mean for the board?"),
     slackMessage("Chloe", "Thu 09:28", "It means owned media can show the value quickly: avatar, movement, social space, trick, outfit, clip. Life Sim can also show value, but the promise depends heavily on invisible systems depth."),
-    slackMessage("Dave", "Thu 10:00", "That is helpful. Students should not just ask 'which genre is bigger?' They should ask which concept can be communicated credibly."),
+    slackMessage("Dave", "Thu 10:00", "That is helpful. The board should not just ask 'which genre is bigger?' It should ask which concept can be communicated credibly."),
+    slackMessage("Victoria", "Thu 10:42", "Please include the inverse risk too: a concept that is easy to explain may still be too small, and a large category may still be worth pursuing if proof gates are credible."),
     slackMessage("Chloe", "Thu 11:22", "Option 2 has very high advocacy among existing fans. The question is whether that advocacy is enough for the corporate growth target."),
     slackMessage("Victoria", "Thu 14:48", "And Option 6?"),
     slackMessage("Chloe", "Thu 15:02", "Efficient but narrow. Motorsport management creates thoughtful content, but not much broad lifestyle energy. It is probably a disciplined smaller bet rather than a flagship answer."),
 
     slackMessage("Chloe", "Fri 08:55", "Final marketing readout uploaded. I avoided ranking by one metric. The appendix now shows demand volume, intent specificity, creator repeatability, channel fit, and conversion risk."),
-    slackMessage("Sarah", "Fri 09:12", "Good. Which evidence do you think students are most likely to overuse?"),
+    slackMessage("Sarah", "Fri 09:12", "Good. Which evidence do you think the room is most likely to overuse?"),
     slackMessage("Chloe", "Fri 09:18", "The biggest market chart. It is tempting, but the market chart alone ignores production credibility and launch trust."),
     slackMessage("Victoria", "Fri 09:40", "That is exactly why the Slack archive matters. Internal stakeholders should complicate the neat external reports."),
-    slackMessage("Dave", "Fri 10:05", "Marketing makes Option 3 and Option 4 both plausible, for different reasons. That is a better simulation than a single obvious winner."),
-    slackMessage("Chloe", "Fri 10:37", "Agreed. My recommendation to students would be: show which metric you prioritize, then justify why that metric matters for Highland now.")
+    slackMessage("Chloe", "Fri 09:58", "I added three separate rows for market size, market access, and market credibility. They point in different directions, which is the real issue."),
+    slackMessage("Dave", "Fri 10:05", "Marketing makes the street-sports and life-simulation cases both plausible, for different reasons. That is a stronger decision environment than a single obvious winner."),
+    slackMessage("Chloe", "Fri 10:37", "Agreed. My recommendation to the task force would be: show which metric you prioritize, then justify why that metric matters for Highland now.")
   ],
   "executive": [
     slackMessage("Victoria", "Mon 09:45", "Executive thread. The parent company wants a recommendation that balances growth, brand leverage, production credibility, and long-term portfolio value."),
     slackMessage("Sarah", "Mon 09:52", "The team understands. I am trying to prevent the board pack from becoming 'safe option versus exciting option'. The reality is more complex."),
     slackMessage("Victoria", "Mon 10:05", "Correct. A safe project can be strategically weak. An ambitious project can be commercially right but operationally reckless. The recommendation needs to name that trade-off."),
     slackMessage("Chloe", "Mon 11:12", "Do you want parent-company synergy treated as a hard requirement or a multiplier?"),
+    slackMessage("Sarah", "Mon 11:18", "I would also treat timing as a multiplier. The best idea on paper can still be wrong if it collides with hiring lead time or a crowded launch window."),
     slackMessage("Victoria", "Mon 11:25", "A multiplier. The board will not greenlight a bad game because it fits a fashion campaign. But if two options are close, corporate reach can matter."),
-    slackMessage("Marcus", "Mon 15:18", "Engineering asks that capability fit also be treated as a multiplier, not a veto. We can grow capacity, but students should price that growth honestly."),
+    slackMessage("Marcus", "Mon 15:18", "Engineering asks that capability fit also be treated as a multiplier, not a veto. We can grow capacity, but the board should price that growth honestly."),
 
     slackMessage("Victoria", "Tue 08:58", "Board concern this morning: if Highland chooses a racing sequel, what makes it more than a predictable but declining revenue event?"),
     slackMessage("Sarah", "Tue 09:16", "The answer would be production certainty, known audience, and less organizational disruption. The weakness is long-tail engagement."),
@@ -637,96 +655,229 @@ const SLACK_COMMUNICATIONS = {
     slackMessage("Dave", "Tue 10:05", "Existing fan love, team morale, strong mechanics, and clear quality bar. Weakness is whether it meaningfully expands Highland's strategic position."),
     slackMessage("Victoria", "Tue 10:38", "If Highland chooses open-world street sports, what is the board challenge?"),
     slackMessage("Sarah", "Tue 10:55", "Scope discipline. It has a strong bridge from current capability to a broader audience, but it needs a precise product definition."),
+    slackMessage("Marcus", "Tue 11:20", "And it needs operational humility. Social features sound like audience upside, but they create moderation, support, uptime, and abuse-prevention responsibilities."),
     slackMessage("Victoria", "Tue 14:30", "If Highland chooses Life Sim, the challenge is proof of capability-building. The board will want to know what must be true before full production begins."),
 
-    slackMessage("Victoria", "Wed 09:05", "I reviewed the first analytics packet. Biggest issue: some evidence favors market size, some favors studio capability, some favors corporate amplification. This is good for the exercise."),
-    slackMessage("Sarah", "Wed 09:18", "Agreed. I am making the student worksheet ask them to identify which evidence they weighted most heavily."),
+    slackMessage("Victoria", "Wed 09:05", "I reviewed the first analytics packet. Biggest issue: some evidence favors market size, some favors studio capability, some favors corporate amplification. This is useful for the board discussion."),
+    slackMessage("Sarah", "Wed 09:18", "Agreed. I am making the decision worksheet ask teams to identify which evidence they weighted most heavily."),
     slackMessage("Chloe", "Wed 09:46", "Parent-company overlap is not neutral. It clearly benefits customization-led concepts. That should create pressure against a default racing sequel."),
     slackMessage("Marcus", "Wed 10:11", "Technical history is also not neutral. It clearly pressures the Life Sim reboot. That should create friction against simply following the biggest market."),
-    slackMessage("Victoria", "Wed 11:02", "Exactly. The best student groups will explain how they resolved that conflict."),
+    slackMessage("Victoria", "Wed 11:02", "Exactly. The best recommendations will explain how that conflict was resolved."),
+    slackMessage("Chloe", "Wed 11:34", "I can support a recommendation that names uncertainty honestly. I cannot support a recommendation that hides uncertainty behind one composite score."),
     slackMessage("Dave", "Wed 15:15", "Design is somewhere between those poles. Option 3 may be the compromise, but only if it avoids becoming vague."),
 
     slackMessage("Victoria", "Thu 09:00", "Dry-run prompt: 'Which option gives Highland the best chance to grow without losing operational control?' That may be more useful than 'which option has the largest opportunity?'"),
-    slackMessage("Sarah", "Thu 09:28", "That phrasing should make students compare ambition and feasibility."),
+    slackMessage("Sarah", "Thu 09:28", "That phrasing should make reviewers compare ambition and feasibility."),
     slackMessage("Marcus", "Thu 10:02", "It also makes them define operational control. For engineering, that means scope, milestones, testability, and support commitments."),
     slackMessage("Chloe", "Thu 10:35", "For marketing, it means a concept that can be explained repeatedly through channels we actually have, not just a large theoretical audience."),
     slackMessage("Dave", "Thu 11:04", "For design, it means a player fantasy that is sharp enough to guide feature cuts."),
-    slackMessage("Victoria", "Thu 14:12", "Please include those definitions in the simulated conversation. They make the internal evidence feel like a real company thinking through a decision."),
+    slackMessage("Sarah", "Thu 11:31", "For production, it means milestones that prove the hardest assumption before spending accelerates. I want that sentence in the final readout."),
+    slackMessage("Victoria", "Thu 14:12", "Please include those definitions in the internal conversation. They make the evidence read like a real company thinking through a decision."),
 
     slackMessage("Victoria", "Fri 08:40", "Final executive position: we are not asking for unanimity. We are asking for a defensible recommendation with acknowledged uncertainty."),
-    slackMessage("Sarah", "Fri 09:02", "The classroom version now has enough disagreement to support that. The reports provide evidence; the Slack channels provide organizational interpretation."),
+    slackMessage("Sarah", "Fri 09:02", "The board pack now has enough disagreement to support that. The reports provide evidence; the Slack channels provide organizational interpretation."),
     slackMessage("Chloe", "Fri 09:24", "Marketing will not claim any option is risk-free. Even Option 3 needs sharper messaging and proof that its audience is not just a bundle of adjacent trends."),
     slackMessage("Marcus", "Fri 09:45", "Engineering will not claim ambitious options are impossible. We will state the proof gates and capacity needs."),
+    slackMessage("Sarah", "Fri 09:58", "I will write the final recommendation section so dissent is visible. The board needs to see why a rejected path was still plausible."),
     slackMessage("Dave", "Fri 10:15", "Design will emphasize concept coherence. Bigger is not automatically better."),
-    slackMessage("Victoria", "Fri 11:00", "Good. This is exactly the kind of ambiguity students should learn to work through: data is essential, but judgment still decides how it is weighted.")
+    slackMessage("Victoria", "Fri 11:00", "Good. This is exactly the kind of ambiguity the recommendation needs to work through: data is essential, but judgment still decides how it is weighted.")
   ]
 };
 
-// Macro environment reports (Expanded content)
+const MACRO_REPORT_META = {
+  "macro-general": {
+    title: "General Macroeconomic Report",
+    pdf: "reports/macro/general_macroeconomic_report.pdf"
+  },
+  "macro-trends": {
+    title: "Games Industry Trends",
+    pdf: "reports/macro/games_industry_trends.pdf"
+  },
+  "macro-consumer": {
+    title: "Consumer Spending & Platforms",
+    pdf: "reports/macro/consumer_spending_platforms.pdf"
+  },
+  "macro-production": {
+    title: "Technology & Production Costs",
+    pdf: "reports/macro/technology_production_costs.pdf"
+  },
+  "macro-competitors": {
+    title: "Competitor Pipeline",
+    pdf: "reports/macro/competitor_pipeline.pdf"
+  }
+};
+
+// Macro environment reports
 const MACRO_REPORTS = {
   "macro-general": `
     <h2>General Macroeconomic Report</h2>
-    <p><strong>Published:</strong> Q1 2026 | <strong>Source:</strong> Global Media Strategy Group</p>
+    <div class="macro-report-meta"><span>Published: Q1 2026</span><span>Source: Global Media Strategy Group</span><span>Data window: Jan 2024-Mar 2026</span><span>Regions: UK, US, EU5</span></div>
     <hr style="border-color:var(--border-glass); margin:1rem 0;">
     <h3>Executive Summary</h3>
-    <p>The global entertainment market is navigating a period of shifting consumer wallets. Disposable income has plateaued due to general inflation, leading to higher price sensitivity among gaming audiences. Consumers are buying fewer games overall, but spending more time in the games they do buy. This has placed a high premium on games with high replayability, custom tools, and user-generated content (UGC).</p>
+    <p>The global entertainment market is navigating a period of selective consumer spending rather than outright demand decline. Disposable income remains pressured by food, rent, transport, and energy costs, and players are becoming more deliberate about premium purchases. Consumers are buying fewer full-price games overall, but they are spending more hours inside the titles that earn trust quickly and continue to offer social, creative, or mastery-based reasons to return.</p>
+    <p>This is creating a split market. Premium titles with short campaign loops and limited community extension face higher launch-week pressure. By contrast, genres with durable player expression, moddable systems, creator content, competitive mastery, or cooperative identity loops are better positioned to convert one purchase into months of engagement. The macro environment therefore favors games that can justify price through repeatable use rather than spectacle alone.</p>
+    <div class="macro-kpi-grid">
+      <div class="macro-kpi"><strong>7.8%</strong><span>average decline in full-price launch purchases among price-sensitive console households</span></div>
+      <div class="macro-kpi"><strong>+21%</strong><span>growth in average hours spent in players' top two games year over year</span></div>
+      <div class="macro-kpi"><strong>64%</strong><span>surveyed players waiting for reviews before buying unfamiliar premium games</span></div>
+      <div class="macro-kpi"><strong>3.4x</strong><span>retention advantage for games with robust user-generated content ecosystems</span></div>
+    </div>
     <h3>Key Macro Forces</h3>
     <ul>
-      <li><strong>Cost-of-Living Pressures:</strong> Consumers are consolidating their gaming hours into 1 or 2 core titles that serve as social hubs.</li>
-      <li><strong>Subscription Service Plateau:</strong> Store subscription rates are flattening, making premium initial purchases with long-term expansions (e.g. cosy games model) highly attractive.</li>
-      <li><strong>Hardware Lifecycle:</strong> Current console hardware (PS5, Xbox Series X/S) is mature, meaning developers can rely on optimization rather than building brand-new graphics pipelines.</li>
+      <li><strong>Cost-of-living pressure:</strong> Players are consolidating leisure spend into fewer trusted games. This benefits titles that can become social or creative routines, and it weakens projects that depend on a single campaign completion cycle.</li>
+      <li><strong>Subscription service plateau:</strong> Subscription growth is flattening across major platforms. Day-one inclusion can still drive reach, but it is less effective as a substitute for product-market fit, community trust, and post-launch engagement.</li>
+      <li><strong>Hardware lifecycle maturity:</strong> Current console hardware is now mature. Developers can win through optimization, polish, input feel, and content cadence rather than large graphics pipeline reinvention.</li>
+      <li><strong>Creator-led discovery:</strong> Short-form video and community creators are becoming a mainstream discovery path. Genres that generate visible, player-authored moments receive more repeatable unpaid promotion.</li>
     </ul>
-    <h3>Strategic Recommendations</h3>
-    <p>We advise studios to transition away from traditional, single-use content cycles toward sandbox environments that allow players to invest their own creative labor. These sandbox loops generate long-term structural value and reduce the need for constant, expensive content updates.</p>
+    <h3>Genre Exposure</h3>
+    <div class="macro-bars">
+      <div class="macro-bar"><span>Life / cozy simulation</span><span class="macro-bar-track"><span class="macro-bar-fill" style="--v:86%"></span></span><strong>86</strong></div>
+      <div class="macro-bar"><span>Survival crafting</span><span class="macro-bar-track"><span class="macro-bar-fill" style="--v:78%"></span></span><strong>78</strong></div>
+      <div class="macro-bar"><span>Action sports</span><span class="macro-bar-track"><span class="macro-bar-fill" style="--v:71%"></span></span><strong>71</strong></div>
+      <div class="macro-bar"><span>RPG / adventure</span><span class="macro-bar-track"><span class="macro-bar-fill" style="--v:69%"></span></span><strong>69</strong></div>
+      <div class="macro-bar"><span>Racing / driving</span><span class="macro-bar-track"><span class="macro-bar-fill" style="--v:48%"></span></span><strong>48</strong></div>
+      <div class="macro-bar"><span>Strategy / management</span><span class="macro-bar-track"><span class="macro-bar-fill" style="--v:44%"></span></span><strong>44</strong></div>
+    </div>
+    <h3>Audience Quotes</h3>
+    <div class="macro-quote-grid">
+      <div class="macro-quote"><p>"I buy fewer new games now, but if one becomes my main hangout I will keep spending time in it."</p><span>UK player, 24, console and PC</span></div>
+      <div class="macro-quote"><p>"I need to know a premium game has depth before paying full price. Reviews and creator clips matter."</p><span>US player, 31, PC</span></div>
+      <div class="macro-quote"><p>"Cosmetics are fine if the base game is generous and the tools are good. I do not want another empty store page."</p><span>EU player, 19, console</span></div>
+      <div class="macro-quote"><p>"A good community can make a game feel cheaper because I keep coming back to see what people made."</p><span>UK player, 27, PC</span></div>
+    </div>
+    <h3>Strategic Recommendation</h3>
+    <p>Studios should avoid judging opportunities by total addressable market alone. The more useful macro question is whether a genre can create trusted long-term participation under household spending pressure. Concepts with player-authored content, strong identity expression, repeatable mastery, or mod-friendly ecosystems are structurally advantaged, provided the production plan is disciplined enough to deliver those loops reliably.</p>
   `,
   "macro-trends": `
     <h2>Games Industry Trends</h2>
-    <p><strong>Published:</strong> April 2026 | <strong>Source:</strong> IDG Research Partner Group</p>
+    <div class="macro-report-meta"><span>Published: April 2026</span><span>Source: IDG Research Partner Group</span><span>Sample: 38 publishers, 214 launches</span><span>Scope: Premium and live-service PC/console</span></div>
     <hr style="border-color:var(--border-glass); margin:1rem 0;">
-    <h3>The Rise of 'Cosy' and Self-Expression Gaming</h3>
-    <p>Over the past three years, the industry has seen a massive shift in player demographics and gaming preferences. The traditional market (focused heavily on competition and photorealism) is stable but crowded. In contrast, games themed around relaxation, self-expression, interior decoration, and social coordination are seeing exponential growth.</p>
+    <h3>Market Direction</h3>
+    <p>The industry is moving away from a simple premium-versus-live-service split. The strongest performers increasingly combine clear upfront value with a credible long tail: modding, creator challenges, expansions, social systems, seasonal events, ranked mastery, or build-sharing communities. This creates pressure on studios to design launch products as durable ecosystems without adopting the most disliked live-service monetization patterns.</p>
+    <p>Self-expression and cozy systems remain major growth areas, but they are not the only trend. Survival crafting, RPG sandboxes, sports management, tactical strategy, and extraction-style multiplayer are also showing durable engagement when their systems generate player stories. Competitive racing and traditional sports remain commercially viable but show lower organic cultural spread unless connected to esports, creator challenges, licensed talent, or unusually strong authenticity.</p>
     <h3>Key Industry Trends</h3>
     <ul>
-      <li><strong>Advocacy & Social Sharing:</strong> Customization tools allow players to build unique identities which they share on TikTok, Instagram, and Discord, generating millions in free viral marketing.</li>
-      <li><strong>Live Service Fatigue:</strong> Players are pushing back against predatory microtransactions and battle passes, preferring clear DLC updates, transparent roadmaps, and mod support.</li>
-      <li><strong>The Creator Loop:</strong> Streamers are looking for games that allow high community interaction (e.g. customized builds, storytelling), which has driven the longevity of simulation and sandbox titles.</li>
+      <li><strong>Self-expression as retention:</strong> Character tools, room building, vehicle styling, neighborhood design, team identity, and avatar fashion are functioning as retention systems rather than cosmetic side features.</li>
+      <li><strong>Live-service fatigue:</strong> Players are increasingly hostile to aggressive battle passes, confusing currencies, and launch products that feel designed around storefronts. Transparent DLC, generous base content, and mod support are receiving stronger trust signals.</li>
+      <li><strong>Creator loops:</strong> Streamers and short-form creators prefer games that allow high community interaction: custom builds, challenge routes, emergent failures, fashion reveals, tactical choices, and personal stories.</li>
+      <li><strong>Genre hybridization:</strong> Publishers are blending sports, RPG progression, social hubs, management systems, and sandbox tools. Hybrid projects can expand audience reach, but they fail quickly when the player fantasy is unclear.</li>
     </ul>
+    <h3>Momentum Index by Genre Cluster</h3>
+    <table class="macro-table">
+      <thead><tr><th>Genre Cluster</th><th>Momentum</th><th>Primary Driver</th><th>Main Risk</th></tr></thead>
+      <tbody>
+        <tr><td>Life / cozy simulation</td><td>Very high</td><td>Customization, decorating, community storytelling</td><td>Players punish instability and shallow systems</td></tr>
+        <tr><td>Survival crafting</td><td>High</td><td>Co-op creativity and emergent progression</td><td>Market crowding and content cadence expectations</td></tr>
+        <tr><td>Action sports / movement</td><td>High</td><td>Clip culture, identity, mastery, style</td><td>Audience size must be expanded beyond franchise fans</td></tr>
+        <tr><td>RPG / adventure</td><td>High</td><td>Character attachment and long playtime</td><td>Production cost and narrative scope</td></tr>
+        <tr><td>Racing / driving</td><td>Stable</td><td>Handling authenticity and known brands</td><td>Launch spike dependence and limited lifestyle reach</td></tr>
+        <tr><td>Strategy / management</td><td>Stable niche</td><td>Depth, replayability, expert community</td><td>Lower mass-market visibility</td></tr>
+      </tbody>
+    </table>
+    <h3>Audience Quotes</h3>
+    <div class="macro-quote-grid">
+      <div class="macro-quote"><p>"I want games where I can make something that is mine, not just unlock what everyone else gets."</p><span>UK player, 22</span></div>
+      <div class="macro-quote"><p>"Battle passes make me feel late before I even start. I prefer expansions I can understand."</p><span>US player, 29</span></div>
+      <div class="macro-quote"><p>"The games I watch most are the ones where every creator's playthrough looks different."</p><span>EU viewer, 20</span></div>
+      <div class="macro-quote"><p>"Hybrid games are exciting, but I need to understand what I actually do minute to minute."</p><span>UK player, 34</span></div>
+    </div>
   `,
   "macro-consumer": `
     <h2>Consumer Spending & Platforms</h2>
-    <p><strong>Published:</strong> Q1 2026 | <strong>Source:</strong> Platform Distribution Report</p>
+    <div class="macro-report-meta"><span>Published: Q1 2026</span><span>Source: Platform Distribution Report</span><span>Panel: 72,000 active players</span><span>Platforms: Steam, PlayStation, Xbox, Switch</span></div>
     <hr style="border-color:var(--border-glass); margin:1rem 0;">
     <h3>Platform Split & Monetization Mechanics</h3>
-    <p>Analytical data indicates that different game genres exhibit highly distinct platform spreads and spending patterns:</p>
-    <ul>
-      <li><strong>Racing Games:</strong> Heavily concentrated on consoles (PlayStation/Xbox) with 75% of sales occurring in the first 30 days. High dependence on physical controller layouts and steering wheels. Very low expansion sale rates.</li>
-      <li><strong>Lifestyle & Action Sports:</strong> High PC and console overlap. Revenue is driven by premium entry price + cosmetic DLC content packs. Highly driven by community events.</li>
-      <li><strong>Simulation Games:</strong> Dominant on PC (Steam) due to modding support and mouse/keyboard interfaces. Long-tail monetization is exceptionally strong, with expansion packs and custom assets generating 60% of total lifetime product revenue.</li>
-    </ul>
+    <p>Platform behavior remains highly genre-specific. Console audiences still over-index for racing, sports, action adventure, and licensed brand experiences where controller comfort and living-room play matter. PC audiences over-index for simulation, strategy, management, modding, creator tools, and long-session customization. Switch remains relevant for cozy, family, and portable-friendly releases, but its technical constraints shape content scope.</p>
+    <p>Consumer spending is also diverging by trust model. Players are more comfortable paying premium prices for polished, complete launches and more willing to buy expansions when the base game feels generous. The strongest resistance appears around paid cosmetics that arrive before meaningful content, unstable launches with premium editions, and opaque recurring monetization.</p>
+    <div class="macro-kpi-grid">
+      <div class="macro-kpi"><strong>81%</strong><span>PC skew for mod-heavy simulation and management titles</span></div>
+      <div class="macro-kpi"><strong>72%</strong><span>console skew for racing and licensed sports releases</span></div>
+      <div class="macro-kpi"><strong>58%</strong><span>players reporting review wait-and-see behavior for £50+ games</span></div>
+      <div class="macro-kpi"><strong>46%</strong><span>higher DLC attach in titles with active creator or mod communities</span></div>
+    </div>
+    <table class="macro-table">
+      <thead><tr><th>Genre</th><th>Platform Shape</th><th>Spend Pattern</th><th>Commercial Note</th></tr></thead>
+      <tbody>
+        <tr><td>Racing / driving</td><td>Console-heavy, wheel-support enthusiast pocket on PC</td><td>Launch-weighted premium sales, modest expansion attach</td><td>Strong known buyers, less organic broadening without licenses or esports</td></tr>
+        <tr><td>Action sports</td><td>Balanced PC/console</td><td>Premium plus cosmetic packs, event-driven engagement</td><td>Benefits from clips, customization, and challenge communities</td></tr>
+        <tr><td>Life / cozy simulation</td><td>PC-led with meaningful console growth</td><td>Long-tail expansions, mod-friendly sales, décor and identity packs</td><td>High upside if tooling and stability are credible</td></tr>
+        <tr><td>Strategy / management</td><td>PC-heavy</td><td>Premium plus expansions, lower cosmetic tolerance</td><td>Smaller audience but reliable depth-driven retention</td></tr>
+        <tr><td>Survival crafting</td><td>PC-led, console viable with strong UX</td><td>Premium or early-access, high co-op retention</td><td>Very competitive; differentiation depends on systems and world identity</td></tr>
+      </tbody>
+    </table>
+    <h3>Target Audience Quotes</h3>
+    <div class="macro-quote-grid">
+      <div class="macro-quote"><p>"I buy simulations on PC because mods are half the point."</p><span>PC player, 30</span></div>
+      <div class="macro-quote"><p>"Racing is a console game for me. I want it smooth, quick, and reliable."</p><span>Console player, 26</span></div>
+      <div class="macro-quote"><p>"I do not mind DLC when I can see the studio is adding real systems, not just selling outfits."</p><span>Multi-platform player, 33</span></div>
+      <div class="macro-quote"><p>"If a game has good creator tools, I will watch it before I buy it."</p><span>UK player, 21</span></div>
+    </div>
   `,
   "macro-production": `
     <h2>Technology & Production Costs</h2>
-    <p><strong>Published:</strong> February 2026 | <strong>Source:</strong> internal Production Audit</p>
+    <div class="macro-report-meta"><span>Published: February 2026</span><span>Source: Production Economics Consortium</span><span>Benchmark: 41 comparable projects</span><span>Scope: AA/AAA PC-console studios</span></div>
     <hr style="border-color:var(--border-glass); margin:1rem 0;">
-    <h3>Development Economics by Project Category</h3>
-    <p>Production analysis indicates high cost inflation across all major project scopes. Recruiting specialized software engineering talent is the single largest cost driver.</p>
-    <ul>
-      <li><strong>Racing Sequel (Scope: Moderate):</strong> High predictability. We can reuse our physical track builder tools and wheel physics engine. Estimated cost: £12M - £15M. Technical risk: Low.</li>
-      <li><strong>Skateboarding Sequel (Scope: Low-Moderate):</strong> Maximum efficiency. We can reuse 80% of our Streetline Skate codebase. Estimated cost: £8M - £10M. Technical risk: Low.</li>
-      <li><strong>Life Simulation Reboot (Scope: High):</strong> Maximum cost. Represents a major expansion into a different genre, requiring a broader simulation roadmap and a longer capacity-building plan. Estimated cost: £20M - £25M. Technical risk: High.</li>
-      <li><strong>Open-World Street Sports (Scope: High):</strong> Expands skateboarding movement physics into a larger street-culture sandbox with social hub and traversal systems. Estimated cost: £16M - £20M. Technical risk: Moderate to High.</li>
-    </ul>
+    <h3>Development Economics by Genre Category</h3>
+    <p>Production cost inflation is now most visible in specialized engineering, content tooling, QA automation, and live operations staffing. The most expensive projects are not always those with the largest maps or highest visual fidelity. Systemic complexity, persistent state, multiplayer operations, moderation, mod validation, and emergent AI behavior can create cost burdens that are less visible in early pitch materials.</p>
+    <p>Reusable technology remains a major advantage, but reuse should be evaluated by system fit, not label similarity. A studio with strong movement physics may still face new risk when adding city streaming or social hubs. A studio with strong UI and data systems may still struggle with autonomous character simulation. Production planning should therefore separate art/content scale, gameplay system novelty, backend complexity, and QA observability.</p>
+    <table class="macro-table">
+      <thead><tr><th>Genre Category</th><th>Typical Budget Range</th><th>Cost Drivers</th><th>Hidden Risk</th></tr></thead>
+      <tbody>
+        <tr><td>Racing / driving</td><td>£12M-£18M</td><td>Vehicle handling, licensed content, tracks, platform optimization</td><td>Market differentiation can be harder than build execution</td></tr>
+        <tr><td>Skateboarding / action sports</td><td>£9M-£16M</td><td>Animation blending, physics feel, UGC tools, replay systems</td><td>Content variety and creator moderation can grow late</td></tr>
+        <tr><td>Life / cozy simulation</td><td>£18M-£30M</td><td>Persistent state, AI schedules, mod validation, object interactions</td><td>Small instability issues can become reputation-defining</td></tr>
+        <tr><td>Open-world social sports</td><td>£16M-£24M</td><td>World streaming, traversal systems, social hubs, live events</td><td>Scope can blur unless the core fantasy is tightly governed</td></tr>
+        <tr><td>Strategy / management</td><td>£8M-£14M</td><td>Data simulation, UI, balancing, scenario generation</td><td>Lower visual spectacle can reduce mainstream visibility</td></tr>
+        <tr><td>Survival crafting</td><td>£15M-£26M</td><td>World systems, co-op networking, crafting depth, AI ecology</td><td>Competitive saturation raises content and polish bar</td></tr>
+      </tbody>
+    </table>
+    <h3>Production Cost Pressure Index</h3>
+    <div class="macro-bars">
+      <div class="macro-bar"><span>Specialized engineering</span><span class="macro-bar-track"><span class="macro-bar-fill" style="--v:92%"></span></span><strong>92</strong></div>
+      <div class="macro-bar"><span>QA automation</span><span class="macro-bar-track"><span class="macro-bar-fill" style="--v:84%"></span></span><strong>84</strong></div>
+      <div class="macro-bar"><span>Backend/live operations</span><span class="macro-bar-track"><span class="macro-bar-fill" style="--v:78%"></span></span><strong>78</strong></div>
+      <div class="macro-bar"><span>Content tooling</span><span class="macro-bar-track"><span class="macro-bar-fill" style="--v:74%"></span></span><strong>74</strong></div>
+      <div class="macro-bar"><span>Licensed content</span><span class="macro-bar-track"><span class="macro-bar-fill" style="--v:57%"></span></span><strong>57</strong></div>
+    </div>
+    <h3>Operational Guidance</h3>
+    <p>Studios should require proof gates that match the highest-risk system in the genre: long-session stability for simulation, network reliability for social worlds, feel and animation quality for movement games, balance integrity for strategy and management, and content cadence for survival crafting. A greenlight case is more credible when the milestone plan proves the central risk before full production spending accelerates.</p>
   `,
   "macro-competitors": `
     <h2>Competitor Pipeline</h2>
-    <p><strong>Published:</strong> May 2026 | <strong>Source:</strong> Competitive Intelligence Agency</p>
+    <div class="macro-report-meta"><span>Published: May 2026</span><span>Source: Competitive Intelligence Agency</span><span>Coverage: announced and inferred 2026-2028 releases</span><span>Confidence: medium</span></div>
     <hr style="border-color:var(--border-glass); margin:1rem 0;">
     <h3>Major Competitor Release Calendar & Crowding</h3>
-    <ul>
-      <li><strong>Racing Genre:</strong> Extremely crowded. <em>Speedway Unlimited</em> and <em>Turbo Asphalt 9</em> hold a combined 80% of the racing market share, with another major racer scheduled for release in Q3 2027. High marketing budgets required to compete.</li>
-      <li><strong>Skateboarding:</strong> Highly open. <em>Grind & Slide</em> is the only active competitor. It has strong scores but is a niche indie title. A premium sequel from Highland Studios would easily capture the mainstream skateboarding audience.</li>
-      <li><strong>Life Simulation:</strong> Dominated by the giant title <em>TownLife</em>. However, <em>TownLife</em> has received heavy player backlash (+35% negative reviews) due to expensive DLCs and engine instability. The market is actively looking for a competitor. The indie developer title <em>Cosy Valley</em> is highly rated but restricted to Switch/casual players. A mod-friendly PC/Console competitor has a massive vacancy window.</li>
-    </ul>
+    <p>The competitor environment is uneven. Racing and licensed sports remain crowded and marketing-intensive. Life and cozy simulation remain dominated by incumbents but show unusual audience dissatisfaction. Action sports is less crowded, but it is also a smaller category unless broadened with social, creator, or lifestyle loops. Survival crafting, RPG/adventure, and shooter/live-service categories remain commercially large but congested, with high player expectations and steep content burdens.</p>
+    <table class="macro-table">
+      <thead><tr><th>Genre</th><th>Current Leaders</th><th>Pipeline Signal</th><th>Opportunity Window</th></tr></thead>
+      <tbody>
+        <tr><td>Racing / driving</td><td><em>Speedway Unlimited</em>, <em>Turbo Asphalt 9</em></td><td>Major premium racer expected Q3 2027; several annualized updates</td><td>Narrow unless differentiated by handling, licensing, or creator events</td></tr>
+        <tr><td>Skateboarding / action sports</td><td><em>Grind & Slide</em>, legacy catalog titles</td><td>Few premium competitors; indie activity mostly niche</td><td>Open, though category expansion requires broader social hooks</td></tr>
+        <tr><td>Life / cozy simulation</td><td><em>TownLife</em>, <em>Cosy Valley</em></td><td>Community demand for alternatives; incumbent backlash around DLC and stability</td><td>Large if technical credibility and mod support are clear</td></tr>
+        <tr><td>Survival crafting</td><td><em>Frontier Ash</em>, <em>Hearthwild</em></td><td>Several early-access launches tracking well</td><td>Attractive but heavily saturated</td></tr>
+        <tr><td>RPG / adventure</td><td><em>Mythward</em>, <em>Chronicle Vale</em></td><td>High budgets and long development cycles</td><td>Strong demand, high capital requirement</td></tr>
+        <tr><td>Strategy / management</td><td><em>Club Director Pro</em>, <em>Empire Desk</em></td><td>Stable specialist audience; limited mainstream campaigns</td><td>Efficient niche with lower brand spectacle</td></tr>
+        <tr><td>Shooter / live service</td><td><em>Strikefront</em>, <em>Zero Hour Arena</em></td><td>Retention war intensifying around ranked seasons and creators</td><td>Large but expensive and risky for new entrants</td></tr>
+      </tbody>
+    </table>
+    <h3>Competitive Crowding Index</h3>
+    <div class="macro-bars">
+      <div class="macro-bar"><span>Shooter / live service</span><span class="macro-bar-track"><span class="macro-bar-fill" style="--v:94%"></span></span><strong>94</strong></div>
+      <div class="macro-bar"><span>Racing / driving</span><span class="macro-bar-track"><span class="macro-bar-fill" style="--v:82%"></span></span><strong>82</strong></div>
+      <div class="macro-bar"><span>Survival crafting</span><span class="macro-bar-track"><span class="macro-bar-fill" style="--v:76%"></span></span><strong>76</strong></div>
+      <div class="macro-bar"><span>Life / cozy simulation</span><span class="macro-bar-track"><span class="macro-bar-fill" style="--v:58%"></span></span><strong>58</strong></div>
+      <div class="macro-bar"><span>Action sports</span><span class="macro-bar-track"><span class="macro-bar-fill" style="--v:41%"></span></span><strong>41</strong></div>
+      <div class="macro-bar"><span>Strategy / management</span><span class="macro-bar-track"><span class="macro-bar-fill" style="--v:39%"></span></span><strong>39</strong></div>
+    </div>
+    <h3>Target Audience Quotes</h3>
+    <div class="macro-quote-grid">
+      <div class="macro-quote"><p>"Racing games all blur together unless one feels amazing or has a license I care about."</p><span>Console player, 28</span></div>
+      <div class="macro-quote"><p>"There is room for a bigger action sports game if it gives people a place to hang out, not just levels."</p><span>PC/console player, 23</span></div>
+      <div class="macro-quote"><p>"I would try a new life sim, but only if the studio proves it will not be broken or overpriced."</p><span>PC player, 35</span></div>
+      <div class="macro-quote"><p>"Management games do not need to be flashy. They need to be deep and honest about the numbers."</p><span>Strategy player, 41</span></div>
+    </div>
+    <h3>Interpretation</h3>
+    <p>Competitive whitespace is not the same as a strong business case. Some categories are open because they are difficult to build or historically smaller. The strongest opportunities are those where competitor weakness aligns with credible studio capability, clear audience dissatisfaction, and a launch plan that can be communicated without relying on vague trend language.</p>
   `
 };
 
@@ -1007,9 +1158,9 @@ function generateMarketTrendsChart() {
         <div class="ed-panel wide">
           <h4>Top Query Families From Raw Export</h4>
           <div class="ed-keyword-grid">
-            <div class="ed-keyword-card"><strong>life sim alternative with better customization</strong><span>High-volume dissatisfaction with dominant competitors; good early signal for Option 4 if execution risk is solved.</span></div>
+            <div class="ed-keyword-card"><strong>life sim alternative with better customization</strong><span>High-volume dissatisfaction with dominant competitors; good early signal for a life-simulation category entry if execution risk is solved.</span></div>
             <div class="ed-keyword-card"><strong>streetline skate multiplayer custom parks</strong><span>Direct evidence that Highland's sports audience already searches for UGC and social creation loops.</span></div>
-            <div class="ed-keyword-card"><strong>open world skate bike parkour game</strong><span>Supports Option 3; users describe activity mix and world structure rather than only franchise names.</span></div>
+            <div class="ed-keyword-card"><strong>open world skate bike parkour game</strong><span>Supports a broader street-sports concept; users describe activity mix and world structure rather than only franchise names.</span></div>
           </div>
         </div>
       </div>
@@ -1190,7 +1341,7 @@ function generateWishlistDashboard() {
         <div class="ed-panel wide">
           <h4>Leading Indicators for Greenlight Discussion</h4>
           <table class="ed-table">
-            <thead><tr><th>Signal</th><th>Option 1 Racing</th><th>Option 3 Street Sports</th><th>Option 4 Life Sim</th><th>Readout</th></tr></thead>
+            <thead><tr><th>Signal</th><th>Racing Sequel</th><th>Street-Sports Concept</th><th>Life-Simulation Entry</th><th>Readout</th></tr></thead>
             <tbody>
               <tr><td>Wishlist growth</td><td><span class="ed-status bad">Low</span></td><td><span class="ed-status good">High</span></td><td><span class="ed-status good">High</span></td><td>High-upside categories are pulling early demand without paid spend.</td></tr>
               <tr><td>Proof required</td><td><span class="ed-status info">Medium</span></td><td><span class="ed-status warn">Medium</span></td><td><span class="ed-status bad">High</span></td><td>Life-sim interest must be paired with credible product proof.</td></tr>
@@ -1436,12 +1587,12 @@ function generateTelemetryDashboard() {
         <div class="ed-panel">
           <h4>Behavioral Readout</h4>
           <table class="ed-table">
-            <thead><tr><th>Signal</th><th>Evidence</th><th>Option Fit</th></tr></thead>
+            <thead><tr><th>Signal</th><th>Evidence</th><th>Genre Fit</th></tr></thead>
             <tbody>
-              <tr><td>Self-expression</td><td>High customization dwell in Streetline Skate</td><td><span class="ed-status good">Option 3</span></td></tr>
-              <tr><td>Pure simulation</td><td>LifeSpace concept had demand but poor crash-free play</td><td><span class="ed-status warn">Option 4</span></td></tr>
-              <tr><td>Track mastery</td><td>Racing sessions are focused but narrow</td><td><span class="ed-status info">Option 1</span></td></tr>
-              <tr><td>Social loop</td><td>Park sharing increases return sessions</td><td><span class="ed-status good">Option 3</span></td></tr>
+              <tr><td>Self-expression</td><td>High customization dwell in Streetline Skate</td><td><span class="ed-status good">Street sports</span></td></tr>
+              <tr><td>Pure simulation</td><td>LifeSpace concept had demand but poor crash-free play</td><td><span class="ed-status warn">Life sim</span></td></tr>
+              <tr><td>Track mastery</td><td>Racing sessions are focused but narrow</td><td><span class="ed-status info">Racing</span></td></tr>
+              <tr><td>Social loop</td><td>Park sharing increases return sessions</td><td><span class="ed-status good">Street sports</span></td></tr>
             </tbody>
           </table>
         </div>
@@ -1507,9 +1658,9 @@ function generateCommunityEngagementDashboard() {
           <h4>Strategic Fit</h4>
           <div class="ed-heat">
             <div></div><div class="head">UGC</div><div class="head">Creator</div><div class="head">Support</div><div class="head">DLC</div><div class="head">Trust</div>
-            <div class="rowhead">Option 3</div><div class="s5">5</div><div class="s5">5</div><div class="s3">3</div><div class="s4">4</div><div class="s4">4</div>
-            <div class="rowhead">Option 4</div><div class="s5">5</div><div class="s5">5</div><div class="s1">1</div><div class="s5">5</div><div class="s2">2</div>
-            <div class="rowhead">Option 1</div><div class="s2">2</div><div class="s2">2</div><div class="s5">5</div><div class="s2">2</div><div class="s4">4</div>
+            <div class="rowhead">Street sports</div><div class="s5">5</div><div class="s5">5</div><div class="s3">3</div><div class="s4">4</div><div class="s4">4</div>
+            <div class="rowhead">Life sim</div><div class="s5">5</div><div class="s5">5</div><div class="s1">1</div><div class="s5">5</div><div class="s2">2</div>
+            <div class="rowhead">Racing</div><div class="s2">2</div><div class="s2">2</div><div class="s5">5</div><div class="s2">2</div><div class="s4">4</div>
           </div>
         </div>
       </div>
@@ -1909,6 +2060,11 @@ function setupEventListeners() {
       const report = e.currentTarget.getAttribute("data-report");
       renderMacroReport(report);
     });
+  });
+
+  document.getElementById("macro-download-pdf-btn")?.addEventListener("click", () => {
+    const activeReport = document.querySelector(".macro-tab-btn.active")?.getAttribute("data-report") || "macro-general";
+    downloadMacroReportPdf(activeReport);
   });
 
   // Close Modal Button
@@ -2667,7 +2823,20 @@ function getRandomSlackPermissionDelaySeconds() {
 // Macro Report tab content renderer
 function renderMacroReport(reportId) {
   const content = document.getElementById("macro-report-content");
+  const meta = MACRO_REPORT_META[reportId] || MACRO_REPORT_META["macro-general"];
   content.innerHTML = MACRO_REPORTS[reportId] || "<p>Report content not found.</p>";
+  const actionTitle = document.getElementById("macro-report-action-title");
+  if (actionTitle) actionTitle.textContent = meta.title;
+}
+
+function downloadMacroReportPdf(reportId) {
+  const meta = MACRO_REPORT_META[reportId] || MACRO_REPORT_META["macro-general"];
+  const link = document.createElement("a");
+  link.href = meta.pdf;
+  link.download = meta.pdf.split("/").pop();
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
 }
 
 // Simulated Email Client Renderer
@@ -2836,7 +3005,7 @@ function tickTimers() {
       State.emails.push({
         sender: "Privacy Governance Office",
         subject: "Denied: Slack Conversation Archive Export",
-        body: "Strategy Task Force,\n\nYour request to download the full Slack conversation archive has been reviewed and denied.\n\nThe archive contains identifiable employee communications and internal workplace discussion data. Under UK privacy requirements, including UK GDPR and the Data Protection Act 2018, the raw export cannot be released for student-facing analysis in its current form.\n\nThis decision has been escalated for senior review. If permission is granted from above, the earliest likely response window is approximately 2-3 weeks.\n\nRegards,\nPrivacy Governance Office",
+        body: "Strategy Task Force,\n\nYour request to download the full Slack conversation archive has been reviewed and denied.\n\nThe archive contains identifiable employee communications and internal workplace discussion data. Under UK privacy requirements, including UK GDPR and the Data Protection Act 2018, the raw export cannot be released outside approved privacy-cleared review channels in its current form.\n\nThis decision has been escalated for senior review. If permission is granted from above, the earliest likely response window is approximately 2-3 weeks.\n\nRegards,\nPrivacy Governance Office",
         date: new Date().toLocaleTimeString(),
         read: false,
         id: "slack_archive_permission_denied"

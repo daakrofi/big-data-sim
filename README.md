@@ -1,5 +1,5 @@
-# Big Data Simulation
+# Highland Strategy Portal
 
-Static classroom simulation for Highland Studios' strategy and analytics exercise.
+Static Highland Studios strategy and analytics portal for portfolio planning work.
 
 Hosted with GitHub Pages.

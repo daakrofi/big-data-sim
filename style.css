@@ -1,4 +1,4 @@
-/* style.css - Highland Studios Interactive Big Data Analytics Exercise */
+/* style.css - Highland Studios Interactive Big Data Analytics Workspace */
 
 /* --- CSS Variables & Design Tokens --- */
 :root {
@@ -1425,6 +1425,34 @@ li {
   min-height: 400px;
 }
 
+.macro-report-panel {
+  display: grid;
+  gap: 1rem;
+  min-width: 0;
+}
+
+.macro-report-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.25rem;
+}
+
+.macro-report-actions div {
+  display: grid;
+  gap: 0.15rem;
+}
+
+.macro-report-actions strong {
+  color: var(--text-primary);
+}
+
+.macro-report-actions span {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
 .macro-report-view h2 {
   font-size: 1.3rem;
   border-bottom: 1px solid var(--border-glass);
@@ -1450,6 +1478,113 @@ li {
 
 .macro-report-view li {
   font-size: 0.9rem;
+}
+
+.macro-report-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-bottom: 1rem;
+  color: var(--text-muted);
+  font-size: 0.82rem;
+}
+
+.macro-report-meta span {
+  border: 1px solid var(--border-glass);
+  border-radius: 999px;
+  padding: 0.25rem 0.55rem;
+  background: rgba(255, 255, 255, 0.54);
+}
+
+.macro-kpi-grid,
+.macro-quote-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.85rem;
+  margin: 1.25rem 0;
+}
+
+.macro-kpi,
+.macro-quote {
+  border: 1px solid var(--border-glass);
+  border-radius: var(--border-radius-md);
+  background: rgba(255, 255, 255, 0.68);
+  padding: 1rem;
+}
+
+.macro-kpi strong {
+  display: block;
+  color: var(--color-brand);
+  font-size: 1.35rem;
+  line-height: 1;
+  margin-bottom: 0.35rem;
+}
+
+.macro-kpi span,
+.macro-quote span {
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  line-height: 1.45;
+}
+
+.macro-quote {
+  border-left: 3px solid var(--color-warning);
+}
+
+.macro-quote p {
+  color: var(--text-primary);
+  font-style: italic;
+}
+
+.macro-bars {
+  display: grid;
+  gap: 0.55rem;
+  margin: 1rem 0 1.25rem;
+}
+
+.macro-bar {
+  display: grid;
+  grid-template-columns: minmax(150px, 0.9fr) minmax(140px, 1.4fr) 54px;
+  gap: 0.7rem;
+  align-items: center;
+  font-size: 0.85rem;
+}
+
+.macro-bar-track {
+  height: 12px;
+  border-radius: 999px;
+  background: rgba(55, 47, 39, 0.1);
+  border: 1px solid var(--border-glass);
+  overflow: hidden;
+}
+
+.macro-bar-fill {
+  display: block;
+  height: 100%;
+  width: var(--v, 0%);
+  min-width: 2px;
+  border-radius: inherit;
+  background: linear-gradient(90deg, var(--color-brand), var(--color-warning));
+}
+
+.macro-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0 1.35rem;
+  font-size: 0.84rem;
+}
+
+.macro-table th,
+.macro-table td {
+  border-bottom: 1px solid var(--border-glass);
+  padding: 0.65rem 0.55rem;
+  text-align: left;
+  vertical-align: top;
+}
+
+.macro-table th {
+  color: var(--text-primary);
+  background: rgba(196, 28, 37, 0.06);
 }
 
 /* --- Email Inbox Style --- */
@@ -1877,16 +2012,20 @@ li {
 
 .ed-bar-track {
   height: 12px;
-  background: rgba(55, 47, 39, 0.08);
+  background: rgba(55, 47, 39, 0.14);
   border: 1px solid var(--border-glass);
   border-radius: 999px;
   overflow: hidden;
 }
 
 .ed-bar-fill {
+  display: block;
   height: 100%;
-  width: var(--v);
+  width: var(--v, 0%);
+  min-width: 2px;
+  border-radius: inherit;
   background: linear-gradient(90deg, var(--color-brand), var(--color-warning));
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.18);
 }
 
 .ed-bar-fill.good { background: linear-gradient(90deg, var(--color-success), #b6a058); }
@@ -2549,11 +2688,33 @@ li {
 }
 
 @media (max-width: 980px) {
+  .macro-report-actions {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .macro-kpi-grid,
+  .macro-quote-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .macro-bar {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.35rem;
+  }
+
   .embedded-report-frame {
     height: clamp(480px, 68vh, 720px);
   }
 
   .data-modal.viewer-open .embedded-report-frame {
     height: calc(94vh - 170px);
+  }
+}
+
+@media (max-width: 640px) {
+  .macro-kpi-grid,
+  .macro-quote-grid {
+    grid-template-columns: 1fr;
   }
 }

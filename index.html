@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Highland Studios | Strategy Portal & Analytics Exercise</title>
+  <title>Highland Studios | Strategy Portal & Analytics Workspace</title>
   <!-- Google Fonts for premium typography -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,7 +18,7 @@
       <header class="login-header">
         <img class="brand-logo login-brand-logo" src="assets/highland-studios-logo.png" alt="Highland Studios">
         <h1>Strategy Task Force Portal</h1>
-        <p class="subtitle">Big Data Analytics Exercise - Project Selector Simulation</p>
+        <p class="subtitle">Portfolio Analytics Workspace - Strategy Task Force Portal</p>
       </header>
       
       <form id="login-form" class="login-form">
@@ -51,7 +51,7 @@
       
       <footer class="login-footer">
         <details>
-          <summary>Passcode Reference (For Classroom Testing)</summary>
+          <summary>Team Access Reference</summary>
           <div class="passcode-table-wrapper">
             <table class="passcode-table">
               <thead>
@@ -144,7 +144,7 @@
         <h2 id="current-tab-title">Scenario Briefing</h2>
         <div class="topbar-actions">
           <div class="status-indicator">
-            <span class="dot live"></span> Simulation Active
+            <span class="dot live"></span> Portal Active
           </div>
         </div>
       </header>
@@ -434,9 +434,18 @@
               </nav>
 
               <!-- Report content panel right -->
-              <article class="macro-report-view glass-panel" id="macro-report-content">
-                <!-- Dynamically populated report text -->
-              </article>
+              <div class="macro-report-panel">
+                <div class="macro-report-actions glass-panel">
+                  <div>
+                    <strong id="macro-report-action-title">General Macroeconomic Report</strong>
+                    <span>Download the current market intelligence brief as a PDF.</span>
+                  </div>
+                  <button type="button" class="btn btn-primary btn-sm" id="macro-download-pdf-btn">Download PDF</button>
+                </div>
+                <article class="macro-report-view glass-panel" id="macro-report-content">
+                  <!-- Dynamically populated report text -->
+                </article>
+              </div>
             </div>
           </div>
         </section>
@@ -529,7 +538,7 @@
 
             <form id="worksheet-form" class="worksheet-form glass-panel">
               <fieldset>
-                <legend>Simulation Parameters & Identification</legend>
+                <legend>Recommendation Parameters & Identification</legend>
                 <div class="grid grid-2">
                   <div class="form-group">
                     <label for="ws-team-display">Team Name</label>
