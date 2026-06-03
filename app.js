@@ -16,6 +16,9 @@ const TEAMS_CONFIG = {
   "Admin": "admin1991"
 };
 
+const ADMIN_PASSCODE = "admin1991";
+const REVOKED_ACCESS_MESSAGE = "Thanks for playing. Access has been revoked for this session.";
+
 // Available Project Options
 const PROJECT_OPTIONS = {
   "racing_sequel": {
@@ -1087,7 +1090,7 @@ function loadState(passcode) {
     State.requests = {};
     State.slackPermissionRequest = null;
     State.viewed = [];
-    const isAdmin = passcode === "admin1991";
+    const isAdmin = passcode === ADMIN_PASSCODE;
     State.emails = [
       {
         sender: "System Notification",
@@ -2131,21 +2134,14 @@ function setupEventListeners() {
   const loginForm = document.getElementById("login-form");
   loginForm.addEventListener("submit", (e) => {
     e.preventDefault();
-    const teamSelect = document.getElementById("team-select");
     const passcode = document.getElementById("passcode-input").value.trim();
     const loginError = document.getElementById("login-error");
     
-    const selectedTeamName = teamSelect.value;
-    const correctPasscode = TEAMS_CONFIG[selectedTeamName];
-    
-    if (passcode === "admin1991") {
+    if (passcode === ADMIN_PASSCODE) {
       loginError.textContent = "";
-      login("Admin", "admin1991");
-    } else if (correctPasscode && correctPasscode === passcode) {
-      loginError.textContent = "";
-      login(selectedTeamName, passcode);
+      login("Admin", ADMIN_PASSCODE);
     } else {
-      loginError.textContent = "Error: Invalid team passcode association. Verify your team selection and passcode.";
+      loginError.textContent = REVOKED_ACCESS_MESSAGE;
     }
   });
 
@@ -2298,7 +2294,7 @@ function updateAdminStateControls() {
   const status = document.getElementById("admin-reset-status");
   if (!panel || !select) return;
 
-  const isAdmin = State.passcode === "admin1991";
+  const isAdmin = State.passcode === ADMIN_PASSCODE;
   panel.classList.toggle("hidden", !isAdmin);
   if (!isAdmin) {
     select.innerHTML = `<option value="">Select team</option>`;
@@ -2314,7 +2310,7 @@ function updateAdminStateControls() {
 }
 
 function resetSelectedTeamState() {
-  if (State.passcode !== "admin1991") return;
+  if (State.passcode !== ADMIN_PASSCODE) return;
 
   const select = document.getElementById("admin-reset-team-select");
   const status = document.getElementById("admin-reset-status");
@@ -2564,7 +2560,7 @@ function openDataSourceModal(sourceId) {
         <button type="button" class="btn btn-primary" id="modal-req-email-btn">Send Data Access Request</button>
       `;
       document.getElementById("modal-req-email-btn").addEventListener("click", () => {
-        const isAdmin = State.passcode === "admin1991";
+        const isAdmin = State.passcode === ADMIN_PASSCODE;
         const randomSeconds = isAdmin ? 0 : (Math.floor(Math.random() * (300 - 60 + 1)) + 60);
         State.requests[src.id] = {
           requestedAt: Date.now(),
@@ -2586,7 +2582,7 @@ function openDataSourceModal(sourceId) {
         <button type="button" class="btn btn-primary" id="modal-buy-btn">Purchase Access (Deduct £${src.cost.toLocaleString()})</button>
       `;
       document.getElementById("modal-buy-btn").addEventListener("click", () => {
-        const isAdmin = State.passcode === "admin1991";
+        const isAdmin = State.passcode === ADMIN_PASSCODE;
         if (isAdmin || State.budget >= src.cost) {
           if (!isAdmin) {
             State.budget -= src.cost;
@@ -3132,7 +3128,7 @@ function renderEmailFullView(email, container) {
 }
 
 function updateBudgetDisplay() {
-  const isAdmin = State.passcode === "admin1991";
+  const isAdmin = State.passcode === ADMIN_PASSCODE;
   if (isAdmin) {
     document.getElementById("display-budget").textContent = "Unlimited";
     document.getElementById("ws-budget-display").value = "Admin Access - Unlimited Budget";
