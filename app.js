@@ -67,7 +67,7 @@ const DATA_SOURCES = {
     id: "s1_search_trends",
     stage: 1,
     name: "Search Trend Data",
-    description: "Aggregated time-series data showing global search index scores for genres, gameplay terms, and platforms over the past 12 months.",
+    description: "Aggregated market-wide search index scores across game genres, gameplay mechanics, competitor titles, monetization concerns, and platform terms over the past 12 months.",
     format: "Structured time-series index",
     owner: "External marketing analytics vendor",
     availability: "Immediate",
@@ -75,8 +75,8 @@ const DATA_SOURCES = {
     cost: 0,
     delay: 0,
     analyticalUse: "Descriptive (Identifies current consumer category volume)",
-    limitations: "Search volume reflects curiosity and hype but does not guarantee purchase conversion. Highly susceptible to short-term viral events.",
-    questions: "What are consumers currently interested in?",
+    limitations: "Search volume reflects curiosity and hype but does not guarantee purchase conversion. Highly susceptible to short-term viral events and competitor announcement spikes.",
+    questions: "What are consumers searching for across the wider games market, and which genre categories show specific feature intent?",
     behaviour: "instant",
     dashboardType: "market_trends"
   },
@@ -153,17 +153,17 @@ const DATA_SOURCES = {
   "s2_search_referrals": {
     id: "s2_search_referrals",
     stage: 2,
-    name: "Search Query Referral Dataset (1,500 Rows)",
-    description: "Log of specific search terms that led users to click on Highland Studios links from Google, Bing, and DuckDuckGo search engine results.",
+    name: "Market Search Query Dataset (1,500 Rows)",
+    description: "Anonymized search-query sample covering wider game-market demand, competitor research, platform-specific discovery, and a smaller subset of queries that reached Highland-owned pages.",
     format: "Structured CSV",
-    owner: "SEO Marketing Operations",
+    owner: "Search Intelligence Vendor",
     availability: "Immediate",
     refresh: "Daily",
     cost: 0,
     delay: 0,
     analyticalUse: "Descriptive (Captures exact user search intent)",
-    limitations: "Search engines redact a large portion of organic query keywords due to privacy policies (categorized as 'not provided').",
-    questions: "What direct searches lead organic traffic to our game servers?",
+    limitations: "Search engines redact a large portion of organic query keywords due to privacy policies. Owned-site clickthrough is included but should not be mistaken for the full market.",
+    questions: "Which broader genre, competitor, platform, and feature searches show actionable player intent?",
     behaviour: "csv",
     csvFile: "search_referrals.csv"
   },
@@ -493,7 +493,15 @@ const SLACK_USERS = {
   Dave: { role: "Lead Game Designer", avatarClass: "avatar-des" },
   Marcus: { role: "Technical Director", avatarClass: "avatar-eng" },
   Elena: { role: "Lead Programmer", avatarClass: "avatar-eng" },
+  Priya: { role: "Senior Simulation Engineer", avatarClass: "avatar-eng" },
+  Tom: { role: "Backend Services Lead", avatarClass: "avatar-eng" },
+  Ben: { role: "QA Automation Lead", avatarClass: "avatar-eng" },
+  Aisha: { role: "Associate Producer", avatarClass: "avatar-pm" },
   Chloe: { role: "Marketing Director", avatarClass: "avatar-mkt" },
+  Jamal: { role: "Market Data Analyst", avatarClass: "avatar-mkt" },
+  Nina: { role: "User Acquisition Manager", avatarClass: "avatar-mkt" },
+  Omar: { role: "Brand Partnerships Lead", avatarClass: "avatar-mkt" },
+  Mia: { role: "Community Manager", avatarClass: "avatar-mkt" },
   Victoria: { role: "VP of Product Strategy", avatarClass: "avatar-exe" }
 };
 
@@ -509,17 +517,18 @@ const SLACK_COMMUNICATIONS = {
   "general": [
     slackMessage("Sarah", "Mon 09:00", "Morning, strategy task force. This week is about narrowing the next Highland project direction into a defensible board recommendation, not just picking the idea we personally like most."),
     slackMessage("Victoria", "Mon 09:07", "Reminder from the parent-company side: external analytics spend is capped at £10k. Every dataset request needs a clear decision use. Please do not buy broad reports just because they look useful."),
-    slackMessage("Dave", "Mon 09:14", "I am putting the six options into a design comparison doc. The big question for me is whether we want a familiar production path or a project that changes what Highland can become."),
-    slackMessage("Chloe", "Mon 09:22", "Marketing will map each option against search demand, creator content, and parent-company audience overlap. Those are different questions, so one dashboard will not answer all of them."),
+    slackMessage("Dave", "Mon 09:14", "I am putting the candidate game types into a design comparison doc. The big question for me is whether we want a familiar production path or a project that changes what Highland can become."),
+    slackMessage("Chloe", "Mon 09:22", "Marketing will map each concept against search demand, creator content, and parent-company audience overlap. Those are different questions, so one dashboard will not answer all of them."),
     slackMessage("Marcus", "Mon 09:31", "Engineering will keep a capability register in #dev-team. I want the board pack to distinguish market upside from build confidence. They are not the same thing."),
+    slackMessage("Aisha", "Mon 09:52", "I am tracking ownership for each evidence request. If anyone needs raw CSV support, send me the file name and the exact decision question it is meant to answer."),
     slackMessage("Sarah", "Mon 10:18", "Good framing. Please flag assumptions in plain language. The board reviewers should be able to see what each team believes, what we know, and where we are still estimating."),
     slackMessage("Chloe", "Mon 11:04", "I will also tag every marketing claim as volume, intent, channel fit, or conversion risk. Otherwise the evidence gets blended into one vague 'market says yes' paragraph."),
     slackMessage("Dave", "Mon 13:25", "Design will do the same for player fantasy, content pipeline, progression, social loop, and cuttable features. If the idea cannot survive feature cuts, it is not defined enough."),
     slackMessage("Victoria", "Mon 15:40", "The board will challenge any recommendation that relies only on a trend report. They will ask: does Highland have the systems, people, brand permission, and channel support to execute?"),
 
-    slackMessage("Sarah", "Tue 08:55", "Day two priority: request only the reports that let us test conflicting claims. We already know every option has a sales story. We need evidence that separates them."),
+    slackMessage("Sarah", "Tue 08:55", "Day two priority: request only the reports that let us test conflicting claims. We already know every candidate direction has a sales story. We need evidence that separates them."),
     slackMessage("Chloe", "Tue 09:10", "Search and wishlist data should arrive by lunch if approved. I am especially interested in keyword specificity, not just volume. 'life sim' by itself is not a strategy."),
-    slackMessage("Dave", "Tue 09:24", "Design note: Option 3 should not be treated as 'a bigger skate game'. If it works, it is a wider street sports platform with movement, identity, and social space."),
+    slackMessage("Dave", "Tue 09:24", "Design note: the street-sports concept should not be treated as 'a bigger skate game'. If it works, it is a wider street sports platform with movement, identity, and social space."),
     slackMessage("Marcus", "Tue 09:41", "Agree, but the word 'platform' raises support expectations. Larger social worlds need moderation, server uptime, seasonal tools, and production support after launch."),
     slackMessage("Victoria", "Tue 11:05", "Parent-company stakeholders are already asking which concepts can travel through streaming, fashion, short-form creator clips, and licensed talent. Racing is not impossible, but it is narrower."),
     slackMessage("Marcus", "Tue 12:34", "Please do not let channel fit become a proxy for build readiness. A concept can be easy to market and still be hard to ship."),
@@ -527,73 +536,90 @@ const SLACK_COMMUNICATIONS = {
     slackMessage("Elena", "Tue 16:12", "Worth noting for the full group: past technical incidents were not just 'bugs'. Some were architectural constraints. That distinction matters for any reboot proposal."),
 
     slackMessage("Sarah", "Wed 09:02", "Midweek checkpoint. We now have enough preliminary evidence to avoid ranking purely by expected revenue. Please start noting what data you still need before Friday."),
-    slackMessage("Chloe", "Wed 09:17", "Marketing readout so far: customization and self-expression are showing up repeatedly across search, community, and parent-company overlap. That supports more than one option, so we need specificity."),
+    slackMessage("Chloe", "Wed 09:17", "Marketing readout so far: customization and self-expression are showing up repeatedly across search, community, and parent-company overlap. That supports more than one candidate direction, so we need specificity."),
     slackMessage("Dave", "Wed 09:33", "From design, the difference is player fantasy. Life sim is about everyday agency and systems depth. Open-world street sports is about identity, movement, and public performance."),
     slackMessage("Marcus", "Wed 10:04", "From engineering, the difference is state complexity. Movement and customization are manageable extensions. Persistent NPC life simulation is a different order of system risk."),
     slackMessage("Chloe", "Wed 10:42", "From marketing, the difference is proof. Street sports proof can be visual in a ten-second clip. Life sim proof depends on trust in the invisible systems behind the clip."),
     slackMessage("Victoria", "Wed 11:20", "I want the pack to show that strong evidence can point in different directions depending on the decision criterion. Do not flatten this into a single obvious answer."),
     slackMessage("Sarah", "Wed 15:35", "Agreed. The final board pack should reward trade-off analysis, not whichever department can point to the biggest chart number."),
 
-    slackMessage("Sarah", "Thu 08:48", "Thursday focus: convert evidence into board language. Each option needs a short case for, a short case against, and the unresolved question that would decide it."),
-    slackMessage("Chloe", "Thu 09:13", "For Option 1, the case for is predictable launch conversion. The case against is weak lifestyle amplification and shallow long-tail marketing."),
-    slackMessage("Dave", "Thu 09:26", "For Option 2, the case for is morale and production efficiency. The case against is whether a straight sequel is ambitious enough for the parent-company brief."),
-    slackMessage("Marcus", "Thu 09:44", "For Option 3, the case for is reuse of proven movement tech plus a bigger social/customization opportunity. The case against is scope control."),
-    slackMessage("Elena", "Thu 10:02", "For Option 4, the case for is genre upside and capacity-building. The case against is whether the required systems foundation can be made credible before greenlight."),
+    slackMessage("Sarah", "Thu 08:48", "Thursday focus: convert evidence into board language. Each candidate direction needs a short case for, a short case against, and the unresolved question that would decide it."),
+    slackMessage("Chloe", "Thu 09:13", "For a racing follow-up, the case for is predictable launch conversion. The case against is weak lifestyle amplification and shallow long-tail marketing."),
+    slackMessage("Dave", "Thu 09:26", "For a straight skateboarding sequel, the case for is morale and production efficiency. The case against is whether it is ambitious enough for the parent-company brief."),
+    slackMessage("Marcus", "Thu 09:44", "For the street-sports concept, the case for is reuse of proven movement tech plus a bigger social/customization opportunity. The case against is scope control."),
+    slackMessage("Elena", "Thu 10:02", "For a life-simulation reboot, the case for is genre upside and capacity-building. The case against is whether the required systems foundation can be made credible before greenlight."),
     slackMessage("Dave", "Thu 10:44", "For the board language, I would avoid saying 'safe' or 'risky' as shorthand. We need to say safe against what, risky in which system, and recoverable by which milestone."),
-    slackMessage("Victoria", "Thu 14:10", "For Option 6, the case for is an efficient niche strategy. The case against is whether it is too small for the corporate-wide growth objective."),
+    slackMessage("Victoria", "Thu 14:10", "For the motorsport management concept, the case for is an efficient niche strategy. The case against is whether it is too small for the corporate-wide growth objective."),
     slackMessage("Sarah", "Thu 16:55", "This is the structure I want in the briefing. Do not include the internal shorthand labels that make the answer feel pre-solved."),
 
     slackMessage("Sarah", "Fri 08:45", "Final day. Before the board dry run, please check that every department's evidence is represented fairly. No cherry-picking."),
     slackMessage("Chloe", "Fri 09:04", "I have tightened the marketing appendix. It now separates volume, specificity, creator behavior, and parent-company channel fit."),
     slackMessage("Marcus", "Fri 09:18", "Engineering appendix is updated. It separates code reuse, team familiarity, new systems complexity, and live operations burden."),
-    slackMessage("Dave", "Fri 09:33", "Design appendix now has player fantasy, content pipeline, social loop, and progression model notes for each option."),
+    slackMessage("Dave", "Fri 09:33", "Design appendix now has player fantasy, content pipeline, social loop, and progression model notes for each candidate direction."),
     slackMessage("Elena", "Fri 09:47", "I added a dependency note for backend staffing. Even the concepts that reuse gameplay systems may need new operations support if the community layer expands."),
     slackMessage("Victoria", "Fri 10:05", "Good. In the board dry run, I expect real disagreement. The reports should provide enough evidence for a reasoned recommendation without one department simply announcing the correct answer."),
     slackMessage("Chloe", "Fri 10:52", "Marketing will mark assumptions separately from evidence in the final pack. I do not want a confident tone hiding weak inference."),
     slackMessage("Sarah", "Fri 11:30", "Thanks, everyone. Final board pack is not a vote tally. It is a decision argument. Reviewers should be able to see what matters most and why.")
   ],
   "dev-team": [
-    slackMessage("Marcus", "Mon 09:12", "Starting the technical thread here. I want a sober capability map for all options: engine fit, content tooling, live operations, QA risk, and team familiarity."),
+    slackMessage("Marcus", "Mon 09:12", "Starting the technical thread here. I want a sober capability map for the candidate game types: engine fit, content tooling, live operations, QA risk, and team familiarity."),
     slackMessage("Elena", "Mon 09:18", "Current engine strengths: movement physics, replay capture, custom park tools, input feel, collision tuning, and deterministic challenge scoring. Weaknesses: large-scale autonomous agents and persistent world-state rollback."),
-    slackMessage("Dave", "Mon 09:22", "Useful. For the design side, Option 3 can keep the movement foundation but add social hubs, character expression, and mixed street sports. It is expansion, not total reinvention."),
+    slackMessage("Dave", "Mon 09:22", "Useful. For the design side, street sports can keep the movement foundation but add social hubs, character expression, and mixed traversal. It is expansion, not total reinvention."),
     slackMessage("Elena", "Mon 09:26", "I am separating 'can reuse code' from 'can reuse confidence'. The code can compile and still need new testing because the surrounding product loop changes."),
-    slackMessage("Marcus", "Mon 09:30", "Option 1 is the cleanest technically. The racing stack already exists through Apex Circuit. Risk is mostly content volume and market differentiation, not engine feasibility."),
-    slackMessage("Elena", "Mon 09:41", "Option 2 is also clean. Streetline Skate has the strongest tooling health in the studio. We could improve animation blending, park sharing, and console performance without rewriting core systems."),
-    slackMessage("Marcus", "Mon 10:05", "Option 6 is efficient but still needs management-sim UI, data tables, and season logic. It is not technically scary, but it may not use our strongest technology in a visible way."),
-    slackMessage("Dave", "Mon 16:20", "Design risk for Option 2 is ambition. A sequel is buildable, but does it give the board enough growth story? Option 3 is where the ambition starts to show."),
+    slackMessage("Marcus", "Mon 09:30", "A racing follow-up is the cleanest technically. The racing stack already exists through Apex Circuit. Risk is mostly content volume and market differentiation, not engine feasibility."),
+    slackMessage("Elena", "Mon 09:41", "A straight skateboarding sequel is also clean. Streetline Skate has the strongest tooling health in the studio. We could improve animation blending, park sharing, and console performance without rewriting core systems."),
+    slackMessage("Tom", "Mon 09:58", "Server-side note: skate sequel traffic is familiar. Street sports adds social presence, inventory, matchmaking, and creator moderation. Same neighborhood, bigger house."),
+    slackMessage("Marcus", "Mon 10:05", "Motorsport management is efficient but still needs management-sim UI, data tables, and season logic. It is not technically scary, but it may not use our strongest technology in a visible way."),
+    slackMessage("Priya", "Mon 10:22", "I want to push back slightly on the life-sim framing. Since LifeSpace we have rebuilt save validation, added deterministic replay capture, and improved telemetry on long sessions. That does not erase the old failure, but it means we are not the same team."),
+    slackMessage("Ben", "Mon 10:47", "QA agrees the tooling is better. It is still a different testing problem. Movement games fail quickly and visibly. Life sims fail after nine hours when a relationship state, schedule, and inventory migration collide."),
+    slackMessage("Dave", "Mon 16:20", "Design risk for a straight skate sequel is ambition. It is buildable, but does it give the board enough growth story? Street sports is where the ambition starts to show."),
+    slackMessage("Tom", "Mon 17:03", "Also, who ate my meatball sandwich from the breakroom??? It had my name on the paper bag."),
 
     slackMessage("Marcus", "Tue 09:05", "Looking at old LifeSpace engineering notes this morning. We should not describe the past issue as a single failure. It was a cluster: save serialization, NPC scheduling, memory pressure, and incomplete QA instrumentation."),
     slackMessage("Elena", "Tue 09:17", "The save-state issue was especially damaging because it appeared late in long sessions. Standard smoke tests did not catch it. Any reboot would need long-run automated simulation tests from the start."),
     slackMessage("Dave", "Tue 09:34", "Would a smaller Life Sim slice avoid that? Fewer NPCs, smaller neighborhoods, more focus on decorating and relationships?"),
     slackMessage("Marcus", "Tue 09:45", "Maybe, but then the design promise changes. A life sim with shallow simulation will be compared harshly with the market leader. The product expectation is already high."),
+    slackMessage("Priya", "Tue 09:56", "The rebuttal is that a modern life sim does not need to simulate every citizen at all times. We can use scoped autonomy, event budgets, and visible relationship beats. We have learned how to instrument the hidden systems."),
     slackMessage("Elena", "Tue 10:02", "Also mod support multiplies edge cases. If players can add items, routines, relationships, and rooms, our validation tools need to be much stronger than last time."),
+    slackMessage("Ben", "Tue 10:24", "If we go near life simulation, I want a test farm running synthetic households every night. Not a token soak test. Thousands of seed states, mod fixtures, save/load loops, and crash triage before anyone says alpha."),
+    slackMessage("Tom", "Tue 10:51", "Backend capacity is also not theoretical. A life sim with sharing, galleries, households, mods, and screenshots needs content moderation queues and storage policies from day one."),
     slackMessage("Marcus", "Tue 11:18", "I want a proof milestone for save integrity that runs longer than normal QA sessions. Long-session bugs are exactly the kind that look invisible until public launch."),
-    slackMessage("Marcus", "Tue 13:25", "For Option 3, the risk is different. Server capacity, moderation, city streaming, and activity variety. Hard, but closer to problems we have solved before."),
+    slackMessage("Priya", "Tue 12:07", "I am not saying greenlight a full life sim tomorrow. I am saying a reboot could be how Highland builds capacity into a genre that is bigger and more durable than our current lane."),
+    slackMessage("Marcus", "Tue 12:33", "That is the best argument for it. My hesitation is whether the capacity build should happen inside the flagship decision, where failure would be expensive and public."),
+    slackMessage("Marcus", "Tue 13:25", "For street sports, the risk is different. Server capacity, moderation, city streaming, and activity variety. Hard, but closer to problems we have solved before."),
     slackMessage("Dave", "Tue 15:48", "That helps the board discussion. Life Sim risk is systems depth. Street Sports risk is scope and service design. Racing risk is strategic, not build feasibility."),
 
-    slackMessage("Elena", "Wed 08:52", "I ran a quick dependency sketch. Option 3 could reuse character customization, replay capture, park object placement, controller feel, and challenge scoring from Streetline Skate."),
-    slackMessage("Marcus", "Wed 09:11", "What would be new for Option 3?"),
+    slackMessage("Elena", "Wed 08:52", "I ran a quick dependency sketch. Street sports could reuse character customization, replay capture, park object placement, controller feel, and challenge scoring from Streetline Skate."),
+    slackMessage("Marcus", "Wed 09:11", "What would be new for street sports?"),
     slackMessage("Elena", "Wed 09:14", "Larger streaming city zones, multiplayer social hub rules, mixed traversal animation, event matchmaking, creator moderation queue, and a more robust avatar inventory service."),
     slackMessage("Dave", "Wed 09:36", "Those new systems support the fantasy directly, though. If players can show style, move through the city, and share clips, the tech becomes visible."),
     slackMessage("Marcus", "Wed 09:48", "Visible tech is good when it works. It is also visible when it fails. The first vertical slice needs ugly internal telemetry, not just a polished demo route."),
-    slackMessage("Marcus", "Wed 10:02", "That is why I am more comfortable with Option 3 than a pure Life Sim reboot. The technical extensions map to things Highland already understands."),
+    slackMessage("Marcus", "Wed 10:02", "That is why I am more comfortable with street sports than a pure life-simulation reboot. The technical extensions map to things Highland already understands."),
+    slackMessage("Priya", "Wed 10:28", "I hear that. But if we only choose what maps neatly to current tooling, we keep proving the same capability. The life-sim case is not nostalgia for LifeSpace. It is a deliberate capacity bet."),
+    slackMessage("Ben", "Wed 10:39", "Capacity bet is fine if the plan includes boring guardrails: data migrations, fixture libraries, crash dashboards, memory budgets, rollback tests, and a kill switch for broken custom assets."),
     slackMessage("Elena", "Wed 11:40", "Still not cheap. Larger world plus social tools means more QA permutations. We should not call it low risk."),
-    slackMessage("Marcus", "Wed 15:05", "Agreed. Option 3 is moderate-high risk with controllable scope. Option 4 is high risk unless the studio commits to a multi-year capacity plan."),
+    slackMessage("Tom", "Wed 14:16", "Minor interruption: facilities says the sandwich situation is not an IT ticket. Please stop assigning it to backend."),
+    slackMessage("Marcus", "Wed 15:05", "Agreed. Street sports is moderate-high risk with controllable scope. Life simulation is high risk unless the studio commits to a multi-year capacity plan."),
 
-    slackMessage("Marcus", "Thu 09:08", "Draft technical scoring: Option 2 highest confidence, Option 1 close behind, Option 3 feasible with scope discipline, Option 6 feasible but less strategic, Option 4 highest capability gap."),
+    slackMessage("Marcus", "Thu 09:08", "Draft technical scoring: straight skate sequel highest confidence, racing close behind, street sports feasible with scope discipline, motorsport management feasible but less strategic, life simulation highest capability gap."),
     slackMessage("Sarah", "Thu 09:20", "Can you make sure that does not read like engineering vetoing ambition? The board needs to understand upside and risk together."),
     slackMessage("Marcus", "Thu 09:31", "Fair. I will phrase it as 'investment required for credible execution', not 'do not do this'."),
-    slackMessage("Elena", "Thu 10:14", "For Option 4, credible execution means prototype milestones before full greenlight: relationship scheduler, save integrity under load, mod validation, and long-session stability."),
+    slackMessage("Priya", "Thu 09:44", "Please include that life simulation also creates new reusable capacity: agent scheduling, relationship-state tooling, household persistence, creator-object validation, and long-session telemetry. Those could serve more than one future product."),
+    slackMessage("Elena", "Thu 10:14", "For life simulation, credible execution means prototype milestones before full greenlight: relationship scheduler, save integrity under load, mod validation, and long-session stability."),
     slackMessage("Marcus", "Thu 10:38", "Add hiring lead time to that. Senior simulation engineers are not sitting around waiting for us, and contractors will not solve architecture ownership."),
-    slackMessage("Dave", "Thu 11:02", "For Option 3, credible execution means a vertical slice with one dense city district, two movement types, avatar styling, and one social challenge loop."),
-    slackMessage("Marcus", "Thu 14:35", "Good distinction. Option 3 can be proven with a gameplay slice. Option 4 needs a systems reliability slice."),
+    slackMessage("Dave", "Thu 11:02", "For street sports, credible execution means a vertical slice with one dense city district, two movement types, avatar styling, and one social challenge loop."),
+    slackMessage("Ben", "Thu 13:22", "For life simulation, I would not accept a pretty slice without data. Show me a household that survives 300 in-game days, multiple save migrations, and mod conflicts."),
+    slackMessage("Marcus", "Thu 14:35", "Good distinction. Street sports can be proven with a gameplay slice. Life simulation needs a systems reliability slice."),
     slackMessage("Elena", "Thu 16:18", "Please also note team morale. People are excited by ambitious ideas, but they get nervous when plans ignore past tooling pain."),
 
-    slackMessage("Marcus", "Fri 08:50", "Final engineering appendix is uploaded. It includes a capability matrix, required proof milestones, and hidden dependencies for each option."),
+    slackMessage("Marcus", "Fri 08:50", "Final engineering appendix is uploaded. It includes a capability matrix, required proof milestones, and hidden dependencies for each candidate direction."),
     slackMessage("Elena", "Fri 09:07", "I added a note that previous LifeSpace lessons can be assets if treated seriously. The studio did learn, but the tooling has to change."),
     slackMessage("Dave", "Fri 09:29", "That is a useful nuance. Reviewers should not read the history as 'never attempt the genre'. It is a capacity-building question."),
+    slackMessage("Priya", "Fri 09:36", "I will say it plainly in the appendix: a life-simulation reboot is a stretch, but it is not fantasy. The technical path is expensive, staged, and measurable."),
     slackMessage("Elena", "Fri 09:51", "I also added the uncomfortable part: capacity-building is not free just because it is strategically attractive. It changes hiring, QA, support, and schedule assumptions."),
     slackMessage("Marcus", "Fri 10:11", "Exactly. The wrong answer is pretending the issue is only market demand. The right debate is whether upside justifies the investment and risk controls."),
+    slackMessage("Tom", "Fri 10:28", "Backend appendix now separates launch services from long-tail services. That should stop people assuming a social feature is just a menu button."),
+    slackMessage("Ben", "Fri 10:36", "QA appendix includes failure modes by genre. I made the life-sim row long on purpose. It is not a veto, it is a reminder that invisible systems need visible gates."),
     slackMessage("Sarah", "Fri 10:44", "This channel now has the strongest evidence for capability fit. Thank you. It will force decision-makers to compare production reality with market temptation.")
   ],
   "marketing": [
@@ -603,50 +629,69 @@ const SLACK_COMMUNICATIONS = {
     slackMessage("Dave", "Mon 10:12", "From design, I would expect Life Sim to win on tutorial/story content, Street Sports to win on clips and identity, Racing to win on specialist comparison videos."),
     slackMessage("Chloe", "Mon 10:18", "I am also tracking negative search modifiers. 'broken', 'DLC', 'cash grab', and 'no mods' are useful because they tell us where a promise could collapse."),
     slackMessage("Chloe", "Mon 10:25", "That matches my hypothesis. The risk is that Racing has clean buyers but poor broader amplification. It sells to a known audience but may not activate the parent-company ecosystem."),
+    slackMessage("Jamal", "Mon 11:06", "Search dashboard now includes survival crafting, RPG adventure, strategy management, and shooter/live-service fatigue terms. We should not make the market view only about Highland's current lanes."),
+    slackMessage("Nina", "Mon 11:32", "Paid acquisition benchmarks are messy by genre. Shooters buy installs like a subscription business, cozy sims often rely on community trust, and racing depends heavily on storefront featuring plus specialist media."),
+    slackMessage("Mia", "Mon 12:10", "Community note: modding questions are coming up across life sim, survival crafting, strategy, and skate. It is not just a sim audience demand anymore."),
     slackMessage("Victoria", "Mon 14:10", "Parent-company channels are most useful when a game gives them lifestyle hooks. Fashion, music, rooms, social identity, and creator moments travel better than technical handling claims."),
+    slackMessage("Omar", "Mon 15:04", "Brand partnership fit is strongest when partners can see themselves in the player fantasy. Apparel can understand avatars and street culture. Automotive can understand racing, but the audience is narrower."),
 
     slackMessage("Chloe", "Tue 09:08", "First search export is in. 'life sim alternative', 'mod friendly life game', and 'custom home social sim' are all rising. But the queries also show distrust around stability and DLC pricing."),
     slackMessage("Sarah", "Tue 09:21", "So Life Sim demand is real but not clean."),
     slackMessage("Chloe", "Tue 09:24", "Yes. Players want a competitor, but they are alert to quality. A weak launch would be punished quickly because the audience has recent examples of disappointment."),
-    slackMessage("Dave", "Tue 09:50", "What about Option 3 terms?"),
+    slackMessage("Dave", "Tue 09:50", "What about street-sports terms?"),
     slackMessage("Chloe", "Tue 10:02", "'open world skate bike parkour game', 'custom street sports avatar', and 'multiplayer trick city' are smaller than life sim terms, but much more feature-specific than I expected."),
+    slackMessage("Jamal", "Tue 10:24", "The surprise is survival crafting. 'base automation multiplayer' and 'private server co-op' are not directly Highland, but they are useful benchmarks for persistent community demand."),
+    slackMessage("Nina", "Tue 10:39", "Install bids are also calmer in strategy/management than in shooter/live service. Lower reach, but less auction pressure and more efficient retargeting."),
     slackMessage("Victoria", "Tue 11:18", "Feature-specific language is useful. It means players can describe what they want, not just a genre label."),
     slackMessage("Dave", "Tue 13:05", "That wording also gives design a constraint. If players say avatar, city, movement, and multiplayer, then the pitch has to make those pieces feel connected."),
+    slackMessage("Mia", "Tue 14:16", "Creator DMs keep using the phrase 'I want to make a place'. That applies to houses, parks, servers, and custom scenarios. Worth noting as a broader UGC pattern."),
     slackMessage("Chloe", "Tue 15:42", "Racing is comparatively stable. Strong terms around 'career mode', 'licensed cars', and 'wheel support', but low growth and lower lifestyle crossover."),
+    slackMessage("Omar", "Tue 16:08", "Small practical thing: if we brief partners on street sports, call it movement and identity first, not 'multi-sport'. Multi-sport sounds like a licensed sports bundle."),
 
     slackMessage("Chloe", "Wed 08:58", "Creator ecosystem report is interesting. Racing videos spike around launch, reviews, and competitive events. Simulation and customization videos keep producing after launch because players generate examples."),
     slackMessage("Sarah", "Wed 09:06", "Is that why stream hours look so different from units sold?"),
     slackMessage("Chloe", "Wed 09:14", "Exactly. A game can sell well but produce limited repeatable content. The parent company cares about repeatable cultural presence, not only launch week."),
+    slackMessage("Jamal", "Wed 09:29", "Pricing curves show the same pattern. Annual sports and racing discount earlier. Simulation, strategy, and survival titles hold price longer when expansions or community content keep the funnel warm."),
     slackMessage("Dave", "Wed 09:47", "Open-world street sports could produce trick clips, outfit reveals, city challenges, and creator route competitions. That sounds closer to repeatable content than a fixed track racer."),
     slackMessage("Chloe", "Wed 10:15", "Yes, but it needs clarity. If the pitch sounds like every youth-culture feature at once, marketing cannot explain it. One strong fantasy beats five vague hooks."),
+    slackMessage("Nina", "Wed 11:02", "Paid user acquisition report is being rewritten into genre bands. The first draft was too thin. We need CPI, channel mix, paid share, and payback logic, not a few headline numbers."),
     slackMessage("Victoria", "Wed 13:32", "Good line. Add that to the board notes: 'channel fit requires product clarity'."),
     slackMessage("Chloe", "Wed 14:08", "I am adding a channel matrix that separates paid media, owned editorial, creator outreach, commerce tie-ins, and community programming. They should not be treated as interchangeable."),
     slackMessage("Chloe", "Wed 16:05", "Parent-company overlap report also favors customization-led concepts. It does not automatically pick a project, but it weakens a pure racing recommendation."),
+    slackMessage("Mia", "Wed 16:42", "Also someone left six empty cold brew cans in the creator room and no one is confessing. This is not a data point, just annoying."),
 
-    slackMessage("Chloe", "Thu 09:03", "Building the marketing scorecard now. Option 4 wins addressable audience and long-tail content if execution is strong. Option 3 wins cross-channel clarity with lower explanation cost."),
+    slackMessage("Chloe", "Thu 09:03", "Building the marketing scorecard now. Life simulation wins addressable audience and long-tail content if execution is strong. Street sports wins cross-channel clarity with lower explanation cost."),
     slackMessage("Sarah", "Thu 09:19", "What does 'lower explanation cost' mean for the board?"),
     slackMessage("Chloe", "Thu 09:28", "It means owned media can show the value quickly: avatar, movement, social space, trick, outfit, clip. Life Sim can also show value, but the promise depends heavily on invisible systems depth."),
+    slackMessage("Jamal", "Thu 09:44", "For completeness: RPG adventure has strong audience pull but crowded launch competition. Strategy/management has excellent retention but lower broad cultural reach. Shooter/live service has spend intensity and sentiment headwinds."),
     slackMessage("Dave", "Thu 10:00", "That is helpful. The board should not just ask 'which genre is bigger?' It should ask which concept can be communicated credibly."),
     slackMessage("Victoria", "Thu 10:42", "Please include the inverse risk too: a concept that is easy to explain may still be too small, and a large category may still be worth pursuing if proof gates are credible."),
-    slackMessage("Chloe", "Thu 11:22", "Option 2 has very high advocacy among existing fans. The question is whether that advocacy is enough for the corporate growth target."),
-    slackMessage("Victoria", "Thu 14:48", "And Option 6?"),
+    slackMessage("Chloe", "Thu 11:22", "The straight skate sequel has very high advocacy among existing fans. The question is whether that advocacy is enough for the corporate growth target."),
+    slackMessage("Nina", "Thu 12:05", "I would not call racing cheap to market. The audience is known, but auction competition around motorsport launch windows gets expensive fast."),
+    slackMessage("Omar", "Thu 13:18", "Streetwear partners are more curious about street sports than skate sequel because it sounds less like a single discipline. But they also asked what the actual game loop is. That is the product clarity issue."),
+    slackMessage("Victoria", "Thu 14:48", "And motorsport management?"),
     slackMessage("Chloe", "Thu 15:02", "Efficient but narrow. Motorsport management creates thoughtful content, but not much broad lifestyle energy. It is probably a disciplined smaller bet rather than a flagship answer."),
+    slackMessage("Mia", "Thu 16:11", "Community risk note: if we mention modding publicly, players will hear it as a promise. We need exact wording before any creator brief leaves the building."),
 
     slackMessage("Chloe", "Fri 08:55", "Final marketing readout uploaded. I avoided ranking by one metric. The appendix now shows demand volume, intent specificity, creator repeatability, channel fit, and conversion risk."),
     slackMessage("Sarah", "Fri 09:12", "Good. Which evidence do you think the room is most likely to overuse?"),
     slackMessage("Chloe", "Fri 09:18", "The biggest market chart. It is tempting, but the market chart alone ignores production credibility and launch trust."),
     slackMessage("Victoria", "Fri 09:40", "That is exactly why the Slack archive matters. Internal stakeholders should complicate the neat external reports."),
     slackMessage("Chloe", "Fri 09:58", "I added three separate rows for market size, market access, and market credibility. They point in different directions, which is the real issue."),
+    slackMessage("Jamal", "Fri 10:02", "Dashboard labels are updated so search, pricing, paid acquisition, and UGC are visibly market-wide. Highland examples are included, but they are not the whole market."),
     slackMessage("Dave", "Fri 10:05", "Marketing makes the street-sports and life-simulation cases both plausible, for different reasons. That is a stronger decision environment than a single obvious winner."),
+    slackMessage("Nina", "Fri 10:21", "Paid acquisition note: if the recommendation depends on buying the market, it is weak. The better story is where paid media supports a product truth that owned channels and creators can repeat."),
+    slackMessage("Omar", "Fri 10:29", "Partnership appendix is done. I removed anything that sounded like guaranteed synergy. Partners amplify evidence; they do not manufacture it."),
+    slackMessage("Mia", "Fri 10:34", "Community appendix is done too. It separates creator enthusiasm from player support load. Those are both community signals, but they mean different things operationally."),
     slackMessage("Chloe", "Fri 10:37", "Agreed. My recommendation to the task force would be: show which metric you prioritize, then justify why that metric matters for Highland now.")
   ],
   "executive": [
     slackMessage("Victoria", "Mon 09:45", "Executive thread. The parent company wants a recommendation that balances growth, brand leverage, production credibility, and long-term portfolio value."),
-    slackMessage("Sarah", "Mon 09:52", "The team understands. I am trying to prevent the board pack from becoming 'safe option versus exciting option'. The reality is more complex."),
+    slackMessage("Sarah", "Mon 09:52", "The team understands. I am trying to prevent the board pack from becoming 'safe direction versus exciting direction'. The reality is more complex."),
     slackMessage("Victoria", "Mon 10:05", "Correct. A safe project can be strategically weak. An ambitious project can be commercially right but operationally reckless. The recommendation needs to name that trade-off."),
     slackMessage("Chloe", "Mon 11:12", "Do you want parent-company synergy treated as a hard requirement or a multiplier?"),
     slackMessage("Sarah", "Mon 11:18", "I would also treat timing as a multiplier. The best idea on paper can still be wrong if it collides with hiring lead time or a crowded launch window."),
-    slackMessage("Victoria", "Mon 11:25", "A multiplier. The board will not greenlight a bad game because it fits a fashion campaign. But if two options are close, corporate reach can matter."),
+    slackMessage("Victoria", "Mon 11:25", "A multiplier. The board will not greenlight a bad game because it fits a fashion campaign. But if two candidate directions are close, corporate reach can matter."),
     slackMessage("Marcus", "Mon 15:18", "Engineering asks that capability fit also be treated as a multiplier, not a veto. We can grow capacity, but the board should price that growth honestly."),
 
     slackMessage("Victoria", "Tue 08:58", "Board concern this morning: if Highland chooses a racing sequel, what makes it more than a predictable but declining revenue event?"),
@@ -664,9 +709,9 @@ const SLACK_COMMUNICATIONS = {
     slackMessage("Marcus", "Wed 10:11", "Technical history is also not neutral. It clearly pressures the Life Sim reboot. That should create friction against simply following the biggest market."),
     slackMessage("Victoria", "Wed 11:02", "Exactly. The best recommendations will explain how that conflict was resolved."),
     slackMessage("Chloe", "Wed 11:34", "I can support a recommendation that names uncertainty honestly. I cannot support a recommendation that hides uncertainty behind one composite score."),
-    slackMessage("Dave", "Wed 15:15", "Design is somewhere between those poles. Option 3 may be the compromise, but only if it avoids becoming vague."),
+    slackMessage("Dave", "Wed 15:15", "Design is somewhere between those poles. Street sports may be the compromise, but only if it avoids becoming vague."),
 
-    slackMessage("Victoria", "Thu 09:00", "Dry-run prompt: 'Which option gives Highland the best chance to grow without losing operational control?' That may be more useful than 'which option has the largest opportunity?'"),
+    slackMessage("Victoria", "Thu 09:00", "Dry-run prompt: 'Which direction gives Highland the best chance to grow without losing operational control?' That may be more useful than 'which direction has the largest opportunity?'"),
     slackMessage("Sarah", "Thu 09:28", "That phrasing should make reviewers compare ambition and feasibility."),
     slackMessage("Marcus", "Thu 10:02", "It also makes them define operational control. For engineering, that means scope, milestones, testability, and support commitments."),
     slackMessage("Chloe", "Thu 10:35", "For marketing, it means a concept that can be explained repeatedly through channels we actually have, not just a large theoretical audience."),
@@ -676,8 +721,8 @@ const SLACK_COMMUNICATIONS = {
 
     slackMessage("Victoria", "Fri 08:40", "Final executive position: we are not asking for unanimity. We are asking for a defensible recommendation with acknowledged uncertainty."),
     slackMessage("Sarah", "Fri 09:02", "The board pack now has enough disagreement to support that. The reports provide evidence; the Slack channels provide organizational interpretation."),
-    slackMessage("Chloe", "Fri 09:24", "Marketing will not claim any option is risk-free. Even Option 3 needs sharper messaging and proof that its audience is not just a bundle of adjacent trends."),
-    slackMessage("Marcus", "Fri 09:45", "Engineering will not claim ambitious options are impossible. We will state the proof gates and capacity needs."),
+    slackMessage("Chloe", "Fri 09:24", "Marketing will not claim any direction is risk-free. Even street sports needs sharper messaging and proof that its audience is not just a bundle of adjacent trends."),
+    slackMessage("Marcus", "Fri 09:45", "Engineering will not claim ambitious directions are impossible. We will state the proof gates and capacity needs."),
     slackMessage("Sarah", "Fri 09:58", "I will write the final recommendation section so dissent is visible. The board needs to see why a rejected path was still plausible."),
     slackMessage("Dave", "Fri 10:15", "Design will emphasize concept coherence. Bigger is not automatically better."),
     slackMessage("Victoria", "Fri 11:00", "Good. This is exactly the kind of ambiguity the recommendation needs to work through: data is essential, but judgment still decides how it is weighted.")
@@ -892,13 +937,13 @@ const EMAIL_TEMPLATES = {
   "modding_ugc_approval": {
     sender: "Community Relations Operations",
     subject: "Approved: Modding & User Generated Content Data Summary",
-    body: "Hey Team,\n\nHere is the data on modding and UGC engagement you requested. We scraped community databases and Steam Workshop logs for the top 5 games in the simulation and sports categories.\n\nPlease open the attached report for the full breakdown of player retention indices, active map sharing counts, and tool creation metrics.\n\nHope this helps with the strategic planning,\nCommunity Ops Team Office",
+    body: "Hey Team,\n\nHere is the data on modding and UGC engagement you requested. We scraped community databases, Steam Workshop logs, creator galleries, and public mod hubs across simulation, action-sports, racing, survival crafting, strategy/management, and RPG benchmarks.\n\nPlease open the attached report for the full breakdown of player retention indices, active map and asset sharing counts, tool creation metrics, support implications, and genre-level UGC adoption patterns.\n\nHope this helps with the strategic planning,\nCommunity Ops Team Office",
     attachment: "modding_ugc_report.pdf"
   },
   "refund_logs_approval": {
     sender: "Platform Partnerships Team",
-    subject: "Approved: Confidential Refund Logs (LifeSpace & Streetline Skate)",
-    body: "Strategy Group,\n\nWe have retrieved the confidential refund rate logs and primary complaint categories from Steam and PlayStation console partner portals.\n\nPlease download the attached raw CSV dataset containing the detailed ticket records and refund reason categorizations.\n\nBest,\nPlatform Partnerships Group",
+    subject: "Approved: Confidential Refund Logs & Escalations",
+    body: "Strategy Group,\n\nWe have retrieved the confidential refund rate logs, escalation flags, platform outcomes, and primary complaint categories from Steam, PlayStation, Xbox, Nintendo, and Epic partner portals.\n\nPlease download the attached raw CSV dataset containing detailed ticket records and refund reason categorizations across Highland releases and comparable market genres including life simulation, skateboarding, racing, survival crafting, RPG adventure, strategy/management, and live-service shooters.\n\nBest,\nPlatform Partnerships Group",
     attachment: "refund_escalation_data.csv"
   }
 };
@@ -910,7 +955,7 @@ const PDF_REPORTS = {
       <section class="doc-section report-frame-summary">
         <h3>Corporate Audience Overlap & Media Synergy Study</h3>
         <p><strong>Prepared by:</strong> Corporate Analytics Office | <strong>Security Classification:</strong> Confidential | <strong>Document ID:</strong> CAO-AUD-26-Q2-117</p>
-        <p>This approved attachment has been expanded into a full corporate-style report with methodology notes, audience-universe findings, cross-category indices, embedded support graphics, option-level implications, governance caveats, and recommendations.</p>
+        <p>This approved attachment has been expanded into a full corporate-style report with methodology notes, audience-universe findings, cross-category indices, embedded support graphics, genre-level implications, governance caveats, and recommendations.</p>
         <p><strong>Key insight:</strong> customization-led concepts have materially stronger parent-company leverage than a traditional racing sequel. Lifestyle and cozy-media overlap reaches 82% among action-sports buyers, while only 24% of general corporate subscribers overlap with racing simulation buyers.</p>
       </section>
       <iframe
@@ -966,6 +1011,13 @@ const PDF_REPORTS = {
       </iframe>
     </article>
   `
+};
+
+const REPORT_PDF_PATHS = {
+  parent_company_audience_overview_report: "reports/parent_company_audience_overview.pdf",
+  modding_ugc_report_report: "reports/modding_ugc_report.pdf",
+  influencer_coverage_report: "reports/influencer_coverage_report.pdf",
+  creator_ecosystem_report: "reports/creator_ecosystem_report.pdf"
 };
 
 // --- 2. GLOBAL STATE CONTROLLER ---
@@ -1097,16 +1149,16 @@ function generateMarketTrendsChart() {
       </div>
 
       <div class="ed-kpi-grid">
-        <div class="ed-kpi good"><strong>+51%</strong><span>growth for mod-support life-sim queries</span></div>
-        <div class="ed-kpi info"><strong>3.8x</strong><span>higher specificity for life-sim searches vs racing searches</span></div>
-        <div class="ed-kpi warn"><strong>64%</strong><span>of high-intent queries mention customization, AI, or UGC</span></div>
-        <div class="ed-kpi bad"><strong>-4%</strong><span>growth for realistic handling mod queries</span></div>
+        <div class="ed-kpi good"><strong>+51%</strong><span>growth for mod-support life/cozy simulation queries</span></div>
+        <div class="ed-kpi info"><strong>+43%</strong><span>survival-crafting searches mentioning co-op servers or base automation</span></div>
+        <div class="ed-kpi warn"><strong>64%</strong><span>of high-intent queries mention systems, customization, UGC, or community tooling</span></div>
+        <div class="ed-kpi bad"><strong>-9%</strong><span>generic live-service shooter queries after battle-pass backlash spikes</span></div>
       </div>
 
       <div class="ed-grid">
         <div class="ed-panel wide">
           <h4>Search Demand Index by Genre</h4>
-          <p class="ed-panel-note">Life simulation demand is not just broad; it gets more specific over time, which is a stronger signal than generic awareness.</p>
+          <p class="ed-panel-note">This view tracks market-wide genre and mechanic searches, including competitor-title research. Owned Highland terms are only a small subset of the raw export.</p>
           <div class="chart-container-market">
             <div class="grid-line" style="bottom: 0%"></div>
             <div class="grid-line" style="bottom: 25%"></div>
@@ -1118,6 +1170,8 @@ function generateMarketTrendsChart() {
               <path d="M 0 162 Q 150 146 290 111 T 600 72" fill="none" stroke="#8a5a2b" stroke-width="3" />
               <path d="M 0 184 Q 120 165 235 112 T 600 25" fill="none" stroke="#c41c25" stroke-width="4" />
               <path d="M 0 150 Q 160 139 330 122 T 600 112" fill="none" stroke="#b7791f" stroke-width="2.5" stroke-dasharray="8 6" />
+              <path d="M 0 132 Q 120 128 240 84 T 600 54" fill="none" stroke="#2f7d6d" stroke-width="2.5" />
+              <path d="M 0 76 Q 160 92 320 116 T 600 156" fill="none" stroke="#6f6477" stroke-width="2.5" />
             </svg>
           </div>
           <div class="chart-axis-labels">
@@ -1128,6 +1182,8 @@ function generateMarketTrendsChart() {
             <span class="legend-item"><span class="legend-dot" style="background-color: #8a5a2b;"></span> Action Sports / Skate</span>
             <span class="legend-item"><span class="legend-dot" style="background-color: #b7791f;"></span> Motorsport Management</span>
             <span class="legend-item"><span class="legend-dot" style="background-color: #4d463e;"></span> Racing</span>
+            <span class="legend-item"><span class="legend-dot" style="background-color: #2f7d6d;"></span> Survival Crafting</span>
+            <span class="legend-item"><span class="legend-dot" style="background-color: #6f6477;"></span> Shooter / Live Service</span>
           </div>
         </div>
 
@@ -1136,10 +1192,10 @@ function generateMarketTrendsChart() {
           <p class="ed-panel-note">Clusters with both volume growth and high specificity.</p>
           <div class="ed-bars">
             <div class="ed-bar-row"><span class="ed-bar-label">Modding support</span><span class="ed-bar-track"><span class="ed-bar-fill good" style="--v:91%"></span></span><span class="ed-bar-value">+51%</span></div>
-            <div class="ed-bar-row"><span class="ed-bar-label">Cozy customization</span><span class="ed-bar-track"><span class="ed-bar-fill good" style="--v:84%"></span></span><span class="ed-bar-value">+44%</span></div>
-            <div class="ed-bar-row"><span class="ed-bar-label">AI relationships</span><span class="ed-bar-track"><span class="ed-bar-fill" style="--v:68%"></span></span><span class="ed-bar-value">+31%</span></div>
+            <div class="ed-bar-row"><span class="ed-bar-label">Co-op base building</span><span class="ed-bar-track"><span class="ed-bar-fill good" style="--v:82%"></span></span><span class="ed-bar-value">+43%</span></div>
+            <div class="ed-bar-row"><span class="ed-bar-label">Character creator</span><span class="ed-bar-track"><span class="ed-bar-fill good" style="--v:78%"></span></span><span class="ed-bar-value">+37%</span></div>
             <div class="ed-bar-row"><span class="ed-bar-label">Open-world sports</span><span class="ed-bar-track"><span class="ed-bar-fill" style="--v:63%"></span></span><span class="ed-bar-value">+27%</span></div>
-            <div class="ed-bar-row"><span class="ed-bar-label">Racing handling</span><span class="ed-bar-track"><span class="ed-bar-fill bad" style="--v:22%"></span></span><span class="ed-bar-value">-4%</span></div>
+            <div class="ed-bar-row"><span class="ed-bar-label">Battle pass shooter</span><span class="ed-bar-track"><span class="ed-bar-fill bad" style="--v:24%"></span></span><span class="ed-bar-value">-9%</span></div>
           </div>
         </div>
 
@@ -1150,7 +1206,8 @@ function generateMarketTrendsChart() {
             <div></div><div class="head">Volume</div><div class="head">Feature</div><div class="head">Brand</div><div class="head">Buy</div><div class="head">Risk</div>
             <div class="rowhead">Life Sim</div><div class="s5">5</div><div class="s5">5</div><div class="s3">3</div><div class="s4">4</div><div class="s3">3</div>
             <div class="rowhead">Street Sports</div><div class="s4">4</div><div class="s5">5</div><div class="s3">3</div><div class="s3">3</div><div class="s2">2</div>
-            <div class="rowhead">Skate Sequel</div><div class="s3">3</div><div class="s4">4</div><div class="s5">5</div><div class="s3">3</div><div class="s2">2</div>
+            <div class="rowhead">Survival Craft</div><div class="s4">4</div><div class="s5">5</div><div class="s2">2</div><div class="s4">4</div><div class="s3">3</div>
+            <div class="rowhead">RPG Adventure</div><div class="s4">4</div><div class="s3">3</div><div class="s4">4</div><div class="s3">3</div><div class="s4">4</div>
             <div class="rowhead">Racing</div><div class="s3">3</div><div class="s2">2</div><div class="s4">4</div><div class="s2">2</div><div class="s1">1</div>
           </div>
         </div>
@@ -1159,8 +1216,10 @@ function generateMarketTrendsChart() {
           <h4>Top Query Families From Raw Export</h4>
           <div class="ed-keyword-grid">
             <div class="ed-keyword-card"><strong>life sim alternative with better customization</strong><span>High-volume dissatisfaction with dominant competitors; good early signal for a life-simulation category entry if execution risk is solved.</span></div>
-            <div class="ed-keyword-card"><strong>streetline skate multiplayer custom parks</strong><span>Direct evidence that Highland's sports audience already searches for UGC and social creation loops.</span></div>
+            <div class="ed-keyword-card"><strong>co-op survival crafting with private servers</strong><span>Strong broader-market demand for durable group play, base persistence, and server ownership.</span></div>
+            <div class="ed-keyword-card"><strong>single player RPG no battle pass</strong><span>Growing backlash against mandatory live-service structures; high purchase intent but high content-scope expectations.</span></div>
             <div class="ed-keyword-card"><strong>open world skate bike parkour game</strong><span>Supports a broader street-sports concept; users describe activity mix and world structure rather than only franchise names.</span></div>
+            <div class="ed-keyword-card"><strong>management game deep career mode</strong><span>Lower volume but high specificity; queries over-index on systems depth, UI clarity, and replay scenarios.</span></div>
           </div>
         </div>
       </div>
@@ -1405,7 +1464,7 @@ const SENTIMENT_KEYWORDS = {
       { word: "active community", score: 79 },
       { word: "modding support", score: 75 },
       { word: "relaxing", score: 68 },
-      { word: "diverse options", score: 62 },
+      { word: "broad customization", score: 62 },
       { word: "expressive play", score: 48 },
       { word: "cosy vibe", score: 42 }
     ],
@@ -1499,10 +1558,10 @@ function generatePricingDecayDashboard() {
       </div>
 
       <div class="ed-kpi-grid">
-        <div class="ed-kpi good"><strong>71%</strong><span>life-sim benchmark price retained at month 18</span></div>
-        <div class="ed-kpi bad"><strong>38%</strong><span>racing benchmark price retained at month 18</span></div>
-        <div class="ed-kpi info"><strong>2.7x</strong><span>higher expansion attach rate for simulation audiences</span></div>
-        <div class="ed-kpi warn"><strong>44%</strong><span>skate/action-sports revenue from creator-led long tail</span></div>
+        <div class="ed-kpi good"><strong>74%</strong><span>strategy/management benchmark price retained at month 18</span></div>
+        <div class="ed-kpi info"><strong>71%</strong><span>life-sim benchmark price retained at month 18</span></div>
+        <div class="ed-kpi warn"><strong>54%</strong><span>survival-crafting price retained after early-access exit</span></div>
+        <div class="ed-kpi bad"><strong>31%</strong><span>annual sports/racing sequel price retained during holiday discount cycle</span></div>
       </div>
 
       <div class="ed-grid">
@@ -1516,6 +1575,8 @@ function generatePricingDecayDashboard() {
               <path d="M 0 24 L 90 28 L 180 42 L 300 54 L 600 72" fill="none" stroke="#c41c25" stroke-width="3" />
               <path d="M 0 30 L 90 44 L 180 78 L 300 106 L 600 138" fill="none" stroke="#8a5a2b" stroke-width="3" />
               <path d="M 0 30 L 90 62 L 180 114 L 300 145 L 600 168" fill="none" stroke="#4d463e" stroke-width="3" />
+              <path d="M 0 20 L 90 24 L 180 36 L 300 48 L 600 62" fill="none" stroke="#2f7d6d" stroke-width="3" />
+              <path d="M 0 28 L 90 38 L 180 55 L 300 91 L 600 130" fill="none" stroke="#6f6477" stroke-width="2.5" />
             </svg>
           </div>
           <div class="chart-axis-labels"><span>Launch</span><span>3 mo</span><span>6 mo</span><span>12 mo</span><span>24 mo</span></div>
@@ -1523,6 +1584,8 @@ function generatePricingDecayDashboard() {
             <span class="legend-item"><span class="legend-dot" style="background:#c41c25"></span> Life Simulation</span>
             <span class="legend-item"><span class="legend-dot" style="background:#8a5a2b"></span> Action Sports</span>
             <span class="legend-item"><span class="legend-dot" style="background:#4d463e"></span> Racing</span>
+            <span class="legend-item"><span class="legend-dot" style="background:#2f7d6d"></span> Strategy / Management</span>
+            <span class="legend-item"><span class="legend-dot" style="background:#6f6477"></span> Survival Crafting</span>
           </div>
         </div>
 
@@ -1531,20 +1594,24 @@ function generatePricingDecayDashboard() {
           <table class="ed-table">
             <thead><tr><th>Genre</th><th>Base Game</th><th>DLC/Exp.</th><th>Discount Risk</th></tr></thead>
             <tbody>
+              <tr><td>Strategy / Management</td><td>52%</td><td>36%</td><td><span class="ed-status good">Low</span></td></tr>
               <tr><td>Life Sim</td><td>46%</td><td>41%</td><td><span class="ed-status good">Low</span></td></tr>
+              <tr><td>Survival Crafting</td><td>58%</td><td>27%</td><td><span class="ed-status warn">Medium</span></td></tr>
               <tr><td>Street Sports</td><td>61%</td><td>24%</td><td><span class="ed-status info">Medium</span></td></tr>
-              <tr><td>Skateboarding</td><td>68%</td><td>18%</td><td><span class="ed-status info">Medium</span></td></tr>
-              <tr><td>Racing</td><td>82%</td><td>9%</td><td><span class="ed-status bad">High</span></td></tr>
+              <tr><td>RPG Adventure</td><td>74%</td><td>14%</td><td><span class="ed-status warn">Medium</span></td></tr>
+              <tr><td>Racing / Annual Sports</td><td>82%</td><td>9%</td><td><span class="ed-status bad">High</span></td></tr>
+              <tr><td>Shooter / Live Service</td><td>39%</td><td>44%</td><td><span class="ed-status bad">High</span></td></tr>
             </tbody>
           </table>
         </div>
 
         <div class="ed-panel">
           <h4>Pricing Implication</h4>
-          <p class="ed-panel-note">Racing can launch predictably but loses price power quickly. Simulation and open-world street sports concepts carry more support risk, but they can earn over a longer monetization window if content pipelines and tooling are reliable.</p>
+          <p class="ed-panel-note">Genres with durable systems, expansions, or creator ecosystems retain price power longer. Annualized sports/racing and live-service shooters discount earlier because the market expects recurring content resets, heavy competition, or aggressive storefront events.</p>
           <div class="ed-bars">
             <div class="ed-bar-row"><span class="ed-bar-label">Launch spike reliance</span><span class="ed-bar-track"><span class="ed-bar-fill bad" style="--v:86%"></span></span><span class="ed-bar-value">Racing</span></div>
             <div class="ed-bar-row"><span class="ed-bar-label">Expansion runway</span><span class="ed-bar-track"><span class="ed-bar-fill good" style="--v:78%"></span></span><span class="ed-bar-value">Life Sim</span></div>
+            <div class="ed-bar-row"><span class="ed-bar-label">DLC depth runway</span><span class="ed-bar-track"><span class="ed-bar-fill good" style="--v:82%"></span></span><span class="ed-bar-value">Strategy</span></div>
             <div class="ed-bar-row"><span class="ed-bar-label">UGC retention</span><span class="ed-bar-track"><span class="ed-bar-fill good" style="--v:71%"></span></span><span class="ed-bar-value">Street</span></div>
           </div>
         </div>
@@ -1795,48 +1862,123 @@ function generateAdSpendViewer() {
       <strong>✓ Dataset Unlocked:</strong> competitor_ad_spend_audit has been registered to your strategy account.
     </div>
     <h4>Competitor Paid User Acquisition Spend & Install Bid Benchmarks</h4>
+    <p style="font-size: 0.9rem; margin: 0.75rem 0 1rem;">AdIntelligence modeled paid media activity across search, paid social, creator whitelisting, video pre-roll, storefront featuring, and mobile app-install exchanges. Values represent observed bid ranges and inferred spend, not publisher-disclosed actuals.</p>
+    <div class="ed-kpi-grid">
+      <div class="ed-kpi bad"><strong>£22.5M</strong><span>highest inferred annual spend: dominant life-sim incumbent</span></div>
+      <div class="ed-kpi warn"><strong>£6.50</strong><span>upper CPI band for crowded life/cozy simulation campaigns</span></div>
+      <div class="ed-kpi good"><strong>£1.40</strong><span>lowest CPI band for UGC-led action-sports creator campaigns</span></div>
+      <div class="ed-kpi info"><strong>38%</strong><span>median paid share of launch installs across premium PC/console titles</span></div>
+    </div>
     <table class="sales-matrix">
       <thead>
         <tr>
           <th>Competitor Game Title</th>
+          <th>Genre</th>
           <th>Annual Paid Ad Spend</th>
-          <th>Average Cost Per Install (CPI)</th>
+          <th>Avg CPI</th>
           <th>Paid Acquisition Share</th>
-          <th>CAC Trend</th>
+          <th>Dominant Channel</th>
+          <th>Payback Readout</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td>Speedway Unlimited (Racing)</td>
+          <td>Speedway Unlimited</td>
+          <td>Racing</td>
           <td>£8.4M</td>
           <td>£4.20</td>
           <td>42% of total players</td>
-          <td style="color:var(--color-danger);">Rising (+12%)</td>
+          <td>Search + video pre-roll</td>
+          <td><span class="ed-status warn">Thin after discounts</span></td>
         </tr>
         <tr>
-          <td>Grind & Slide (Skating)</td>
+          <td>Grind & Slide</td>
+          <td>Skateboarding / Action Sports</td>
           <td>£1.2M</td>
           <td>£1.80</td>
           <td>15% of total players</td>
-          <td style="color:var(--color-success);">Flat</td>
+          <td>Creator whitelisting</td>
+          <td><span class="ed-status good">Efficient</span></td>
         </tr>
         <tr>
-          <td>TownLife (Life Sim)</td>
+          <td>TownLife</td>
+          <td>Life / Cozy Simulation</td>
           <td>£22.5M</td>
           <td>£6.50</td>
           <td>55% of total players</td>
-          <td style="color:var(--color-danger);">Rising (+24%)</td>
+          <td>Paid social + search conquesting</td>
+          <td><span class="ed-status bad">Expensive but defensible at scale</span></td>
+        </tr>
+        <tr>
+          <td>Hearthwild</td>
+          <td>Survival Crafting</td>
+          <td>£9.8M</td>
+          <td>£3.75</td>
+          <td>34% of total players</td>
+          <td>Influencer co-op series</td>
+          <td><span class="ed-status info">Improves with server retention</span></td>
+        </tr>
+        <tr>
+          <td>Chronicle Vale</td>
+          <td>RPG / Adventure</td>
+          <td>£14.2M</td>
+          <td>£5.10</td>
+          <td>47% of total players</td>
+          <td>Cinematic video + creator embargo</td>
+          <td><span class="ed-status warn">Dependent on critic scores</span></td>
+        </tr>
+        <tr>
+          <td>Club Director Pro</td>
+          <td>Strategy / Management</td>
+          <td>£2.6M</td>
+          <td>£2.25</td>
+          <td>22% of total players</td>
+          <td>Search + specialist newsletters</td>
+          <td><span class="ed-status good">Slow but durable</span></td>
+        </tr>
+        <tr>
+          <td>Zero Hour Arena</td>
+          <td>Shooter / Live Service</td>
+          <td>£31.0M</td>
+          <td>£7.80</td>
+          <td>61% of total players</td>
+          <td>Paid social + esports sponsorship</td>
+          <td><span class="ed-status bad">High churn risk</span></td>
         </tr>
       </tbody>
     </table>
-    <p style="font-size: 0.85rem; margin-top: 1rem;">
-      <strong>Strategic Insight:</strong> Competitor customer acquisition costs (CAC) for the simulation market are extremely high (£6.50 CPI) due to bidding wars. If Highland reboots LifeSpace as a traditional paid-acquisition game, the marketing budget will be drained. We must depend on organic creator loops, modding advocacy, and community shares to offset these acquisition costs.
-    </p>
+    <div class="ed-grid" style="margin-top: 1rem;">
+      <div class="ed-panel">
+        <h4>Channel Mix by Genre</h4>
+        <div class="ed-bars">
+          <div class="ed-bar-row"><span class="ed-bar-label">Life/cozy paid social</span><span class="ed-bar-track"><span class="ed-bar-fill bad" style="--v:78%"></span></span><span class="ed-bar-value">78</span></div>
+          <div class="ed-bar-row"><span class="ed-bar-label">Racing search bids</span><span class="ed-bar-track"><span class="ed-bar-fill warn" style="--v:66%"></span></span><span class="ed-bar-value">66</span></div>
+          <div class="ed-bar-row"><span class="ed-bar-label">Action-sports creators</span><span class="ed-bar-track"><span class="ed-bar-fill good" style="--v:84%"></span></span><span class="ed-bar-value">84</span></div>
+          <div class="ed-bar-row"><span class="ed-bar-label">Strategy newsletters</span><span class="ed-bar-track"><span class="ed-bar-fill good" style="--v:58%"></span></span><span class="ed-bar-value">58</span></div>
+        </div>
+      </div>
+      <div class="ed-panel">
+        <h4>Strategic Insight</h4>
+        <p class="ed-panel-note">Paid acquisition is most dangerous when a genre has high CPI and weak organic proof. Life/cozy simulation has high bid pressure but can offset it with creator trust and modding advocacy. Action-sports has lower CPI because creator clips carry more discovery work. Racing needs higher paid support because intent is clear but culturally narrower.</p>
+      </div>
+    </div>
   `;
 }
 
-// Function to download strategic reports as formatted text
+// Function to download strategic reports as pre-rendered PDFs
 async function downloadReport(reportKey, docTitle) {
+  const pdfPath = REPORT_PDF_PATHS[reportKey];
+  if (pdfPath) {
+    const link = document.createElement("a");
+    link.setAttribute("href", pdfPath);
+    link.setAttribute("download", pdfPath.split("/").pop());
+    link.style.visibility = "hidden";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    return;
+  }
+
   const htmlContent = PDF_REPORTS[reportKey];
   if (!htmlContent) return;
   
@@ -1868,11 +2010,16 @@ async function downloadReport(reportKey, docTitle) {
     });
   });
   
-  const blob = new Blob([text], { type: "text/plain;charset=utf-8" });
+  const escapedText = text
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;");
+  const fallbackHtml = `<!doctype html><html><head><meta charset="utf-8"><title>${docTitle}</title></head><body><pre>${escapedText}</pre></body></html>`;
+  const blob = new Blob([fallbackHtml], { type: "text/html;charset=utf-8" });
   const url = URL.createObjectURL(blob);
   const link = document.createElement("a");
   link.setAttribute("href", url);
-  link.setAttribute("download", `${reportKey.replace("_report", "")}_document.txt`);
+  link.setAttribute("download", `${reportKey.replace("_report", "")}_document.html`);
   link.style.visibility = "hidden";
   document.body.appendChild(link);
   link.click();
@@ -1886,16 +2033,16 @@ function downloadCSV(filename) {
   
   if (filename === "search_referrals.csv") {
     content = `SearchTerm,MonthlyClicks,ReferralRatePercent,PrimaryGenreIntent,TargetPlatform,TrendGrowthPercent
-next highland skating game,8500,14.2,Skateboarding,Console/PC,15
-racing game career mode,6200,9.5,Racing,Console,2
-life sim alternative,14200,18.7,Life Simulation,PC/Steam,38
-highland simulation game reboot,4500,6.1,Life Simulation,PC,5
-Apex Circuit sequel,3800,8.2,Racing,Console,1
-streetline skate multiplayer,7100,12.4,Skateboarding,Console/PC,24
-cosy game customization,9500,11.8,Life Simulation,Switch/PC,42
-realistic car handling mods,3100,4.3,Racing,PC,-5
-expressive movement games,5800,7.9,Skateboarding/Sports,Console/PC,18
-highland velocity track editor,2400,3.8,Racing,Console,-2`;
+life simulation game with mod support,16800,16.4,Life Simulation,PC/Steam,51
+co-op survival crafting with private servers,15400,13.8,Survival Crafting,PC/Console,43
+single player RPG no battle pass,13200,11.6,RPG Adventure,PC/Console,34
+open world skate bike parkour game,11800,12.9,Action Sports,Console/PC,27
+management game deep career mode,9300,8.1,Strategy Management,PC,18
+streetline skate multiplayer custom parks,8500,14.2,Skateboarding,Console/PC,28
+racing game career mode realistic handling,6200,9.5,Racing,Console,4
+new extraction shooter fair monetization,7400,6.3,Shooter Live Service,PC/Console,11
+games like TownLife but not paywall dlc,14200,18.7,Life Simulation,PC/Steam,39
+realistic car handling mods,3100,4.3,Racing,PC,-4`;
   } 
   else if (filename === "competitor_comparison.csv") {
     content = `CompetitorTitle,Genre,EstActiveUsersMAU,AverageReviewScore,LaunchPriceUSD,ModdingSupport,DLCFrequency,CrossPlaySupport,VisualStyle,CommunitySentiment
@@ -1928,6 +2075,12 @@ BUG-2024-101,Streetline Skate,Minor,Physics,Skateboard clips slightly into high 
 BUG-2024-102,Streetline Skate,Minor,Animation,Character foot positioning slightly off during manual kickflip,Closed,3,Lead Animator
 BUG-2023-401,Apex Circuit,Minor,UI,Leaderboard fails to refresh on slow network connection,Closed,7,Server QA
 BUG-2023-402,Apex Circuit,Major,Physics,Car collision with soft tyre barrier sends physics engine unstable,Closed,12,Physics Dev`;
+  }
+  else if (filename === "refund_escalation_data.csv") {
+    content = `RefundID,Date,GameTitle,Genre,PlatformStorefront,Region,PurchasePriceGBP,HoursPlayed,RefundRequested,RefundReason,ComplaintCategory,Escalated,EscalationTier,ResolutionStatus,ResolutionDays,SupportNotes
+RF-500001,2026-01-11,LifeSpace,Life Simulation,Steam,UK,49.99,14.2,TRUE,"Save corruption","Save / support",TRUE,"Platform escalation","Approved",12,"Escalated because player supplied corrupted save files"
+RF-500002,2026-03-31,Streetline Skate,Skateboarding,Xbox Store,AU,39.99,7.3,TRUE,"Online park desync","Online / support",FALSE,"Storefront auto-approved","Partial credit issued",3,"Standard storefront review"
+RF-500003,2026-04-06,Hearthwild,Survival Crafting,Steam,US,34.99,9.1,TRUE,"Server rollback","Server / support",TRUE,"Publisher review","Pending evidence",8,"Escalated because co-op rollback logs were supplied"`;
   }
   
   // Prefer the full generated CSV served with the app. If the app is opened from a
@@ -2359,7 +2512,7 @@ function openDataSourceModal(sourceId) {
     actions.innerHTML = `
       <div style="display: flex; gap: 0.75rem;">
         <button type="button" class="btn btn-primary" id="modal-view-report-btn">Read Pre-Analyzed Report</button>
-        <button type="button" class="btn btn-outline" id="modal-dl-report-btn">Download Report (.txt)</button>
+        <button type="button" class="btn btn-outline" id="modal-dl-report-btn">Download Report PDF</button>
       </div>
     `;
     document.getElementById("modal-view-report-btn").addEventListener("click", () => {
@@ -2963,7 +3116,7 @@ function renderEmailFullView(email, container) {
         const viewer = document.getElementById("modal-workspace-viewer");
         actions.innerHTML = `
           <div style="display: flex; gap: 0.75rem; margin-bottom: 1rem;">
-            <button type="button" class="btn btn-outline" id="modal-dl-report-btn">Download Attachment (.txt)</button>
+            <button type="button" class="btn btn-outline" id="modal-dl-report-btn">Download Attachment PDF</button>
           </div>
         `;
         document.getElementById("modal-dl-report-btn").addEventListener("click", () => {
