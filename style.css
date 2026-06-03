@@ -411,6 +411,48 @@ li {
   color: var(--color-success);
 }
 
+.admin-state-panel {
+  display: grid;
+  gap: 0.55rem;
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  background: linear-gradient(135deg, rgba(255, 254, 250, 0.95), rgba(246, 243, 237, 0.9));
+}
+
+.admin-state-panel.hidden {
+  display: none;
+}
+
+.admin-state-panel h3 {
+  margin: 0;
+  color: var(--text-primary);
+  font-size: 0.95rem;
+}
+
+.admin-state-panel label {
+  color: var(--text-muted);
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.admin-state-panel select {
+  width: 100%;
+  border: 1px solid rgba(70, 60, 49, 0.18);
+  border-radius: var(--border-radius-sm);
+  background: rgba(255, 255, 255, 0.78);
+  color: var(--text-primary);
+  font: inherit;
+  padding: 0.55rem 0.65rem;
+}
+
+.admin-reset-status {
+  min-height: 1.1rem;
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 0.74rem;
+  line-height: 1.4;
+}
+
 .nav-list {
   list-style: none;
   margin-left: 0;

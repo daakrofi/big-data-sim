@@ -67,6 +67,16 @@
         <div class="budget-label">Available Analytics Budget:</div>
         <div class="budget-value" id="display-budget">£10,000</div>
       </div>
+
+      <div class="admin-state-panel glass-panel-accent hidden" id="admin-state-panel" aria-label="Admin Team State Controls">
+        <h3>Team State Controls</h3>
+        <label for="admin-reset-team-select">Reset team workspace</label>
+        <select id="admin-reset-team-select">
+          <option value="">Select team</option>
+        </select>
+        <button type="button" class="btn btn-outline btn-sm btn-full" id="admin-reset-team-btn">Reset Selected Team</button>
+        <p class="admin-reset-status" id="admin-reset-status" aria-live="polite"></p>
+      </div>
       
       <nav aria-label="Main Navigation">
         <ul class="nav-list">

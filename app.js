@@ -1992,12 +1992,13 @@ function setupEventListeners() {
       loginError.textContent = "";
       login(selectedTeamName, passcode);
     } else {
-      loginError.textContent = "Error: Invalid team passcode association. Verify passcode reference below.";
+      loginError.textContent = "Error: Invalid team passcode association. Verify your team selection and passcode.";
     }
   });
 
   // Logout Button
   document.getElementById("logout-btn").addEventListener("click", logout);
+  document.getElementById("admin-reset-team-btn")?.addEventListener("click", resetSelectedTeamState);
 
   // Tab Navigation Buttons
   const navItems = document.querySelectorAll(".nav-item");
@@ -2110,6 +2111,7 @@ function login(teamName, passcode) {
   // Prepare Worksheet Display fields
   document.getElementById("ws-team-display").value = teamName;
   updateBudgetDisplay();
+  updateAdminStateControls();
   
   // Unhide app frame
   document.getElementById("login-overlay").classList.add("hidden");
@@ -2131,9 +2133,47 @@ function logout() {
   saveState();
   State.passcode = "";
   State.activeTeam = "";
+  updateAdminStateControls();
   document.getElementById("login-overlay").classList.remove("hidden");
   document.getElementById("app-wrapper").classList.add("hidden");
   document.getElementById("passcode-input").value = "";
+}
+
+function updateAdminStateControls() {
+  const panel = document.getElementById("admin-state-panel");
+  const select = document.getElementById("admin-reset-team-select");
+  const status = document.getElementById("admin-reset-status");
+  if (!panel || !select) return;
+
+  const isAdmin = State.passcode === "admin1991";
+  panel.classList.toggle("hidden", !isAdmin);
+  if (!isAdmin) {
+    select.innerHTML = `<option value="">Select team</option>`;
+    if (status) status.textContent = "";
+    return;
+  }
+
+  select.innerHTML = `<option value="">Select team</option>` + Object.keys(TEAMS_CONFIG)
+    .filter(teamName => teamName !== "Admin")
+    .map(teamName => `<option value="${teamName}">${teamName}</option>`)
+    .join("");
+  if (status) status.textContent = "";
+}
+
+function resetSelectedTeamState() {
+  if (State.passcode !== "admin1991") return;
+
+  const select = document.getElementById("admin-reset-team-select");
+  const status = document.getElementById("admin-reset-status");
+  const teamName = select?.value;
+  if (!teamName || teamName === "Admin" || !TEAMS_CONFIG[teamName]) {
+    if (status) status.textContent = "Select a team to reset.";
+    return;
+  }
+
+  localStorage.removeItem(`highland_state_${TEAMS_CONFIG[teamName]}`);
+  if (status) status.textContent = `${teamName} workspace has been reset to default.`;
+  if (select) select.value = "";
 }
 
 function switchTab(tabId) {
